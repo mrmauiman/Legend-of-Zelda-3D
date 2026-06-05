@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://5uqblccpocit"]
+
+[ext_resource type="PackedScene" uid="uid://b7r3rh8k3cfc3" path="res://models/dungeons/level_1/Pieces/FloorWaterIsland.glb" id="1_jikx8"]
+[ext_resource type="PackedScene" uid="uid://b74bv8mdncqd0" path="res://scenes/environment/overworld/water.tscn" id="2_b7wys"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_sc4jn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sc4jn"]
+data = PackedVector3Array(-9.599999, -0.19999999, 5.6, -9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, 5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, 0, -5.6, 9.599999, 0, -5.6, 9.599999, 0, 5.6, -9.599999, 0, 5.6)
+
+[node name="FloorWaterIsland" instance=ExtResource("1_jikx8")]
+
+[node name="FloorWaterIsland" parent="." index="0"]
+script = ExtResource("2_sc4jn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_sc4jn")
+
+[node name="WaterBlocks" type="Node3D" parent="." index="2"]
+visible = false
+
+[node name="Water" parent="WaterBlocks" index="0" instance=ExtResource("2_b7wys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7683716e-07, 1.5000001, -2.3999996)
+size = Vector3(16, 3.4, 3.2)
+
+[node name="Water2" parent="WaterBlocks" index="1" instance=ExtResource("2_b7wys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.400001, 1.5000001, 0.80000055)
+size = Vector3(3.2, 3.4, 3.2)
+
+[node name="Water3" parent="WaterBlocks" index="2" instance=ExtResource("2_b7wys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.399999, 1.5000001, 0.8000001)
+size = Vector3(3.2, 3.4, 3.2)
+
+[node name="Water4" parent="WaterBlocks" index="3" instance=ExtResource("2_b7wys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 1.5000001, 4.0000005)
+size = Vector3(6.4, 3.4, 3.2)
+
+[node name="Water5" parent="WaterBlocks" index="4" instance=ExtResource("2_b7wys")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.799999, 1.5000001, 4)
+size = Vector3(6.4, 3.4, 3.2)

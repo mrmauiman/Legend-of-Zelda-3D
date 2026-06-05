@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvgewad7a4k84"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_dt0w2"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="2_uxd88"]
+[ext_resource type="Script" uid="uid://bk12pwr4k0k5g" path="res://scripts/components/item_giver.gd" id="4_wlsml"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="5_uxd88"]
+
+[node name="Loadables_1_2" type="Node3D"]
+script = ExtResource("1_dt0w2")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="SpawnChecker" parent="." instance=ExtResource("2_uxd88")]
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="KeyGiver" type="Node" parent="Pickups" node_paths=PackedStringArray("enemies")]
+script = ExtResource("4_wlsml")
+enemies = NodePath("../../Enemies")
+location_id = "dungeon/5/loadables_1_2"
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("5_uxd88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+enemies = NodePath("../../Enemies")

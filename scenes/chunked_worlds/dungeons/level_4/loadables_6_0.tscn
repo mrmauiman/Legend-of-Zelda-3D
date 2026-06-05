@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://6sk30ldo0gj8"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_3wqdk"]
+[ext_resource type="PackedScene" uid="uid://dumwmibigwdqn" path="res://scenes/enemies/dungeon/manhandla.tscn" id="2_oxn16"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="3_qn1hl"]
+[ext_resource type="PackedScene" uid="uid://kwsva51tncqd" path="res://scenes/enemies/dungeon/living_dragon_statue.tscn" id="4_0b82g"]
+[ext_resource type="PackedScene" uid="uid://e42jglknftkl" path="res://scenes/enemies/dungeon/living_head_statue.tscn" id="5_223fc"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="6_0k7fe"]
+
+[node name="Loadables_6_0" type="Node3D"]
+script = ExtResource("1_3wqdk")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Manhandla" parent="Bosses" instance=ExtResource("2_oxn16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_qn1hl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 5.7000003)
+enemies = NodePath("../../Bosses")
+
+[node name="SealedDoor2" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_qn1hl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+enemies = NodePath("../../Bosses")
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("4_0b82g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[node name="head_statue" parent="Traps" instance=ExtResource("5_223fc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+
+[node name="SpawnChecker" parent="." instance=ExtResource("6_0k7fe")]

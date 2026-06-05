@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://bak4urj05ofej"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_i5eyx"]
+[ext_resource type="PackedScene" uid="uid://0u4na6ufappj" path="res://scenes/environment/dungeons/general_pieces/floor_water_inverse_mail_slot.tscn" id="2_cy07d"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_gy6bs"]
+[ext_resource type="PackedScene" uid="uid://cjv048p5u8obk" path="res://scenes/environment/dungeons/general_pieces/south_wall_bombed.tscn" id="4_byo8n"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="5_gbd1k"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="6_nuyt3"]
+
+[node name="Room_7_1" instance=ExtResource("1_i5eyx")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_7_1.tscn"
+
+[node name="FloorWaterInverseMailSlot" parent="Pieces" index="1" instance=ExtResource("2_cy07d")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_gy6bs")]
+
+[node name="SouthWallBombed" parent="Pieces" index="3" instance=ExtResource("4_byo8n")]
+
+[node name="WestWallDoor" parent="Pieces" index="4" instance=ExtResource("5_gbd1k")]
+
+[node name="EastWallDoor" parent="Pieces" index="5" instance=ExtResource("6_nuyt3")]

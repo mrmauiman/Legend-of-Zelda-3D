@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://p50rf1j883of"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7kneujc0o8ht" path="res://models/RedRock.obj" id="1_p4q0f"]
+[ext_resource type="Script" uid="uid://6i1vt055w700" path="res://scripts/components/rock_pushable.gd" id="1_umrn0"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ku72o"]
+height = 1.6
+radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pod2"]
+size = Vector3(0.6, 1.6, 1.8000001)
+
+[node name="Rock" type="StaticBody3D"]
+script = ExtResource("1_umrn0")
+power_bracelet_required = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_ku72o")
+
+[node name="RedRock" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("1_p4q0f")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Pushable"]]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.79999995, -8.940697e-08)
+shape = SubResource("BoxShape3D_7pod2")

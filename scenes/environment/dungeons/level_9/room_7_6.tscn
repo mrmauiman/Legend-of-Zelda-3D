@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://dse3to2xtcgg7"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_26dax"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="2_klvbm"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_tcbxa"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_txtfy"]
+[ext_resource type="PackedScene" uid="uid://bwubre06xhcl0" path="res://scenes/environment/dungeons/general_pieces/west_wall_bombed.tscn" id="5_gd0t0"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="6_qrejj"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="7_bw8o2"]
+[ext_resource type="PackedScene" uid="uid://sx8su1hqkuvc" path="res://scenes/npcs/free_info_old_man_npc.tscn" id="8_b82et"]
+
+[node name="Room_7_6" instance=ExtResource("1_26dax")]
+
+[node name="FloorBlack" parent="Pieces" index="1" instance=ExtResource("2_klvbm")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_tcbxa")]
+
+[node name="ShortWall" parent="Pieces" index="3" instance=ExtResource("4_txtfy")]
+
+[node name="WestWallBombed" parent="Pieces" index="4" instance=ExtResource("5_gd0t0")]
+
+[node name="SouthWallDoor" parent="Pieces" index="5" instance=ExtResource("6_qrejj")]
+
+[node name="Torch" parent="." index="2" instance=ExtResource("7_bw8o2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+
+[node name="Torch2" parent="." index="3" instance=ExtResource("7_bw8o2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, 0)
+
+[node name="OldManNPC" parent="." index="4" instance=ExtResource("8_b82et")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6999999)
+info = "GO TO THE NEXT ROOM."

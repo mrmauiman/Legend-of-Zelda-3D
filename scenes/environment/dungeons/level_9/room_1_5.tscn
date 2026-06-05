@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg4ylyo5jeh44"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_utd4c"]
+[ext_resource type="Script" uid="uid://xfmhu864ey0f" path="res://scripts/components/black_out.gd" id="2_bp2q4"]
+[ext_resource type="PackedScene" uid="uid://dt5nfdqype2dc" path="res://scenes/environment/dungeons/general_pieces/floor_water_river.tscn" id="3_ppry7"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="4_p7mvj"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="5_asihx"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="6_ndrl6"]
+[ext_resource type="PackedScene" uid="uid://nrnhhxq6q1ks" path="res://scenes/environment/dungeons/general_pieces/north_wall_bombed.tscn" id="7_xaph5"]
+
+[node name="Room_1_5" instance=ExtResource("1_utd4c")]
+script = ExtResource("2_bp2q4")
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_9/loadables_1_5.tscn"
+
+[node name="FloorWaterRiver" parent="Pieces" index="1" instance=ExtResource("3_ppry7")]
+
+[node name="EastWallDoor" parent="Pieces" index="2" instance=ExtResource("4_p7mvj")]
+
+[node name="LongWall" parent="Pieces" index="3" instance=ExtResource("5_asihx")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="WestWallDoor" parent="Pieces" index="4" instance=ExtResource("6_ndrl6")]
+
+[node name="NorthWallBombed" parent="Pieces" index="5" instance=ExtResource("7_xaph5")]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbqbc0sn3qpo0"]
+
+[ext_resource type="Script" uid="uid://cmwp78wfi1i5y" path="res://scripts/enemies/dungeon/ganon.gd" id="1_amvqf"]
+[ext_resource type="PackedScene" uid="uid://c3hdpp7nc8hjy" path="res://scenes/enemies/dungeon/ganon_model.tscn" id="2_5rek6"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_5rek6"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r6jfk"]
+height = 3.4
+radius = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_uxtgd"]
+height = 3.4
+radius = 1.4
+
+[node name="Ganon" type="CharacterBody3D"]
+collision_layer = 132
+script = ExtResource("1_amvqf")
+
+[node name="GanonModel" parent="." instance=ExtResource("2_5rek6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+shape = SubResource("CylinderShape3D_r6jfk")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+shape = SubResource("CylinderShape3D_uxtgd")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_5rek6")
+max_health = 16
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

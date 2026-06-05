@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmmavc0v1q00q"]
+
+[ext_resource type="Script" uid="uid://b3a6bj7c07mcg" path="res://scripts/link/arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://bceoy3jo68x8a" path="res://sprites/link/arrow.png" id="2_q8ifc"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="3_uqxp3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ckq1"]
+radius = 0.05
+height = 1.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxf2y"]
+size = Vector3(0.6, 0.6, 1.6)
+
+[node name="Arrow" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_23jat")
+
+[node name="Texture" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("2_q8ifc")
+hframes = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_7ckq1")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+collision_mask = 257
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("3_uqxp3")
+knockback = Vector3(0, 6.4, 6.4)
+relative_knockback_orientor = NodePath("..")
+damage = 4
+is_arrow = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("BoxShape3D_sxf2y")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="blocked" from="HitBox" to="." method="hit_blocked"]
+[connection signal="hit" from="HitBox" to="." method="hit_enemy"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

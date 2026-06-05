@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://beuveaodc4fuw"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_13h08"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="2_13h08"]
+
+[node name="Loadables_3_2" type="Node3D"]
+script = ExtResource("1_13h08")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" instance=ExtResource("2_13h08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 1.6)
+location_id = "dungeon/5/loadables_3_2"

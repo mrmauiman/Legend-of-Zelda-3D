@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2jetmgj0ygv6"]
+
+[ext_resource type="PackedScene" uid="uid://c1tbqk0abonga" path="res://scenes/pickups/triforce_piece_pickup.tscn" id="1_s31lt"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_m8uo2"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="3_4bfqb"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="4_kxavn"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="5_i0ugv"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="6_npqwn"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="7_msbb0"]
+[ext_resource type="PackedScene" uid="uid://dstgau5klwsnm" path="res://scenes/environment/dungeons/general_pieces/dragon_statue.tscn" id="8_lgbux"]
+[ext_resource type="PackedScene" uid="uid://dkwnqednva41k" path="res://scenes/environment/dungeons/general_pieces/head_statue.tscn" id="9_vjrj8"]
+
+[node name="Room_7_4" type="Node3D"]
+
+[node name="Pickup" parent="." instance=ExtResource("1_s31lt")]
+
+[node name="Roof" parent="." instance=ExtResource("2_m8uo2")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("3_4bfqb")
+
+[node name="Floor" parent="." instance=ExtResource("2_m8uo2")]
+
+[node name="LongWall" parent="." instance=ExtResource("4_kxavn")]
+
+[node name="ShortWall" parent="." instance=ExtResource("5_i0ugv")]
+
+[node name="ShortWall2" parent="." instance=ExtResource("5_i0ugv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SouthWallDoor" parent="." instance=ExtResource("6_npqwn")]
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -3.2)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -3.2)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3.2)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -3.2)
+
+[node name="Block9" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -3.2)
+
+[node name="Block10" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -1.6)
+
+[node name="Block11" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 0)
+
+[node name="Block12" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 1.6)
+
+[node name="Block13" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 3.2)
+
+[node name="Block14" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, -3.2)
+
+[node name="Block15" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, -1.6)
+
+[node name="Block16" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 0)
+
+[node name="Block17" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 1.6)
+
+[node name="Block18" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 3.2)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -3.2)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.2)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -3.2)
+
+[node name="Block19" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 3.2)
+
+[node name="Block20" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3.2)
+
+[node name="Block21" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 3.2)
+
+[node name="Block22" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 3.2)
+
+[node name="Block23" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3.2)
+
+[node name="Block24" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 3.2)
+
+[node name="Block8" parent="Blocks" instance=ExtResource("7_msbb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -3.2)
+
+[node name="Statues" type="Node3D" parent="."]
+
+[node name="DragonStatue" parent="Statues" instance=ExtResource("8_lgbux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="DragonStatue2" parent="Statues" instance=ExtResource("8_lgbux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -1.6)
+
+[node name="HeadStatue" parent="Statues" instance=ExtResource("9_vjrj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="HeadStatue2" parent="Statues" instance=ExtResource("9_vjrj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -1.6)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkqxt3ghoxu3o"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_qn4g6"]
+[ext_resource type="PackedScene" uid="uid://cbqbc0sn3qpo0" path="res://scenes/enemies/dungeon/ganon.tscn" id="2_ggkel"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="3_8g8fh"]
+
+[node name="Loadables_3_2" type="Node3D"]
+script = ExtResource("1_qn4g6")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Ganon" parent="Bosses" instance=ExtResource("2_ggkel")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000001, 0, -2.4)
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_8g8fh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+enemies = NodePath("../../Bosses")
+
+[node name="SealedDoor2" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_8g8fh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 5.7000003)
+enemies = NodePath("../../Bosses")

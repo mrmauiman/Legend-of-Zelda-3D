@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://yvlrcsqvko4x"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_3ctgv"]
+[ext_resource type="PackedScene" uid="uid://5uqblccpocit" path="res://scenes/environment/dungeons/general_pieces/floor_water_island.tscn" id="2_1go8b"]
+[ext_resource type="PackedScene" uid="uid://qp413d785uk7" path="res://scenes/environment/dungeons/general_pieces/east_wall_bombed.tscn" id="3_ubrwi"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="4_b0b3v"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="5_eecxf"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="6_su8dg"]
+
+[node name="Room_5_3" instance=ExtResource("1_3ctgv")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_9/loadables_5_3.tscn"
+
+[node name="FloorWaterIsland" parent="Pieces" index="1" instance=ExtResource("2_1go8b")]
+
+[node name="EastWallBombed" parent="Pieces" index="2" instance=ExtResource("3_ubrwi")]
+
+[node name="WestWallDoor" parent="Pieces" index="3" instance=ExtResource("4_b0b3v")]
+
+[node name="SouthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_eecxf")]
+
+[node name="NorthWallDoor" parent="Pieces" index="5" instance=ExtResource("6_su8dg")]

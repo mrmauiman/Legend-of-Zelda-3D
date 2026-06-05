@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0cesglneor3s"]
+
+[ext_resource type="Script" uid="uid://j4krg01tnqf8" path="res://scripts/components/raft_trigger.gd" id="1_jx8ch"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_paxxb"]
+size = Vector3(1.6, 1.6, 0.1)
+
+[node name="RaftTrigger" type="Area3D" groups=["RaftTrigger"]]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_jx8ch")
+direction = Vector3(0, 0, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_paxxb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://q06agebtbocr"]
+
+[ext_resource type="Script" uid="uid://boagbgcn5i01r" path="res://scripts/components/raft.gd" id="1_sl03k"]
+[ext_resource type="PackedScene" uid="uid://de8oj30cmcwh3" path="res://models/raft.glb" id="2_12u0i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rakhh"]
+size = Vector3(1.6, 0.2, 1.6)
+
+[node name="Raft" type="CharacterBody3D"]
+script = ExtResource("1_sl03k")
+
+[node name="Model" parent="." instance=ExtResource("2_12u0i")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
+shape = SubResource("BoxShape3D_rakhh")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -1.6, 0)

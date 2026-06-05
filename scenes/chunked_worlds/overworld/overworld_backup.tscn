@@ -1,0 +1,2730 @@
+[gd_scene load_steps=40 format=3 uid="uid://ew35jx1e2xdt"]
+
+[ext_resource type="Script" uid="uid://n4yfolq6cjen" path="res://scripts/chunked_world/populate_screen_tool.gd" id="1_pahce"]
+[ext_resource type="PackedScene" uid="uid://c02y7oo75bny6" path="res://scenes/environment/overworld/map.tscn" id="1_ut6yq"]
+[ext_resource type="Script" uid="uid://d2ilne8dk1bwu" path="res://scripts/chunked_world/screen_manager.gd" id="2_pahce"]
+[ext_resource type="Script" uid="uid://u6wv2gi8qyd3" path="res://scripts/chunked_world/screen.gd" id="3_pahce"]
+[ext_resource type="PackedScene" uid="uid://c666j00ip7l6j" path="res://scenes/enemies/overworld/moblin_blue.tscn" id="4_41qjw"]
+[ext_resource type="PackedScene" uid="uid://vra84fs8wopc" path="res://scenes/enemies/overworld/moblin.tscn" id="5_4xkgl"]
+[ext_resource type="PackedScene" uid="uid://cw3j64626urfl" path="res://scenes/enemies/overworld/tektite.tscn" id="6_j7g3e"]
+[ext_resource type="PackedScene" uid="uid://hgmxhycsu707" path="res://scenes/enemies/overworld/peahat.tscn" id="7_qye8e"]
+[ext_resource type="PackedScene" uid="uid://pptkhrolarw8" path="res://scenes/enemies/overworld/zora.tscn" id="8_8mmr5"]
+[ext_resource type="PackedScene" uid="uid://b16demwcef8bn" path="res://scenes/enemies/overworld/leever_blue.tscn" id="9_0gk58"]
+[ext_resource type="PackedScene" uid="uid://cgs1nrjj61ygo" path="res://scenes/enemies/overworld/leever.tscn" id="10_26tac"]
+[ext_resource type="PackedScene" uid="uid://b5o43hexckok2" path="res://scenes/enemies/overworld/octorock.tscn" id="11_o2ys5"]
+[ext_resource type="PackedScene" uid="uid://c7bijmlfh8s2a" path="res://scenes/enemies/overworld/tektite_blue.tscn" id="12_7qcki"]
+[ext_resource type="PackedScene" uid="uid://duq5wekoun4v7" path="res://scenes/enemies/overworld/octorock_blue.tscn" id="13_iyphg"]
+[ext_resource type="PackedScene" uid="uid://dschhxc8yx5or" path="res://scenes/enemies/overworld/lynel.tscn" id="14_611l1"]
+[ext_resource type="PackedScene" uid="uid://dd10xryr2gtvt" path="res://scenes/enemies/overworld/lynel_blue.tscn" id="15_e6aic"]
+[ext_resource type="PackedScene" uid="uid://da1f2st5n1g83" path="res://scenes/enemies/overworld/ghini.tscn" id="16_weprq"]
+[ext_resource type="PackedScene" uid="uid://bv0hd7icvlfc6" path="res://scenes/enemies/overworld/rock_slide_area.tscn" id="17_mqaoi"]
+[ext_resource type="PackedScene" uid="uid://hkruvn1ig2vp" path="res://scenes/environment/caves/secret_cave_30.tscn" id="18_6sd5q"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="19_w8rjt"]
+[ext_resource type="PackedScene" uid="uid://qla5xm24jiiy" path="res://scenes/environment/caves/money_game_cave.tscn" id="21_tr1xd"]
+[ext_resource type="PackedScene" uid="uid://cnjkwyqdj2kyn" path="res://scenes/environment/caves/wooden_sword_cave.tscn" id="22_jryu7"]
+[ext_resource type="PackedScene" uid="uid://b73sg1pklgfos" path="res://scenes/environment/caves/potion_cave.tscn" id="23_qnvkk"]
+[ext_resource type="PackedScene" uid="uid://bm2ni4kcffa81" path="res://scenes/environment/caves/fast_travel_cave.tscn" id="24_41rsk"]
+[ext_resource type="PackedScene" uid="uid://domn4h8q6womb" path="res://scenes/environment/caves/sword_scroll_cave.tscn" id="25_gcpfl"]
+[ext_resource type="PackedScene" uid="uid://drlfq6b5avlxp" path="res://scenes/environment/caves/potion_or_heart_container_cave.tscn" id="26_kw13q"]
+[ext_resource type="PackedScene" uid="uid://dpt0rmrfogic2" path="res://scenes/environment/caves/door_repair_cave.tscn" id="27_lljr3"]
+[ext_resource type="PackedScene" uid="uid://c18sy5ri3r3ub" path="res://scenes/environment/caves/secret_cave_100.tscn" id="28_hnl0q"]
+[ext_resource type="PackedScene" uid="uid://bva60dw8i31un" path="res://scenes/environment/caves/shop_1_cave.tscn" id="29_t4ttu"]
+[ext_resource type="PackedScene" uid="uid://c6luxoxgvcnhu" path="res://scenes/environment/caves/shop_2_cave.tscn" id="30_och2k"]
+[ext_resource type="PackedScene" uid="uid://bly51of5rh464" path="res://scenes/environment/caves/secret_cave_10.tscn" id="31_7blue"]
+[ext_resource type="PackedScene" uid="uid://djc1rn7ukxcd7" path="res://scenes/environment/caves/shop_3_cave.tscn" id="32_oovdi"]
+[ext_resource type="PackedScene" uid="uid://bjuv7evcmmicp" path="res://scenes/environment/caves/shop_4_cave.tscn" id="33_ge162"]
+[ext_resource type="PackedScene" uid="uid://c02m2eu1vcq88" path="res://scenes/environment/caves/magic_sword_cave.tscn" id="34_xidjp"]
+[ext_resource type="PackedScene" uid="uid://bthetgr0730lm" path="res://scenes/environment/caves/cave_6_10.tscn" id="35_7x43l"]
+[ext_resource type="PackedScene" uid="uid://6jrto65qbetx" path="res://scenes/environment/caves/cave_6_12.tscn" id="36_k6bag"]
+[ext_resource type="PackedScene" uid="uid://do3xhsmeh8afe" path="res://scenes/environment/caves/white_sword_cave.tscn" id="37_srbxw"]
+[ext_resource type="PackedScene" uid="uid://dhoo6hv4s3qcy" path="res://scenes/environment/caves/letter_cave.tscn" id="38_i3dhl"]
+[ext_resource type="PackedScene" uid="uid://rqc1yj5uto2h" path="res://scenes/link/link.tscn" id="39_pahce"]
+
+[node name="Overworld" type="Node3D"]
+script = ExtResource("1_pahce")
+
+[node name="WorldMesh" parent="." instance=ExtResource("1_ut6yq")]
+
+[node name="Screens" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_pahce")
+
+[node name="Screen_0_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Screen_0_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Octorock15" parent="Screens/Screen_0_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.8950825, 0, -2.691307)
+
+[node name="Octorock16" parent="Screens/Screen_0_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.8950825, 0, 2.608696)
+
+[node name="Octorock17" parent="Screens/Screen_0_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.295083, 0, -1.891304)
+
+[node name="Octorock18" parent="Screens/Screen_0_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.004917, 0, -6.2913055)
+
+[node name="Screen_0_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Tektite6" parent="Screens/Screen_0_9" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20000076, 4.8, 3.7000046)
+
+[node name="Tektite7" parent="Screens/Screen_0_9" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000076, 4.8, -3.5999947)
+
+[node name="Tektite8" parent="Screens/Screen_0_9" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999985, 4.8, -3.5999947)
+
+[node name="Tektite13" parent="Screens/Screen_0_9" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0999985, 4.8, 3.2000046)
+
+[node name="Tektite14" parent="Screens/Screen_0_9" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9000015, 4.4, 2.5000076)
+
+[node name="Screen_0_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Tektite9" parent="Screens/Screen_0_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.200001, 4.8, -2.899994)
+
+[node name="Tektite10" parent="Screens/Screen_0_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 4.8, -3.5999947)
+
+[node name="Tektite11" parent="Screens/Screen_0_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40000153, 4.8, 2.100006)
+
+[node name="Tektite12" parent="Screens/Screen_0_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.800003, 4.8, 1.3000069)
+
+[node name="Screen_0_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Zora5" parent="Screens/Screen_0_11" instance=ExtResource("8_8mmr5")]
+
+[node name="Leever11" parent="Screens/Screen_0_11" instance=ExtResource("10_26tac")]
+
+[node name="Leever12" parent="Screens/Screen_0_11" instance=ExtResource("10_26tac")]
+
+[node name="Leever13" parent="Screens/Screen_0_11" instance=ExtResource("10_26tac")]
+
+[node name="Leever14" parent="Screens/Screen_0_11" instance=ExtResource("10_26tac")]
+
+[node name="Leever15" parent="Screens/Screen_0_11" instance=ExtResource("10_26tac")]
+
+[node name="Leever16" parent="Screens/Screen_0_11" instance=ExtResource("10_26tac")]
+
+[node name="Screen_0_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Zora6" parent="Screens/Screen_0_12" instance=ExtResource("8_8mmr5")]
+
+[node name="Leever17" parent="Screens/Screen_0_12" instance=ExtResource("10_26tac")]
+
+[node name="Leever18" parent="Screens/Screen_0_12" instance=ExtResource("10_26tac")]
+
+[node name="Leever19" parent="Screens/Screen_0_12" instance=ExtResource("10_26tac")]
+
+[node name="Leever20" parent="Screens/Screen_0_12" instance=ExtResource("10_26tac")]
+
+[node name="Leever21" parent="Screens/Screen_0_12" instance=ExtResource("10_26tac")]
+
+[node name="Leever22" parent="Screens/Screen_0_12" instance=ExtResource("10_26tac")]
+
+[node name="Screen_0_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Octorock117" parent="Screens/Screen_0_13" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, 7.200012, 0, -0.3999939)
+
+[node name="Octorock118" parent="Screens/Screen_0_13" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 4.0000153, 0, -2.7999954)
+
+[node name="Octorock119" parent="Screens/Screen_0_13" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 1.3000183, 0, -1.3999939)
+
+[node name="Octorock120" parent="Screens/Screen_0_13" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -5.1999817, 0, -3.899994)
+
+[node name="Zora7" parent="Screens/Screen_0_13" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_0_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Octorock67" parent="Screens/Screen_0_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.7682973e-07, 0, -1, 0, 1, 0, 1, 0, -1.7682973e-07, 9.495026, 0, -0.39499664)
+
+[node name="Octorock68" parent="Screens/Screen_0_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054112e-07, 0, 1, 0, -2.2054112e-07, 0, -1, 3.7950287, 0, -1.8949966)
+
+[node name="Octorock69" parent="Screens/Screen_0_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(2.6425252e-07, 0, 1, 0, 1, 0, -1, 0, 2.6425252e-07, -0.8049774, 0, -1.4949951)
+
+[node name="Octorock70" parent="Screens/Screen_0_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(2.6425252e-07, 0, 1, 0, 1, 0, -1, 0, 2.6425252e-07, 1.8950195, 0, 0.005004883)
+
+[node name="Zora8" parent="Screens/Screen_0_14" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_0_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 61.6)
+script = ExtResource("3_pahce")
+
+[node name="Octorock116" parent="Screens/Screen_0_15" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 4.371139e-07, 0, 1, 0, -4.371139e-07, 0, -1, -1.0999908, 0, -2.2999954)
+
+[node name="Zora9" parent="Screens/Screen_0_15" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_1_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Lynel" parent="Screens/Screen_1_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 4.6000023)
+
+[node name="Lynel2" parent="Screens/Screen_1_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399994, 0, 1.7000008)
+
+[node name="LynelBlue30" parent="Screens/Screen_1_0" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.400009, 0, -4.0999985)
+
+[node name="LynelBlue31" parent="Screens/Screen_1_0" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.199997, 0, -0.3999977)
+
+[node name="Peahat43" parent="Screens/Screen_1_0" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000305, 0, 0.1000061)
+
+[node name="Peahat44" parent="Screens/Screen_1_0" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.800003, 0, 3.2000046)
+
+[node name="Screen_1_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Moblin84" parent="Screens/Screen_1_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 4.799988, 0.1, 2.699997)
+
+[node name="Moblin85" parent="Screens/Screen_1_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, 6.799988, 0.1, 0.099998474)
+
+[node name="Moblin86" parent="Screens/Screen_1_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, 1.3999939, 0.1, -0.6000023)
+
+[node name="Moblin87" parent="Screens/Screen_1_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -1.9000092, 0.1, 1.0999985)
+
+[node name="Moblin88" parent="Screens/Screen_1_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -4.900009, 0.1, -0.9000015)
+
+[node name="Screen_1_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Moblin68" parent="Screens/Screen_1_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.7000122, 0.1, 7.0999985)
+
+[node name="Moblin69" parent="Screens/Screen_1_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.2000122, 0.1, 3.7999992)
+
+[node name="Moblin70" parent="Screens/Screen_1_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.599991, 0.1, 0.70000076)
+
+[node name="Moblin71" parent="Screens/Screen_1_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 6.599991, 0.1, -1)
+
+[node name="Moblin72" parent="Screens/Screen_1_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4.4999847, 0.1, -3.2000008)
+
+[node name="Screen_1_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock93" parent="Screens/Screen_1_3" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6999893, 0, -5.200001)
+
+[node name="Octorock94" parent="Screens/Screen_1_3" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.4000092, 0, -3.1000023)
+
+[node name="Moblin23" parent="Screens/Screen_1_3" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.69999695, 0.1, 0.10000229)
+
+[node name="Moblin24" parent="Screens/Screen_1_3" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.1, 1.6000023)
+
+[node name="Moblin25" parent="Screens/Screen_1_3" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.199997, 0.1, -0.099998474)
+
+[node name="Moblin75" parent="Screens/Screen_1_3" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -4.3000183, 0.1, -1.800003)
+
+[node name="Screen_1_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock80" parent="Screens/Screen_1_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.0000001, 0, 5.762046e-08, 0, 1, 0, -5.762046e-08, 0, -1.0000001, 2.2548676, -1.9073486e-06, -1.0293427)
+
+[node name="Octorock81" parent="Screens/Screen_1_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.0000001, 0, 5.762046e-08, 0, 1, 0, -5.762046e-08, 0, -1.0000001, -0.4451294, -1.9073486e-06, 3.170658)
+
+[node name="Octorock82" parent="Screens/Screen_1_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.39090695e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -1.39090695e-08, -9.145126, -1.9073486e-06, -0.12934113)
+
+[node name="Octorock91" parent="Screens/Screen_1_4" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.899994, 0, 1.7999992)
+
+[node name="Octorock92" parent="Screens/Screen_1_4" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.49999237, 0, 0.79999924)
+
+[node name="Screen_1_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock9" parent="Screens/Screen_1_5" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4548683, -1.9073486e-06, 4.170658)
+
+[node name="Octorock77" parent="Screens/Screen_1_5" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, -5.7451324, -1.9073486e-06, 4.170658)
+
+[node name="Octorock78" parent="Screens/Screen_1_5" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, -10.745132, -1.9073486e-06, 2.3706589)
+
+[node name="Octorock79" parent="Screens/Screen_1_5" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.39090695e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -1.39090695e-08, -5.9451294, -1.9073486e-06, -1.8293419)
+
+[node name="Zora34" parent="Screens/Screen_1_5" instance=ExtResource("8_8mmr5")]
+spawn_limit_min = Vector2(-4.8, -8.8)
+spawn_limit_max = Vector2(-1.6, 8.8)
+
+[node name="Screen_1_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock5" parent="Screens/Screen_1_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.2462234, 0, 2.1686707)
+
+[node name="Octorock6" parent="Screens/Screen_1_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.7572594, 0, -2.2182617)
+
+[node name="Octorock7" parent="Screens/Screen_1_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.5888176, 0, 1.8094025)
+
+[node name="Octorock8" parent="Screens/Screen_1_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.703537, -1.9073486e-06, -2.526783)
+
+[node name="Screen_1_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock" parent="Screens/Screen_1_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 1.4115858, 0, -0.09218216)
+
+[node name="Octorock2" parent="Screens/Screen_1_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4402952, 0, -3.0921822)
+
+[node name="Octorock3" parent="Screens/Screen_1_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.64618, 0, -4.561878)
+
+[node name="Octorock4" parent="Screens/Screen_1_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2268553, 0, 1.6853485)
+
+[node name="Screen_1_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock10" parent="Screens/Screen_1_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.987853, -1.9073486e-06, 0.5154495)
+
+[node name="Octorock11" parent="Screens/Screen_1_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.0950804, -1.9073486e-06, -4.894943)
+
+[node name="Octorock12" parent="Screens/Screen_1_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.99508286, 0, 1.4480286)
+
+[node name="Octorock13" parent="Screens/Screen_1_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.7049179, 0, -1.4913063)
+
+[node name="Screen_1_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock19" parent="Screens/Screen_1_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.705002, 1.6, -0.09500122)
+
+[node name="Octorock20" parent="Screens/Screen_1_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.005001, 1.6, 2.9049988)
+
+[node name="Octorock21" parent="Screens/Screen_1_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.3050003, 1.6, -4.9950027)
+
+[node name="Octorock22" parent="Screens/Screen_1_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.0950012, 1.6, 2.204998)
+
+[node name="Zora" parent="Screens/Screen_1_9" instance=ExtResource("8_8mmr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Screen_1_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock44" parent="Screens/Screen_1_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(2.6425252e-07, 0, 1, 0, 1, 0, -1, 0, 2.6425252e-07, -8.204994, 1.6, 4.404999)
+
+[node name="Octorock45" parent="Screens/Screen_1_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, -3.079639e-07, 0, 1, 0, 3.079639e-07, 0, 1, 1.8950043, 1.6, 1.5049973)
+
+[node name="Octorock46" parent="Screens/Screen_1_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-3.5167528e-07, 0, -1, 0, 1, 0, 1, 0, -3.5167528e-07, 5.595001, 1.6, -4.595001)
+
+[node name="Octorock47" parent="Screens/Screen_1_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 3.9538668e-07, 0, 1, 0, -3.9538668e-07, 0, -1, 10.294998, 1.6, -2.4950027)
+
+[node name="Zora4" parent="Screens/Screen_1_10" instance=ExtResource("8_8mmr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Screen_1_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock95" parent="Screens/Screen_1_11" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -5.7999954, 1.6, 3.7000008)
+
+[node name="Octorock96" parent="Screens/Screen_1_11" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 6.600006, 1.6, 4.9000015)
+
+[node name="Moblin9" parent="Screens/Screen_1_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 11.100014, 1.6, -0.5)
+
+[node name="Moblin12" parent="Screens/Screen_1_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2.5000153, 1.6, -5.0999985)
+
+[node name="Moblin13" parent="Screens/Screen_1_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -6.599983, 1.6, 2)
+
+[node name="Moblin32" parent="Screens/Screen_1_11" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.699997, 1.7, -3.7999992)
+
+[node name="Screen_1_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Moblin10" parent="Screens/Screen_1_12" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.8999863, 1.6, -1.5999985)
+
+[node name="Moblin14" parent="Screens/Screen_1_12" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.8000107, 1.6, -4.0999985)
+
+[node name="Moblin15" parent="Screens/Screen_1_12" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.200012, 1.6, 1.4000015)
+
+[node name="Moblin11" parent="Screens/Screen_1_12" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -9.899986, 1.6, 0)
+
+[node name="Screen_1_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Moblin16" parent="Screens/Screen_1_13" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.599991, 1.6, 2.1000023)
+
+[node name="Moblin17" parent="Screens/Screen_1_13" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -7.699997, 1.6, -0.19999695)
+
+[node name="Moblin18" parent="Screens/Screen_1_13" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.300003, 1.6, -3.7999954)
+
+[node name="Moblin19" parent="Screens/Screen_1_13" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 9.300003, 1.6, -1.0999947)
+
+[node name="Screen_1_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock114" parent="Screens/Screen_1_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, 10.100006, 1.6, 0)
+
+[node name="Octorock115" parent="Screens/Screen_1_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, -5.799988, 1.6, 5)
+
+[node name="Moblin20" parent="Screens/Screen_1_14" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-2.1855692e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855692e-07, -5.299988, 1.6, -1.5999947)
+
+[node name="Moblin21" parent="Screens/Screen_1_14" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-2.1855692e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855692e-07, -5.299988, 1.6, 1.5000038)
+
+[node name="Moblin22" parent="Screens/Screen_1_14" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, 0.6000061, 1.6, -2.9999962)
+
+[node name="Moblin48" parent="Screens/Screen_1_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0133182e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133182e-07, 2.600006, 1.7, 3.300003)
+
+[node name="Screen_1_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 44)
+script = ExtResource("3_pahce")
+
+[node name="Octorock63" parent="Screens/Screen_1_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, -1.3311833e-07, 0, 1, 0, 1.3311833e-07, 0, 1, -0.7049866, 0, -5.8950005)
+
+[node name="Octorock64" parent="Screens/Screen_1_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054111e-07, 0, 1, 0, -2.2054111e-07, 0, -1, -7.7049866, 0, -1.3950005)
+
+[node name="Octorock65" parent="Screens/Screen_1_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054111e-07, 0, 1, 0, -2.2054111e-07, 0, -1, -0.9049835, 0, -1.3950005)
+
+[node name="Octorock66" parent="Screens/Screen_1_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, -1.3311833e-07, 0, 1, 0, 1.3311833e-07, 0, 1, -2.9049835, 0, 4.3050003)
+
+[node name="Octorock113" parent="Screens/Screen_1_15" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-3.934025e-07, 0, -1, 0, 1, 0, 1, 0, -3.934025e-07, -2.899994, 0, -5.999996)
+
+[node name="Zora10" parent="Screens/Screen_1_15" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_2_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Lynel3" parent="Screens/Screen_2_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5, 0, 0.6000004)
+
+[node name="Lynel4" parent="Screens/Screen_2_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 1.8999996)
+
+[node name="Lynel5" parent="Screens/Screen_2_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3, 0, 3.5)
+
+[node name="Lynel6" parent="Screens/Screen_2_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.199997, 0, 3.7999992)
+
+[node name="Lynel7" parent="Screens/Screen_2_0" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.1000061, 0, 5.5999985)
+
+[node name="Screen_2_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin79" parent="Screens/Screen_2_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.100021, 0.1, 2.8999996)
+
+[node name="Moblin80" parent="Screens/Screen_2_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6999817, 0.1, 3.5)
+
+[node name="Moblin81" parent="Screens/Screen_2_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.200012, 0.1, 0.10000038)
+
+[node name="Moblin82" parent="Screens/Screen_2_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.300018, 0.1, -3.6000004)
+
+[node name="Moblin83" parent="Screens/Screen_2_1" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.799988, 0.1, -4.200001)
+
+[node name="Screen_2_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin30" parent="Screens/Screen_2_2" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.099991, 0.1, -3.6999989)
+
+[node name="Moblin31" parent="Screens/Screen_2_2" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -7.799988, 0.1, 0.10000038)
+
+[node name="Moblin73" parent="Screens/Screen_2_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.7000122, 0.1, 4.699999)
+
+[node name="Moblin74" parent="Screens/Screen_2_2" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -7.5000153, 0.1, 2.499998)
+
+[node name="Screen_2_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin26" parent="Screens/Screen_2_3" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5999985, 0.1, 4.1000004)
+
+[node name="Moblin27" parent="Screens/Screen_2_3" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.199997, 0.1, -2.2999992)
+
+[node name="Moblin76" parent="Screens/Screen_2_3" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 0.29998016, 0.1, 1.699997)
+
+[node name="Moblin77" parent="Screens/Screen_2_3" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 5.79998, 0.1, 4.199997)
+
+[node name="Moblin78" parent="Screens/Screen_2_3" instance=ExtResource("4_41qjw")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, 0.6999817, 0.1, -5.9000034)
+
+[node name="Screen_2_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock83" parent="Screens/Screen_2_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.39090695e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -1.39090695e-08, 2.8548737, -1.9073486e-06, 5.0706577)
+
+[node name="Octorock84" parent="Screens/Screen_2_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, -7.245125, -1.9073486e-06, 3.0706577)
+
+[node name="Octorock85" parent="Screens/Screen_2_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.0000001, 0, 5.762046e-08, 0, 1, 0, -5.762046e-08, 0, -1.0000001, -8.645126, -1.9073486e-06, -1.2293415)
+
+[node name="Octorock86" parent="Screens/Screen_2_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.0133185e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133185e-07, -1.1451263, -1.9073486e-06, -4.9293423)
+
+[node name="Zora30" parent="Screens/Screen_2_4" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_2_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock14" parent="Screens/Screen_2_5" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9548683, -1.9073486e-06, 1.5706577)
+
+[node name="Zora29" parent="Screens/Screen_2_5" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_2_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock31" parent="Screens/Screen_2_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.595081, -1.9073486e-06, -5.294943)
+
+[node name="Octorock32" parent="Screens/Screen_2_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3950806, -1.9073486e-06, -5.294943)
+
+[node name="Octorock33" parent="Screens/Screen_2_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3049202, -1.9073486e-06, -1.1949425)
+
+[node name="Octorock34" parent="Screens/Screen_2_6" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.7950783, -1.9073486e-06, 0.005056381)
+
+[node name="Zora28" parent="Screens/Screen_2_6" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_2_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock27" parent="Screens/Screen_2_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.19508, -1.9073486e-06, 1.7050571)
+
+[node name="Octorock28" parent="Screens/Screen_2_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3950796, -1.9073486e-06, -5.094942)
+
+[node name="Octorock29" parent="Screens/Screen_2_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.3049212, -1.9073486e-06, -1.6949425)
+
+[node name="Octorock30" parent="Screens/Screen_2_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.6049204, -1.9073486e-06, -2.7949429)
+
+[node name="Screen_2_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock23" parent="Screens/Screen_2_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.5950804, -1.9073486e-06, 1.4050579)
+
+[node name="Octorock25" parent="Screens/Screen_2_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.604919, -1.9073486e-06, 1.4050579)
+
+[node name="Octorock24" parent="Screens/Screen_2_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7950802, -1.9073486e-06, -0.29494286)
+
+[node name="Octorock26" parent="Screens/Screen_2_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.60492, -1.9073486e-06, -1.6949425)
+
+[node name="Screen_2_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Zora2" parent="Screens/Screen_2_9" instance=ExtResource("8_8mmr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Peahat49" parent="Screens/Screen_2_9" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.6, 0.70000076)
+
+[node name="Peahat50" parent="Screens/Screen_2_9" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.6, -2)
+
+[node name="Peahat51" parent="Screens/Screen_2_9" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1.6, -0.6000004)
+
+[node name="Peahat52" parent="Screens/Screen_2_9" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4000015, 1.6, 3.6999989)
+
+[node name="Screen_2_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock40" parent="Screens/Screen_2_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 2.4950027, 1.6, -2.5950031)
+
+[node name="Octorock41" parent="Screens/Screen_2_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.7682974e-07, 0, -1, 0, 1, 0, 1, 0, -1.7682974e-07, 6.8950043, 1.6, -4.8950024)
+
+[node name="Octorock42" parent="Screens/Screen_2_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054112e-07, 0, 1, 0, -2.2054112e-07, 0, -1, 5.6950073, 1.6, -1.6950016)
+
+[node name="Octorock43" parent="Screens/Screen_2_10" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054112e-07, 0, 1, 0, -2.2054112e-07, 0, -1, 10.695007, 1.6, 2.1049976)
+
+[node name="Zora3" parent="Screens/Screen_2_10" instance=ExtResource("8_8mmr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Screen_2_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin7" parent="Screens/Screen_2_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9000092, 1.6, 1.7000008)
+
+[node name="Moblin8" parent="Screens/Screen_2_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.200012, 1.6, 1.7000008)
+
+[node name="Moblin33" parent="Screens/Screen_2_11" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.300003, 1.7, 5)
+
+[node name="Moblin37" parent="Screens/Screen_2_11" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.0000001, 0, 5.762046e-08, 0, 1, 0, -5.762046e-08, 0, -1.0000001, 10.200005, 1.7, -4.999998)
+
+[node name="Screen_2_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin34" parent="Screens/Screen_2_12" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.799995, 1.7, 5)
+
+[node name="Moblin35" parent="Screens/Screen_2_12" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, -5.4999924, 1.7, 7.000002)
+
+[node name="Moblin36" parent="Screens/Screen_2_12" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.39090695e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -1.39090695e-08, -6.9999924, 1.7, -4.999998)
+
+[node name="Moblin38" parent="Screens/Screen_2_12" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504324e-07, 0, 1, 0, 1.4504324e-07, 0, 1.0000001, 7.2000046, 1.7, 3.2000027)
+
+[node name="Screen_2_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin39" parent="Screens/Screen_2_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0133185e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133185e-07, 2.699997, 1.7, -0.7999973)
+
+[node name="Moblin40" parent="Screens/Screen_2_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0133185e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133185e-07, 4, 1.7, 0.90000343)
+
+[node name="Moblin41" parent="Screens/Screen_2_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0133185e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133185e-07, 7.199997, 1.7, -0.09999657)
+
+[node name="Moblin42" parent="Screens/Screen_2_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504323e-07, 0, 1, 0, 1.4504323e-07, 0, 1.0000001, 7.199997, 1.7, -5.699997)
+
+[node name="Screen_2_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Moblin43" parent="Screens/Screen_2_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.01331835e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.01331835e-07, -4.5, 1.7, -3.9999962)
+
+[node name="Moblin44" parent="Screens/Screen_2_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504322e-07, 0, 1, 0, 1.4504322e-07, 0, 1.0000001, -3.399994, 1.7, 3.7000046)
+
+[node name="Moblin45" parent="Screens/Screen_2_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504322e-07, 0, 1, 0, 1.4504322e-07, 0, 1.0000001, 0.40000916, 1.7, 2.300005)
+
+[node name="Moblin46" parent="Screens/Screen_2_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504322e-07, 0, 1, 0, 1.4504322e-07, 0, 1.0000001, 0.6000061, 1.7, -1.3999958)
+
+[node name="Moblin47" parent="Screens/Screen_2_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504322e-07, 0, 1, 0, 1.4504322e-07, 0, 1.0000001, 4.700012, 1.7, -0.8999958)
+
+[node name="Screen_2_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock60" parent="Screens/Screen_2_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, -1.3311833e-07, 0, 1, 0, 1.3311833e-07, 0, 1, 0.5950165, 0, -4.495001)
+
+[node name="Octorock61" parent="Screens/Screen_2_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054111e-07, 0, 1, 0, -2.2054111e-07, 0, -1, -2.1049805, 0, -2.3950005)
+
+[node name="Octorock62" parent="Screens/Screen_2_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, -1.3311833e-07, 0, 1, 0, 1.3311833e-07, 0, 1, -0.7049866, 0, 1.8050003)
+
+[node name="Octorock112" parent="Screens/Screen_2_15" instance=ExtResource("13_iyphg")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, -3.199997, 0, 2.7000027)
+
+[node name="Zora11" parent="Screens/Screen_2_15" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_3_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Ghini" parent="Screens/Screen_3_0" instance=ExtResource("16_weprq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2, 0)
+
+[node name="Screen_3_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Ghini2" parent="Screens/Screen_3_1" instance=ExtResource("16_weprq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1000061, 11.2, 0.10000038)
+
+[node name="Screen_3_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Moblin28" parent="Screens/Screen_3_2" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5000153, 1.6, -4.3999996)
+
+[node name="Screen_3_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Screen_3_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock87" parent="Screens/Screen_3_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.0133185e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133185e-07, -1.9451294, -1.9073486e-06, 3.370657)
+
+[node name="Octorock88" parent="Screens/Screen_3_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.0000001, 0, 5.762045e-08, 0, 1, 0, -5.762045e-08, 0, -1.0000001, -1.0451279, -1.9073486e-06, 0.7706566)
+
+[node name="Octorock89" parent="Screens/Screen_3_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.0000001, 0, 5.762045e-08, 0, 1, 0, -5.762045e-08, 0, -1.0000001, -8.945129, -1.9073486e-06, 2.4706564)
+
+[node name="Octorock90" parent="Screens/Screen_3_4" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.0000001, 0, 2.9802333e-08, 0, 1, 0, -2.9802333e-08, 0, 1.0000001, -8.945129, -1.9073486e-06, -3.8293438)
+
+[node name="Zora31" parent="Screens/Screen_3_4" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_3_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Screen_3_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Zora24" parent="Screens/Screen_3_6" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_3_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Zora25" parent="Screens/Screen_3_7" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_3_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Zora18" parent="Screens/Screen_3_8" instance=ExtResource("8_8mmr5")]
+
+[node name="Leever" parent="Screens/Screen_3_8" instance=ExtResource("10_26tac")]
+
+[node name="Leever2" parent="Screens/Screen_3_8" instance=ExtResource("10_26tac")]
+
+[node name="Leever3" parent="Screens/Screen_3_8" instance=ExtResource("10_26tac")]
+
+[node name="Leever4" parent="Screens/Screen_3_8" instance=ExtResource("10_26tac")]
+
+[node name="Screen_3_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock35" parent="Screens/Screen_3_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -8.404999, 1.6, -2.795003)
+
+[node name="Octorock36" parent="Screens/Screen_3_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5049973, 1.6, 3.1049967)
+
+[node name="Octorock37" parent="Screens/Screen_3_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.704998, 1.6, 4.704997)
+
+[node name="Octorock38" parent="Screens/Screen_3_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.3950005, 1.6, -0.29500294)
+
+[node name="Octorock39" parent="Screens/Screen_3_9" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.895, 1.6, 1.2049971)
+
+[node name="Octorock97" parent="Screens/Screen_3_9" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, 0.80000305, 1.6, -1.7999988)
+
+[node name="Screen_3_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Tektite15" parent="Screens/Screen_3_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000076, 1.6, 0.8000002)
+
+[node name="Tektite16" parent="Screens/Screen_3_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1.6, -3.6)
+
+[node name="Tektite17" parent="Screens/Screen_3_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.799999, 1.6, 1.3000002)
+
+[node name="Tektite18" parent="Screens/Screen_3_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8999977, 1.6, 3.8000002)
+
+[node name="Tektite19" parent="Screens/Screen_3_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79999924, 1.6, -3.6)
+
+[node name="Tektite20" parent="Screens/Screen_3_10" instance=ExtResource("12_7qcki")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.800003, 1.6, 0.6000004)
+
+[node name="Screen_3_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Moblin" parent="Screens/Screen_3_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.699997, 1.6, -2)
+
+[node name="Moblin2" parent="Screens/Screen_3_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.49999237, 1.6, 4.8)
+
+[node name="Moblin3" parent="Screens/Screen_3_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9999924, 1.6, 3.5)
+
+[node name="Moblin4" parent="Screens/Screen_3_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9000092, 1.6, 6.5)
+
+[node name="Moblin5" parent="Screens/Screen_3_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.7000122, 1.6, -3.6000004)
+
+[node name="Moblin6" parent="Screens/Screen_3_11" instance=ExtResource("5_4xkgl")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.400009, 1.6, 0)
+
+[node name="Screen_3_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock48" parent="Screens/Screen_3_12" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(4.3909807e-07, 0, 1, 0, 1, 0, -1, 0, 4.3909807e-07, -0.9049988, 1.6, 4.3049965)
+
+[node name="Octorock49" parent="Screens/Screen_3_12" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-3.5167528e-07, 0, -1, 0, 1, 0, 1, 0, -3.5167528e-07, 6.3950043, 1.6, 4.404997)
+
+[node name="Octorock50" parent="Screens/Screen_3_12" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(2.642525e-07, 0, 1, 0, 1, 0, -1, 0, 2.642525e-07, 8.395004, 1.6, 0.10499668)
+
+[node name="Octorock98" parent="Screens/Screen_3_12" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, -3.2999954, 1.6, 2.7000017)
+
+[node name="Octorock99" parent="Screens/Screen_3_12" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 0.80000305, 1.6, 1.9000015)
+
+[node name="Screen_3_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Moblin49" parent="Screens/Screen_3_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.01331835e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.01331835e-07, -4, 1.7, 4.9000025)
+
+[node name="Moblin50" parent="Screens/Screen_3_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.01331835e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.01331835e-07, 0.8999939, 1.7, -4.499998)
+
+[node name="Moblin51" parent="Screens/Screen_3_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.01331835e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.01331835e-07, 3.2999878, 1.7, -4.399998)
+
+[node name="Moblin52" parent="Screens/Screen_3_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.8875461e-07, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -1.8875461e-07, 7.6999817, 1.7, -4.6999984)
+
+[node name="Screen_3_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Moblin53" parent="Screens/Screen_3_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.8875461e-07, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -1.8875461e-07, -5.900009, 1.7, -4.2999983)
+
+[node name="Moblin54" parent="Screens/Screen_3_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.0000001, 0, 2.32466e-07, 0, 1, 0, -2.32466e-07, 0, -1.0000001, 0.2999878, 1.7, -2.0999985)
+
+[node name="Moblin55" parent="Screens/Screen_3_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.0000001, 0, 2.32466e-07, 0, 1, 0, -2.32466e-07, 0, -1.0000001, -4.600006, 1.7, 3.1000013)
+
+[node name="Moblin56" parent="Screens/Screen_3_14" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.450432e-07, 0, 1, 0, 1.450432e-07, 0, 1.0000001, 2.2999878, 1.7, 4.2000017)
+
+[node name="Screen_3_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, 8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock57" parent="Screens/Screen_3_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054112e-07, 0, 1, 0, -2.2054112e-07, 0, -1, 0.29501343, 0, -5.3950024)
+
+[node name="Octorock58" parent="Screens/Screen_3_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054112e-07, 0, 1, 0, -2.2054112e-07, 0, -1, -1.4049835, 0, 3.3049974)
+
+[node name="Octorock59" parent="Screens/Screen_3_15" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.7682973e-07, 0, -1, 0, 1, 0, 1, 0, -1.7682973e-07, -2.9049835, 0, 5.6049976)
+
+[node name="Octorock110" parent="Screens/Screen_3_15" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -3, 0, -2.8999982)
+
+[node name="Octorock111" parent="Screens/Screen_3_15" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0.19999695, 0, 0.3000021)
+
+[node name="Zora12" parent="Screens/Screen_3_15" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_4_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Ghini4" parent="Screens/Screen_4_0" instance=ExtResource("16_weprq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1000061, 11.2, 0.10000038)
+
+[node name="Screen_4_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Ghini3" parent="Screens/Screen_4_1" instance=ExtResource("16_weprq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19999695, 11.2, 0)
+
+[node name="Screen_4_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Lynel8" parent="Screens/Screen_4_2" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.9000092, 11.2, -0.6999998)
+
+[node name="Lynel9" parent="Screens/Screen_4_2" instance=ExtResource("14_611l1")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 6.5, 11.2, -2.4000006)
+
+[node name="LynelBlue28" parent="Screens/Screen_4_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.300003, 11.2, 3.5000005)
+
+[node name="LynelBlue29" parent="Screens/Screen_4_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.400009, 11.2, -1.499999)
+
+[node name="Peahat41" parent="Screens/Screen_4_2" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000061, 11.2, 1.3000002)
+
+[node name="Peahat42" parent="Screens/Screen_4_2" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7999878, 11.2, 4)
+
+[node name="Screen_4_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Screen_4_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Zora32" parent="Screens/Screen_4_4" instance=ExtResource("8_8mmr5")]
+
+[node name="LeeverBlue16" parent="Screens/Screen_4_4" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue17" parent="Screens/Screen_4_4" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue18" parent="Screens/Screen_4_4" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue19" parent="Screens/Screen_4_4" instance=ExtResource("9_0gk58")]
+
+[node name="Screen_4_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Zora33" parent="Screens/Screen_4_5" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_4_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Zora23" parent="Screens/Screen_4_6" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_4_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock76" parent="Screens/Screen_4_7" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 2.1950798, -1.9073486e-06, -0.39494228)
+
+[node name="Screen_4_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock71" parent="Screens/Screen_4_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.7950792, -1.9073486e-06, -0.09494305)
+
+[node name="Octorock72" parent="Screens/Screen_4_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.59508, -1.9073486e-06, -5.1949434)
+
+[node name="Octorock73" parent="Screens/Screen_4_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0950804, -1.9073486e-06, 4.205057)
+
+[node name="Octorock74" parent="Screens/Screen_4_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.7049198, -1.9073486e-06, -2.6949434)
+
+[node name="Octorock75" parent="Screens/Screen_4_8" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.7049198, -1.9073486e-06, -6.094943)
+
+[node name="Octorock121" parent="Screens/Screen_4_8" instance=ExtResource("13_iyphg")]
+transform = Transform3D(3.059797e-07, 0, 1, 0, 1, 0, -1, 0, 3.059797e-07, 2.8000193, 0, 1.5000033)
+
+[node name="Zora19" parent="Screens/Screen_4_8" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_4_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Screen_4_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Leever9" parent="Screens/Screen_4_10" instance=ExtResource("10_26tac")]
+
+[node name="LeeverBlue" parent="Screens/Screen_4_10" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue2" parent="Screens/Screen_4_10" instance=ExtResource("9_0gk58")]
+
+[node name="Peahat" parent="Screens/Screen_4_10" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.800003, 0, -1.8999996)
+
+[node name="Peahat2" parent="Screens/Screen_4_10" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.699997, 0, -4.2)
+
+[node name="Peahat3" parent="Screens/Screen_4_10" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3999977, 0, 1.9000001)
+
+[node name="Screen_4_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="LeeverBlue11" parent="Screens/Screen_4_11" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue12" parent="Screens/Screen_4_11" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue13" parent="Screens/Screen_4_11" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue14" parent="Screens/Screen_4_11" instance=ExtResource("9_0gk58")]
+
+[node name="Screen_4_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock100" parent="Screens/Screen_4_12" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 7.4000015, 12.800001, -3.6999998)
+
+[node name="Screen_4_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Moblin57" parent="Screens/Screen_4_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.450432e-07, 0, 1, 0, 1.450432e-07, 0, 1.0000001, 0.7999878, 1.7, 1.6000018)
+
+[node name="Moblin58" parent="Screens/Screen_4_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0133181e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0133181e-07, 4.1999817, 1.7, 4.800002)
+
+[node name="Moblin59" parent="Screens/Screen_4_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(1.0000001, 0, -1.4504319e-07, 0, 1, 0, 1.4504319e-07, 0, 1.0000001, 8.999985, 1.7, 4.600002)
+
+[node name="Moblin60" parent="Screens/Screen_4_13" instance=ExtResource("4_41qjw")]
+transform = Transform3D(-1.0000001, 0, 2.3246596e-07, 0, 1, 0, -2.3246596e-07, 0, -1.0000001, -1.5258789e-05, 1.7, -3.199998)
+
+[node name="Screen_4_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock54" parent="Screens/Screen_4_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.7682973e-07, 0, -1, 0, 1, 0, 1, 0, -1.7682973e-07, -6.7049866, 0, -6.6950026)
+
+[node name="Octorock55" parent="Screens/Screen_4_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.7682973e-07, 0, -1, 0, 1, 0, 1, 0, -1.7682973e-07, -0.40498352, 0, 4.404998)
+
+[node name="Octorock56" parent="Screens/Screen_4_14" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054112e-07, 0, 1, 0, -2.2054112e-07, 0, -1, 9.0950165, 0, 0.9049978)
+
+[node name="Octorock107" parent="Screens/Screen_4_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -1.7484554e-07, 0, 1, 0, 1.7484554e-07, 0, 1, -5.199997, 0, -3.3999987)
+
+[node name="Octorock108" parent="Screens/Screen_4_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -1.0999908, 0, -1.2999983)
+
+[node name="Zora14" parent="Screens/Screen_4_14" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_4_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -8.8)
+script = ExtResource("3_pahce")
+
+[node name="Octorock109" parent="Screens/Screen_4_15" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -1, 0, 1.6000018)
+
+[node name="Zora13" parent="Screens/Screen_4_15" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_5_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Ghini5" parent="Screens/Screen_5_0" instance=ExtResource("16_weprq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1000061, 11.2, -1.9073486e-06)
+
+[node name="Screen_5_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Ghini6" parent="Screens/Screen_5_1" instance=ExtResource("16_weprq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.2, -0.10000229)
+
+[node name="Screen_5_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Lynel10" parent="Screens/Screen_5_2" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.599991, 22.4, 3.7999992)
+
+[node name="Screen_5_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Lynel11" parent="Screens/Screen_5_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.599998, 19.2, -1)
+
+[node name="Lynel13" parent="Screens/Screen_5_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.699997, 19.2, 3.8000011)
+
+[node name="Lynel12" parent="Screens/Screen_5_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.9000015, 19.2, -1.7999992)
+
+[node name="Lynel14" parent="Screens/Screen_5_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.699997, 6.4, 0.79999924)
+
+[node name="Screen_5_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Screen_5_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Peahat31" parent="Screens/Screen_5_5" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.200001, 6.4, 1.2999992)
+
+[node name="Peahat32" parent="Screens/Screen_5_5" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2999992, 6.4, -1.8000011)
+
+[node name="Peahat33" parent="Screens/Screen_5_5" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8999977, 6.4, 4.299999)
+
+[node name="Peahat34" parent="Screens/Screen_5_5" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.600006, 6.4, 2.1999989)
+
+[node name="Screen_5_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Zora22" parent="Screens/Screen_5_6" instance=ExtResource("8_8mmr5")]
+
+[node name="Peahat25" parent="Screens/Screen_5_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7999954, 0, 1.9999981)
+
+[node name="Peahat26" parent="Screens/Screen_5_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.499996, 0, -1.3000011)
+
+[node name="Peahat27" parent="Screens/Screen_5_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5000038, 0, -0.5000019)
+
+[node name="Peahat28" parent="Screens/Screen_5_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.999996, 0, -2.3000011)
+
+[node name="Peahat29" parent="Screens/Screen_5_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.099995, 0, 4.299999)
+
+[node name="Peahat30" parent="Screens/Screen_5_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.399994, 0, 1.2999992)
+
+[node name="Screen_5_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Zora21" parent="Screens/Screen_5_7" instance=ExtResource("8_8mmr5")]
+
+[node name="Peahat19" parent="Screens/Screen_5_7" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80000305, 0, 5.499998)
+
+[node name="Peahat20" parent="Screens/Screen_5_7" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7999964, 0, -1.0000019)
+
+[node name="Peahat21" parent="Screens/Screen_5_7" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2000036, 0, -0.20000267)
+
+[node name="Peahat22" parent="Screens/Screen_5_7" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1000032, 0, -0.6000023)
+
+[node name="Peahat23" parent="Screens/Screen_5_7" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5000029, 0, -3.300003)
+
+[node name="Peahat24" parent="Screens/Screen_5_7" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2999973, 0, 2.3999977)
+
+[node name="Screen_5_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Zora20" parent="Screens/Screen_5_8" instance=ExtResource("8_8mmr5")]
+
+[node name="Peahat13" parent="Screens/Screen_5_8" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2000036, 0, -3.1000004)
+
+[node name="Peahat14" parent="Screens/Screen_5_8" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0999966, 0, -4)
+
+[node name="Peahat15" parent="Screens/Screen_5_8" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10000324, 0, 2.3999996)
+
+[node name="Peahat16" parent="Screens/Screen_5_8" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.099997, 0, -1.2000008)
+
+[node name="Peahat17" parent="Screens/Screen_5_8" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2999964, 0, -1.1000004)
+
+[node name="Peahat18" parent="Screens/Screen_5_8" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0999966, 0, 3.1999989)
+
+[node name="Screen_5_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Leever5" parent="Screens/Screen_5_9" instance=ExtResource("10_26tac")]
+
+[node name="Leever6" parent="Screens/Screen_5_9" instance=ExtResource("10_26tac")]
+
+[node name="Leever7" parent="Screens/Screen_5_9" instance=ExtResource("10_26tac")]
+
+[node name="Leever8" parent="Screens/Screen_5_9" instance=ExtResource("10_26tac")]
+
+[node name="Screen_5_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="LeeverBlue3" parent="Screens/Screen_5_10" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue4" parent="Screens/Screen_5_10" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue5" parent="Screens/Screen_5_10" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue6" parent="Screens/Screen_5_10" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue7" parent="Screens/Screen_5_10" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue8" parent="Screens/Screen_5_10" instance=ExtResource("9_0gk58")]
+
+[node name="Screen_5_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Leever10" parent="Screens/Screen_5_11" instance=ExtResource("10_26tac")]
+
+[node name="LeeverBlue9" parent="Screens/Screen_5_11" instance=ExtResource("9_0gk58")]
+
+[node name="LeeverBlue10" parent="Screens/Screen_5_11" instance=ExtResource("9_0gk58")]
+
+[node name="Peahat4" parent="Screens/Screen_5_11" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5999985, 0, -2.2000008)
+
+[node name="Peahat5" parent="Screens/Screen_5_11" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4000015, 0, -2.1000004)
+
+[node name="Peahat6" parent="Screens/Screen_5_11" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0999985, 0, 4.199999)
+
+[node name="Screen_5_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Tektite21" parent="Screens/Screen_5_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.399994, 0, -2)
+
+[node name="Tektite22" parent="Screens/Screen_5_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.099991, 0, -3.5)
+
+[node name="Tektite23" parent="Screens/Screen_5_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8999939, 0, 4.300001)
+
+[node name="Tektite24" parent="Screens/Screen_5_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.800003, 0, -3.6999989)
+
+[node name="Screen_5_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock51" parent="Screens/Screen_5_13" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(1, 0, -3.079639e-07, 0, 1, 0, 3.079639e-07, 0, 1, -8.705002, 0, 0.704998)
+
+[node name="Octorock52" parent="Screens/Screen_5_13" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1, 0, 2.2054111e-07, 0, 1, 0, -2.2054111e-07, 0, -1, -5.404999, 0, -1.9950027)
+
+[node name="Octorock53" parent="Screens/Screen_5_13" instance=ExtResource("11_o2ys5")]
+transform = Transform3D(-1.7682973e-07, 0, -1, 0, 1, 0, 1, 0, -1.7682973e-07, -6.1049957, 0, 2.4049969)
+
+[node name="Octorock101" parent="Screens/Screen_5_13" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -1.5, 0, 1)
+
+[node name="Octorock102" parent="Screens/Screen_5_13" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, -6.899994, 0, 0)
+
+[node name="Zora16" parent="Screens/Screen_5_13" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_5_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Octorock103" parent="Screens/Screen_5_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -1.7484554e-07, 0, 1, 0, 1.7484554e-07, 0, 1, -2.899994, 0, 0.5)
+
+[node name="Octorock104" parent="Screens/Screen_5_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -1.7484554e-07, 0, 1, 0, 1.7484554e-07, 0, 1, -2.899994, 0, 6.300001)
+
+[node name="Octorock105" parent="Screens/Screen_5_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(-2.1855692e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855692e-07, -6.399994, 0, 6.300001)
+
+[node name="Octorock106" parent="Screens/Screen_5_14" instance=ExtResource("13_iyphg")]
+transform = Transform3D(1, 0, -1.7484552e-07, 0, 1, 0, 1.7484552e-07, 0, 1, -7.599991, 0, 5.1000004)
+
+[node name="Zora15" parent="Screens/Screen_5_14" instance=ExtResource("8_8mmr5")]
+
+[node name="Screen_5_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -26.4)
+script = ExtResource("3_pahce")
+
+[node name="Screen_6_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="LynelBlue24" parent="Screens/Screen_6_0" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.300003, 22.4, 1.2999992)
+
+[node name="LynelBlue25" parent="Screens/Screen_6_0" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.800003, 22.4, 4.3999977)
+
+[node name="LynelBlue26" parent="Screens/Screen_6_0" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.400009, 22.4, 1.4999962)
+
+[node name="LynelBlue27" parent="Screens/Screen_6_0" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19999695, 22.4, -2.7000046)
+
+[node name="Screen_6_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Lynel31" parent="Screens/Screen_6_1" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.3000183, 22.4, 3.4000015)
+
+[node name="Lynel32" parent="Screens/Screen_6_1" instance=ExtResource("14_611l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6000214, 22.4, -1.2999992)
+
+[node name="LynelBlue22" parent="Screens/Screen_6_1" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.199997, 22.4, 4.700001)
+
+[node name="LynelBlue23" parent="Screens/Screen_6_1" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.199997, 22.4, 0.70000076)
+
+[node name="Peahat39" parent="Screens/Screen_6_1" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.100006, 22.4, 3.7999992)
+
+[node name="Peahat40" parent="Screens/Screen_6_1" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2999878, 22.4, -3.1000023)
+
+[node name="Screen_6_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="LynelBlue16" parent="Screens/Screen_6_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 7.399994, 0, 2.3999977)
+
+[node name="LynelBlue17" parent="Screens/Screen_6_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 4.399994, 0, 4.699997)
+
+[node name="LynelBlue18" parent="Screens/Screen_6_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, 1.7999878, 0, 1.7999954)
+
+[node name="LynelBlue19" parent="Screens/Screen_6_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -0.90000916, 0, -0.7000046)
+
+[node name="LynelBlue20" parent="Screens/Screen_6_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -2.9000092, 0, 1.699997)
+
+[node name="LynelBlue21" parent="Screens/Screen_6_2" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -4.800003, 0, 4.499996)
+
+[node name="Screen_6_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Lynel21" parent="Screens/Screen_6_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(1.3113414e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113414e-07, -2.100006, 0, 0.8999977)
+
+[node name="Lynel22" parent="Screens/Screen_6_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.7422755e-08, 0, 1, 0, -8.7422755e-08, 0, -1, 3.899994, 0, 2.699997)
+
+[node name="LynelBlue14" parent="Screens/Screen_6_3" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.2999954, 0, 4.5)
+
+[node name="LynelBlue15" parent="Screens/Screen_6_3" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -11.000008, 0, 1.2999992)
+
+[node name="Screen_6_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Lynel17" parent="Screens/Screen_6_4" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 0.40000153, 0, 0.5999985)
+
+[node name="Lynel18" parent="Screens/Screen_6_4" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -4.9000015, 0, -2.6000023)
+
+[node name="Lynel19" parent="Screens/Screen_6_4" instance=ExtResource("14_611l1")]
+transform = Transform3D(-2.1855692e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855692e-07, -5.0999985, 0, 1.199997)
+
+[node name="Lynel20" parent="Screens/Screen_6_4" instance=ExtResource("14_611l1")]
+transform = Transform3D(1.3113414e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113414e-07, 2.5999985, 0, -4.1000023)
+
+[node name="Screen_6_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Lynel15" parent="Screens/Screen_6_5" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.7000008, 0, 3.0999985)
+
+[node name="Lynel16" parent="Screens/Screen_6_5" instance=ExtResource("14_611l1")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 8.200001, 0, -0.30000305)
+
+[node name="LynelBlue12" parent="Screens/Screen_6_5" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.800003, 0, -2)
+
+[node name="LynelBlue13" parent="Screens/Screen_6_5" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.1000023, 0, 0.29999924)
+
+[node name="Peahat35" parent="Screens/Screen_6_5" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4000015, 0, 2.5999985)
+
+[node name="Peahat36" parent="Screens/Screen_6_5" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4000015, 0, -3.2000008)
+
+[node name="Screen_6_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="RockSlideArea4" parent="Screens/Screen_6_6" instance=ExtResource("17_mqaoi")]
+
+[node name="Screen_6_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Zora26" parent="Screens/Screen_6_7" instance=ExtResource("8_8mmr5")]
+spawn_limit_min = Vector2(-2.4, -1.6)
+
+[node name="RockSlideArea" parent="Screens/Screen_6_7" instance=ExtResource("17_mqaoi")]
+
+[node name="Screen_6_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="RockSlideArea2" parent="Screens/Screen_6_8" instance=ExtResource("17_mqaoi")]
+
+[node name="Screen_6_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="RockSlideArea3" parent="Screens/Screen_6_9" instance=ExtResource("17_mqaoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0)
+
+[node name="Screen_6_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Zora27" parent="Screens/Screen_6_10" instance=ExtResource("8_8mmr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4, 0)
+spawn_limit_min = Vector2(-12.8, -1.6)
+spawn_limit_max = Vector2(-2.4, 8.8)
+
+[node name="Tektite43" parent="Screens/Screen_6_10" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9000015, 6.4, 0.70000076)
+
+[node name="Tektite44" parent="Screens/Screen_6_10" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.099998, 6.4, 2.1000023)
+
+[node name="Tektite45" parent="Screens/Screen_6_10" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6.4, 3.800003)
+
+[node name="Tektite46" parent="Screens/Screen_6_10" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4000015, 6.4, 4.1000023)
+
+[node name="Tektite47" parent="Screens/Screen_6_10" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2000046, 6.4, 1.4000015)
+
+[node name="Tektite48" parent="Screens/Screen_6_10" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0999947, 6.4, 0.80000305)
+
+[node name="Screen_6_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Screen_6_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Screen_6_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Zora17" parent="Screens/Screen_6_13" instance=ExtResource("8_8mmr5")]
+
+[node name="Peahat7" parent="Screens/Screen_6_13" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -1.5)
+
+[node name="Peahat8" parent="Screens/Screen_6_13" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3999939, 0, 4.200001)
+
+[node name="Peahat9" parent="Screens/Screen_6_13" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 4.1000023)
+
+[node name="Peahat10" parent="Screens/Screen_6_13" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 6.4, 3)
+
+[node name="Peahat11" parent="Screens/Screen_6_13" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.100006, 6.4, -3.5999985)
+
+[node name="Peahat12" parent="Screens/Screen_6_13" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.900009, 6.4, 2.1000023)
+
+[node name="Screen_6_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Tektite37" parent="Screens/Screen_6_14" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9000092, 0, -3.2999992)
+
+[node name="Tektite38" parent="Screens/Screen_6_14" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0000153, 0, 0.20000076)
+
+[node name="Tektite39" parent="Screens/Screen_6_14" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.400009, 0, -3.2000008)
+
+[node name="Tektite40" parent="Screens/Screen_6_14" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.300003, 0, 3.3999977)
+
+[node name="Tektite41" parent="Screens/Screen_6_14" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.300003, 0, -0.80000305)
+
+[node name="Tektite42" parent="Screens/Screen_6_14" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.899994, 0, -0.40000153)
+
+[node name="Screen_6_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -44)
+script = ExtResource("3_pahce")
+
+[node name="Peahat56" parent="Screens/Screen_6_15" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6000061, 0, -0.5999985)
+
+[node name="Peahat57" parent="Screens/Screen_6_15" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.200012, 0, 1.300003)
+
+[node name="Peahat58" parent="Screens/Screen_6_15" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.600006, 0, -3.9999962)
+
+[node name="Peahat59" parent="Screens/Screen_6_15" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.799988, 0, 0.10000229)
+
+[node name="Peahat60" parent="Screens/Screen_6_15" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5999908, 0, 3.5000038)
+
+[node name="Peahat61" parent="Screens/Screen_6_15" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.599991, 0, -4.299999)
+
+[node name="Screen_7_0" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Screen_7_1" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Lynel27" parent="Screens/Screen_7_1" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.100006, 16, -3.6000137)
+
+[node name="Lynel28" parent="Screens/Screen_7_1" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.5, 16, 3.4999847)
+
+[node name="Lynel29" parent="Screens/Screen_7_1" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.3999939, 16, 2.4999847)
+
+[node name="Lynel30" parent="Screens/Screen_7_1" instance=ExtResource("14_611l1")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -5.899994, 16, 0.99998474)
+
+[node name="Screen_7_2" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Lynel23" parent="Screens/Screen_7_2" instance=ExtResource("14_611l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.600006, 16, 2.4999962)
+
+[node name="Lynel24" parent="Screens/Screen_7_2" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.300003, 16, -2.5000076)
+
+[node name="Screen_7_3" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Lynel25" parent="Screens/Screen_7_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.400002, 16, 3.0999908)
+
+[node name="Lynel26" parent="Screens/Screen_7_3" instance=ExtResource("14_611l1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -9.599998, 16, -0.8000107)
+
+[node name="RockSlideArea6" parent="Screens/Screen_7_3" instance=ExtResource("17_mqaoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+
+[node name="Screen_7_4" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="LynelBlue6" parent="Screens/Screen_7_4" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5999985, 16, 3.5999985)
+
+[node name="LynelBlue7" parent="Screens/Screen_7_4" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.9000015, 16, 2.0999985)
+
+[node name="LynelBlue8" parent="Screens/Screen_7_4" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.800003, 16, -0.30000305)
+
+[node name="LynelBlue9" parent="Screens/Screen_7_4" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.4000015, 16, 3.0999985)
+
+[node name="LynelBlue10" parent="Screens/Screen_7_4" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.800003, 16, 0.69999695)
+
+[node name="LynelBlue11" parent="Screens/Screen_7_4" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.600006, 16, 3.7999954)
+
+[node name="Screen_7_5" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Leever24" parent="Screens/Screen_7_5" instance=ExtResource("10_26tac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+
+[node name="LeeverBlue15" parent="Screens/Screen_7_5" instance=ExtResource("9_0gk58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+
+[node name="Lynel33" parent="Screens/Screen_7_5" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.699997, 16, -2.800003)
+
+[node name="Lynel34" parent="Screens/Screen_7_5" instance=ExtResource("14_611l1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5000038, 16, -4.5)
+
+[node name="LynelBlue4" parent="Screens/Screen_7_5" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 16, 4.199997)
+
+[node name="LynelBlue5" parent="Screens/Screen_7_5" instance=ExtResource("15_e6aic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000305, 16, -2.5)
+
+[node name="Screen_7_6" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Lynel35" parent="Screens/Screen_7_6" instance=ExtResource("14_611l1")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -4.399994, 16, -2.2000008)
+
+[node name="Lynel36" parent="Screens/Screen_7_6" instance=ExtResource("14_611l1")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -5.2999954, 16, 1.7000008)
+
+[node name="LynelBlue2" parent="Screens/Screen_7_6" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.20000076, 16, -3.7000046)
+
+[node name="LynelBlue3" parent="Screens/Screen_7_6" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.20000076, 16, 3.0999947)
+
+[node name="Peahat37" parent="Screens/Screen_7_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10000229, 16, -5.5000076)
+
+[node name="Peahat38" parent="Screens/Screen_7_6" instance=ExtResource("7_qye8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7000008, 16, -2.100006)
+
+[node name="Screen_7_7" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Lynel37" parent="Screens/Screen_7_7" instance=ExtResource("14_611l1")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 1.6000032, 16, -0.099998474)
+
+[node name="Screen_7_8" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="RockSlideArea5" parent="Screens/Screen_7_8" instance=ExtResource("17_mqaoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+
+[node name="Screen_7_9" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Screen_7_10" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Zora36" parent="Screens/Screen_7_10" instance=ExtResource("8_8mmr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.699999, 0)
+spawn_limit_min = Vector2(-12.8, -1.6)
+spawn_limit_max = Vector2(-2.4, 8.8)
+
+[node name="LynelBlue" parent="Screens/Screen_7_10" instance=ExtResource("15_e6aic")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.7000008, 17.6, -4.699997)
+
+[node name="Screen_7_11" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Leever23" parent="Screens/Screen_7_11" instance=ExtResource("10_26tac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.8, 0)
+
+[node name="Screen_7_12" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Tektite25" parent="Screens/Screen_7_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6000061, 12.8, -1.300003)
+
+[node name="Tektite26" parent="Screens/Screen_7_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6000061, 12.8, 3.2999954)
+
+[node name="Tektite27" parent="Screens/Screen_7_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.900009, 12.8, -3.100006)
+
+[node name="Tektite28" parent="Screens/Screen_7_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.200012, 12.8, 0.69999313)
+
+[node name="Tektite29" parent="Screens/Screen_7_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3000107, 12.8, -4.0000076)
+
+[node name="Tektite30" parent="Screens/Screen_7_12" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.300003, 12.3, 0.8999977)
+
+[node name="Screen_7_13" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Tektite31" parent="Screens/Screen_7_13" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 9.6, 1.5999985)
+
+[node name="Tektite32" parent="Screens/Screen_7_13" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.399994, 9.6, 3.5999985)
+
+[node name="Tektite33" parent="Screens/Screen_7_13" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.899994, 9.6, -0.70000076)
+
+[node name="Tektite34" parent="Screens/Screen_7_13" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.300003, 9.6, -3)
+
+[node name="Tektite35" parent="Screens/Screen_7_13" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 9.6, 1.5)
+
+[node name="Tektite36" parent="Screens/Screen_7_13" instance=ExtResource("6_j7g3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.199997, 9.6, -3.699997)
+
+[node name="Screen_7_14" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Screen_7_15" type="Node3D" parent="Screens"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, 0, -61.6)
+script = ExtResource("3_pahce")
+
+[node name="Caves" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Row1" type="Node3D" parent="Caves"]
+
+[node name="Cave1_8" parent="Caves/Row1" instance=ExtResource("22_jryu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, -12.8, 61.6)
+
+[node name="Exit" parent="Caves/Row1/Cave1_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(-18.4, 0, 58.4)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 12.8, -5.65)
+teleport_to = Vector3(-12.8, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave1_9" parent="Caves/Row1" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, -12.8, 61.6)
+
+[node name="Exit" parent="Caves/Row1/Cave1_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(5.6, 0, 62.4)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 7.200001, -0.10000038, 62.449997)
+top_level = true
+teleport_to = Vector3(12.8, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave1_10" parent="Caves/Row1" instance=ExtResource("24_41rsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, -12.8, 61.6)
+location_1 = Vector3(130.4, 6.4, -47.2)
+location_2 = Vector3(-120.8, 19.2, -31.2)
+location_3 = Vector3(31.2, 1.6, 5.6)
+
+[node name="Exit" parent="Caves/Row1/Cave1_10" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(36, 4.8, 60)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_10" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 40.8, 4.7000003, 60.8)
+top_level = true
+teleport_to = Vector3(38.4, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave1_11" parent="Caves/Row1" instance=ExtResource("25_gcpfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -12.8, 61.6)
+sword_scroll = 4
+
+[node name="Exit" parent="Caves/Row1/Cave1_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(64.8, 4.8, 58.4)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 67.25, 4.8, 58.4)
+top_level = true
+teleport_to = Vector3(64, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave1_12" parent="Caves/Row1" instance=ExtResource("26_kw13q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, -12.8, 61.6)
+
+[node name="Exit" parent="Caves/Row1/Cave1_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(92, 0, 60)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, 0, 55.95)
+top_level = true
+teleport_to = Vector3(89.6, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave1_13" parent="Caves/Row1" instance=ExtResource("21_tr1xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, -12.8, 61.6)
+
+[node name="Exit" parent="Caves/Row1/Cave1_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(112.8, 0, 60)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.799995, 0, 55.95)
+top_level = true
+teleport_to = Vector3(115.2, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave1_14" parent="Caves/Row1" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, -12.8, 61.6)
+
+[node name="Exit" parent="Caves/Row1/Cave1_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.852699)
+teleport_to = Vector3(140.8, 0, 60)
+
+[node name="Entrance" parent="Caves/Row1/Cave1_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.4, 0, 55.95)
+top_level = true
+teleport_to = Vector3(140.8, -12.8, 66.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row2" type="Node3D" parent="Caves"]
+
+[node name="Cave2_3" parent="Caves/Row2" instance=ExtResource("28_hnl0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_3" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-143.2, 0, 42.4)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_3" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -140, -0.1, 38.4)
+top_level = true
+teleport_to = Vector3(-140.8, -12.8, 48.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_4" parent="Caves/Row2" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-116, 0, 45.6)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -117.6, -0.1, 44.8)
+top_level = true
+teleport_to = Vector3(-115.2, -12.8, 48.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_5" parent="Caves/Row2" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-90.4, 0, 42.4)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4, 0, 38.35)
+top_level = true
+teleport_to = Vector3(-89.6, -12.8, 48.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_7" parent="Caves/Row2" instance=ExtResource("29_t4ttu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-39.2, 0, 42.4)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.2, 0, 38.35)
+top_level = true
+teleport_to = Vector3(-38.4, -12.8, 48.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_8" parent="Caves/Row2" instance=ExtResource("18_6sd5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-12.8, 0, 42.4)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 38.35)
+top_level = true
+teleport_to = Vector3(-12.8, -12.8, 48.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_9" parent="Caves/Row2" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(5.6, 0, 44)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 4, -0.1, 44.8)
+top_level = true
+teleport_to = Vector3(12.8, -12.8, 48.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_11" parent="Caves/Row2" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(72.8, 1.6, 45.6)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 71.200005, 1.5, 44.8)
+top_level = true
+teleport_to = Vector3(64, -12.8, 50.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_12" parent="Caves/Row2" instance=ExtResource("28_hnl0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(85.6, 1.6, 45.6)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 90.40001, 1.5, 44.8)
+top_level = true
+teleport_to = Vector3(89.6, -12.8, 50.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave2_16" parent="Caves/Row2" instance=ExtResource("30_och2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, -12.8, 44)
+
+[node name="Exit" parent="Caves/Row2/Cave2_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(184.8, 0, 40.8)
+
+[node name="Entrance" parent="Caves/Row2/Cave2_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.8, 0, 38.35)
+top_level = true
+teleport_to = Vector3(192, -12.8, 50.4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row3" type="Node3D" parent="Caves"]
+
+[node name="Cave3_2" parent="Caves/Row3" instance=ExtResource("31_7blue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, -12.8, 26.4)
+
+[node name="Exit" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit3" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.049997)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit4" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.249998)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit10" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.399994, 0, 16.85)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit13" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.399994, 0, 12.050001)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit11" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.399994, 0, 20.049997)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit12" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.399994, 0, 23.249998)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit5" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.050001)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit6" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 23.249998)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit7" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.449999)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit8" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.199997, 0, 23.249998)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit9" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.199997, 0, 26.449999)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Exit2" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.199997, 0, 8.85)
+teleport_to = Vector3(-162.4, 0, 28)
+
+[node name="Entrance" parent="Caves/Row3/Cave3_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -164, -0.1, 27.200003)
+top_level = true
+teleport_to = Vector3(-166.4, -12.8, 31.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave3_7" parent="Caves/Row3" instance=ExtResource("31_7blue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, -12.8, 26.4)
+
+[node name="Exit" parent="Caves/Row3/Cave3_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.85)
+teleport_to = Vector3(-32.8, -0.1, 29.6)
+
+[node name="Entrance" parent="Caves/Row3/Cave3_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -34.4, -0.1, 27.200003)
+top_level = true
+teleport_to = Vector3(-38.4, -12.8, 31.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave3_12" parent="Caves/Row3" instance=ExtResource("31_7blue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, -12.8, 26.4)
+
+[node name="Exit" parent="Caves/Row3/Cave3_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.85)
+teleport_to = Vector3(82.4, 1.6, 28)
+
+[node name="Entrance" parent="Caves/Row3/Cave3_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 80.8, 1.5, 27.2)
+top_level = true
+teleport_to = Vector3(89.6, -12.8, 31.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave3_15" parent="Caves/Row3" instance=ExtResource("29_t4ttu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, -12.8, 26.4)
+
+[node name="Exit" parent="Caves/Row3/Cave3_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.85)
+teleport_to = Vector3(165.6, 1.6, 23.2)
+
+[node name="Entrance" parent="Caves/Row3/Cave3_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.6, 1.6, 20.75)
+top_level = true
+teleport_to = Vector3(166.4, -12.8, 31.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row4" type="Node3D" parent="Caves"]
+
+[node name="Cave4_5" parent="Caves/Row4" instance=ExtResource("29_t4ttu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-95.2, 0, 5.6)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.200005, 0, 3.1499991)
+top_level = true
+teleport_to = Vector3(-89.6, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_7" parent="Caves/Row4" instance=ExtResource("32_oovdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(-37.66, 0, 10.4)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -36, -0.1, 11.2)
+top_level = true
+teleport_to = Vector3(-38.4, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_8" parent="Caves/Row4" instance=ExtResource("26_kw13q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, -12.8, 8.8)
+id = 1
+
+[node name="Exit" parent="Caves/Row4/Cave4_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(-7.2, 0, 10.4)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -7.1999993, -0.1, 11.2)
+top_level = true
+teleport_to = Vector3(-12.8, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_9" parent="Caves/Row4" instance=ExtResource("18_6sd5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(20, 0, 4)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 21.600002, -0.1, 3.1999998)
+top_level = true
+teleport_to = Vector3(12.8, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_10" parent="Caves/Row4" instance=ExtResource("24_41rsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, -12.8, 8.8)
+location_1 = Vector3(36, 4.8, 60)
+location_2 = Vector3(130.4, 6.4, -47.2)
+location_3 = Vector3(-120.8, 19.2, -31.2)
+
+[node name="Exit" parent="Caves/Row4/Cave4_10" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(31.2, 1.6, 5.6)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_10" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 34.6, 1.5, 4.7999997)
+top_level = true
+teleport_to = Vector3(38.4, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_11" parent="Caves/Row4" instance=ExtResource("30_och2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(69.6, 1.6, 5.6)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.6, 1.6, 3.1499999)
+top_level = true
+teleport_to = Vector3(64, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_12" parent="Caves/Row4" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(96.8, 1.6, 4)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_12" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 95.2, 1.5, 3.2)
+top_level = true
+teleport_to = Vector3(89.6, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_14" parent="Caves/Row4" instance=ExtResource("32_oovdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(149.6, 1.6, 12)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 149.59999, 1.5, 9.6)
+top_level = true
+teleport_to = Vector3(140.8, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_15" parent="Caves/Row4" instance=ExtResource("31_7blue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, -12.8, 8.8)
+
+[node name="Exit" parent="Caves/Row4/Cave4_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(168.8, 1.6, 7.2)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 170.39998, 1.5, 6.4)
+top_level = true
+teleport_to = Vector3(166.4, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave4_16" parent="Caves/Row4" instance=ExtResource("25_gcpfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, -12.8, 8.8)
+sword_scroll = 5
+
+[node name="Exit" parent="Caves/Row4/Cave4_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.8499975)
+teleport_to = Vector3(184.8, 0, 10.4)
+
+[node name="Entrance" parent="Caves/Row4/Cave4_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 182.34999, 0, 10.4)
+top_level = true
+teleport_to = Vector3(192, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row5" type="Node3D" parent="Caves"]
+
+[node name="Cave5_4" parent="Caves/Row5" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, -12.8, -8.8)
+
+[node name="Exit" parent="Caves/Row5/Cave5_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-111.2, 12.8, -12)
+
+[node name="Entrance" parent="Caves/Row5/Cave5_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -111.2, 12.8, -14.45)
+top_level = true
+teleport_to = Vector3(-115.2, -12.8, -4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave5_5" parent="Caves/Row5" instance=ExtResource("33_ge162")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, -8.8)
+
+[node name="Exit" parent="Caves/Row5/Cave5_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-95.2, 0, -12)
+
+[node name="Entrance" parent="Caves/Row5/Cave5_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -95.2, -0.1, -11.2)
+top_level = true
+teleport_to = Vector3(-89.6, -12.8, -4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave5_14" parent="Caves/Row5" instance=ExtResource("18_6sd5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, -12.8, -8.8)
+
+[node name="Exit" parent="Caves/Row5/Cave5_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(141.6, 1.6, -10.4)
+
+[node name="Entrance" parent="Caves/Row5/Cave5_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 143.2, 1.5, -11.2)
+top_level = true
+teleport_to = Vector3(140.8, -12.8, -4)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row6" type="Node3D" parent="Caves"]
+
+[node name="Cave6_2" parent="Caves/Row6" instance=ExtResource("34_xidjp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, -12.8, -25.8)
+
+[node name="Exit" parent="Caves/Row6/Cave6_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-165.6, 11.2, -26.4)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -164, 11.099999, -27.2)
+top_level = true
+teleport_to = Vector3(-166.4, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_4" parent="Caves/Row6" instance=ExtResource("24_41rsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, -12.8, -25.8)
+location_1 = Vector3(31.2, 1.6, 5.6)
+location_2 = Vector3(36, 4.8, 60)
+location_3 = Vector3(130.4, 6.4, -47.2)
+
+[node name="Exit" parent="Caves/Row6/Cave6_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-120.8, 19.2, -27.6)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -120.799995, 19.099998, -27.2)
+top_level = true
+teleport_to = Vector3(-115.2, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_6" parent="Caves/Row6" instance=ExtResource("30_och2k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, -12.8, -25.8)
+
+[node name="Exit" parent="Caves/Row6/Cave6_6" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-60, 6.4, -29.6)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_6" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 6.4, -32.05)
+top_level = true
+teleport_to = Vector3(-64, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_7" parent="Caves/Row6" instance=ExtResource("32_oovdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, -12.8, -25.8)
+
+[node name="Exit" parent="Caves/Row6/Cave6_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-45.6, 0, -29.6)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.600002, 9.685755e-08, -32.05)
+top_level = true
+teleport_to = Vector3(-38.4, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_8" parent="Caves/Row6" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, -12.8, -25.8)
+
+[node name="Exit" parent="Caves/Row6/Cave6_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-2.4, 0, -29.6)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000022, 9.685755e-08, -32.05)
+top_level = true
+teleport_to = Vector3(-12.8, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_9" parent="Caves/Row6" instance=ExtResource("18_6sd5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, -12.8, -25.8)
+
+[node name="Exit" parent="Caves/Row6/Cave6_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(21.6, 0, -26.4)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_9" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 21.6, -0.1, -25.6)
+top_level = true
+teleport_to = Vector3(12.8, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_13" parent="Caves/Row6" instance=ExtResource("26_kw13q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, -12.8, -25.8)
+id = 2
+
+[node name="Exit" parent="Caves/Row6/Cave6_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(117.6, 0, -22.4)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.6, 0, -24.05)
+top_level = true
+teleport_to = Vector3(115.2, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_14" parent="Caves/Row6" instance=ExtResource("18_6sd5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, -12.8, -25.8)
+
+[node name="Exit" parent="Caves/Row6/Cave6_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(136.8, 0, -29.6)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.8, 0, -32.050003)
+top_level = true
+teleport_to = Vector3(140.8, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave6_16" parent="Caves/Row6" instance=ExtResource("26_kw13q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, -12.8, -25.8)
+id = 3
+
+[node name="Exit" parent="Caves/Row6/Cave6_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(189.6, 3.2, -25.6)
+
+[node name="Entrance" parent="Caves/Row6/Cave6_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.60002, 3.2, -27.450003)
+top_level = true
+teleport_to = Vector3(192, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row7" type="Node3D" parent="Caves"]
+
+[node name="Cave7_1" parent="Caves/Row7" instance=ExtResource("21_tr1xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_1" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-189.6, 22.4, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_1" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.6, 22.4, -49.65)
+top_level = true
+teleport_to = Vector3(-192, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_2" parent="Caves/Row7" instance=ExtResource("25_gcpfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, -12.8, -43.4)
+sword_scroll = 3
+
+[node name="Exit" parent="Caves/Row7/Cave7_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-170.4, 22.4, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -170.4, 22.4, -49.65)
+top_level = true
+teleport_to = Vector3(-166.4, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_3" parent="Caves/Row7" instance=ExtResource("32_oovdi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.8, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_3" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-140, 0, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_3" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140, -9.685755e-08, -49.65)
+top_level = true
+teleport_to = Vector3(-140.8, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_4" parent="Caves/Row7" instance=ExtResource("18_6sd5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-124, 0, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124, -9.685755e-08, -49.65)
+top_level = true
+teleport_to = Vector3(-115.2, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_5" parent="Caves/Row7" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-82.4, 0, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.399994, -9.685755e-08, -49.65)
+top_level = true
+teleport_to = Vector3(-89.6, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_7" parent="Caves/Row7" instance=ExtResource("21_tr1xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-40.8, 0, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_7" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.79999, -9.685755e-08, -49.65)
+top_level = true
+teleport_to = Vector3(-38, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_11" parent="Caves/Row7" instance=ExtResource("35_7x43l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(61.6, 6.4, -44)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.600006, 6.4000006, -46.45)
+top_level = true
+teleport_to = Vector3(64, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_13" parent="Caves/Row7" instance=ExtResource("36_k6bag")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(108, 6.4, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 120.8, 6.3, -46.399998)
+top_level = true
+teleport_to = Vector3(115.2, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_14" parent="Caves/Row7" instance=ExtResource("24_41rsk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, -12.8, -43.4)
+location_1 = Vector3(-120.8, 19.2, -31.2)
+location_2 = Vector3(31.2, 1.6, 5.6)
+location_3 = Vector3(36, 4.8, 60)
+
+[node name="Exit" parent="Caves/Row7/Cave7_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(130.4, 6.4, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 136.05, 6.4, -47.2)
+top_level = true
+teleport_to = Vector3(140.8, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_15" parent="Caves/Row7" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(173.6, 0, -47.2)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.6, 0, -49.65)
+top_level = true
+teleport_to = Vector3(166.4, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave7_16" parent="Caves/Row7" instance=ExtResource("21_tr1xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, -12.8, -43.4)
+
+[node name="Exit" parent="Caves/Row7/Cave7_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(189.8, 0, -41.8)
+
+[node name="Entrance" parent="Caves/Row7/Cave7_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 189.60002, 0, -45.15)
+top_level = true
+teleport_to = Vector3(192, -12.8, -39.2)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Row8" type="Node3D" parent="Caves"]
+
+[node name="Cave8_2" parent="Caves/Row8" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.4, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-164, 16, -64.8)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_2" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -164, 16, -67.25)
+top_level = true
+teleport_to = Vector3(-166.4, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_4" parent="Caves/Row8" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.2, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-116, 16, -61.6)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_4" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -116, 16, -62.449997)
+top_level = true
+teleport_to = Vector3(-115.2, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_5" parent="Caves/Row8" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-82.4, 16, -64.8)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_5" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.399994, 16, -67.25)
+top_level = true
+teleport_to = Vector3(-89.6, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_8" parent="Caves/Row8" instance=ExtResource("27_lljr3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(-8.8, 16, -61.6)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_8" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7999935, 16, -62.45)
+top_level = true
+teleport_to = Vector3(-12.8, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_11" parent="Caves/Row8" instance=ExtResource("37_srbxw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(55.2, 17.6, -64.8)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_11" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.200005, 17.6, -67.25)
+top_level = true
+teleport_to = Vector3(64, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_13" parent="Caves/Row8" instance=ExtResource("29_t4ttu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.2, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(116, 12.8, -64.8)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_13" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.00001, 12.800001, -67.25)
+top_level = true
+teleport_to = Vector3(115.2, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_14" parent="Caves/Row8" instance=ExtResource("23_qnvkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.8, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(143.2, 9.6, -64.8)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_14" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.20001, 9.600001, -67.24999)
+top_level = true
+teleport_to = Vector3(140.8, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_15" parent="Caves/Row8" instance=ExtResource("38_i3dhl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.4, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(162.4, 11.2, -60)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_15" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.40002, 11.200001, -62.449993)
+top_level = true
+teleport_to = Vector3(166.4, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Cave8_16" parent="Caves/Row8" instance=ExtResource("28_hnl0q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192, -12.8, -61)
+
+[node name="Exit" parent="Caves/Row8/Cave8_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.849998)
+teleport_to = Vector3(192.9, 4.8, -60)
+
+[node name="Entrance" parent="Caves/Row8/Cave8_16" instance=ExtResource("19_w8rjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.80002, 4.800001, -62.649994)
+top_level = true
+teleport_to = Vector3(192, -12.8, -56.8)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Link" parent="." instance=ExtResource("39_pahce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3, 0, 64.3)

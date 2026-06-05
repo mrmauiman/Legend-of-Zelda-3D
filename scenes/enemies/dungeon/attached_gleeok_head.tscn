@@ -1,0 +1,278 @@
+[gd_scene load_steps=17 format=3 uid="uid://b75xu4xmxa0ux"]
+
+[ext_resource type="Script" uid="uid://depw2rc8r6bca" path="res://scripts/enemies/dungeon/gleeok_attached_head.gd" id="1_fg56m"]
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_4iaum"]
+[ext_resource type="Texture2D" uid="uid://devahny5b1obt" path="res://sprites/enemies/dungeon/gleeok_head.png" id="2_ggm86"]
+[ext_resource type="Script" uid="uid://dw1rcdsmew6se" path="res://scripts/components/sprite3d_effects/rotating_sprite3d.gd" id="3_jbao5"]
+[ext_resource type="Script" uid="uid://b25hhwmfvpuoc" path="res://scripts/components/state_machine/gleeok_head_default.gd" id="3_un2mt"]
+[ext_resource type="Texture2D" uid="uid://htha4vwwuvvm" path="res://sprites/enemies/dungeon/gleeok_neck.png" id="4_4iaum"]
+[ext_resource type="Script" uid="uid://ci0ws5q83p8w2" path="res://scripts/enemies/dungeon/gleeok_neck_segments.gd" id="4_ggm86"]
+[ext_resource type="Script" uid="uid://2w33oq3428iq" path="res://scripts/components/state_machine/gleeok_attack.gd" id="4_un2mt"]
+[ext_resource type="Script" uid="uid://45lovl1cwfpt" path="res://scripts/components/state_machine/enemy_hurt.gd" id="5_dreob"]
+[ext_resource type="Script" uid="uid://cuq46x47rnye" path="res://scripts/components/state_machine/enemy_stunned.gd" id="6_rlj5e"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="9_nli3c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dreob"]
+radius = 0.4
+height = 1.625
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ggm86"]
+radius = 0.3
+height = 1.4499999
+
+[sub_resource type="Animation" id="Animation_rlj5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NeckSegments/Neck/Sprite3D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NeckSegments/Neck2/Sprite3D2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NeckSegments/Neck3/Sprite3D2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NeckSegments/Neck4/Sprite3D2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dreob"]
+resource_name = "hurt"
+length = 0.2667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NeckSegments/Neck/Sprite3D2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NeckSegments/Neck2/Sprite3D2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NeckSegments/Neck3/Sprite3D2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NeckSegments/Neck4/Sprite3D2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iprbw"]
+_data = {
+&"RESET": SubResource("Animation_rlj5e"),
+&"hurt": SubResource("Animation_dreob")
+}
+
+[node name="GleeokHead" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 97
+script = ExtResource("1_fg56m")
+target_arrow_offset = Vector3(0, 0.6, 0)
+drop_group = 4
+
+[node name="StateMachine" type="Node3D" parent="."]
+script = ExtResource("2_4iaum")
+metadata/_custom_type_script = "uid://b0waclod0fapl"
+
+[node name="Patrol" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_un2mt")
+attack_chance = 10.0
+
+[node name="Attack" type="Node3D" parent="StateMachine"]
+script = ExtResource("4_un2mt")
+
+[node name="Hurt" type="Node3D" parent="StateMachine"]
+script = ExtResource("5_dreob")
+metadata/_custom_type_script = "uid://45lovl1cwfpt"
+
+[node name="HurtBox" type="Area3D" parent="StateMachine/Hurt"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StateMachine/Hurt/HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2874999, 0.1)
+shape = SubResource("CapsuleShape3D_dreob")
+
+[node name="Stunned" type="Node3D" parent="StateMachine"]
+script = ExtResource("6_rlj5e")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.95185065, 0, 0.3065611, 0, 1, 0, -0.3065611, 0, -0.95185065, 0, -0.2999997, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("2_ggm86")
+hframes = 4
+vframes = 4
+frame = 15
+script = ExtResource("3_jbao5")
+
+[node name="NeckSegments" type="Node3D" parent="."]
+script = ExtResource("4_ggm86")
+
+[node name="Neck" type="Node3D" parent="NeckSegments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29133892, -0.19756567, -0.46726346)
+
+[node name="Sprite3D2" type="Sprite3D" parent="NeckSegments/Neck"]
+transform = Transform3D(-0.9697737, 0, 0.24400438, 0, 1, 0, -0.24400438, 0, -0.9697737, 0, 0, 0)
+sorting_offset = -0.2
+offset = Vector2(0, 3)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("4_4iaum")
+hframes = 4
+vframes = 4
+frame = 15
+script = ExtResource("3_jbao5")
+
+[node name="Neck2" type="Node3D" parent="NeckSegments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5826779, -0.39513135, -0.93452716)
+
+[node name="Sprite3D2" type="Sprite3D" parent="NeckSegments/Neck2"]
+transform = Transform3D(-0.9822574, 0, 0.1875358, 0, 1, 0, -0.1875358, 0, -0.9822574, 0, 0, 0)
+sorting_offset = -0.2
+offset = Vector2(0, 3)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("4_4iaum")
+hframes = 4
+vframes = 4
+script = ExtResource("3_jbao5")
+
+[node name="Neck3" type="Node3D" parent="NeckSegments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8740169, -0.59269714, -1.4017907)
+
+[node name="Sprite3D2" type="Sprite3D" parent="NeckSegments/Neck3"]
+transform = Transform3D(-0.99059695, 0, 0.13680938, 0, 1, 0, -0.13680938, 0, -0.99059695, 0, 0, 0)
+sorting_offset = -0.2
+offset = Vector2(0, 3)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("4_4iaum")
+hframes = 4
+vframes = 4
+script = ExtResource("3_jbao5")
+
+[node name="Neck4" type="Node3D" parent="NeckSegments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1653558, -0.7902628, -1.8690542)
+
+[node name="Sprite3D2" type="Sprite3D" parent="NeckSegments/Neck4"]
+transform = Transform3D(-0.9958192, 0, 0.09134191, 0, 1, 0, -0.09134191, 0, -0.9958192, 0, 0, 0)
+sorting_offset = -0.2
+offset = Vector2(0, 3)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("4_4iaum")
+hframes = 4
+vframes = 4
+script = ExtResource("3_jbao5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37499994, 0.1)
+shape = SubResource("CapsuleShape3D_ggm86")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("9_nli3c")
+max_health = 8
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[node name="ColorAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iprbw")
+}
+
+[connection signal="area_entered" from="StateMachine/Hurt/HurtBox" to="StateMachine/Hurt" method="_on_hurt_box_area_entered"]

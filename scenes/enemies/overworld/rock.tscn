@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvsu3gcqoli0n"]
+
+[ext_resource type="Script" uid="uid://dngwnpj5ocnrr" path="res://scripts/enemies/overworld/rock.gd" id="1_88tjs"]
+[ext_resource type="Texture2D" uid="uid://db44vgxs311b5" path="res://sprites/enemies/rock.png" id="1_gmcbt"]
+[ext_resource type="PackedScene" uid="uid://dwdyc5b50emvc" path="res://scenes/misc/shadow.tscn" id="3_hev3n"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="4_42d3v"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gmcbt"]
+radius = 0.7
+
+[node name="Rock" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_88tjs")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_gmcbt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("SphereShape3D_gmcbt")
+
+[node name="Shadow" parent="." instance=ExtResource("3_hev3n")]
+shadow_radius = 0.7
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_42d3v")
+knockback = Vector3(0, 6.4, -6.4)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("SphereShape3D_gmcbt")
+
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]

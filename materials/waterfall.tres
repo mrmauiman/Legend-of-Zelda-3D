@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dvsfsk03nn1ib"]
+
+[ext_resource type="Shader" uid="uid://dowx5naakhux8" path="res://shaders/waterfall.tres" id="1_pmnow"]
+[ext_resource type="Texture2D" uid="uid://dparmmxrfpgm4" path="res://models/map_water_fall_texture.png" id="2_p51fh"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_pmnow")
+shader_parameter/Image = ExtResource("2_p51fh")

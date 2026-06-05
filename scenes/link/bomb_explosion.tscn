@@ -1,0 +1,298 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddnoby6aqeciw"]
+
+[ext_resource type="PackedScene" uid="uid://lnu333c4towe" path="res://scenes/link/smoke.tscn" id="1_uyumr"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="2_elfo0"]
+[ext_resource type="Script" uid="uid://cyhi6c42i811q" path="res://scripts/components/animation_enablers/collision_shape_animation_enabler.gd" id="3_dcqiy"]
+[ext_resource type="Script" uid="uid://cdtugaw7cadwm" path="res://scripts/components/animation_enablers/animation_section.gd" id="4_xrs5d"]
+
+[sub_resource type="Animation" id="Animation_xqdjw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot6/Smoke:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot5/Smoke:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot4/Smoke:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.8)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot3/Smoke:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot2/Smoke:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pivot/Smoke:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.8)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Smoke:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_elfo0"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot6/Smoke:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivot5/Smoke:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivot4/Smoke:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot3/Smoke:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.6)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot2/Smoke:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.6)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pivot/Smoke:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.6)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Smoke:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.49999982, 0.21022382),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.8, 0)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dcqiy"]
+_data = {
+&"RESET": SubResource("Animation_xqdjw"),
+&"explosion": SubResource("Animation_elfo0")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xqdjw"]
+radius = 2.3
+
+[sub_resource type="Resource" id="Resource_dcqiy"]
+script = ExtResource("4_xrs5d")
+animation = "explosion"
+end_time = 0.5
+metadata/_custom_type_script = "uid://cdtugaw7cadwm"
+
+[sub_resource type="Resource" id="Resource_aaw0k"]
+script = ExtResource("4_xrs5d")
+animation = "explosion"
+end_time = 1.0
+metadata/_custom_type_script = "uid://cdtugaw7cadwm"
+
+[node name="BombExplosion" type="Node3D"]
+
+[node name="Smoke" parent="." instance=ExtResource("1_uyumr")]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Smoke" parent="Pivot" instance=ExtResource("1_uyumr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="Pivot2" type="Node3D" parent="."]
+transform = Transform3D(0.49999997, 0, 0.86602545, 0, 1, 0, -0.86602545, 0, 0.49999997, 0, 0, 0)
+
+[node name="Smoke" parent="Pivot2" instance=ExtResource("1_uyumr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="Pivot3" type="Node3D" parent="."]
+transform = Transform3D(-0.50000006, 0, 0.8660254, 0, 1, 0, -0.8660254, 0, -0.50000006, 0, 0, 0)
+
+[node name="Smoke" parent="Pivot3" instance=ExtResource("1_uyumr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="Pivot4" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Smoke" parent="Pivot4" instance=ExtResource("1_uyumr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="Pivot5" type="Node3D" parent="."]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, 0, 0, 0)
+
+[node name="Smoke" parent="Pivot5" instance=ExtResource("1_uyumr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="Pivot6" type="Node3D" parent="."]
+transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 0, 0, 0)
+
+[node name="Smoke" parent="Pivot6" instance=ExtResource("1_uyumr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_dcqiy")
+}
+autoplay = "explosion"
+
+[node name="PlayerHitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_elfo0")
+knockback = Vector3(0, 9.6, 9.6)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+damage = 8
+is_bomb = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerHitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_xqdjw")
+
+[node name="Node" type="Node" parent="PlayerHitBox/CollisionShape3D" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("3_dcqiy")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_sections = Array[ExtResource("4_xrs5d")]([SubResource("Resource_dcqiy")])
+
+[node name="EnemyHitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("2_elfo0")
+knockback = Vector3(0, 9.6, 9.6)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+damage = 8
+is_bomb = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyHitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_xqdjw")
+
+[node name="Node" type="Node" parent="EnemyHitBox/CollisionShape3D" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("3_dcqiy")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_sections = Array[ExtResource("4_xrs5d")]([SubResource("Resource_aaw0k")])

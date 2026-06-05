@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfsyopg7cpkra"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_7h7wt"]
+[ext_resource type="PackedScene" uid="uid://drl547gpk7hb4" path="res://scenes/enemies/dungeon/bubble.tscn" id="5_8e32b"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="6_xp5eq"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="7_souhi"]
+
+[node name="Loadables_6_3" type="Node3D"]
+script = ExtResource("1_7h7wt")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="Bubble" parent="Traps" instance=ExtResource("5_8e32b")]
+
+[node name="Bubble2" parent="Traps" instance=ExtResource("5_8e32b")]
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("6_xp5eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6000004)
+enemies = NodePath("../../Enemies")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("7_souhi")]

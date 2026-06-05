@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgs1nrjj61ygo"]
+
+[ext_resource type="Script" uid="uid://hjxnj1nigx0f" path="res://scripts/enemies/overworld/leever.gd" id="1_pjedh"]
+[ext_resource type="PackedScene" uid="uid://du18movlldify" path="res://scenes/enemies/overworld/leever_model.tscn" id="2_v7dfo"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_v7dfo"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="4_66m3p"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_66m3p"]
+height = 1.175
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_viqo7"]
+size = Vector3(25.6, 3.2, 17.6)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_viqo7"]
+height = 1.4
+radius = 0.7
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ik3tx"]
+height = 1.2
+radius = 0.6
+
+[node name="Leever" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 233
+script = ExtResource("1_pjedh")
+target_arrow_offset = Vector3(0, 1.6, 0)
+drop_group = 2
+
+[node name="LeeverModel" parent="." instance=ExtResource("2_v7dfo")]
+unique_name_in_owner = true
+
+[node name="BodyShape" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6374999, 0)
+shape = SubResource("CylinderShape3D_66m3p")
+disabled = true
+
+[node name="Sight" type="Area3D" parent="."]
+unique_name_in_owner = true
+top_level = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sight"]
+shape = SubResource("BoxShape3D_viqo7")
+
+[node name="CollisionDetector" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+top_level = true
+collision_mask = 105
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_v7dfo")
+max_health = 4
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="HurtBoxShape" type="CollisionShape3D" parent="HurtBox"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("CylinderShape3D_viqo7")
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_66m3p")
+knockback = Vector3(0, 9.6, 3.2)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+
+[node name="HitBoxShape" type="CollisionShape3D" parent="HitBox"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CylinderShape3D_ik3tx")
+
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="blocked" from="HitBox" to="." method="blocked"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

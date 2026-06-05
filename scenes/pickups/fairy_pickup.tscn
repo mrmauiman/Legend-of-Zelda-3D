@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://72fm4fwmmhuh"]
+
+[ext_resource type="PackedScene" uid="uid://ckftgy0sw1l74" path="res://scenes/pickups/pickup.tscn" id="1_u2r36"]
+[ext_resource type="PackedScene" uid="uid://c180uha28yww4" path="res://scenes/npcs/fairy.tscn" id="2_ba8k6"]
+[ext_resource type="Script" uid="uid://be830kpqyyikr" path="res://scripts/components/pickups/fairy_pickup.gd" id="2_xftvj"]
+
+[node name="FairyPickup" instance=ExtResource("1_u2r36")]
+script = ExtResource("2_xftvj")
+amount = 3
+
+[node name="Fairy" parent="." index="2" instance=ExtResource("2_ba8k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+
+[node name="FloorCheck" type="RayCast3D" parent="." index="3"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, -2.4, 0)
+
+[node name="WallChecks" type="Node3D" parent="." index="4"]
+unique_name_in_owner = true
+top_level = true
+
+[node name="RayCast3D" type="RayCast3D" parent="WallChecks" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, 1.6)
+collision_mask = 33
+
+[node name="RayCast3D2" type="RayCast3D" parent="WallChecks" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, -1.6)
+collision_mask = 33
+
+[node name="RayCast3D3" type="RayCast3D" parent="WallChecks" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(1.6, 0, 0)
+collision_mask = 33
+
+[node name="RayCast3D4" type="RayCast3D" parent="WallChecks" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(-1.6, 0, 0)
+collision_mask = 33

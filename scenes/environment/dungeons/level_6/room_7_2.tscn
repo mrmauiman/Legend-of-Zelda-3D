@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://djr7gq2qkk7ua"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_ggvxx"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_3i3wl"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_lblut"]
+[ext_resource type="PackedScene" uid="uid://qp413d785uk7" path="res://scenes/environment/dungeons/general_pieces/east_wall_bombed.tscn" id="4_pywpk"]
+[ext_resource type="PackedScene" uid="uid://bwubre06xhcl0" path="res://scenes/environment/dungeons/general_pieces/west_wall_bombed.tscn" id="5_wb3iw"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="6_mfjkt"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="7_laqfs"]
+
+[node name="Room_7_2" instance=ExtResource("1_ggvxx")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_6/loadables_7_2.tscn"
+
+[node name="Floor" parent="Pieces" index="1" instance=ExtResource("2_3i3wl")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_lblut")]
+
+[node name="EastWallBombed" parent="Pieces" index="3" instance=ExtResource("4_pywpk")]
+
+[node name="WestWallBombed" parent="Pieces" index="4" instance=ExtResource("5_wb3iw")]
+
+[node name="SouthWallDoor" parent="Pieces" index="5" instance=ExtResource("6_mfjkt")]
+
+[node name="Block" parent="Pieces" index="6" instance=ExtResource("7_laqfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+
+[node name="Block2" parent="Pieces" index="7" instance=ExtResource("7_laqfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddgp0to8jydfv"]
+
+[ext_resource type="PackedScene" uid="uid://co0fepuo0i2j4" path="res://scenes/environment/dungeons/general_pieces/floor_item_room.tscn" id="1_ce6ws"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="2_2fpw2"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_f33gq"]
+[ext_resource type="PackedScene" uid="uid://cox4frwwicyq7" path="res://scenes/environment/dungeons/general_pieces/entrance_door.tscn" id="4_ms1t7"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="5_gyhoh"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="6_2fpw2"]
+[ext_resource type="PackedScene" uid="uid://b55x5niaurtlp" path="res://scenes/chunked_worlds/dungeons/linkchecker.tscn" id="7_f33gq"]
+
+[node name="BowRoom" type="Node3D"]
+
+[node name="FloorItemRoom" parent="." instance=ExtResource("1_ce6ws")]
+
+[node name="ShortWall" parent="." instance=ExtResource("2_2fpw2")]
+
+[node name="ShortWall2" parent="." instance=ExtResource("2_2fpw2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="LongWall" parent="." instance=ExtResource("3_f33gq")]
+
+[node name="EntranceDoor" parent="." instance=ExtResource("4_ms1t7")]
+
+[node name="Roof" parent="." instance=ExtResource("5_gyhoh")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("6_2fpw2")
+
+[node name="Linkchecker" parent="." instance=ExtResource("7_f33gq")]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_1/loadables_bow_room.tscn"

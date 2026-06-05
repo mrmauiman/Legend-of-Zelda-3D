@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccdb8ihcw2vqd"]
+
+[ext_resource type="PackedScene" uid="uid://ckftgy0sw1l74" path="res://scenes/pickups/pickup.tscn" id="1_d2jrn"]
+[ext_resource type="Script" uid="uid://dexkugdnopi28" path="res://scripts/components/pickups/counter_pickup.gd" id="2_40knc"]
+[ext_resource type="Texture2D" uid="uid://dsmd3ju3csvbn" path="res://sprites/link/bomb_1.png" id="2_c6j8o"]
+[ext_resource type="Script" uid="uid://c8rrfukm3oyt5" path="res://scripts/components/sprite3d_effects/rotating_sprite3d_billboard_along_y.gd" id="3_d2jrn"]
+
+[node name="BombPickup" instance=ExtResource("1_d2jrn")]
+script = ExtResource("2_40knc")
+pickup_id = "bombs"
+count = 4
+boomerang_can_pickup = true
+
+[node name="Sprite" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_c6j8o")
+hframes = 5
+vframes = 2
+script = ExtResource("3_d2jrn")

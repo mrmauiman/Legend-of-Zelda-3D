@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://ee5njfkoy26c"]
+
+[ext_resource type="Script" uid="uid://cbl2pja0avan3" path="res://scripts/npcs/money_making_game_rupee.gd" id="1_kh3v6"]
+[ext_resource type="Texture2D" uid="uid://clcb40m0m2g0w" path="res://sprites/rupee.png" id="2_x48h5"]
+[ext_resource type="FontFile" uid="uid://ipfhmv1fvvgt" path="res://sprites/fonts/the-legend-of-zelda-nes.otf" id="3_yb2no"]
+
+[sub_resource type="Animation" id="Animation_euthm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_whpgg"]
+resource_name = "flicker"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3gag"]
+_data = {
+&"RESET": SubResource("Animation_euthm"),
+&"flicker": SubResource("Animation_whpgg")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o7k1r"]
+radius = 0.4
+height = 1.6
+
+[node name="Payment" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_kh3v6")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_x48h5")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_a3gag")
+}
+autoplay = "flicker"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CapsuleShape3D_o7k1r")
+
+[node name="Text" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 2
+double_sided = false
+texture_filter = 0
+text = "-10
+"
+font = ExtResource("3_yb2no")
+font_size = 45
+outline_size = 0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

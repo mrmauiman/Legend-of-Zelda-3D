@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1an0x0lqx5kq"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_i8jd8"]
+[ext_resource type="PackedScene" uid="uid://c1nyluwn611yp" path="res://scenes/npcs/bomb_capacity_shop_old_man_npc.tscn" id="2_ssb2v"]
+
+[node name="Loadables_6_3" type="Node3D"]
+script = ExtResource("1_i8jd8")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="OldManNPC" parent="Pickups" instance=ExtResource("2_ssb2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+location_id = "dungeon/5/loadables_6_3"

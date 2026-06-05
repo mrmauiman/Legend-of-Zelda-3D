@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://batnb412ct1i6"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_v7xqp"]
+[ext_resource type="PackedScene" uid="uid://bjsl4kaf7vcu8" path="res://scenes/enemies/dungeon/spike_trap.tscn" id="2_3bq2r"]
+
+[node name="Loadables_7_2" type="Node3D"]
+script = ExtResource("1_v7xqp")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="SpikeTrap" parent="Traps" instance=ExtResource("2_3bq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, 0)
+
+[node name="SpikeTrap2" parent="Traps" instance=ExtResource("2_3bq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 0)
+
+[node name="SpikeTrap3" parent="Traps" instance=ExtResource("2_3bq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.800001, 0, -4.8)
+
+[node name="SpikeTrap4" parent="Traps" instance=ExtResource("2_3bq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.800001, 0, 4.8)
+
+[node name="SpikeTrap5" parent="Traps" instance=ExtResource("2_3bq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.799999, 0, -4.8)
+
+[node name="SpikeTrap6" parent="Traps" instance=ExtResource("2_3bq2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.799999, 0, 4.8)

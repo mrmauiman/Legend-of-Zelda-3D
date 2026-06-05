@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjfrpdqmx7n3r"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_4on8g"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_sup3b"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="3_jigom"]
+[ext_resource type="PackedScene" uid="uid://qp413d785uk7" path="res://scenes/environment/dungeons/general_pieces/east_wall_bombed.tscn" id="4_o7kn5"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="5_gh1uy"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="6_iyqow"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="7_jcr7w"]
+
+[node name="Room_6_0" instance=ExtResource("1_4on8g")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_6_0.tscn"
+
+[node name="Floor" parent="Pieces" index="1" instance=ExtResource("2_sup3b")]
+
+[node name="ShortWall" parent="Pieces" index="2" instance=ExtResource("3_jigom")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="EastWallBombed" parent="Pieces" index="3" instance=ExtResource("4_o7kn5")]
+
+[node name="SouthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_gh1uy")]
+
+[node name="NorthWallDoor" parent="Pieces" index="5" instance=ExtResource("6_iyqow")]
+
+[node name="Blocks" type="Node3D" parent="Pieces" index="6"]
+
+[node name="Block" parent="Pieces/Blocks" index="0" instance=ExtResource("7_jcr7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 0)
+
+[node name="Block2" parent="Pieces/Blocks" index="1" instance=ExtResource("7_jcr7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3.2)
+
+[node name="Block3" parent="Pieces/Blocks" index="2" instance=ExtResource("7_jcr7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3.2)
+
+[node name="Block4" parent="Pieces/Blocks" index="3" instance=ExtResource("7_jcr7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2, 0, 0)

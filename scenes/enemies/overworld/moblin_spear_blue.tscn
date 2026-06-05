@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmc7wt8110uxs"]
+
+[ext_resource type="Script" uid="uid://codvikc15pghu" path="res://scripts/components/forward_enemy_projectile.gd" id="1_cdy4r"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="2_cjau4"]
+[ext_resource type="Texture2D" uid="uid://cipbqbsjgdrxy" path="res://sprites/enemies/moblin_blue_spear.png" id="3_cdy4r"]
+[ext_resource type="Script" uid="uid://dur55rjoel68d" path="res://scripts/components/sprite3d_effects/billboard_along_bone.gd" id="4_oe6d5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ownoe"]
+radius = 0.1
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ftosi"]
+radius = 0.15
+height = 1.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cdy4r"]
+
+[node name="MoblinSpear" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 65
+script = ExtResource("1_cdy4r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ownoe")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_cjau4")
+knockback = Vector3(0, 9.6, 6.4)
+relative_knockback_orientor = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_ftosi")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-0.7516138, 0, -0.65960324, 0, 1, 0, 0.65960324, 0, -0.7516138, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_cdy4r")
+script = ExtResource("4_oe6d5")
+
+[node name="WaterChecker" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WaterChecker"]
+shape = SubResource("SphereShape3D_cdy4r")
+
+[connection signal="blocked" from="HitBox" to="." method="blocked"]
+[connection signal="hit" from="HitBox" to="." method="hit"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

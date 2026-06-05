@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdb0piko4gvlg"]
+
+[ext_resource type="Script" uid="uid://cfsgc2ak74eaw" path="res://scripts/ui/heart_ui.gd" id="1_62sgg"]
+[ext_resource type="Texture2D" uid="uid://cqqnrr2qgpq7n" path="res://sprites/heart.png" id="2_iwxod"]
+
+[node name="1" type="MarginContainer"]
+custom_minimum_size = Vector2(40, 40)
+script = ExtResource("1_62sgg")
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(5, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("2_iwxod")
+offset = Vector2(3.5, 4)
+hframes = 4
+frame = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_iwxod")
+offset = Vector2(3.5, 4)
+hframes = 4

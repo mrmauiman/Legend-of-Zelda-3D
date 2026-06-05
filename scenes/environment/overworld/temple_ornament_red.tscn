@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn0exexuhpedc"]
+
+[ext_resource type="ArrayMesh" uid="uid://cefxhdcg6jbqm" path="res://models/TempleOrnamentRed.obj" id="1_4gs84"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qxjuq"]
+height = 3.2
+radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m7lmg"]
+size = Vector3(0.8, 2.4, 0.8)
+
+[node name="TempleOrnament" type="StaticBody3D"]
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("CylinderShape3D_qxjuq")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2000002, 1.2, 0)
+shape = SubResource("BoxShape3D_m7lmg")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1999999, 1.2, -2.9802322e-08)
+shape = SubResource("BoxShape3D_m7lmg")
+
+[node name="TempleOrnamentRed" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+mesh = ExtResource("1_4gs84")

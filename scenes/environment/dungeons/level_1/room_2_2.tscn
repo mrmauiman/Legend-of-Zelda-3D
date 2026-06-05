@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://bx6ght8lagu0g"]
+
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="1_ur0ox"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="2_fyaft"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="2_qdoyo"]
+[ext_resource type="PackedScene" uid="uid://nrnhhxq6q1ks" path="res://scenes/environment/dungeons/general_pieces/north_wall_bombed.tscn" id="3_1fr5v"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="4_qdoyo"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="5_lolr2"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="7_1fr5v"]
+[ext_resource type="PackedScene" uid="uid://b55x5niaurtlp" path="res://scenes/chunked_worlds/dungeons/linkchecker.tscn" id="9_lolr2"]
+
+[node name="Room_2_2" type="Node3D"]
+
+[node name="Roof" parent="." instance=ExtResource("1_ur0ox")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("2_qdoyo")
+
+[node name="Floor" parent="." instance=ExtResource("1_ur0ox")]
+
+[node name="SouthWallDoor" parent="." instance=ExtResource("2_fyaft")]
+
+[node name="NorthWallBombed" parent="." instance=ExtResource("3_1fr5v")]
+
+[node name="WestWallDoor" parent="." instance=ExtResource("4_qdoyo")]
+
+[node name="EastWallDoor" parent="." instance=ExtResource("5_lolr2")]
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("7_1fr5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, 1.6)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("7_1fr5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, -1.6)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("7_1fr5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 1.6)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("7_1fr5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -1.6)
+
+[node name="Linkchecker" parent="." instance=ExtResource("9_lolr2")]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_1/loadables_2_2.tscn"

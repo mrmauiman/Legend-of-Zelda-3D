@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5nsolucnkfer"]
+
+[ext_resource type="Script" uid="uid://dje4sxhsowtu" path="res://scripts/components/wall_red_static_cover.gd" id="1_f8j5l"]
+[ext_resource type="PackedScene" uid="uid://dveenl2vghj7p" path="res://models/red_bombable_wall.glb" id="2_0voxt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrnhd"]
+size = Vector3(1.6, 1.6, 0.1)
+
+[node name="StaticCoverWall" type="StaticBody3D"]
+script = ExtResource("1_f8j5l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.05)
+shape = SubResource("BoxShape3D_hrnhd")
+
+[node name="red_bombable_wall" parent="." instance=ExtResource("2_0voxt")]

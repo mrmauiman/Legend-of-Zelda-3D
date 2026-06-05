@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://gxymhi2sne6c"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_0ig42"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_d6cvv"]
+[ext_resource type="PackedScene" uid="uid://tsqja7t8ofbo" path="res://scenes/environment/dungeons/general_pieces/floor_stairs_top_right.tscn" id="3_wamhs"]
+[ext_resource type="PackedScene" uid="uid://qp413d785uk7" path="res://scenes/environment/dungeons/general_pieces/east_wall_bombed.tscn" id="4_fx8rq"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="5_hejl4"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="6_d3pr3"]
+[ext_resource type="PackedScene" uid="uid://dro6isr8bb654" path="res://scenes/environment/dungeons/general_pieces/block_pushable_stairs.tscn" id="7_v6ku3"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="8_kbosn"]
+
+[node name="Room_7_5" instance=ExtResource("1_0ig42")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_9/loadables_7_5.tscn"
+
+[node name="Floor" parent="Pieces" index="1" instance=ExtResource("2_d6cvv")]
+
+[node name="FloorStairsTopRight" parent="Pieces" index="2" instance=ExtResource("3_wamhs")]
+
+[node name="EastWallBombed" parent="Pieces" index="3" instance=ExtResource("4_fx8rq")]
+
+[node name="LongWall" parent="Pieces" index="4" instance=ExtResource("5_hejl4")]
+
+[node name="LongWall2" parent="Pieces" index="5" instance=ExtResource("5_hejl4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="ShortWall" parent="Pieces" index="6" instance=ExtResource("6_d3pr3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="BlockPushable" parent="Pieces" index="7" node_paths=PackedStringArray("floor", "floor_stairs") instance=ExtResource("7_v6ku3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+floor = NodePath("../Floor")
+floor_stairs = NodePath("../FloorStairsTopRight")
+
+[node name="Block" parent="Pieces" index="8" instance=ExtResource("8_kbosn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)

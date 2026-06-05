@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://7qcail8c1ae0"]
+
+[ext_resource type="Script" uid="uid://bxagk3jr30ynr" path="res://scripts/chunked_world/loadable_screen.gd" id="1_6k040"]
+[ext_resource type="Script" uid="uid://cyb2go4e6m4s2" path="res://scripts/chunked_world/screen_enemy_manager.gd" id="1_l4872"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="5_dx1qe"]
+[ext_resource type="PackedScene" uid="uid://d0rylqdc0o2bi" path="res://scenes/chunked_worlds/overworld/spawn_checker.tscn" id="7_6k040"]
+
+[node name="Screen_1_15" type="Node3D"]
+script = ExtResource("1_6k040")
+
+[node name="Enemies" type="Node3D" parent="."]
+script = ExtResource("1_l4872")
+is_beach = true
+
+[node name="SpawnChecker" parent="." instance=ExtResource("7_6k040")]
+
+[node name="SpawnSpot85" parent="SpawnChecker" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, -4.8)
+
+[node name="SpawnSpot86" parent="SpawnChecker" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, -3.2000003)
+
+[node name="SpawnSpot87" parent="SpawnChecker" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, -1.6000003)
+
+[node name="SpawnSpot88" parent="SpawnChecker" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, -2.3841858e-07)
+
+[node name="SpawnSpot89" parent="SpawnChecker" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, 1.5999999)
+
+[node name="SpawnSpot90" parent="SpawnChecker" index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, 3.1999998)
+
+[node name="SpawnSpot91" parent="SpawnChecker" index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0.8, 4.8)
+
+[node name="SpawnSpot106" parent="SpawnChecker" index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, -4.8)
+
+[node name="SpawnSpot107" parent="SpawnChecker" index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, -3.2000003)
+
+[node name="SpawnSpot108" parent="SpawnChecker" index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, -1.6000003)
+
+[node name="SpawnSpot109" parent="SpawnChecker" index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, -2.3841858e-07)
+
+[node name="SpawnSpot110" parent="SpawnChecker" index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, 1.5999999)
+
+[node name="SpawnSpot111" parent="SpawnChecker" index="19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, 3.1999998)
+
+[node name="SpawnSpot112" parent="SpawnChecker" index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 1.6, 4.8)
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot113" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot114" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot115" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot116" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot117" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot118" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot119" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot120" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot121" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot122" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot145" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot146" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot147" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot148" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot149" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot150" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot151" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot152" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot153" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot154" index="0"]
+disabled = true
+
+[node name="Exit" parent="." instance=ExtResource("5_dx1qe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.8, 8.849998)
+teleport_to = Vector3(184.8, 0, 40.8)
+
+[node name="Entrance" parent="." instance=ExtResource("5_dx1qe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.8, 0, 38.35)
+top_level = true
+teleport_to = Vector3(192, -12.8, 50.4)
+look_dir = Vector3(0, 0, 1)
+
+[editable path="SpawnChecker"]

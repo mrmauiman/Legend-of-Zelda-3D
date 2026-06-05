@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf8dhthwfwno8"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_5sma7"]
+[ext_resource type="PackedScene" uid="uid://b3lfe1xxoseqq" path="res://scenes/enemies/dungeon/aquamentus.tscn" id="2_4rrn7"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="3_5sma7"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="4_l02px"]
+
+[node name="Loadables_5_2" type="Node3D"]
+script = ExtResource("1_5sma7")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Aquamentus" parent="Bosses" instance=ExtResource("2_4rrn7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.6, 0, 0)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("3_5sma7")]
+location_id = "dungeon/7/loadables_5_2"
+hidden_by_enemies = NodePath("../../Bosses")
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("4_l02px")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.7, -0.1, 0)
+enemies = NodePath("../../Bosses")

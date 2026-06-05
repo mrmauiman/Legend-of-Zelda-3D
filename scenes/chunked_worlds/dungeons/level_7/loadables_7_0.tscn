@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwm68j16cy7dn"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_j70ys"]
+[ext_resource type="PackedScene" uid="uid://bvq1naeu1kpb5" path="res://scenes/pickups/rupee_pickup.tscn" id="2_rmxkf"]
+
+[node name="Loadables_7_0" type="Node3D"]
+script = ExtResource("1_j70ys")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="RupeePickup" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="RupeePickup9" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+
+[node name="RupeePickup10" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+
+[node name="RupeePickup4" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="RupeePickup2" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+
+[node name="RupeePickup5" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, -1.6)
+
+[node name="RupeePickup6" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -1.6)
+
+[node name="RupeePickup7" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 1.6)
+
+[node name="RupeePickup8" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 1.6)
+
+[node name="RupeePickup3" parent="Pickups" instance=ExtResource("2_rmxkf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)

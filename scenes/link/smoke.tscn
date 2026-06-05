@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://lnu333c4towe"]
+
+[ext_resource type="Texture2D" uid="uid://bhno8gl3fxq5b" path="res://sprites/link/smoke.png" id="1_acmqr"]
+[ext_resource type="Script" uid="uid://c64g7vlvtapfo" path="res://scripts/link/smoke.gd" id="1_rx0m8"]
+
+[node name="Smoke" type="Node3D"]
+script = ExtResource("1_rx0m8")
+linger_time = 1.0
+
+[node name="SmokeModel" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+sorting_offset = 0.5
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_acmqr")
+hframes = 3

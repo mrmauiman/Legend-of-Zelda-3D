@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq03bwlxaru7g"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_atvip"]
+[ext_resource type="PackedScene" uid="uid://dmn4p2rc6mbr0" path="res://scenes/enemies/dungeon/gohma_blue.tscn" id="2_n1g64"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="3_y3la0"]
+[ext_resource type="PackedScene" uid="uid://yw7e3tu7ntt2" path="res://scenes/enemies/dungeon/living_accent_dragon_statue.tscn" id="4_si7el"]
+[ext_resource type="PackedScene" uid="uid://cxab8aqhp6r6e" path="res://scenes/enemies/dungeon/living_accent_head_statue.tscn" id="5_gd2wo"]
+
+[node name="Loadables_6_3" type="Node3D"]
+script = ExtResource("1_atvip")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Gohma" parent="Bosses" instance=ExtResource("2_n1g64")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.1000001)
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_y3la0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+enemies = NodePath("../../Bosses")
+
+[node name="SealedDoor2" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_y3la0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.7, -0.1, 0)
+enemies = NodePath("../../Bosses")
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("4_si7el")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="dragon_statue2" parent="Traps" instance=ExtResource("4_si7el")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[node name="head_statue" parent="Traps" instance=ExtResource("5_gd2wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)
+
+[node name="head_statue2" parent="Traps" instance=ExtResource("5_gd2wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)

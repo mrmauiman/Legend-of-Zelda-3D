@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=3 uid="uid://cunkl2qur3cqg"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_g1jya"]
+[ext_resource type="PackedScene" uid="uid://c1typ58dauv72" path="res://scenes/environment/dungeons/general_pieces/floor_zelda_room.tscn" id="2_54shx"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_cvyn6"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_n6hk3"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="5_x5yq2"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="6_4pxcj"]
+[ext_resource type="PackedScene" uid="uid://dkwnqednva41k" path="res://scenes/environment/dungeons/general_pieces/head_statue.tscn" id="7_2qrjq"]
+[ext_resource type="PackedScene" uid="uid://dstgau5klwsnm" path="res://scenes/environment/dungeons/general_pieces/dragon_statue.tscn" id="8_ivkpd"]
+[ext_resource type="PackedScene" uid="uid://bebtirw6f4u8u" path="res://scenes/environment/dungeons/general_pieces/hitable_torch.tscn" id="9_54shx"]
+[ext_resource type="PackedScene" uid="uid://bw7tsxru0644t" path="res://scenes/npcs/zelda.tscn" id="10_n6hk3"]
+
+[node name="Room_4_2" instance=ExtResource("1_g1jya")]
+
+[node name="FloorZeldaRoom" parent="Pieces" index="1" instance=ExtResource("2_54shx")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_cvyn6")]
+
+[node name="ShortWall" parent="Pieces" index="3" instance=ExtResource("4_n6hk3")]
+
+[node name="ShortWall2" parent="Pieces" index="4" instance=ExtResource("4_n6hk3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SouthWallDoor" parent="Pieces" index="5" instance=ExtResource("5_x5yq2")]
+
+[node name="Blocks" type="Node3D" parent="Pieces" index="6"]
+
+[node name="Block" parent="Pieces/Blocks" index="0" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)
+
+[node name="Block15" parent="Pieces/Blocks" index="1" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -4.8)
+
+[node name="Block16" parent="Pieces/Blocks" index="2" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -4.8)
+
+[node name="Block17" parent="Pieces/Blocks" index="3" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4.8)
+
+[node name="Block18" parent="Pieces/Blocks" index="4" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 0, -4.8)
+
+[node name="Block19" parent="Pieces/Blocks" index="5" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79999995, 0, -4.8)
+
+[node name="Block20" parent="Pieces/Blocks" index="6" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -4.8)
+
+[node name="Block21" parent="Pieces/Blocks" index="7" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -4.8)
+
+[node name="Block25" parent="Pieces/Blocks" index="8" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000003, 0, -3.2000003)
+
+[node name="Block26" parent="Pieces/Blocks" index="9" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -3.2000003)
+
+[node name="Block22" parent="Pieces/Blocks" index="10" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9999998, 0, -4.8)
+
+[node name="Block23" parent="Pieces/Blocks" index="11" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, 0, -4.8)
+
+[node name="Block27" parent="Pieces/Blocks" index="12" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -1.6000001)
+
+[node name="Block28" parent="Pieces/Blocks" index="13" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.6000001)
+
+[node name="Block29" parent="Pieces/Blocks" index="14" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9999998, 0, -1.6000001)
+
+[node name="Block30" parent="Pieces/Blocks" index="15" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, 0, -1.6000001)
+
+[node name="Block31" parent="Pieces/Blocks" index="16" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -1.1920929e-07)
+
+[node name="Block32" parent="Pieces/Blocks" index="17" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.1920929e-07)
+
+[node name="Block33" parent="Pieces/Blocks" index="18" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9999998, 0, -1.1920929e-07)
+
+[node name="Block34" parent="Pieces/Blocks" index="19" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, 0, -1.1920929e-07)
+
+[node name="Block24" parent="Pieces/Blocks" index="20" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -4.8)
+
+[node name="Block2" parent="Pieces/Blocks" index="21" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -3.2000003)
+
+[node name="Block3" parent="Pieces/Blocks" index="22" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -1.6000003)
+
+[node name="Block4" parent="Pieces/Blocks" index="23" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -2.3841858e-07)
+
+[node name="Block5" parent="Pieces/Blocks" index="24" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 1.5999998)
+
+[node name="Block6" parent="Pieces/Blocks" index="25" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 3.1999998)
+
+[node name="Block7" parent="Pieces/Blocks" index="26" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.7999997)
+
+[node name="Block8" parent="Pieces/Blocks" index="27" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="Block9" parent="Pieces/Blocks" index="28" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -3.2000003)
+
+[node name="Block10" parent="Pieces/Blocks" index="29" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -1.6000003)
+
+[node name="Block11" parent="Pieces/Blocks" index="30" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -2.3841858e-07)
+
+[node name="Block12" parent="Pieces/Blocks" index="31" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 1.5999998)
+
+[node name="Block13" parent="Pieces/Blocks" index="32" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 3.1999998)
+
+[node name="Block14" parent="Pieces/Blocks" index="33" instance=ExtResource("6_4pxcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.7999997)
+
+[node name="Statues" type="Node3D" parent="Pieces" index="7"]
+
+[node name="HeadStatue" parent="Pieces/Statues" index="0" instance=ExtResource("7_2qrjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 1.6)
+
+[node name="HeadStatue2" parent="Pieces/Statues" index="1" instance=ExtResource("7_2qrjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 4.8)
+
+[node name="DragonStatue" parent="Pieces/Statues" index="2" instance=ExtResource("8_ivkpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 1.6)
+
+[node name="DragonStatue2" parent="Pieces/Statues" index="3" instance=ExtResource("8_ivkpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6000004, 0, 4.8)
+
+[node name="Torch" parent="Pieces" index="8" instance=ExtResource("9_54shx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 1.6)
+
+[node name="Torch2" parent="Pieces" index="9" instance=ExtResource("9_54shx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 1.6)
+
+[node name="Torch3" parent="Pieces" index="10" instance=ExtResource("9_54shx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 4)
+
+[node name="Torch4" parent="Pieces" index="11" instance=ExtResource("9_54shx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 4)
+
+[node name="Zelda" parent="." index="2" instance=ExtResource("10_n6hk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.8)

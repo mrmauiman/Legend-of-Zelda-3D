@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgvakp75miaqa"]
+
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="1_lcc7d"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="2_68uwo"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="2_h0qve"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="3_2gbyy"]
+[ext_resource type="PackedScene" uid="uid://depcw8vem7nj" path="res://scenes/environment/dungeons/general_pieces/floor_stairs_middle.tscn" id="4_h0qve"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="5_ps7f2"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="6_68uwo"]
+[ext_resource type="PackedScene" uid="uid://bej6ykj7mp76h" path="res://scenes/environment/dungeons/general_pieces/block_pushable.tscn" id="7_2gbyy"]
+[ext_resource type="PackedScene" uid="uid://bjsl4kaf7vcu8" path="res://scenes/enemies/dungeon/spike_trap.tscn" id="9_ps7f2"]
+
+[node name="Room_5_1" type="Node3D"]
+
+[node name="Roof" parent="." instance=ExtResource("1_lcc7d")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("2_h0qve")
+
+[node name="LongWall" parent="." instance=ExtResource("2_68uwo")]
+
+[node name="LongWall2" parent="." instance=ExtResource("2_68uwo")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="ShortWall" parent="." instance=ExtResource("3_2gbyy")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="FloorStairsMiddle" parent="." instance=ExtResource("4_h0qve")]
+
+[node name="EastWallDoor" parent="." instance=ExtResource("5_ps7f2")]
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -1.6)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8000001, 0, -3.2)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79999995, 0, -1.6)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79999995, 0, 1.6)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8000001, 0, 3.2)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("6_68uwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 1.6)
+
+[node name="BlockPushable" parent="." instance=ExtResource("7_2gbyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+x_axis_locked = true
+
+[node name="SpikeTraps" type="Node3D" parent="."]
+
+[node name="SpikeTrap" parent="SpikeTraps" instance=ExtResource("9_ps7f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="SpikeTrap2" parent="SpikeTraps" instance=ExtResource("9_ps7f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[node name="SpikeTrap3" parent="SpikeTraps" instance=ExtResource("9_ps7f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+
+[node name="SpikeTrap4" parent="SpikeTraps" instance=ExtResource("9_ps7f2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)

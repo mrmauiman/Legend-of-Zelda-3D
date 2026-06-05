@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdxq7k87gugh7"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_nscjy"]
+[ext_resource type="PackedScene" uid="uid://e42jglknftkl" path="res://scenes/enemies/dungeon/living_head_statue.tscn" id="3_nx1lx"]
+[ext_resource type="PackedScene" uid="uid://kwsva51tncqd" path="res://scenes/enemies/dungeon/living_dragon_statue.tscn" id="4_u61n8"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="4_ygu6y"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="6_2mxf1"]
+
+[node name="Loadables_4_7" type="Node3D"]
+script = ExtResource("1_nscjy")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="head_statue" parent="Traps" instance=ExtResource("3_nx1lx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("4_u61n8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("4_ygu6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+location_id = "dungeon/9/loadables_4_7"
+hidden_by_enemies = NodePath("../../Enemies")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("6_2mxf1")]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://c58r3ufr5pxh0"]
+
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_0y7c0"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_2f3pi"]
+[ext_resource type="PackedScene" uid="uid://cjv048p5u8obk" path="res://scenes/environment/dungeons/general_pieces/south_wall_bombed.tscn" id="5_jhpue"]
+[ext_resource type="PackedScene" uid="uid://nrnhhxq6q1ks" path="res://scenes/environment/dungeons/general_pieces/north_wall_bombed.tscn" id="6_me76i"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="6_wxncc"]
+[ext_resource type="PackedScene" uid="uid://b55x5niaurtlp" path="res://scenes/chunked_worlds/dungeons/linkchecker.tscn" id="7_0y7c0"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="7_bpxu2"]
+
+[node name="Room_4_3" type="Node3D"]
+
+[node name="Linkchecker" parent="." instance=ExtResource("7_0y7c0")]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_2/loadables_4_3.tscn"
+
+[node name="Roof" parent="." instance=ExtResource("2_0y7c0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("6_wxncc")
+
+[node name="Floor" parent="." instance=ExtResource("2_0y7c0")]
+
+[node name="ShortWall" parent="." instance=ExtResource("4_2f3pi")]
+
+[node name="SouthWallBombed" parent="." instance=ExtResource("5_jhpue")]
+
+[node name="NorthWallBombed" parent="." instance=ExtResource("6_me76i")]
+
+[node name="WestWallDoor" parent="." instance=ExtResource("7_bpxu2")]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://m6cgn82qvf84"]
+
+[ext_resource type="Shader" uid="uid://v2kkcr0kgsvo" path="res://shaders/circle_transition.gdshader" id="1_3nc8h"]
+[ext_resource type="Script" uid="uid://cnhuwxf3tdjd2" path="res://scripts/ui/door_animation.gd" id="1_3vier"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vier"]
+shader = ExtResource("1_3nc8h")
+shader_parameter/circle_radius = 0.6000000285
+shader_parameter/circle_offset = Vector2(0, 0.07)
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[sub_resource type="Animation" id="Animation_3vier"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/circle_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6000000285]
+}
+
+[sub_resource type="Animation" id="Animation_3nc8h"]
+resource_name = "enter"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/circle_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.6000000285, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4bkno"]
+resource_name = "exit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/circle_radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.10000001, 0.40000004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.6000000285]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5iio6"]
+_data = {
+&"RESET": SubResource("Animation_3vier"),
+&"enter": SubResource("Animation_3nc8h"),
+&"exit": SubResource("Animation_4bkno")
+}
+
+[node name="DoorAnimation" type="CanvasLayer"]
+script = ExtResource("1_3vier")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_3vier")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5iio6")
+}

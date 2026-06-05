@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://csnhphlhqfqyr"]
+
+[ext_resource type="Texture2D" uid="uid://b05e8ajws7fil" path="res://sprites/link/fire.png" id="1_52nqi"]
+[ext_resource type="Script" uid="uid://bd3j47bverj11" path="res://scripts/link/fire.gd" id="1_xqmqg"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="2_02t57"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xqmqg"]
+height = 1.6
+radius = 0.8
+
+[sub_resource type="Animation" id="Animation_rach5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite3D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g5mbl"]
+resource_name = "flicker"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite3D:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txieb"]
+_data = {
+&"RESET": SubResource("Animation_rach5"),
+&"flicker": SubResource("Animation_g5mbl")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xqmqg"]
+radius = 0.2
+
+[node name="Fire" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_xqmqg")
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor") groups=["Fire"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("2_02t57")
+knockback = Vector3(0, 6.4, 4.8)
+relative_knockback_orientor = NodePath("..")
+damage = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("CylinderShape3D_xqmqg")
+
+[node name="LinkHitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_02t57")
+knockback = Vector3(0, 6.4, 4.8)
+relative_knockback_orientor = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LinkHitBox"]
+shape = SubResource("CylinderShape3D_xqmqg")
+disabled = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+sorting_offset = 0.6
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_52nqi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../HitBox")
+libraries = {
+&"": SubResource("AnimationLibrary_txieb")
+}
+autoplay = "flicker"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_xqmqg")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+collision_mask = 257
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.83137256, 0.23921569, 0.15686275, 1)
+omni_range = 8.0

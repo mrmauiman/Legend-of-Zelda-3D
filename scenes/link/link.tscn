@@ -1,0 +1,487 @@
+[gd_scene load_steps=15 format=3 uid="uid://rqc1yj5uto2h"]
+
+[ext_resource type="Script" uid="uid://c6gv107ahouwh" path="res://scripts/link/link.gd" id="1_oi62t"]
+[ext_resource type="PackedScene" uid="uid://clndwpa8mkqjh" path="res://scenes/link/link_model.tscn" id="2_spwdo"]
+[ext_resource type="Script" uid="uid://bd0xa5pq0euk2" path="res://scripts/camera_3d.gd" id="3_cqm8i"]
+[ext_resource type="PackedScene" uid="uid://dfvbvi1w21etl" path="res://scenes/link/target_arrow.tscn" id="4_spwdo"]
+[ext_resource type="Script" uid="uid://dll07mni3703e" path="res://scripts/world_camera.gd" id="5_7mn31"]
+[ext_resource type="Script" uid="uid://dqfeu2biog0v6" path="res://scripts/link/wizrobe_spawn_checker.gd" id="7_mpoja"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wbcvk"]
+height = 1.5405273
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhp3a"]
+margin = 0.1
+size = Vector3(0.4, 0.4, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fn6gi"]
+size = Vector3(1, 1.6, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fn6gi"]
+viewport_path = NodePath("CanvasLayer/OnTopDisplayViewPort")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5yifi"]
+size = Vector3(1.6, 1.6, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpoja"]
+size = Vector3(0.9, 1.6, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fb05r"]
+size = Vector3(1.2, 1.2, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_spwdo"]
+size = Vector3(16, 6.4, 16)
+
+[node name="Link" type="CharacterBody3D" groups=["Link"]]
+collision_layer = 2
+collision_mask = 217
+floor_constant_speed = true
+floor_max_angle = 0.87266463
+safe_margin = 0.01
+script = ExtResource("1_oi62t")
+
+[node name="LinkModel" parent="." instance=ExtResource("2_spwdo")]
+unique_name_in_owner = true
+transform = Transform3D(-0.99999976, 0, -8.7422755e-08, 0, 1, 0, 8.7422755e-08, 0, -0.99999976, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7666183, 0)
+shape = SubResource("CapsuleShape3D_wbcvk")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+script = ExtResource("3_cqm8i")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)
+shape = SubResource("BoxShape3D_yhp3a")
+spring_length = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
+current = true
+
+[node name="TargetArrow" parent="CameraPivot" instance=ExtResource("4_spwdo")]
+visible = false
+
+[node name="HurtBox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+shape = SubResource("BoxShape3D_fn6gi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ViewportTexture_fn6gi")
+
+[node name="OnTopDisplayViewPort" type="SubViewport" parent="CanvasLayer"]
+unique_name_in_owner = true
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/OnTopDisplayViewPort"]
+script = ExtResource("5_7mn31")
+
+[node name="WizrobeSpawnChecker" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+script = ExtResource("7_mpoja")
+
+[node name="XPlusCast" type="ShapeCast3D" parent="WizrobeSpawnChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0)
+shape = SubResource("BoxShape3D_5yifi")
+target_position = Vector3(17.6, 0, 0)
+collision_mask = 33
+
+[node name="XMinusCast" type="ShapeCast3D" parent="WizrobeSpawnChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6, 0, 0)
+shape = SubResource("BoxShape3D_5yifi")
+target_position = Vector3(-17.6, 0, 0)
+collision_mask = 33
+
+[node name="ZPlusCast" type="ShapeCast3D" parent="WizrobeSpawnChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.6)
+shape = SubResource("BoxShape3D_mpoja")
+target_position = Vector3(0, 0, 9.6)
+collision_mask = 33
+
+[node name="ZMinusCast" type="ShapeCast3D" parent="WizrobeSpawnChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6)
+shape = SubResource("BoxShape3D_mpoja")
+target_position = Vector3(0, 0, -9.6)
+collision_mask = 33
+
+[node name="SpawnPoints" type="Node3D" parent="WizrobeSpawnChecker"]
+
+[node name="XPlus" type="Node3D" parent="WizrobeSpawnChecker/SpawnPoints"]
+
+[node name="XPlus1" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus1"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus2" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus2"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus3" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus3"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus4" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus4"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus5" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus5"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus6" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.200001, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus6"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus7" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.800001, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus7"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus8" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.400002, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus8"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus9" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.000002, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus9"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus10" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.600002, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus10"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XPlus11" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.200003, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XPlus/XPlus11"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus" type="Node3D" parent="WizrobeSpawnChecker/SpawnPoints"]
+
+[node name="XMinus1" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus1"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus2" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus2"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus3" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus3"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus4" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus4"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus5" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus5"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus6" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.200001, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus6"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus7" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus7"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus8" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.400002, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus8"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus9" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.000002, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus9"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus10" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.600002, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus10"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="XMinus11" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.200003, 0, 0)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/XMinus/XMinus11"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZPlus" type="Node3D" parent="WizrobeSpawnChecker/SpawnPoints"]
+
+[node name="ZPlus1" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus/ZPlus1"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZPlus2" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.8)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus/ZPlus2"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZPlus3" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.4)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus/ZPlus3"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZPlus4" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus/ZPlus4"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZPlus5" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.6)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus/ZPlus5"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZPlus6" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.200001)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZPlus/ZPlus6"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZMinus" type="Node3D" parent="WizrobeSpawnChecker/SpawnPoints"]
+
+[node name="ZMinus1" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus/ZMinus1"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZMinus2" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.8)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus/ZMinus2"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZMinus3" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.4)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus/ZMinus3"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZMinus4" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus/ZMinus4"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZMinus5" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.6)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus/ZMinus5"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="ZMinus6" type="Area3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.200001)
+collision_layer = 0
+collision_mask = 233
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WizrobeSpawnChecker/SpawnPoints/ZMinus/ZMinus6"]
+shape = SubResource("BoxShape3D_fb05r")
+debug_color = Color(0.9991979, 0, 0.13397232, 0.41960785)
+
+[node name="Visualizer" type="Node3D" parent="WizrobeSpawnChecker"]
+
+[node name="TargetArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-0.99999976, 0, -8.7422755e-08, 0, 1, 0, 8.7422755e-08, 0, -0.99999976, 0, 0, 0)
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TargetArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 8.4)
+shape = SubResource("BoxShape3D_spwdo")
+debug_color = Color(0.8228401, 0.4009019, 0, 0.41960785)
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

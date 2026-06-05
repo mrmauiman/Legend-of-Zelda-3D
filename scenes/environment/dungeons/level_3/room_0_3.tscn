@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6lw3jhd7dk8m"]
+
+[ext_resource type="PackedScene" uid="uid://bvu0gwut64we3" path="res://scenes/environment/dungeons/general_pieces/accent_dragon_statue.tscn" id="1_beavo"]
+[ext_resource type="PackedScene" uid="uid://c2hbxbg2oul73" path="res://scenes/environment/dungeons/general_pieces/accent_head_statue.tscn" id="2_l4w3x"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="4_730om"]
+[ext_resource type="PackedScene" uid="uid://b4lcu334h3gm3" path="res://scenes/environment/dungeons/general_pieces/floor_entrance.tscn" id="6_61is0"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="7_foqd0"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="7_koli2"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="8_foqd0"]
+[ext_resource type="PackedScene" uid="uid://cox4frwwicyq7" path="res://scenes/environment/dungeons/general_pieces/entrance_door.tscn" id="9_re5ac"]
+[ext_resource type="PackedScene" uid="uid://bhgpc2qlcwh3j" path="res://scenes/environment/dungeons/dungeon_exit.tscn" id="10_beavo"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="10_ukd6c"]
+
+[node name="Room_0_3" type="Node3D"]
+
+[node name="Statues" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="AccentDragonStatue" parent="Statues" instance=ExtResource("1_beavo")]
+
+[node name="AccentDragonStatue2" parent="Statues" instance=ExtResource("1_beavo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 3.2)
+
+[node name="AccentDragonStatue3" parent="Statues" instance=ExtResource("1_beavo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+
+[node name="AccentDragonStatue4" parent="Statues" instance=ExtResource("1_beavo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+
+[node name="AccentDragonStatue5" parent="Statues" instance=ExtResource("1_beavo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 3.2)
+
+[node name="AccentDragonStatue6" parent="Statues" instance=ExtResource("1_beavo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -3.2)
+
+[node name="AccentHeadStatue" parent="Statues" instance=ExtResource("2_l4w3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, 0)
+
+[node name="AccentHeadStatue2" parent="Statues" instance=ExtResource("2_l4w3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, -0.1, 3.2)
+
+[node name="AccentHeadStatue3" parent="Statues" instance=ExtResource("2_l4w3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -3.2)
+
+[node name="AccentHeadStatue4" parent="Statues" instance=ExtResource("2_l4w3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 0, 0)
+
+[node name="AccentHeadStatue5" parent="Statues" instance=ExtResource("2_l4w3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 0, 3.2)
+
+[node name="AccentHeadStatue6" parent="Statues" instance=ExtResource("2_l4w3x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 0, -3.2)
+
+[node name="DungeonEntrance" parent="." instance=ExtResource("10_beavo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5000005)
+dungeon_path = "res://scenes/chunked_worlds/overworld/overworld.tscn"
+
+[node name="Roof" parent="." instance=ExtResource("4_730om")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("7_foqd0")
+
+[node name="FloorEntrance" parent="." instance=ExtResource("6_61is0")]
+
+[node name="WestWallDoor" parent="." instance=ExtResource("7_koli2")]
+
+[node name="ShortWall" parent="." instance=ExtResource("8_foqd0")]
+
+[node name="EntranceDoor" parent="." instance=ExtResource("9_re5ac")]
+
+[node name="LongWall" parent="." instance=ExtResource("10_ukd6c")]

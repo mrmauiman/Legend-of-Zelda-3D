@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://di46s7xw4xijy"]
+
+[ext_resource type="Script" uid="uid://dndix4a8koe20" path="res://scripts/components/pickups/shop_pickup.gd" id="1_50ps2"]
+[ext_resource type="Texture2D" uid="uid://cqqnrr2qgpq7n" path="res://sprites/heart.png" id="2_50ps2"]
+[ext_resource type="FontFile" uid="uid://ipfhmv1fvvgt" path="res://sprites/fonts/the-legend-of-zelda-nes.otf" id="3_mltna"]
+[ext_resource type="Script" uid="uid://bcluwncpeh3eb" path="res://scripts/components/reveal_text.gd" id="4_0w4ky"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n45u7"]
+size = Vector3(0.7, 1.6, 0.7)
+
+[sub_resource type="Animation" id="Animation_8a8h0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7jtuk"]
+resource_name = "flicker01"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_mltna"]
+resource_name = "flicker03"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gqo2a"]
+_data = {
+&"RESET": SubResource("Animation_8a8h0"),
+&"flicker01": SubResource("Animation_7jtuk"),
+&"flicker03": SubResource("Animation_mltna")
+}
+
+[node name="ShopPickup" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_50ps2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_n45u7")
+
+[node name="Sprite" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_50ps2")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_gqo2a")
+}
+
+[node name="Text" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+billboard = 1
+double_sided = false
+texture_filter = 0
+text = "10"
+font = ExtResource("3_mltna")
+font_size = 45
+outline_size = 0
+script = ExtResource("4_0w4ky")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

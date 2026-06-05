@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4jifkkhe7pda"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_waw33"]
+[ext_resource type="Script" uid="uid://xfmhu864ey0f" path="res://scripts/components/black_out.gd" id="2_gi1p5"]
+[ext_resource type="PackedScene" uid="uid://b0bg78xtryf88" path="res://scenes/environment/dungeons/general_pieces/floor_water_mail_slot.tscn" id="3_oym17"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_4k256"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="5_jasao"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="6_gkwgg"]
+
+[node name="Room_3_0" instance=ExtResource("1_waw33")]
+script = ExtResource("2_gi1p5")
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_3_0.tscn"
+
+[node name="FloorWaterMailSlot" parent="Pieces" index="1" instance=ExtResource("3_oym17")]
+
+[node name="ShortWall" parent="Pieces" index="2" instance=ExtResource("4_4k256")]
+
+[node name="ShortWall2" parent="Pieces" index="3" instance=ExtResource("4_4k256")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="NorthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_jasao")]
+
+[node name="SouthWallDoor" parent="Pieces" index="5" instance=ExtResource("6_gkwgg")]
+
+[connection signal="area_entered" from="Linkchecker" to="." method="_on_linkchecker_area_entered"]

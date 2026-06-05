@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwnufmciir5io"]
+
+[ext_resource type="PackedScene" uid="uid://dd16ksjpph4uh" path="res://models/dungeons/level_1/Pieces/FloorWaterRiverRight.glb" id="1_nav8q"]
+[ext_resource type="PackedScene" uid="uid://b74bv8mdncqd0" path="res://scenes/environment/overworld/water.tscn" id="2_c62f4"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_cb7xr"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cb7xr"]
+data = PackedVector3Array(-9.599999, -0.19999999, 5.6, -9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, 5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, 0, -5.6, 9.599999, 0, -5.6, 9.599999, 0, 5.6, -9.599999, 0, 5.6)
+
+[node name="FloorWaterRiverRight" instance=ExtResource("1_nav8q")]
+
+[node name="FloorWaterRiverRight" parent="." index="0"]
+script = ExtResource("2_cb7xr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_cb7xr")
+
+[node name="WaterBlocks" type="Node3D" parent="." index="2"]
+visible = false
+
+[node name="Water" parent="WaterBlocks" index="0" instance=ExtResource("2_c62f4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0000005, 1.7499999, -7.1525574e-07)
+size = Vector3(1.6, 4.1, 11.2)

@@ -1,0 +1,146 @@
+[gd_scene load_steps=5 format=3 uid="uid://be3r2elwql7qd"]
+
+[ext_resource type="Script" uid="uid://bxagk3jr30ynr" path="res://scripts/chunked_world/loadable_screen.gd" id="1_f4ckm"]
+[ext_resource type="Script" uid="uid://cyb2go4e6m4s2" path="res://scripts/chunked_world/screen_enemy_manager.gd" id="1_qd2ja"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="4_f4ckm"]
+[ext_resource type="PackedScene" uid="uid://d0rylqdc0o2bi" path="res://scenes/chunked_worlds/overworld/spawn_checker.tscn" id="6_qd2ja"]
+
+[node name="Screen_5_7" type="Node3D"]
+script = ExtResource("1_f4ckm")
+
+[node name="Enemies" type="Node3D" parent="."]
+script = ExtResource("1_qd2ja")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("6_qd2ja")]
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot2" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot85" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot86" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot106" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot107" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot8" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot9" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot15" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot16" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot22" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot23" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot64" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot65" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot71" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot72" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot78" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot79" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot145" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot146" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot147" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot148" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot149" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot150" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot151" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot152" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot153" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot154" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot155" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot156" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot167" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot168" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot169" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot170" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot171" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot172" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot173" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot174" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot175" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot176" index="0"]
+disabled = true
+
+[node name="Exit" parent="." instance=ExtResource("4_f4ckm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.8, 8.85)
+teleport_to = Vector3(-2.4, 0, -29.6)
+
+[node name="Entrance" parent="." instance=ExtResource("4_f4ckm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000022, 9.685755e-08, -32.05)
+top_level = true
+teleport_to = Vector3(-12.8, -12.8, -21.6)
+look_dir = Vector3(0, 0, 1)
+
+[editable path="SpawnChecker"]

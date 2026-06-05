@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://pa5dqidocmf7"]
+
+[sub_resource type="Gradient" id="Gradient_88tjs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.32051283, 0.8504273)
+colors = PackedColorArray(0.84705883, 0.15686275, 0, 1, 0.9882353, 0.59607846, 0.21960784, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hev3n"]
+gradient = SubResource("Gradient_88tjs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_42d3v"]
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 1.5999999
+initial_velocity_max = 12.799999
+gravity = Vector3(0, -12.8, 0)
+color_initial_ramp = SubResource("GradientTexture1D_hev3n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouckr"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_285kf"]
+material = SubResource("StandardMaterial3D_ouckr")
+size = Vector2(0.1, 0.1)
+
+[node name="SmashParticles" type="GPUParticles3D"]
+emitting = false
+amount = 64
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_42d3v")
+draw_pass_1 = SubResource("QuadMesh_285kf")
+
+[connection signal="finished" from="." to="." method="queue_free"]
+[connection signal="ready" from="." to="." method="set_emitting" binds= [true]]

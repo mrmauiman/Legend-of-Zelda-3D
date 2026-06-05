@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://bf3nwhkuup2e1"]
+
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="1_cam1o"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="2_mkwsd"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_h7f0j"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_7wd4q"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="5_ynryu"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="6_gpr67"]
+[ext_resource type="PackedScene" uid="uid://dstgau5klwsnm" path="res://scenes/environment/dungeons/general_pieces/dragon_statue.tscn" id="7_u07eg"]
+[ext_resource type="PackedScene" uid="uid://dkwnqednva41k" path="res://scenes/environment/dungeons/general_pieces/head_statue.tscn" id="8_ysjrt"]
+[ext_resource type="PackedScene" uid="uid://c1tbqk0abonga" path="res://scenes/pickups/triforce_piece_pickup.tscn" id="9_3btdk"]
+
+[node name="Room_5_3" type="Node3D"]
+
+[node name="Roof" parent="." instance=ExtResource("1_cam1o")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("2_mkwsd")
+
+[node name="Floor" parent="." instance=ExtResource("1_cam1o")]
+
+[node name="LongWall" parent="." instance=ExtResource("3_h7f0j")]
+
+[node name="LongWall2" parent="." instance=ExtResource("3_h7f0j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="ShortWall" parent="." instance=ExtResource("4_7wd4q")]
+
+[node name="WestWallDoor" parent="." instance=ExtResource("5_ynryu")]
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 0)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 1.6)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -3.2)
+
+[node name="Block11" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -3.2)
+
+[node name="Block12" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 0, -3.2)
+
+[node name="Block13" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000006, 0, -3.2)
+
+[node name="Block14" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000055, 0, -3.2)
+
+[node name="Block15" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999995, 0, -3.2)
+
+[node name="Block16" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999996, 0, -3.2)
+
+[node name="Block17" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9999995, 0, -3.2)
+
+[node name="Block18" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, -3.2)
+
+[node name="Block19" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 3.2)
+
+[node name="Block20" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 0, 3.2)
+
+[node name="Block21" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000006, 0, 3.2)
+
+[node name="Block22" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999996, 0, 3.2)
+
+[node name="Block23" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9999995, 0, 3.2)
+
+[node name="Block24" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, 3.2)
+
+[node name="Block5" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -1.6)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 3.2)
+
+[node name="Block6" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 0)
+
+[node name="Block7" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 1.6)
+
+[node name="Block8" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, -3.2)
+
+[node name="Block9" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, -1.6)
+
+[node name="Block10" parent="Blocks" instance=ExtResource("6_gpr67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 3.2)
+
+[node name="Statues" type="Node3D" parent="."]
+
+[node name="DragonStatue" parent="Statues" instance=ExtResource("7_u07eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -1.6)
+
+[node name="DragonStatue2" parent="Statues" instance=ExtResource("7_u07eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="HeadStatue" parent="Statues" instance=ExtResource("8_ysjrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -1.6)
+
+[node name="HeadStatue2" parent="Statues" instance=ExtResource("8_ysjrt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Pickup" parent="." instance=ExtResource("9_3btdk")]

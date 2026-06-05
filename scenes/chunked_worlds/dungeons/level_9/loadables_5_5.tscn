@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://djxixvh76m2re"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_ir4ud"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="3_nrred"]
+[ext_resource type="PackedScene" uid="uid://drl547gpk7hb4" path="res://scenes/enemies/dungeon/bubble.tscn" id="4_bpado"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="6_ibrkj"]
+
+[node name="Loadables_5_5" type="Node3D"]
+script = ExtResource("1_ir4ud")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="Bubble" parent="Traps" instance=ExtResource("4_bpado")]
+
+[node name="Bubble2" parent="Traps" instance=ExtResource("4_bpado")]
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("3_nrred")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+location_id = "dungeon/9/loadables_5_5"
+hidden_by_enemies = NodePath("../../Enemies")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("6_ibrkj")]

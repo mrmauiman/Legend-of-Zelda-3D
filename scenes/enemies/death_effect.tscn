@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn5ajwofjs5ai"]
+
+[ext_resource type="Texture2D" uid="uid://cistgs7op03lc" path="res://sprites/enemies/enemy_death.png" id="1_516on"]
+[ext_resource type="Script" uid="uid://s3lrqey81vyc" path="res://scripts/enemies/overworld/death_effect.gd" id="2_koetp"]
+
+[sub_resource type="Animation" id="Animation_db78l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6yftb"]
+resource_name = "death"
+length = 0.1333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iw60t"]
+_data = {
+&"RESET": SubResource("Animation_db78l"),
+&"death": SubResource("Animation_6yftb")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("2_koetp")
+
+[node name="DeathEffect" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_516on")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeathEffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_iw60t")
+}
+autoplay = "death"
+
+[connection signal="animation_finished" from="DeathEffect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

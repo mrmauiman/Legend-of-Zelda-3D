@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=4 uid="uid://bej6ykj7mp76h"]
+
+[ext_resource type="Script" uid="uid://cbcddifyembxc" path="res://scripts/components/block_pushable.gd" id="1_xp3ym"]
+[ext_resource type="Texture2D" uid="uid://blekjb2dchwiu" path="res://models/dungeons/level_1/Pieces/Block_base_texture.png" id="2_764ih"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="3_6ml1w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75ojm"]
+resource_name = "Base"
+cull_mode = 2
+albedo_color = Color(0.094117664, 0.2352942, 0.36078438, 1)
+albedo_texture = ExtResource("2_764ih")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xte14"]
+_surfaces = [{
+"aabb": AABB(-0.8, 0, -0.8, 1.6, 1.6, 1.6),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEAAwAGAAUABgAEAAcABAACAAcABgAHAAUACAABAAUACQAHAAIACgACAAEACQACAAoACgABAAgACwAHAAkACwAJAAoACwAFAAcACwAKAAgACAAFAAsA"),
+"name": "Base",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP9/AAAAAAAA/3///wAAAAAAAAAAAAD//wAA//8AAP///38AAAAA//8AAAAAAAD///9///8AAP8/////PwAA/7////+/AAD/P////78AAP+/////PwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k0v7y"]
+resource_name = "Block_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.8, 0, -0.8, 1.6, 1.6, 1.6),
+"attribute_data": PackedByteArray("uA1G8vE11KHxNUbyuA3UobgN1KHxNWFR8TXUobgNYVGM02FRU6vUoVOrYVGM09ShjNPUoVOrRvJTq9ShjNNG8rgN8TXxNbgN8TXxNbgNuA3qYire8TXUoepi8LXxNUby6mK3jfE1YVHqYn5l8TXUoVp+fmVTq9ShWn63jVOrYVFafvC1U6tG8lp+Kt5Tq9Sh"),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEA"),
+"material": SubResource("StandardMaterial3D_75ojm"),
+"name": "Base",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP9/AABU1QAA/3///1TVAAAAAAAAVNUAAAAAAAD//////38AAP//AAD/fwAA/////wAAAAD/////AAAAAFTV////f///VNX///9/AABU1f//AAD//1TV//8AAP///78AAP9/////v////3////+/AAAAAP///7//v////z////8/////v////z////8/////v////7////8/////v2jLAAD/fwAAaMv/P////z9oywAA/3///2jL/z////8/svL///9/AACy8v+/////P7LyAAD/fwAAsvL/v////z9oy////3///2jL/7////+/aMv///9/AABoy/+/////vybCAAD/f///JsL/P////78mwv///3///ybCVNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qqlVVqqpVVaqqVFWqqlVV/3//f/9//3//f/9//3//f/9//7//f/+//3//v/9//7+e3MDGntzAxp7cwMae3MDGPbk9uT25Pbk9uT25Pbk9uT25nlw9uZ5cPbmeXD25nlyGlIaUhpSGlIaUhpSGlIaU")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xte14")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xp3ym"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ml1w"]
+size = Vector3(0.6, 1.6, 1.8000001)
+
+[node name="BlockPushable" type="StaticBody3D"]
+collision_layer = 64
+script = ExtResource("1_xp3ym")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_k0v7y")
+skeleton = NodePath("")
+script = ExtResource("3_6ml1w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_xp3ym")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Pushable"]]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Z-Axis" type="CollisionShape3D" parent="Area3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.79999995, -8.940697e-08)
+shape = SubResource("BoxShape3D_6ml1w")
+
+[node name="X-Axis" type="CollisionShape3D" parent="Area3D"]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.9604645e-08, 0.79999995, -8.940697e-08)
+shape = SubResource("BoxShape3D_6ml1w")

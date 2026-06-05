@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=3 uid="uid://cydqufvlguo7r"]
+
+[ext_resource type="Script" uid="uid://b166d37idgcq1" path="res://scripts/link/sword_beam.gd" id="1_g0ne2"]
+[ext_resource type="Texture2D" uid="uid://dwyt0n20ap8pm" path="res://sprites/link/sword_beam.png" id="2_hj6l8"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="3_gnjxo"]
+
+[sub_resource type="Animation" id="Animation_8nkaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gnjxo"]
+resource_name = "flash"
+length = 0.2667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1fsa0"]
+_data = {
+&"RESET": SubResource("Animation_8nkaf"),
+&"flash": SubResource("Animation_gnjxo")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ckq1"]
+radius = 0.05
+height = 1.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxf2y"]
+size = Vector3(0.6, 0.6, 1.6)
+
+[node name="SwordBeam" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_g0ne2")
+
+[node name="Texture" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("2_hj6l8")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Texture"]
+libraries = {
+&"": SubResource("AnimationLibrary_1fsa0")
+}
+autoplay = "flash"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_7ckq1")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+collision_mask = 257
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("3_gnjxo")
+knockback = Vector3(0, 6.4, 6.4)
+relative_knockback_orientor = NodePath("..")
+is_sword = true
+is_sword_beam = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("BoxShape3D_sxf2y")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="blocked" from="HitBox" to="." method="hit_blocked"]
+[connection signal="hit" from="HitBox" to="." method="hit_blocked"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

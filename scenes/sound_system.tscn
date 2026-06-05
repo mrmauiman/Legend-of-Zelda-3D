@@ -1,0 +1,155 @@
+[gd_scene load_steps=15 format=3 uid="uid://cuqtsfl3rgjer"]
+
+[ext_resource type="Script" uid="uid://d27ltdkhar7i1" path="res://scripts/sound_system.gd" id="1_gf1l5"]
+[ext_resource type="AudioStream" uid="uid://ba22t34awn5p" path="res://audio/music/IntroMusic.mp3" id="2_kh1c6"]
+[ext_resource type="AudioStream" uid="uid://b6604rmrw5a4a" path="res://audio/music/TriforcePieceObtained.wav" id="3_dqen3"]
+[ext_resource type="AudioStream" uid="uid://dhx4fivgnmsos" path="res://audio/music/OverworldMusic.mp3" id="3_ylov4"]
+[ext_resource type="AudioStream" uid="uid://nbk7276e4l61" path="res://audio/music/DungeonMusic.mp3" id="4_ws3v8"]
+[ext_resource type="AudioStream" uid="uid://cdfky05qn08vk" path="res://audio/music/Level9Music.mp3" id="5_cqdlt"]
+[ext_resource type="AudioStream" uid="uid://bcy0iqh3lvees" path="res://audio/music/Level2Music.mp3" id="5_dqt0e"]
+[ext_resource type="AudioStream" uid="uid://dn02ecppwdup1" path="res://audio/music/Level3Music.mp3" id="6_mybpk"]
+[ext_resource type="AudioStream" uid="uid://esiadvr6re2n" path="res://audio/music/game_over.mp3" id="6_xd5qn"]
+[ext_resource type="AudioStream" uid="uid://yhctakr450kf" path="res://audio/music/Level4Music.mp3" id="7_h3je3"]
+[ext_resource type="AudioStream" uid="uid://dfvxbw7urpm66" path="res://audio/music/Level5Music.mp3" id="8_aoglj"]
+[ext_resource type="AudioStream" uid="uid://ch8yh0x2so5lc" path="res://audio/music/Level6Music.mp3" id="9_eggmy"]
+[ext_resource type="AudioStream" uid="uid://d3yv7pefl587s" path="res://audio/music/Level7Music.mp3" id="10_msh5r"]
+[ext_resource type="AudioStream" uid="uid://7027807dp345" path="res://audio/music/Level8Music.mp3" id="11_pp8qg"]
+
+[node name="SoundSystem" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_gf1l5")
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_kh1c6")
+parameters/looping = true
+
+[node name="OverWorldMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_ylov4")
+parameters/looping = true
+
+[node name="Level1Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_ws3v8")
+parameters/looping = true
+
+[node name="Level2Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_dqt0e")
+parameters/looping = true
+
+[node name="Level3Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_mybpk")
+parameters/looping = true
+
+[node name="Level4Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_h3je3")
+parameters/looping = true
+
+[node name="Level5Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_aoglj")
+parameters/looping = true
+
+[node name="Level6Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_eggmy")
+parameters/looping = true
+
+[node name="Level7Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_msh5r")
+parameters/looping = true
+
+[node name="Level8Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_pp8qg")
+parameters/looping = true
+
+[node name="Level9Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_cqdlt")
+parameters/looping = true
+
+[node name="TriforceMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_dqen3")
+
+[node name="GameOver" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_xd5qn")
+
+[node name="SFX1" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX2" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX3" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX4" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX5" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX6" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX7" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX8" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX9" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX10" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX11" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX12" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX13" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX14" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX15" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFX16" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal1" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal2" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal3" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal4" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal5" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal6" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal7" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="SFXGlobal8" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

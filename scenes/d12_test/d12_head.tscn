@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqecrumj64vbl"]
+
+[ext_resource type="Texture2D" uid="uid://b8fx1ins5nfl7" path="res://sprites/link/d12_test/head.png" id="1_7qmfr"]
+[ext_resource type="Script" uid="uid://dnfbuucdq4052" path="res://scripts/components/sprite3d_effects/d12_sprite.gd" id="2_7j8bs"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0)
+
+[node name="D12Head" type="Sprite3D" parent="."]
+transform = Transform3D(-0.647935, -0.5511682, -0.52573144, 0, 0.6902121, -0.723607, 0.76169544, -0.46885037, -0.44721264, 0, 0, 0)
+flip_h = true
+texture_filter = 0
+texture = ExtResource("1_7qmfr")
+hframes = 3
+vframes = 4
+frame = 1
+script = ExtResource("2_7j8bs")
+
+[node name="0" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, -5.9604645e-08, 0, 5.9604645e-08, 1.0000012, 0, 0, 1)
+visible = false
+radius = 0.25
+
+[node name="1" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, -5.9604645e-08, 0, 5.9604645e-08, 1.0000012, 0.5257313, 0.7236071, 0.44721282)
+visible = false
+radius = 0.25
+
+[node name="2" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, -5.9604645e-08, 0, 5.9604645e-08, 1.0000012, -0.5257313, 0.7236071, 0.44721282)
+visible = false
+radius = 0.25
+
+[node name="3" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, -5.9604645e-08, 0, 5.9604645e-08, 1.0000012, 0.8506512, -0.27639332, 0.44721282)
+visible = false
+radius = 0.25
+
+[node name="4" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1.0000012, -5.9604645e-08, 0, 5.9604645e-08, 1.0000012, -0.8506512, -0.27639332, 0.44721282)
+visible = false
+radius = 0.25
+
+[node name="5" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8944276, 0.44721282)
+visible = false
+radius = 0.25
+
+[node name="6" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8944276, -0.44721282)
+visible = false
+radius = 0.25
+
+[node name="7" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8506512, 0.27639332, -0.44721282)
+visible = false
+radius = 0.25
+
+[node name="8" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8506512, 0.27639332, -0.44721282)
+visible = false
+radius = 0.25
+
+[node name="9" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5257313, -0.7236071, -0.44721282)
+visible = false
+radius = 0.25
+
+[node name="10" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5257313, -0.7236071, -0.44721282)
+visible = false
+radius = 0.25
+
+[node name="11" type="CSGSphere3D" parent="D12Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+visible = false
+radius = 0.25

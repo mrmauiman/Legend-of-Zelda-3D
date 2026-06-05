@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4lcu334h3gm3"]
+
+[ext_resource type="PackedScene" uid="uid://corck31mpdssp" path="res://models/dungeons/level_1/Pieces/FloorEntrance.glb" id="1_41hpw"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_ggo20"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ggo20"]
+data = PackedVector3Array(-9.599999, -0.19999999, 5.6, -9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, 5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, 0, -5.6, 9.599999, 0, -5.6, 9.599999, 0, 5.6, -9.599999, 0, 5.6)
+
+[node name="FloorEntrance" instance=ExtResource("1_41hpw")]
+
+[node name="EntranceFloor" parent="." index="0"]
+script = ExtResource("2_ggo20")
+
+[node name="CollisionShape" parent="." index="1"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_ggo20")

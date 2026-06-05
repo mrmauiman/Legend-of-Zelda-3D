@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://c2f80fqc2tunf"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_3km43"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="2_nioa0"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="3_2pyre"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="4_sxrha"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="5_g15hn"]
+[ext_resource type="PackedScene" uid="uid://bwubre06xhcl0" path="res://scenes/environment/dungeons/general_pieces/west_wall_bombed.tscn" id="6_1leul"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="7_x8si6"]
+
+[node name="Room_7_1" instance=ExtResource("1_3km43")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_7/loadables_7_1.tscn"
+
+[node name="LongWall" parent="Pieces" index="0" instance=ExtResource("2_nioa0")]
+
+[node name="Floor" parent="Pieces" index="2" instance=ExtResource("3_2pyre")]
+
+[node name="EastWallDoor" parent="Pieces" index="3" instance=ExtResource("4_sxrha")]
+
+[node name="SouthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_g15hn")]
+
+[node name="WestWallBombed" parent="Pieces" index="5" instance=ExtResource("6_1leul")]
+
+[node name="Blocks" type="Node3D" parent="Pieces" index="6"]
+
+[node name="Block" parent="Pieces/Blocks" index="0" instance=ExtResource("7_x8si6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+
+[node name="Block2" parent="Pieces/Blocks" index="1" instance=ExtResource("7_x8si6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)

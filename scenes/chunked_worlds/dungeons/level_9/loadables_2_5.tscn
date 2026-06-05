@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckxdwfh24udwr"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_p2w15"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="2_cmi6g"]
+
+[node name="Loadables_2_5" type="Node3D"]
+script = ExtResource("1_p2w15")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="SpawnChecker" parent="." instance=ExtResource("2_cmi6g")]
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot39" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot45" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot46" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot47" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot53" index="0"]
+disabled = true
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[editable path="SpawnChecker"]

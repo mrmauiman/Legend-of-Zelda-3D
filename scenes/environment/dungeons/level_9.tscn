@@ -1,0 +1,663 @@
+[gd_scene load_steps=72 format=3 uid="uid://c2h8kg08bnb34"]
+
+[ext_resource type="PackedScene" uid="uid://blynj52mihwn8" path="res://scenes/environment/dungeons/level.tscn" id="1_7xput"]
+[ext_resource type="PackedScene" uid="uid://p6qljpii6pbr" path="res://scenes/environment/dungeons/level_9/room_0_1.tscn" id="2_anccu"]
+[ext_resource type="PackedScene" uid="uid://qtautyw8u3kr" path="res://scenes/environment/dungeons/level_9/room_0_3.tscn" id="3_uofit"]
+[ext_resource type="PackedScene" uid="uid://bvvpp4ere5e0s" path="res://scenes/environment/dungeons/level_9/room_0_4.tscn" id="4_xevxa"]
+[ext_resource type="PackedScene" uid="uid://do8ux1522y27c" path="res://scenes/environment/dungeons/level_9/room_0_6.tscn" id="5_dn2mx"]
+[ext_resource type="PackedScene" uid="uid://ds4wme1vwqjsm" path="res://scenes/environment/dungeons/level_9/room_1_1.tscn" id="6_yofi0"]
+[ext_resource type="PackedScene" uid="uid://ch7qnmwil0ibf" path="res://scenes/environment/dungeons/level_9/room_1_2.tscn" id="7_qa82q"]
+[ext_resource type="PackedScene" uid="uid://c7v335d5xomwp" path="res://scenes/environment/dungeons/level_9/room_1_3.tscn" id="8_v7y0n"]
+[ext_resource type="PackedScene" uid="uid://n6g180hix41m" path="res://scenes/environment/dungeons/level_9/room_1_4.tscn" id="9_8masj"]
+[ext_resource type="PackedScene" uid="uid://cg4ylyo5jeh44" path="res://scenes/environment/dungeons/level_9/room_1_5.tscn" id="10_c04r5"]
+[ext_resource type="PackedScene" uid="uid://b8wuertejvnib" path="res://scenes/environment/dungeons/level_9/room_1_6.tscn" id="11_84wq2"]
+[ext_resource type="PackedScene" uid="uid://dbd3ff7xm8yvt" path="res://scenes/environment/dungeons/level_9/room_2_0.tscn" id="12_p4jb6"]
+[ext_resource type="PackedScene" uid="uid://dg6l6jh78cuej" path="res://scenes/environment/dungeons/level_9/room_2_1.tscn" id="13_08hhe"]
+[ext_resource type="PackedScene" uid="uid://pohpmtcamh8v" path="res://scenes/environment/dungeons/level_9/room_2_2.tscn" id="14_j4a06"]
+[ext_resource type="PackedScene" uid="uid://n636j70xnhr6" path="res://scenes/environment/dungeons/level_9/room_2_3.tscn" id="15_umw8d"]
+[ext_resource type="PackedScene" uid="uid://d1eu0q4gwoq61" path="res://scenes/environment/dungeons/level_9/room_2_4.tscn" id="16_scgpp"]
+[ext_resource type="PackedScene" uid="uid://b4g4jwd5ldv1d" path="res://scenes/environment/dungeons/level_9/room_2_5.tscn" id="17_ta8eq"]
+[ext_resource type="PackedScene" uid="uid://cf2jdel5j0kkx" path="res://scenes/environment/dungeons/level_9/room_2_6.tscn" id="18_n0dey"]
+[ext_resource type="PackedScene" uid="uid://dpb22bt6p675q" path="res://scenes/environment/dungeons/level_9/room_2_7.tscn" id="19_v54uh"]
+[ext_resource type="PackedScene" uid="uid://ccrealwy0josi" path="res://scenes/environment/dungeons/level_9/room_3_0.tscn" id="20_umw8d"]
+[ext_resource type="PackedScene" uid="uid://p3yi1s7dftcd" path="res://scenes/environment/dungeons/level_9/room_3_1.tscn" id="21_scgpp"]
+[ext_resource type="PackedScene" uid="uid://cllhoep7n6dat" path="res://scenes/environment/dungeons/level_9/room_3_2.tscn" id="22_ta8eq"]
+[ext_resource type="PackedScene" uid="uid://5py5jeg1mr8q" path="res://scenes/environment/dungeons/level_9/room_3_3.tscn" id="23_tyrty"]
+[ext_resource type="PackedScene" uid="uid://417tvn4sa64b" path="res://scenes/environment/dungeons/level_9/room_3_4.tscn" id="24_5vdcn"]
+[ext_resource type="PackedScene" uid="uid://e5p7hq1lghy1" path="res://scenes/environment/dungeons/level_9/room_3_5.tscn" id="25_tt6fc"]
+[ext_resource type="PackedScene" uid="uid://k6gscsvjgxgf" path="res://scenes/environment/dungeons/level_9/room_3_6.tscn" id="26_lc7a0"]
+[ext_resource type="PackedScene" uid="uid://d0kxiuailyqu8" path="res://scenes/environment/dungeons/level_9/room_3_7.tscn" id="27_nmvj8"]
+[ext_resource type="PackedScene" uid="uid://dpcsb1vxrjkas" path="res://scenes/environment/dungeons/level_9/room_4_0.tscn" id="28_lc7a0"]
+[ext_resource type="PackedScene" uid="uid://ks5px36gigdl" path="res://scenes/environment/dungeons/level_9/room_4_1.tscn" id="29_nmvj8"]
+[ext_resource type="PackedScene" uid="uid://cunkl2qur3cqg" path="res://scenes/environment/dungeons/level_9/room_4_2.tscn" id="30_7epa0"]
+[ext_resource type="PackedScene" uid="uid://hpu6l7hii2mx" path="res://scenes/environment/dungeons/level_9/room_4_3.tscn" id="31_j3yqx"]
+[ext_resource type="PackedScene" uid="uid://bq4sf4eg4a1mb" path="res://scenes/environment/dungeons/level_9/room_4_4.tscn" id="32_abeex"]
+[ext_resource type="PackedScene" uid="uid://kerv11ls5124" path="res://scenes/environment/dungeons/level_9/room_4_5.tscn" id="33_avs8u"]
+[ext_resource type="PackedScene" uid="uid://cqwueecxo6ji5" path="res://scenes/environment/dungeons/level_9/room_4_6.tscn" id="34_svbtj"]
+[ext_resource type="PackedScene" uid="uid://70le1l7jpp5t" path="res://scenes/environment/dungeons/level_9/room_4_7.tscn" id="35_8b3mi"]
+[ext_resource type="PackedScene" uid="uid://cfqdybasrg312" path="res://scenes/environment/dungeons/level_9/room_5_0.tscn" id="36_l6d2w"]
+[ext_resource type="PackedScene" uid="uid://ba87ix0xwhqle" path="res://scenes/environment/dungeons/level_9/room_5_1.tscn" id="37_7o1or"]
+[ext_resource type="PackedScene" uid="uid://q6ofch3oxa8q" path="res://scenes/environment/dungeons/level_9/room_5_2.tscn" id="38_hovdy"]
+[ext_resource type="PackedScene" uid="uid://yvlrcsqvko4x" path="res://scenes/environment/dungeons/level_9/room_5_3.tscn" id="39_wbpv0"]
+[ext_resource type="PackedScene" uid="uid://c6iv3hrdrsm2o" path="res://scenes/environment/dungeons/level_9/room_5_4.tscn" id="40_ti4w0"]
+[ext_resource type="PackedScene" uid="uid://ji8w8x52wjmv" path="res://scenes/environment/dungeons/level_9/room_5_5.tscn" id="41_ke26o"]
+[ext_resource type="PackedScene" uid="uid://enwfgr6sk0bj" path="res://scenes/environment/dungeons/level_9/room_5_6.tscn" id="42_lhx4m"]
+[ext_resource type="PackedScene" uid="uid://bbwipfic1wtkk" path="res://scenes/environment/dungeons/level_9/room_5_7.tscn" id="43_fc1lj"]
+[ext_resource type="PackedScene" uid="uid://dr4mrv2f0ic5q" path="res://scenes/environment/dungeons/level_9/room_6_0.tscn" id="44_1u7g0"]
+[ext_resource type="PackedScene" uid="uid://cpwoxh8nlhlb8" path="res://scenes/environment/dungeons/level_9/room_6_1.tscn" id="45_0lfe5"]
+[ext_resource type="PackedScene" uid="uid://wwd0p422cfc4" path="res://scenes/environment/dungeons/level_9/room_6_2.tscn" id="46_h4h5e"]
+[ext_resource type="PackedScene" uid="uid://c6vkc2hrbijmq" path="res://scenes/environment/dungeons/level_9/room_6_3.tscn" id="47_880v1"]
+[ext_resource type="PackedScene" uid="uid://hhy7co6mrwmo" path="res://scenes/environment/dungeons/level_9/room_6_4.tscn" id="48_pj7tu"]
+[ext_resource type="PackedScene" uid="uid://cxk305jr1pp24" path="res://scenes/environment/dungeons/level_9/room_6_5.tscn" id="49_7spf1"]
+[ext_resource type="PackedScene" uid="uid://lv1yprrgjgm0" path="res://scenes/environment/dungeons/level_9/room_6_6.tscn" id="50_oxa0y"]
+[ext_resource type="PackedScene" uid="uid://osenb75dihbj" path="res://scenes/environment/dungeons/level_9/room_6_7.tscn" id="51_wd1hf"]
+[ext_resource type="PackedScene" uid="uid://6up8hqw28o3i" path="res://scenes/environment/dungeons/level_9/room_7_1.tscn" id="52_fc1lj"]
+[ext_resource type="PackedScene" uid="uid://bbd7vevdfqk0e" path="res://scenes/environment/dungeons/level_9/room_7_2.tscn" id="53_1u7g0"]
+[ext_resource type="PackedScene" uid="uid://c6e0f3norw0s5" path="res://scenes/environment/dungeons/level_9/room_7_3.tscn" id="54_0lfe5"]
+[ext_resource type="PackedScene" uid="uid://boqqxj652786x" path="res://scenes/environment/dungeons/level_9/room_7_4.tscn" id="55_h4h5e"]
+[ext_resource type="PackedScene" uid="uid://gxymhi2sne6c" path="res://scenes/environment/dungeons/level_9/room_7_5.tscn" id="56_880v1"]
+[ext_resource type="PackedScene" uid="uid://dse3to2xtcgg7" path="res://scenes/environment/dungeons/level_9/room_7_6.tscn" id="57_pj7tu"]
+[ext_resource type="PackedScene" uid="uid://b88wy4ovnsjsh" path="res://scenes/environment/dungeons/level_9/room_7_7.tscn" id="58_7spf1"]
+[ext_resource type="PackedScene" uid="uid://dg3e88p8nbx4g" path="res://scenes/environment/dungeons/level_9/room_tunnel_a.tscn" id="59_7spf1"]
+[ext_resource type="PackedScene" uid="uid://w8dosow1xan2" path="res://scenes/environment/dungeons/level_9/room_tunnel_b.tscn" id="60_oxa0y"]
+[ext_resource type="PackedScene" uid="uid://c87far62iur28" path="res://scenes/environment/dungeons/level_9/room_tunnel_c.tscn" id="61_wd1hf"]
+[ext_resource type="PackedScene" uid="uid://bvslvw0wpf2td" path="res://scenes/environment/dungeons/level_9/room_tunnel_d.tscn" id="62_m2km0"]
+[ext_resource type="PackedScene" uid="uid://lm04bi8lhqtq" path="res://scenes/environment/dungeons/level_9/room_tunnel_e.tscn" id="63_bghy6"]
+[ext_resource type="PackedScene" uid="uid://bamacblwjfrat" path="res://scenes/environment/dungeons/level_9/room_tunnel_f.tscn" id="64_qnos4"]
+[ext_resource type="PackedScene" uid="uid://dm066estbqvws" path="res://scenes/environment/dungeons/level_9/room_red_ring.tscn" id="65_wd1hf"]
+[ext_resource type="PackedScene" uid="uid://ccyk4nnsmm0wb" path="res://scenes/environment/dungeons/level_9/room_silver_arrow.tscn" id="66_m2km0"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="67_m2km0"]
+[ext_resource type="PackedScene" uid="uid://b7vv0ekm7d7h4" path="res://scenes/environment/dungeons/general_pieces/bomb_cover_ew.tscn" id="68_aqeyn"]
+[ext_resource type="PackedScene" uid="uid://bi3jfhxuvkayc" path="res://scenes/environment/dungeons/general_pieces/bomb_cover_ns.tscn" id="69_m52hw"]
+[ext_resource type="PackedScene" uid="uid://cik2qat56v370" path="res://scenes/environment/dungeons/general_pieces/door_locked.tscn" id="70_itcxj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aqeyn"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[node name="Level9" instance=ExtResource("1_7xput")]
+level = 9
+
+[node name="Room_0_1" parent="Rooms" index="0" instance=ExtResource("2_anccu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 61.6)
+
+[node name="Room_0_3" parent="Rooms" index="1" instance=ExtResource("3_uofit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 61.6)
+
+[node name="Room_0_4" parent="Rooms" index="2" instance=ExtResource("4_xevxa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 61.6)
+
+[node name="Room_0_6" parent="Rooms" index="3" instance=ExtResource("5_dn2mx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 61.6)
+
+[node name="Room_1_1" parent="Rooms" index="4" instance=ExtResource("6_yofi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 44)
+
+[node name="Room_1_2" parent="Rooms" index="5" instance=ExtResource("7_qa82q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 44)
+
+[node name="Room_1_3" parent="Rooms" index="6" instance=ExtResource("8_v7y0n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, 44)
+
+[node name="Room_1_4" parent="Rooms" index="7" instance=ExtResource("9_8masj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, 44)
+
+[node name="Room_1_5" parent="Rooms" index="8" instance=ExtResource("10_c04r5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 44)
+
+[node name="Room_1_6" parent="Rooms" index="9" instance=ExtResource("11_84wq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 44)
+
+[node name="Room_2_0" parent="Rooms" index="10" instance=ExtResource("12_p4jb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, 26.4)
+
+[node name="Room_2_1" parent="Rooms" index="11" instance=ExtResource("13_08hhe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 26.4)
+
+[node name="Room_2_2" parent="Rooms" index="12" instance=ExtResource("14_j4a06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 26.4)
+
+[node name="Room_2_3" parent="Rooms" index="13" instance=ExtResource("15_umw8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, 26.4)
+
+[node name="Room_2_4" parent="Rooms" index="14" instance=ExtResource("16_scgpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, 26.4)
+
+[node name="Room_2_5" parent="Rooms" index="15" instance=ExtResource("17_ta8eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 26.4)
+
+[node name="Room_2_6" parent="Rooms" index="16" instance=ExtResource("18_n0dey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 26.4)
+
+[node name="Room_2_7" parent="Rooms" index="17" instance=ExtResource("19_v54uh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, 26.4)
+
+[node name="Room_3_0" parent="Rooms" index="18" instance=ExtResource("20_umw8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, 8.8)
+
+[node name="Room_3_1" parent="Rooms" index="19" instance=ExtResource("21_scgpp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 8.8)
+
+[node name="Room_3_2" parent="Rooms" index="20" instance=ExtResource("22_ta8eq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.399998, 0, 8.8)
+
+[node name="Room_3_3" parent="Rooms" index="21" instance=ExtResource("23_tyrty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 8.8)
+
+[node name="Room_3_4" parent="Rooms" index="22" instance=ExtResource("24_5vdcn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, 8.8)
+
+[node name="Room_3_5" parent="Rooms" index="23" instance=ExtResource("25_tt6fc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 8.8)
+
+[node name="Room_3_6" parent="Rooms" index="24" instance=ExtResource("26_lc7a0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 8.8)
+
+[node name="Room_3_7" parent="Rooms" index="25" instance=ExtResource("27_nmvj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, 8.8)
+
+[node name="Room_4_0" parent="Rooms" index="26" instance=ExtResource("28_lc7a0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -8.8)
+
+[node name="Room_4_1" parent="Rooms" index="27" instance=ExtResource("29_nmvj8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -8.8)
+
+[node name="Room_4_2" parent="Rooms" index="28" instance=ExtResource("30_7epa0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -8.8)
+
+[node name="Room_4_3" parent="Rooms" index="29" instance=ExtResource("31_j3yqx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, -8.8)
+
+[node name="Room_4_4" parent="Rooms" index="30" instance=ExtResource("32_abeex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 0, -8.8)
+
+[node name="Room_4_5" parent="Rooms" index="31" instance=ExtResource("33_avs8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -8.8)
+
+[node name="Room_4_6" parent="Rooms" index="32" instance=ExtResource("34_svbtj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -8.8)
+
+[node name="Room_4_7" parent="Rooms" index="33" instance=ExtResource("35_8b3mi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -8.8)
+
+[node name="Room_5_0" parent="Rooms" index="34" instance=ExtResource("36_l6d2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -26.4)
+
+[node name="Room_5_1" parent="Rooms" index="35" instance=ExtResource("37_7o1or")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -26.4)
+
+[node name="Room_5_2" parent="Rooms" index="36" instance=ExtResource("38_hovdy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -26.4)
+
+[node name="Room_5_3" parent="Rooms" index="37" instance=ExtResource("39_wbpv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -26.4)
+
+[node name="Room_5_4" parent="Rooms" index="38" instance=ExtResource("40_ti4w0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, -26.4)
+
+[node name="Room_5_5" parent="Rooms" index="39" instance=ExtResource("41_ke26o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -26.4)
+
+[node name="Room_5_6" parent="Rooms" index="40" instance=ExtResource("42_lhx4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -26.4)
+
+[node name="Room_5_7" parent="Rooms" index="41" instance=ExtResource("43_fc1lj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -26.4)
+
+[node name="Room_6_0" parent="Rooms" index="42" instance=ExtResource("44_1u7g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, 0, -44)
+
+[node name="Room_6_1" parent="Rooms" index="43" instance=ExtResource("45_0lfe5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -44)
+
+[node name="Room_6_2" parent="Rooms" index="44" instance=ExtResource("46_h4h5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -44)
+
+[node name="Room_6_3" parent="Rooms" index="45" instance=ExtResource("47_880v1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -44)
+
+[node name="Room_6_4" parent="Rooms" index="46" instance=ExtResource("48_pj7tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, -44)
+
+[node name="Room_6_5" parent="Rooms" index="47" instance=ExtResource("49_7spf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -44)
+
+[node name="Room_6_6" parent="Rooms" index="48" instance=ExtResource("50_oxa0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -44)
+
+[node name="Room_6_7" parent="Rooms" index="49" instance=ExtResource("51_wd1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -44)
+
+[node name="Room_7_1" parent="Rooms" index="50" instance=ExtResource("52_fc1lj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -61.600002)
+
+[node name="Room_7_2" parent="Rooms" index="51" instance=ExtResource("53_1u7g0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -61.600002)
+
+[node name="Room_7_3" parent="Rooms" index="52" instance=ExtResource("54_0lfe5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -61.600002)
+
+[node name="Room_7_4" parent="Rooms" index="53" instance=ExtResource("55_h4h5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, -61.600002)
+
+[node name="Room_7_5" parent="Rooms" index="54" instance=ExtResource("56_880v1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -61.600002)
+
+[node name="Room_7_6" parent="Rooms" index="55" instance=ExtResource("57_pj7tu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -61.600002)
+
+[node name="Room_7_7" parent="Rooms" index="56" instance=ExtResource("58_7spf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -61.600002)
+
+[node name="RoomTunnelA" parent="Rooms" index="57" instance=ExtResource("59_7spf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, -12.8, 26.4)
+
+[node name="RoomTunnelB" parent="Rooms" index="58" instance=ExtResource("60_oxa0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, -12.8, -61.6)
+
+[node name="RoomTunnelC" parent="Rooms" index="59" instance=ExtResource("61_wd1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, -12.8, 44)
+
+[node name="RoomTunnelD" parent="Rooms" index="60" instance=ExtResource("62_m2km0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, -12.8, 61.6)
+
+[node name="RoomTunnelE" parent="Rooms" index="61" instance=ExtResource("63_bghy6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, -8.8)
+
+[node name="RoomTunnelF" parent="Rooms" index="62" instance=ExtResource("64_qnos4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, -12.8, -61.6)
+
+[node name="RoomRedRing" parent="Rooms" index="63" instance=ExtResource("65_wd1hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, -12.8, -61.6)
+
+[node name="RoomSilverArrow" parent="Rooms" index="64" instance=ExtResource("66_m2km0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, -44)
+
+[node name="TunnelA" type="Node3D" parent="Doors" index="0"]
+
+[node name="Door" parent="Doors/TunnelA" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 39.200005, -0.1, 25.600004)
+teleport_to = Vector3(33.65, -12.8, 26.4)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors/TunnelA" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.850006, -12.8, 26.400002)
+teleport_to = Vector3(36, 0, 29.6)
+look_dir = Vector3(0, 0, -1)
+
+[node name="Door3" parent="Doors/TunnelA" index="2" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 15.200001, -0.1, -46.399994)
+teleport_to = Vector3(43.15, -12.8, 26.4)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors/TunnelA" index="3" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 47.950005, -12.8, 26.400002)
+teleport_to = Vector3(12, 0, -45.6)
+look_dir = Vector3(1, 0, 0)
+
+[node name="TunnelB" type="Node3D" parent="Doors" index="1"]
+
+[node name="Door" parent="Doors/TunnelB" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 47.200005, -0.1, -67.2)
+teleport_to = Vector3(32.05, -12.8, -61.6)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors/TunnelB" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.850006, -12.8, -61.6)
+teleport_to = Vector3(44, 0, -66.4)
+look_dir = Vector3(0, 0, -1)
+
+[node name="Door3" parent="Doors/TunnelB" index="2" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.9999993, -0.1, 43.20001)
+teleport_to = Vector3(44.75, -12.8, -61.6)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors/TunnelB" index="3" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 47.950005, -12.8, -61.6)
+teleport_to = Vector3(-7.2, 0, 44)
+look_dir = Vector3(1, 0, 0)
+
+[node name="TunnelC" type="Node3D" parent="Doors" index="2"]
+
+[node name="Door" parent="Doors/TunnelC" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -63.199997, -0.1, 43.200005)
+teleport_to = Vector3(-70.35, -12.8, 44)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors/TunnelC" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -73.549995, -12.8, 44.000004)
+teleport_to = Vector3(-66.4, 0, 47.2)
+look_dir = Vector3(0, 0, -1)
+
+[node name="Door3" parent="Doors/TunnelC" index="2" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -88.8, -0.1, -27.199993)
+teleport_to = Vector3(-57.65, -12.8, 44)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors/TunnelC" index="3" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -54.449993, -12.8, 44.000004)
+teleport_to = Vector3(-92, 0, -23.2)
+look_dir = Vector3(1, 0, 0)
+
+[node name="TunnelD" type="Node3D" parent="Doors" index="3"]
+
+[node name="Door" parent="Doors/TunnelD" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -55.199997, -0.1, 60.800003)
+teleport_to = Vector3(-70.35, -12.8, 61.6)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors/TunnelD" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -73.549995, -12.8, 61.600006)
+teleport_to = Vector3(-58.4, 0, 61.6)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door3" parent="Doors/TunnelD" index="2" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.599998, -0.1, 60.80001)
+teleport_to = Vector3(-57.65, -12.8, 61.6)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors/TunnelD" index="3" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -54.449993, -12.8, 61.600006)
+teleport_to = Vector3(10.4, 0, 64.8)
+look_dir = Vector3(1, 0, 0)
+
+[node name="TunnelE" type="Node3D" parent="Doors" index="4"]
+
+[node name="Door" parent="Doors/TunnelE" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -80.799995, -0.1, -14.400002)
+teleport_to = Vector3(-95.95, -12.8, -8.8)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors/TunnelE" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -99.149994, -12.8, -8.799995)
+teleport_to = Vector3(-84, 0, -12)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door3" parent="Doors/TunnelE" index="2" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 13.599998, -0.1, -62.399994)
+teleport_to = Vector3(-83.25, -12.8, -8.8)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors/TunnelE" index="3" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -80.049995, -12.8, -8.799995)
+teleport_to = Vector3(10.4, 0, -58.4)
+look_dir = Vector3(1, 0, 0)
+
+[node name="TunnelF" type="Node3D" parent="Doors" index="5"]
+
+[node name="Door" parent="Doors/TunnelF" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -11.999992, -0.1, -62.4)
+teleport_to = Vector3(-19.15, -12.8, -61.6)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors/TunnelF" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -22.34999, -12.8, -61.599995)
+teleport_to = Vector3(-15.2, 0, -58.4)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door3" parent="Doors/TunnelF" index="2" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -29.600002, -0.1, 25.600006)
+teleport_to = Vector3(-6.45, -12.8, -61.6)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors/TunnelF" index="3" instance=ExtResource("67_m2km0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2499924, -12.8, -61.599995)
+teleport_to = Vector3(-32.8, 0, 26.4)
+look_dir = Vector3(1, 0, 0)
+
+[node name="RedRing" type="Node3D" parent="Doors" index="6"]
+
+[node name="Door" parent="Doors/RedRing" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 90.40001, -0.1, -62.4)
+teleport_to = Vector3(89.6, -12.8, -59.25)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Door2" parent="Doors/RedRing" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, -12.8, -56.05)
+teleport_to = Vector3(87.2, 0, -58.4)
+look_dir = Vector3(0, 0, -1)
+
+[node name="SilverArrow" type="Node3D" parent="Doors" index="7"]
+
+[node name="Door" parent="Doors/SilverArrow" index="0" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -80.79999, -0.1, -49.600002)
+teleport_to = Vector3(-89.6, -12.8, -41.65)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Door2" parent="Doors/SilverArrow" index="1" instance=ExtResource("67_m2km0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.6, -12.8, -38.449997)
+teleport_to = Vector3(-84, 0, -48.8)
+look_dir = Vector3(0, 0, -1)
+
+[node name="BombCoverEW" parent="Doors" index="8" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2, 0, 26.4)
+
+[node name="BombCoverEW2" parent="Doors" index="9" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.6, 0, 26.4)
+
+[node name="BombCoverEW3" parent="Doors" index="10" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.8, 0, -8.800001)
+
+[node name="BombCoverEW4" parent="Doors" index="11" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.8, 0, -26.400002)
+
+[node name="BombCoverEW5" parent="Doors" index="12" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.200005, 0, -61.600002)
+
+[node name="BombCoverEW6" parent="Doors" index="13" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, -61.600002)
+
+[node name="BombCoverEW7" parent="Doors" index="14" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, -26.400002)
+
+[node name="BombCoverEW8" parent="Doors" index="15" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8146973e-06, 0, -8.800001)
+
+[node name="BombCoverEW9" parent="Doors" index="16" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.199997, 0, -26.400002)
+
+[node name="BombCoverEW10" parent="Doors" index="17" instance=ExtResource("68_aqeyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.799995, 0, -8.800001)
+
+[node name="BombCoverNS" parent="Doors" index="18" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.399998, 0, 17.6)
+
+[node name="BombCoverNS2" parent="Doors" index="19" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.399998, 0, 35.2)
+
+[node name="BombCoverNS3" parent="Doors" index="20" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -17.599998)
+
+[node name="BombCoverNS4" parent="Doors" index="21" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -35.199997)
+
+[node name="BombCoverNS5" parent="Doors" index="22" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.6, 0, -52.799995)
+
+[node name="BombCoverNS6" parent="Doors" index="23" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.399998, 0, -17.599995)
+
+[node name="BombCoverNS7" parent="Doors" index="24" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.399998, 0, -35.199997)
+
+[node name="BombCoverNS8" parent="Doors" index="25" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800003, 0, 17.600002)
+
+[node name="BombCoverNS9" parent="Doors" index="26" instance=ExtResource("69_m52hw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.600006, 0, -35.199997)
+
+[node name="DoorLocked" parent="Doors" index="27" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -0.1, -17.6)
+
+[node name="DoorLocked3" parent="Doors" index="28" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -0.1, -52.800003)
+
+[node name="DoorLocked6" parent="Doors" index="29" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800003, -0.1, -17.600002)
+
+[node name="DoorLocked7" parent="Doors" index="30" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800003, -0.1, -35.200005)
+
+[node name="DoorLocked9" parent="Doors" index="31" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, -0.1, -35.200005)
+
+[node name="DoorLocked11" parent="Doors" index="32" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.600006, -0.1, -3.8146973e-06)
+
+[node name="DoorLocked12" parent="Doors" index="33" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.600006, -0.1, 17.599997)
+
+[node name="DoorLocked14" parent="Doors" index="34" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800003, -0.1, 35.199997)
+
+[node name="DoorLocked15" parent="Doors" index="35" instance=ExtResource("70_itcxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800003, -0.1, 52.799995)
+
+[node name="DoorLocked2" parent="Doors" index="36" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 51.2, -0.1, -26.400002)
+
+[node name="DoorLocked4" parent="Doors" index="37" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.6, -0.1, -44)
+
+[node name="DoorLocked5" parent="Doors" index="38" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.6, -0.1, -26.4)
+
+[node name="DoorLocked8" parent="Doors" index="39" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.6, -0.1, -44)
+
+[node name="DoorLocked10" parent="Doors" index="40" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.2, -0.1, -61.6)
+
+[node name="DoorLocked13" parent="Doors" index="41" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -25.6, -0.1, 44)
+
+[node name="DoorLocked16" parent="Doors" index="42" instance=ExtResource("70_itcxj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, -0.1, 61.6)
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="DoorEnemyWalls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -61.600002)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="DoorEnemyWalls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.6, 0, -61.600002)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="DoorEnemyWalls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.200005, 0, -66.4)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="DoorEnemyWalls" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.40001, 0, -61.600002)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D7" type="StaticBody3D" parent="DoorEnemyWalls" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.79999, 0, -48.800003)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="DoorEnemyWalls" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -88.79999, 0, -26.400003)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="DoorEnemyWalls" index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.200012, 0, -45.600006)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="DoorEnemyWalls" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.79999, 0, -13.600006)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D10" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="DoorEnemyWalls" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.599987, 0, 26.399994)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D11" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D12" type="StaticBody3D" parent="DoorEnemyWalls" index="9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.200016, 0, 26.399994)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D12" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D13" type="StaticBody3D" parent="DoorEnemyWalls" index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9999847, 0, 43.999992)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D14" type="StaticBody3D" parent="DoorEnemyWalls" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.199986, 0, 43.999992)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D14" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D15" type="StaticBody3D" parent="DoorEnemyWalls" index="12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.199986, 0, 61.59999)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D15" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="StaticBody3D16" type="StaticBody3D" parent="DoorEnemyWalls" index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.600018, 0, 61.59999)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D16" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_aqeyn")
+
+[node name="Link" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.00001, 0, 64.8)

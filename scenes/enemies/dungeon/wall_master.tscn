@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkyixd6pfxhth"]
+
+[ext_resource type="PackedScene" uid="uid://plqxxenmep3u" path="res://scenes/enemies/dungeon/wall_master_model.tscn" id="1_lwd4g"]
+[ext_resource type="Script" uid="uid://kgpco6v7g8fh" path="res://scripts/enemies/dungeon/wall_master.gd" id="1_xv36u"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_b7qk1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xv36u"]
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7qk1"]
+size = Vector3(1, 1.6, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oeueg"]
+size = Vector3(1.8000001, 1.8000001, 1.2)
+
+[node name="WallMaster" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_xv36u")
+target_arrow_offset = Vector3(0, 1.8, 0)
+drop_group = 2
+
+[node name="Model" parent="." instance=ExtResource("1_lwd4g")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
+shape = SubResource("BoxShape3D_xv36u")
+
+[node name="Sight" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0.85)
+shape = SubResource("BoxShape3D_b7qk1")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, 0.90000004, 0.100000024)
+shape = SubResource("BoxShape3D_oeueg")
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_b7qk1")
+max_health = 2
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

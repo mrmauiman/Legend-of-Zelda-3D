@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b1xfcmdc6xorc"]
+
+[ext_resource type="Texture2D" uid="uid://qlthu4rmiaw" path="res://models/materials/TreeFoliage.png" id="1_uehs0"]
+
+[resource]
+shading_mode = 0
+albedo_texture = ExtResource("1_uehs0")

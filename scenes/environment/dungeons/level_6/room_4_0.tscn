@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://drmborhn7duno"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_6atwo"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_cvt2r"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="3_k7qvg"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="4_5jbh0"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="5_rkou8"]
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="6_0rf0b"]
+[ext_resource type="PackedScene" uid="uid://bej6ykj7mp76h" path="res://scenes/environment/dungeons/general_pieces/block_pushable.tscn" id="7_levw3"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="8_d5r8d"]
+
+[node name="Room_4_0" instance=ExtResource("1_6atwo")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_6/loadables_4_0.tscn"
+
+[node name="Floor" parent="Pieces" index="1" instance=ExtResource("2_cvt2r")]
+
+[node name="ShortWall" parent="Pieces" index="2" instance=ExtResource("3_k7qvg")]
+
+[node name="ShortWall2" parent="Pieces" index="3" instance=ExtResource("3_k7qvg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SouthWallDoor" parent="Pieces" index="4" instance=ExtResource("4_5jbh0")]
+
+[node name="NorthWallDoor" parent="Pieces" index="5" instance=ExtResource("5_rkou8")]
+
+[node name="Blocks" type="Node3D" parent="Pieces" index="6"]
+
+[node name="Block" parent="Pieces/Blocks" index="0" instance=ExtResource("6_0rf0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="BlockPushable" parent="Pieces/Blocks" index="1" node_paths=PackedStringArray("door", "extra_doors") instance=ExtResource("7_levw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+door = NodePath("../../SealedDoor")
+extra_doors = [NodePath("../../SealedDoor2")]
+
+[node name="SealedDoor" parent="Pieces" index="7" instance=ExtResource("8_d5r8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 5.7000003)
+
+[node name="SealedDoor2" parent="Pieces" index="8" instance=ExtResource("8_d5r8d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+
+[connection signal="body_entered" from="Linkchecker" to="Pieces/SealedDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="Linkchecker" to="Pieces/SealedDoor2" method="_on_body_entered"]

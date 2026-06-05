@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://5py5jeg1mr8q"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_ch2xl"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="2_i7glj"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_xicip"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_3t4ey"]
+[ext_resource type="PackedScene" uid="uid://cjv048p5u8obk" path="res://scenes/environment/dungeons/general_pieces/south_wall_bombed.tscn" id="5_cry1l"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="6_gp67e"]
+[ext_resource type="PackedScene" uid="uid://sx8su1hqkuvc" path="res://scenes/npcs/free_info_old_man_npc.tscn" id="7_lsdlc"]
+
+[node name="Room_3_3" instance=ExtResource("1_ch2xl")]
+
+[node name="FloorBlack" parent="Pieces" index="1" instance=ExtResource("2_i7glj")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_xicip")]
+
+[node name="ShortWall" parent="Pieces" index="3" instance=ExtResource("4_3t4ey")]
+
+[node name="ShortWall2" parent="Pieces" index="4" instance=ExtResource("4_3t4ey")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SouthWallBombed" parent="Pieces" index="5" instance=ExtResource("5_cry1l")]
+
+[node name="Torch" parent="." index="2" instance=ExtResource("6_gp67e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+
+[node name="Torch2" parent="." index="3" instance=ExtResource("6_gp67e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, 0)
+
+[node name="OldManNPC" parent="." index="4" instance=ExtResource("7_lsdlc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6999999)
+info = "PATRA HAS THE MAP."

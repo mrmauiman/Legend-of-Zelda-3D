@@ -1,0 +1,45 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://s686woe3prot"
+path.s3tc="res://.godot/imported/NorthWallBombed_NorthWallBombed.png-8c708e2655992b2bae9876fa4fb98191.s3tc.ctex"
+path.etc2="res://.godot/imported/NorthWallBombed_NorthWallBombed.png-8c708e2655992b2bae9876fa4fb98191.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "afb7ed3258f5ec402112e5c1a51e07db"
+}
+
+[deps]
+
+source_file="res://models/dungeons/level_1/Pieces/NorthWallBombed_NorthWallBombed.png"
+dest_files=["res://.godot/imported/NorthWallBombed_NorthWallBombed.png-8c708e2655992b2bae9876fa4fb98191.s3tc.ctex", "res://.godot/imported/NorthWallBombed_NorthWallBombed.png-8c708e2655992b2bae9876fa4fb98191.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

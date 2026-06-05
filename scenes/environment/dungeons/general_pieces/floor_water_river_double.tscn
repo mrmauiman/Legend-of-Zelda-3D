@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd22px2jxe6fi"]
+
+[ext_resource type="PackedScene" uid="uid://7oa0nxxumqoe" path="res://models/dungeons/level_1/Pieces/FloorWaterRiverDouble.glb" id="1_nqrh4"]
+[ext_resource type="PackedScene" uid="uid://b74bv8mdncqd0" path="res://scenes/environment/overworld/water.tscn" id="2_2rrbb"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_qas4g"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qas4g"]
+data = PackedVector3Array(-9.599999, -0.19999999, 5.6, -9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, -9.599999, 0, -5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, 0, 5.6, 9.599999, 0, -5.6, 9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, 9.599999, 0, 5.6, 9.599999, -0.19999999, 5.6, -9.599999, -0.19999999, 5.6, -9.599999, 0, 5.6, -9.599999, -0.19999999, -5.6, 9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, -5.6, -9.599999, -0.19999999, 5.6, 9.599999, -0.19999999, 5.6, 9.599999, 0, -5.6, -9.599999, 0, 5.6, -9.599999, 0, -5.6, 9.599999, 0, -5.6, 9.599999, 0, 5.6, -9.599999, 0, 5.6)
+
+[node name="FloorWaterRiverDouble" instance=ExtResource("1_nqrh4")]
+
+[node name="FloorWaterRiverDouble" parent="." index="0"]
+script = ExtResource("2_qas4g")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_qas4g")
+
+[node name="WaterBlocks" type="Node3D" parent="." index="2"]
+visible = false
+
+[node name="Water" parent="WaterBlocks" index="0" instance=ExtResource("2_2rrbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.7499999, -3.2000003)
+size = Vector3(19.2, 4.1, 1.6)
+
+[node name="Water2" parent="WaterBlocks" index="1" instance=ExtResource("2_2rrbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.7499999, 3.1999998)
+size = Vector3(19.2, 4.1, 1.6)

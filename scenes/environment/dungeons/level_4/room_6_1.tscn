@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdtqrrrxphic2"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_65vef"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="2_pakkp"]
+[ext_resource type="PackedScene" uid="uid://qp413d785uk7" path="res://scenes/environment/dungeons/general_pieces/east_wall_bombed.tscn" id="3_xgve0"]
+[ext_resource type="PackedScene" uid="uid://nrnhhxq6q1ks" path="res://scenes/environment/dungeons/general_pieces/north_wall_bombed.tscn" id="4_glckr"]
+[ext_resource type="PackedScene" uid="uid://cjv048p5u8obk" path="res://scenes/environment/dungeons/general_pieces/south_wall_bombed.tscn" id="5_5sfp6"]
+[ext_resource type="PackedScene" uid="uid://bwubre06xhcl0" path="res://scenes/environment/dungeons/general_pieces/west_wall_bombed.tscn" id="6_kylcp"]
+
+[node name="Room_6_1" instance=ExtResource("1_65vef")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_6_1.tscn"
+
+[node name="FloorBlack" parent="Pieces" index="1" instance=ExtResource("2_pakkp")]
+
+[node name="EastWallBombed" parent="Pieces" index="2" instance=ExtResource("3_xgve0")]
+
+[node name="NorthWallBombed" parent="Pieces" index="3" instance=ExtResource("4_glckr")]
+
+[node name="SouthWallBombed" parent="Pieces" index="4" instance=ExtResource("5_5sfp6")]
+
+[node name="WestWallBombed" parent="Pieces" index="5" instance=ExtResource("6_kylcp")]

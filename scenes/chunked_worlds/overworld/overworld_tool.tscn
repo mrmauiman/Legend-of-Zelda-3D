@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch1j4tb0v2qvg"]
+
+[ext_resource type="Script" uid="uid://n4yfolq6cjen" path="res://scripts/chunked_world/populate_screen_tool.gd" id="1_w8cgl"]
+[ext_resource type="PackedScene" uid="uid://c02y7oo75bny6" path="res://scenes/environment/overworld/map.tscn" id="2_cmboa"]
+[ext_resource type="Script" uid="uid://d2ilne8dk1bwu" path="res://scripts/chunked_world/screen_manager.gd" id="3_p0skv"]
+[ext_resource type="PackedScene" uid="uid://rqc1yj5uto2h" path="res://scenes/link/link.tscn" id="39_ceuvc"]
+
+[node name="Overworld" type="Node3D"]
+script = ExtResource("1_w8cgl")
+
+[node name="WorldMesh" parent="." instance=ExtResource("2_cmboa")]
+
+[node name="Screens" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_p0skv")
+
+[node name="Caves" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Row1" type="Node3D" parent="Caves"]
+
+[node name="Row2" type="Node3D" parent="Caves"]
+
+[node name="Row3" type="Node3D" parent="Caves"]
+
+[node name="Row4" type="Node3D" parent="Caves"]
+
+[node name="Row5" type="Node3D" parent="Caves"]
+
+[node name="Row6" type="Node3D" parent="Caves"]
+
+[node name="Row7" type="Node3D" parent="Caves"]
+
+[node name="Row8" type="Node3D" parent="Caves"]
+
+[node name="Link" parent="." instance=ExtResource("39_ceuvc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3, 0, 64.3)

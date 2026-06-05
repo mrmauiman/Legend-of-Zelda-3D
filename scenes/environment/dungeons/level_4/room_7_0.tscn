@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2fhbrkmii7y8"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_x1tdw"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="2_0x00r"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_w3i0t"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_k0bu8"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="5_aq8dk"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="6_5w4u6"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="7_w3i0t"]
+[ext_resource type="PackedScene" uid="uid://sx8su1hqkuvc" path="res://scenes/npcs/free_info_old_man_npc.tscn" id="8_k0bu8"]
+
+[node name="Room_7_0" instance=ExtResource("1_x1tdw")]
+
+[node name="FloorBlack" parent="Pieces" index="1" instance=ExtResource("2_0x00r")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_w3i0t")]
+
+[node name="ShortWall" parent="Pieces" index="3" instance=ExtResource("4_k0bu8")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="SouthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_aq8dk")]
+
+[node name="EastWallDoor" parent="Pieces" index="5" instance=ExtResource("6_5w4u6")]
+
+[node name="Torch" parent="." index="2" instance=ExtResource("7_w3i0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -2)
+
+[node name="Torch2" parent="." index="3" instance=ExtResource("7_w3i0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -2)
+
+[node name="OldManNPC" parent="." index="4" instance=ExtResource("8_k0bu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+info = "WALK INTO THE
+WATERFALL."

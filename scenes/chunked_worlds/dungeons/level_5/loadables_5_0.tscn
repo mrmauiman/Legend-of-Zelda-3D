@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfudnnnm5udpj"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_e0yud"]
+[ext_resource type="PackedScene" uid="uid://e42jglknftkl" path="res://scenes/enemies/dungeon/living_head_statue.tscn" id="2_bs4ro"]
+[ext_resource type="PackedScene" uid="uid://kwsva51tncqd" path="res://scenes/enemies/dungeon/living_dragon_statue.tscn" id="3_arnf0"]
+[ext_resource type="PackedScene" uid="uid://glnf6scyts82" path="res://scenes/enemies/dungeon/digdogger.tscn" id="4_bs4ro"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="5_bs4ro"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="5_jf6eb"]
+
+[node name="Loadables_5_0" type="Node3D"]
+script = ExtResource("1_e0yud")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="head_statue" parent="Traps" instance=ExtResource("2_bs4ro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)
+
+[node name="head_statue2" parent="Traps" instance=ExtResource("2_bs4ro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("3_arnf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="dragon_statue2" parent="Traps" instance=ExtResource("3_arnf0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[node name="Bosses" type="Node3D" parent="."]
+script = ExtResource("1_e0yud")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Digdogger" parent="Bosses" instance=ExtResource("4_bs4ro")]
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("5_bs4ro")]
+location_id = "dungeon/5/loadables_5_0"
+hidden_by_enemies = NodePath("../../Bosses")
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("5_jf6eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+enemies = NodePath("../../Bosses")

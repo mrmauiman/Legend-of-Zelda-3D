@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv0hd7icvlfc6"]
+
+[ext_resource type="Script" uid="uid://b8rpsmymxcpyg" path="res://scripts/enemies/overworld/rock_slide_area.gd" id="1_7mpmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mpmc"]
+size = Vector3(25.6, 6.4, 17.6)
+
+[node name="RockSlideArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_7mpmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0)
+shape = SubResource("BoxShape3D_7mpmc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

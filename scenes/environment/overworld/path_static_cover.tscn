@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://l85kagwwusua"]
+
+[ext_resource type="Script" uid="uid://dje4sxhsowtu" path="res://scripts/components/wall_red_static_cover.gd" id="1_ou1ga"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ou1ga"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvyfv"]
+albedo_color = Color(0.9882353, 0.84705883, 0.65882355, 1)
+
+[node name="Tree" type="StaticBody3D"]
+collision_layer = 64
+script = ExtResource("1_ou1ga")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_ou1ga")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+size = Vector3(1.6, 1.6, 1.6)
+material = SubResource("StandardMaterial3D_dvyfv")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtmipgu8xkga0"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_fg6nm"]
+[ext_resource type="PackedScene" uid="uid://dqde4kt3rmijy" path="res://scenes/enemies/dungeon/dodongo.tscn" id="2_sqt8p"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="4_fg6nm"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="4_sqt8p"]
+
+[node name="Loadables_7_2" type="Node3D"]
+script = ExtResource("1_fg6nm")
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Dodongo" parent="Bosses" instance=ExtResource("2_sqt8p")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.3, 0, -2.2)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("4_sqt8p")]
+location_id = "dungeon/2/loadables_7_2"
+hidden_by_enemies = NodePath("../../Bosses")
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor4" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("4_fg6nm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 5.7000003)
+enemies = NodePath("../../Pickups")
+
+[node name="SealedDoor2" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("4_fg6nm")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.6, -0.1, 0)
+enemies = NodePath("../../Pickups")

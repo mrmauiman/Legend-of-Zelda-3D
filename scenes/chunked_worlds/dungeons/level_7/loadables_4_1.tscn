@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh3qera6u232v"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_4geu6"]
+[ext_resource type="PackedScene" uid="uid://glnf6scyts82" path="res://scenes/enemies/dungeon/digdogger.tscn" id="2_7rhn0"]
+[ext_resource type="PackedScene" uid="uid://yw7e3tu7ntt2" path="res://scenes/enemies/dungeon/living_accent_dragon_statue.tscn" id="3_6hlpk"]
+[ext_resource type="PackedScene" uid="uid://cxab8aqhp6r6e" path="res://scenes/enemies/dungeon/living_accent_head_statue.tscn" id="4_8qhjj"]
+
+[node name="Loadables_4_1" type="Node3D"]
+script = ExtResource("1_4geu6")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Digdogger" parent="Bosses" instance=ExtResource("2_7rhn0")]
+split_count = 1
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("3_6hlpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="dragon_statue2" parent="Traps" instance=ExtResource("3_6hlpk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[node name="head_statue" parent="Traps" instance=ExtResource("4_8qhjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+
+[node name="head_statue2" parent="Traps" instance=ExtResource("4_8qhjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)

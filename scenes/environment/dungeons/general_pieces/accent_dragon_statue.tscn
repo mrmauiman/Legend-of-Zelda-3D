@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvu0gwut64we3"]
+
+[ext_resource type="PackedScene" uid="uid://b83kn22k3fmyn" path="res://models/dungeons/level_1/dragon_statue.glb" id="1_vi8hi"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_fd4iq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ueqfh"]
+height = 1.6
+radius = 0.8
+
+[node name="AccentDragonStatue" instance=ExtResource("1_vi8hi")]
+
+[node name="DungeonDragonStatue" parent="." index="0"]
+script = ExtResource("2_fd4iq")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_ueqfh")

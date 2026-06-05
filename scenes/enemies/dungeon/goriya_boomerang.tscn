@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://limv7bvvrild"]
+
+[ext_resource type="Script" uid="uid://bd7wnb4tbrjes" path="res://scripts/enemies/dungeon/goriya_boomerang.gd" id="1_pp84b"]
+[ext_resource type="Texture2D" uid="uid://cltc5jaxdif1j" path="res://sprites/link/boomerang.png" id="2_v51bp"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="4_fe4kf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lfx52"]
+radius = 0.25
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_byqsh"]
+
+[node name="Boomerang" type="CharacterBody3D" groups=["Boomerang"]]
+collision_layer = 4
+collision_mask = 97
+script = ExtResource("1_pp84b")
+speed = 12.8
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="BoomerangModel" type="Sprite3D" parent="Node3D"]
+unique_name_in_owner = true
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+flip_v = true
+pixel_size = 0.1
+axis = 0
+texture_filter = 0
+texture = ExtResource("2_v51bp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("SphereShape3D_lfx52")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor") groups=["Boomerang"]]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_fe4kf")
+knockback = Vector3(0, 0, 6.4)
+relative_knockback_orientor = NodePath("..")
+stun_time = 1.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("SphereShape3D_byqsh")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="blocked" from="HitBox" to="." method="_on_hit_box_hit"]
+[connection signal="hit" from="HitBox" to="." method="_on_hit_box_hit"]
+[connection signal="parried" from="HitBox" to="." method="_on_hit_box_hit"]

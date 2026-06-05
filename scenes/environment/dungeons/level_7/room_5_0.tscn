@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://4oul1mtq8tv6"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_26yec"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="2_dk3t3"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="3_qeh4t"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="4_75idh"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="5_mkfp0"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="6_b11vv"]
+
+[node name="Room_5_0" instance=ExtResource("1_26yec")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_7/loadables_5_0.tscn"
+
+[node name="FloorBlack" parent="Pieces" index="1" instance=ExtResource("2_dk3t3")]
+
+[node name="SouthWallDoor" parent="Pieces" index="2" instance=ExtResource("3_qeh4t")]
+
+[node name="NorthWallDoor" parent="Pieces" index="3" instance=ExtResource("4_75idh")]
+
+[node name="ShortWall" parent="Pieces" index="4" instance=ExtResource("5_mkfp0")]
+
+[node name="ShortWall2" parent="Pieces" index="5" instance=ExtResource("5_mkfp0")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Torch" parent="." index="2" instance=ExtResource("6_b11vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -2)
+
+[node name="Torch2" parent="." index="3" instance=ExtResource("6_b11vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -2)

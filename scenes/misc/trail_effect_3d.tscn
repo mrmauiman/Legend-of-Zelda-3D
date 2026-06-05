@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcnyv7nsdl7y0"]
+
+[ext_resource type="Shader" uid="uid://cae62o507036y" path="res://shaders/trail_particles.gdshader" id="1_h57ss"]
+[ext_resource type="Shader" uid="uid://0xwnoclybnx2" path="res://shaders/trail.gdshader" id="2_krki6"]
+[ext_resource type="Texture2D" uid="uid://db44vgxs311b5" path="res://sprites/enemies/rock.png" id="3_ducr8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mh45w"]
+shader = ExtResource("1_h57ss")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8l1nm"]
+render_priority = 0
+shader = ExtResource("2_krki6")
+shader_parameter/tex = ExtResource("3_ducr8")
+
+[sub_resource type="QuadMesh" id="QuadMesh_onov1"]
+material = SubResource("ShaderMaterial_8l1nm")
+
+[node name="TrailEffect3D" type="GPUParticles3D"]
+amount = 16
+lifetime = 16.0
+speed_scale = 60.0
+fixed_fps = 60
+process_material = SubResource("ShaderMaterial_mh45w")
+draw_pass_1 = SubResource("QuadMesh_onov1")

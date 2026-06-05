@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://begmluyboqssi"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_t8wtc"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="2_2763g"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="4_5py35"]
+
+[node name="LoadablesMagicRod" type="Node3D"]
+script = ExtResource("1_t8wtc")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" instance=ExtResource("2_2763g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -3.7)
+location_id = "dungeon/6/loadablesmagicrod"
+
+[node name="SpawnChecker" parent="." instance=ExtResource("4_5py35")]
+
+[node name="SpawnSpot22" parent="SpawnChecker" index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.6, -4.8)
+
+[node name="SpawnSpot23" parent="SpawnChecker" index="22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.6, -3.2000003)
+
+[node name="SpawnSpot24" parent="SpawnChecker" index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.6, -1.6000003)
+
+[node name="SpawnSpot29" parent="SpawnChecker" index="28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.6, -4.8)
+
+[node name="SpawnSpot30" parent="SpawnChecker" index="29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.6, -3.2000003)
+
+[node name="SpawnSpot31" parent="SpawnChecker" index="30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 1.6, -1.6000003)
+
+[node name="SpawnSpot36" parent="SpawnChecker" index="35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 1.6, -4.8)
+
+[node name="SpawnSpot37" parent="SpawnChecker" index="36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 1.6, -3.2000003)
+
+[node name="SpawnSpot38" parent="SpawnChecker" index="37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 1.6, -1.6000003)
+
+[node name="SpawnSpot39" parent="SpawnChecker" index="38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0.4, -2.3841858e-07)
+
+[node name="SpawnSpot43" parent="SpawnChecker" index="42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 1.6, -4.8)
+
+[node name="SpawnSpot44" parent="SpawnChecker" index="43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 1.6, -3.2000003)
+
+[node name="SpawnSpot45" parent="SpawnChecker" index="44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 1.6, -1.6000003)
+
+[node name="SpawnSpot46" parent="SpawnChecker" index="45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0.4, -2.3841858e-07)
+
+[node name="SpawnSpot50" parent="SpawnChecker" index="49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.6, -4.8)
+
+[node name="SpawnSpot51" parent="SpawnChecker" index="50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.6, -3.2000003)
+
+[node name="SpawnSpot52" parent="SpawnChecker" index="51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 1.6, -1.6000003)
+
+[node name="SpawnSpot57" parent="SpawnChecker" index="56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.6, -4.8)
+
+[node name="SpawnSpot58" parent="SpawnChecker" index="57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.6, -3.2000003)
+
+[node name="SpawnSpot59" parent="SpawnChecker" index="58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.6, -1.6000003)
+
+[editable path="SpawnChecker"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8wuertejvnib"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_pjwqk"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="2_ctnet"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="3_jlfhq"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="4_ab6me"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="5_62axg"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="6_npxri"]
+[ext_resource type="PackedScene" uid="uid://bobmvcypf3xlq" path="res://scenes/environment/dungeons/general_pieces/door_sealed_triforce.tscn" id="7_3kwtq"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="8_jlfhq"]
+[ext_resource type="PackedScene" uid="uid://sx8su1hqkuvc" path="res://scenes/npcs/free_info_old_man_npc.tscn" id="9_ab6me"]
+
+[node name="Room_1_6" instance=ExtResource("1_pjwqk")]
+
+[node name="FloorBlack" parent="Pieces" index="1" instance=ExtResource("2_ctnet")]
+
+[node name="ShortWall" parent="Pieces" index="2" instance=ExtResource("3_jlfhq")]
+
+[node name="SouthWallDoor" parent="Pieces" index="3" instance=ExtResource("4_ab6me")]
+
+[node name="NorthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_62axg")]
+
+[node name="WestWallDoor" parent="Pieces" index="5" instance=ExtResource("6_npxri")]
+
+[node name="SealedDoor" parent="Pieces" index="6" instance=ExtResource("7_3kwtq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6000004)
+
+[node name="SealedDoor2" parent="Pieces" index="7" instance=ExtResource("7_3kwtq")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.599999, -0.1, 0)
+
+[node name="Torch" parent="." index="2" instance=ExtResource("8_jlfhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+
+[node name="Torch2" parent="." index="3" instance=ExtResource("8_jlfhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, 0)
+
+[node name="OldManNPC" parent="." index="4" instance=ExtResource("9_ab6me")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6999999)
+info = "ONES WHO DOES NOT HAVE TRIFORCE CAN'T GO IN."

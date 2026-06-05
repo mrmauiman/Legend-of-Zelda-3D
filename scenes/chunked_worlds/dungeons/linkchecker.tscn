@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b55x5niaurtlp"]
+
+[ext_resource type="Script" uid="uid://pjrwnu26qtu1" path="res://scripts/chunked_world/dungeon_room_loader.gd" id="1_3hber"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7j3i5"]
+size = Vector3(17.6, 6.5, 9.6)
+
+[node name="Linkchecker" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3hber")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0500002, 0)
+shape = SubResource("BoxShape3D_7j3i5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

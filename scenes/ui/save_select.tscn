@@ -1,0 +1,3429 @@
+[gd_scene load_steps=59 format=3 uid="uid://dw2tlk61ru3te"]
+
+[ext_resource type="Texture2D" uid="uid://dhbf6br4plt3h" path="res://sprites/ui/main_menu/file_select.png" id="1_4gi8t"]
+[ext_resource type="Script" uid="uid://dwtwdyy005p06" path="res://scripts/ui/file_select.gd" id="1_oh6xq"]
+[ext_resource type="Texture2D" uid="uid://cyqjsftwfypfu" path="res://sprites/ui/main_menu/file_select_font.png" id="2_8idbp"]
+[ext_resource type="Script" uid="uid://c4yg2gmvlhcj0" path="res://scripts/ui/file_slot.gd" id="2_u4aom"]
+[ext_resource type="Texture2D" uid="uid://bgc443cspwck4" path="res://sprites/ui/main_menu/link_icons.png" id="3_u4aom"]
+[ext_resource type="Script" uid="uid://cschnwsnidfen" path="res://scripts/ui/register_name.gd" id="5_p7p5m"]
+[ext_resource type="Texture2D" uid="uid://k6gcyjduuvtd" path="res://sprites/ui/main_menu/file_select_overlay.png" id="6_rvxhj"]
+[ext_resource type="Texture2D" uid="uid://b3bdeliefku18" path="res://sprites/ui/main_menu/register_name_screen.png" id="6_ulc4c"]
+[ext_resource type="Script" uid="uid://cts8ar0dfd5jx" path="res://scripts/ui/show_icon.gd" id="7_orlhk"]
+[ext_resource type="Script" uid="uid://mhfp8vvbuvm1" path="res://scripts/ui/letter_selector.gd" id="7_ulc4c"]
+[ext_resource type="FontFile" uid="uid://ipfhmv1fvvgt" path="res://sprites/fonts/the-legend-of-zelda-nes.otf" id="9_temnu"]
+[ext_resource type="Texture2D" uid="uid://d1822svfvewph" path="res://sprites/ui/item_selector.png" id="10_er272"]
+[ext_resource type="Script" uid="uid://4o1bacaf78l" path="res://scripts/ui/quit.gd" id="11_er272"]
+[ext_resource type="Script" uid="uid://sjhdjdghvvy8" path="res://scripts/ui/focus_sound.gd" id="11_mltri"]
+[ext_resource type="Script" uid="uid://b5on5ewm0uou3" path="res://scripts/ui/options.gd" id="11_wvsp2"]
+[ext_resource type="Script" uid="uid://y2iqjd6q7umw" path="res://scripts/ui/settings/options_menu.gd" id="16_7l3t4"]
+[ext_resource type="Texture2D" uid="uid://djiiihmn1qhfd" path="res://sprites/ui/main_menu/nine_patch_panel.png" id="17_5furh"]
+[ext_resource type="Script" uid="uid://btnjn0duo8iif" path="res://scripts/ui/padded_scroll_container.gd" id="18_nu4ma"]
+[ext_resource type="Texture2D" uid="uid://cen2bupgrw5na" path="res://sprites/ui/main_menu/dropdown_arrow.png" id="19_s7am5"]
+[ext_resource type="Script" uid="uid://llfe7s0rdwko" path="res://scripts/ui/randomizer/new_seed_button.gd" id="20_7l3t4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4aom"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f48f8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7p5m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ulc4c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oh6xq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orlhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0m0g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvsp2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7kryw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2j3m7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wvsp2"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+texture = ExtResource("10_er272")
+region_rect = Rect2(0, 0, 80, 80)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lb4ft"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qthc7"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+texture = ExtResource("10_er272")
+region_rect = Rect2(0, 0, 80, 80)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l3t4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3oxsd"]
+load_path = "res://.godot/imported/item_selector.png-eda4566896a5d5d0042f086b0e6b1e26.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5furh"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+texture = SubResource("CompressedTexture2D_3oxsd")
+region_rect = Rect2(80, 0, 80, 80)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nu4ma"]
+texture = SubResource("CompressedTexture2D_3oxsd")
+region_rect = Rect2(80, 0, 80, 80)
+
+[sub_resource type="Animation" id="Animation_rvxhj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_oh6xq"]
+resource_name = "flash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_orlhk"]
+_data = {
+&"RESET": SubResource("Animation_rvxhj"),
+&"flash": SubResource("Animation_oh6xq")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mltri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0m0g"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_temnu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_er272"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvsp2"]
+bg_color = Color(0.89411765, 0, 0.34509805, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qthc7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5furh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nu4ma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5f5dq"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26jq3"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.32172796, 0.32172796, 0.32172787, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nse4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ad24c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hybvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0h0f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ku2ww"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rxgc1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vchlm"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwult"]
+bg_color = Color(0.32156864, 0.32156864, 0.32156864, 1)
+
+[node name="save_select" type="CanvasLayer"]
+metadata/_edit_vertical_guides_ = [-872.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="FileSelect" type="Node2D" parent="."]
+position = Vector2(0, -74)
+script = ExtResource("1_oh6xq")
+
+[node name="Panel" type="Sprite2D" parent="FileSelect"]
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(5, 5)
+texture = ExtResource("1_4gi8t")
+
+[node name="Slot1" type="Button" parent="FileSelect"]
+z_as_relative = false
+custom_minimum_size = Vector2(900, 100)
+offset_left = 508.0
+offset_top = 328.0
+offset_right = 1408.0
+offset_bottom = 428.0
+focus_neighbor_top = NodePath("../HBoxContainer/Options")
+focus_neighbor_bottom = NodePath("../Slot2")
+focus_next = NodePath("../Slot2")
+focus_previous = NodePath("../HBoxContainer/Quit")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4aom")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f48f8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7p5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulc4c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oh6xq")
+action_mode = 0
+script = ExtResource("2_u4aom")
+
+[node name="Selector" type="Sprite2D" parent="FileSelect/Slot1"]
+position = Vector2(32, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="LinkIcon" type="Sprite2D" parent="FileSelect/Slot1"]
+position = Vector2(92, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("3_u4aom")
+hframes = 4
+
+[node name="Name" type="Node2D" parent="FileSelect/Slot1"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-260, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-220, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-180, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-140, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-100, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-60.000004, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(-20.000008, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot1/Name"]
+position = Vector2(19.999989, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="DeathCount" type="Node2D" parent="FileSelect/Slot1"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot1/DeathCount"]
+position = Vector2(-260, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot1/DeathCount"]
+position = Vector2(-220, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot1/DeathCount"]
+position = Vector2(-180, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot1/DeathCount"]
+position = Vector2(-140, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 34
+
+[node name="Hearts" type="Node2D" parent="FileSelect/Slot1"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(99.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(139.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(179.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(219.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(259.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(299.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(339.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(379.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter9" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(99.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter10" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(139.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter11" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(179.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter12" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(219.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter13" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(259.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter14" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(299.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter15" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(339.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter16" type="Sprite2D" parent="FileSelect/Slot1/Hearts"]
+position = Vector2(379.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Overlay" type="Sprite2D" parent="FileSelect/Slot1"]
+visible = false
+z_index = 2
+position = Vector2(452, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("6_rvxhj")
+script = ExtResource("11_mltri")
+
+[node name="Play" type="Button" parent="FileSelect/Slot1/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = -56.0
+offset_top = 6.0
+offset_right = -10.399994
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../..")
+focus_neighbor_right = NodePath("../Delete")
+focus_next = NodePath("../Delete")
+focus_previous = NodePath("../..")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot1/Overlay/Play"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Delete" type="Button" parent="FileSelect/Slot1/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 77.59999
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../Play")
+focus_previous = NodePath("../Play")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot1/Overlay/Delete"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Slot2" type="Button" parent="FileSelect"]
+z_as_relative = false
+custom_minimum_size = Vector2(900, 100)
+offset_left = 508.0
+offset_top = 448.0
+offset_right = 1408.0
+offset_bottom = 548.0
+focus_neighbor_top = NodePath("../Slot1")
+focus_neighbor_bottom = NodePath("../Slot3")
+focus_next = NodePath("../Slot3")
+focus_previous = NodePath("../Slot1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4aom")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f48f8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7p5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulc4c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oh6xq")
+action_mode = 0
+script = ExtResource("2_u4aom")
+
+[node name="Selector" type="Sprite2D" parent="FileSelect/Slot2"]
+position = Vector2(32, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="LinkIcon" type="Sprite2D" parent="FileSelect/Slot2"]
+position = Vector2(92, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("3_u4aom")
+hframes = 4
+
+[node name="Name" type="Node2D" parent="FileSelect/Slot2"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-260, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-220, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-180, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-140, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-100, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-60.000004, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(-20.000008, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot2/Name"]
+position = Vector2(19.999989, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="DeathCount" type="Node2D" parent="FileSelect/Slot2"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot2/DeathCount"]
+position = Vector2(-260, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot2/DeathCount"]
+position = Vector2(-220, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot2/DeathCount"]
+position = Vector2(-180, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot2/DeathCount"]
+position = Vector2(-140, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 34
+
+[node name="Hearts" type="Node2D" parent="FileSelect/Slot2"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(99.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(139.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(179.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(219.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(259.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(299.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(339.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(379.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter9" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(99.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter10" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(139.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter11" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(179.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter12" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(219.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter13" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(259.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter14" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(299.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter15" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(339.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter16" type="Sprite2D" parent="FileSelect/Slot2/Hearts"]
+position = Vector2(379.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Overlay" type="Sprite2D" parent="FileSelect/Slot2"]
+visible = false
+z_index = 2
+position = Vector2(452, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("6_rvxhj")
+script = ExtResource("11_mltri")
+
+[node name="Play" type="Button" parent="FileSelect/Slot2/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = -56.0
+offset_top = 6.0
+offset_right = -8.800003
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../..")
+focus_neighbor_right = NodePath("../Delete")
+focus_next = NodePath("../Delete")
+focus_previous = NodePath("../..")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot2/Overlay/Play"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Delete" type="Button" parent="FileSelect/Slot2/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 76.8
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../Play")
+focus_previous = NodePath("../Play")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot2/Overlay/Delete"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Slot3" type="Button" parent="FileSelect"]
+z_as_relative = false
+custom_minimum_size = Vector2(900, 100)
+offset_left = 508.0
+offset_top = 568.0
+offset_right = 1408.0
+offset_bottom = 668.0
+focus_neighbor_top = NodePath("../Slot2")
+focus_neighbor_bottom = NodePath("../Slot4")
+focus_next = NodePath("../Slot4")
+focus_previous = NodePath("../Slot2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4aom")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f48f8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7p5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulc4c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oh6xq")
+action_mode = 0
+script = ExtResource("2_u4aom")
+
+[node name="Selector" type="Sprite2D" parent="FileSelect/Slot3"]
+position = Vector2(32, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="LinkIcon" type="Sprite2D" parent="FileSelect/Slot3"]
+position = Vector2(92, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("3_u4aom")
+hframes = 4
+
+[node name="Name" type="Node2D" parent="FileSelect/Slot3"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-260, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-220, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-180, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-140, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-100, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-60.000004, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(-20.000008, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot3/Name"]
+position = Vector2(19.999989, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="DeathCount" type="Node2D" parent="FileSelect/Slot3"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot3/DeathCount"]
+position = Vector2(-260, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot3/DeathCount"]
+position = Vector2(-220, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot3/DeathCount"]
+position = Vector2(-180, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot3/DeathCount"]
+position = Vector2(-140, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 34
+
+[node name="Hearts" type="Node2D" parent="FileSelect/Slot3"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(99.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(139.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(179.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(219.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(259.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(299.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(339.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(379.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter9" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(99.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter10" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(139.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter11" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(179.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter12" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(219.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter13" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(259.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter14" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(299.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter15" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(339.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter16" type="Sprite2D" parent="FileSelect/Slot3/Hearts"]
+position = Vector2(379.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Overlay" type="Sprite2D" parent="FileSelect/Slot3"]
+visible = false
+z_index = 2
+position = Vector2(452, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("6_rvxhj")
+script = ExtResource("11_mltri")
+
+[node name="Play" type="Button" parent="FileSelect/Slot3/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = -56.0
+offset_top = 6.0
+offset_right = -10.399994
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../..")
+focus_neighbor_right = NodePath("../Delete")
+focus_next = NodePath("../Delete")
+focus_previous = NodePath("../..")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot3/Overlay/Play"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Delete" type="Button" parent="FileSelect/Slot3/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 77.59999
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../Play")
+focus_previous = NodePath("../Play")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot3/Overlay/Delete"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Slot4" type="Button" parent="FileSelect"]
+z_as_relative = false
+custom_minimum_size = Vector2(900, 100)
+offset_left = 508.0
+offset_top = 688.0
+offset_right = 1408.0
+offset_bottom = 788.0
+focus_neighbor_top = NodePath("../Slot3")
+focus_neighbor_bottom = NodePath("../Slot5")
+focus_next = NodePath("../Slot5")
+focus_previous = NodePath("../Slot3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4aom")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f48f8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7p5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulc4c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oh6xq")
+action_mode = 0
+script = ExtResource("2_u4aom")
+
+[node name="Selector" type="Sprite2D" parent="FileSelect/Slot4"]
+position = Vector2(32, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="LinkIcon" type="Sprite2D" parent="FileSelect/Slot4"]
+position = Vector2(92, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("3_u4aom")
+hframes = 4
+
+[node name="Name" type="Node2D" parent="FileSelect/Slot4"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-260, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-220, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-180, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-140, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-100, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-60.000004, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(-20.000008, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot4/Name"]
+position = Vector2(19.999989, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="DeathCount" type="Node2D" parent="FileSelect/Slot4"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot4/DeathCount"]
+position = Vector2(-260, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot4/DeathCount"]
+position = Vector2(-220, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot4/DeathCount"]
+position = Vector2(-180, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot4/DeathCount"]
+position = Vector2(-140, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 34
+
+[node name="Hearts" type="Node2D" parent="FileSelect/Slot4"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(99.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(139.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(179.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(219.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(259.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(299.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(339.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(379.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter9" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(99.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter10" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(139.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter11" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(179.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter12" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(219.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter13" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(259.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter14" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(299.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter15" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(339.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter16" type="Sprite2D" parent="FileSelect/Slot4/Hearts"]
+position = Vector2(379.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Overlay" type="Sprite2D" parent="FileSelect/Slot4"]
+visible = false
+z_index = 2
+position = Vector2(452, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("6_rvxhj")
+script = ExtResource("11_mltri")
+
+[node name="Play" type="Button" parent="FileSelect/Slot4/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = -56.0
+offset_top = 6.0
+offset_right = -9.599991
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../..")
+focus_neighbor_right = NodePath("../Delete")
+focus_next = NodePath("../Delete")
+focus_previous = NodePath("../..")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot4/Overlay/Play"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Delete" type="Button" parent="FileSelect/Slot4/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 77.59999
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../Play")
+focus_previous = NodePath("../Play")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot4/Overlay/Delete"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Slot5" type="Button" parent="FileSelect"]
+z_as_relative = false
+custom_minimum_size = Vector2(900, 100)
+offset_left = 508.0
+offset_top = 808.0
+offset_right = 1408.0
+offset_bottom = 908.0
+focus_neighbor_top = NodePath("../Slot4")
+focus_neighbor_bottom = NodePath("../HBoxContainer/Options")
+focus_next = NodePath("../HBoxContainer/Options")
+focus_previous = NodePath("../Slot4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_u4aom")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f48f8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_p7p5m")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ulc4c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_oh6xq")
+action_mode = 0
+script = ExtResource("2_u4aom")
+
+[node name="Selector" type="Sprite2D" parent="FileSelect/Slot5"]
+position = Vector2(32, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="LinkIcon" type="Sprite2D" parent="FileSelect/Slot5"]
+position = Vector2(92, 52)
+scale = Vector2(5, 5)
+texture = ExtResource("3_u4aom")
+hframes = 4
+
+[node name="Name" type="Node2D" parent="FileSelect/Slot5"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-260, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-220, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-180, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-140, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-100, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-60.000004, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(-20.000008, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot5/Name"]
+position = Vector2(19.999989, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="DeathCount" type="Node2D" parent="FileSelect/Slot5"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot5/DeathCount"]
+position = Vector2(-260, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot5/DeathCount"]
+position = Vector2(-220, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot5/DeathCount"]
+position = Vector2(-180, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 36
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot5/DeathCount"]
+position = Vector2(-140, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 34
+
+[node name="Hearts" type="Node2D" parent="FileSelect/Slot5"]
+position = Vector2(452, 212)
+
+[node name="Letter1" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(99.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter2" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(139.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter3" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(179.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter4" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(219.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter5" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(259.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter6" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(299.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter7" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(339.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter8" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(379.99997, -180)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter9" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(99.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter10" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(139.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter11" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(179.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter12" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(219.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter13" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(259.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter14" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(299.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter15" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(339.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Letter16" type="Sprite2D" parent="FileSelect/Slot5/Hearts"]
+position = Vector2(379.99997, -140)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 46
+
+[node name="Overlay" type="Sprite2D" parent="FileSelect/Slot5"]
+visible = false
+z_index = 2
+position = Vector2(452, 104)
+scale = Vector2(5, 5)
+texture = ExtResource("6_rvxhj")
+script = ExtResource("11_mltri")
+
+[node name="Play" type="Button" parent="FileSelect/Slot5/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = -56.0
+offset_top = 6.0
+offset_right = -9.599991
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../..")
+focus_neighbor_right = NodePath("../Delete")
+focus_next = NodePath("../Delete")
+focus_previous = NodePath("../..")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot5/Overlay/Play"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="Delete" type="Button" parent="FileSelect/Slot5/Overlay"]
+z_index = 2
+z_as_relative = false
+custom_minimum_size = Vector2(8, 8)
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 77.59999
+offset_bottom = 14.0
+focus_neighbor_left = NodePath("../Play")
+focus_previous = NodePath("../Play")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_orlhk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wvsp2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7kryw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2j3m7")
+script = ExtResource("7_orlhk")
+
+[node name="Selector2" type="Sprite2D" parent="FileSelect/Slot5/Overlay/Delete"]
+position = Vector2(4, 4)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 47
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FileSelect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 608.0
+offset_top = 1014.0
+offset_right = 1306.0
+offset_bottom = 1092.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="Options" type="Button" parent="FileSelect/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Quit")
+focus_neighbor_top = NodePath("../../Slot5")
+focus_neighbor_right = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../../Slot1")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../../Slot5")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_wvsp2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lb4ft")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qthc7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7l3t4")
+theme_override_styles/focus = SubResource("StyleBoxTexture_5furh")
+text = "Options"
+script = ExtResource("11_wvsp2")
+
+[node name="Quit" type="Button" parent="FileSelect/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+focus_neighbor_left = NodePath("../Options")
+focus_neighbor_top = NodePath("../../Slot5")
+focus_neighbor_right = NodePath("../Options")
+focus_neighbor_bottom = NodePath("../../Slot1")
+focus_next = NodePath("../../Slot1")
+focus_previous = NodePath("../Options")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_wvsp2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lb4ft")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nu4ma")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7l3t4")
+theme_override_styles/focus = SubResource("StyleBoxTexture_5furh")
+text = "Quit"
+script = ExtResource("11_er272")
+
+[node name="RegisterName" type="Node2D" parent="."]
+visible = false
+script = ExtResource("5_p7p5m")
+
+[node name="Panel" type="Sprite2D" parent="RegisterName"]
+z_index = 1
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(5, 5)
+texture = ExtResource("6_ulc4c")
+
+[node name="LinkIcon" type="Sprite2D" parent="RegisterName"]
+z_index = 2
+position = Vector2(780, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("3_u4aom")
+hframes = 4
+
+[node name="Name" type="Node2D" parent="RegisterName"]
+
+[node name="LetterSelector" type="Sprite2D" parent="RegisterName/Name"]
+modulate = Color(1, 1, 1, 0.5)
+z_index = 3
+position = Vector2(880, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+frame = 35
+script = ExtResource("7_ulc4c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RegisterName/Name/LetterSelector"]
+libraries = {
+&"": SubResource("AnimationLibrary_orlhk")
+}
+autoplay = "flash"
+
+[node name="Letter1" type="Sprite2D" parent="RegisterName/Name"]
+clip_children = 2
+z_index = 2
+position = Vector2(880, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter2" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(920, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter3" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(960, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter4" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(1000, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter5" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(1040, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter6" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(1080, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter7" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(1120, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letter8" type="Sprite2D" parent="RegisterName/Name"]
+z_index = 2
+position = Vector2(1160, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("2_8idbp")
+hframes = 12
+vframes = 4
+
+[node name="Letters" type="Node2D" parent="RegisterName"]
+script = ExtResource("11_mltri")
+
+[node name="A" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 540.0
+offset_top = 480.0
+offset_right = 580.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../K")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../B")
+focus_neighbor_bottom = NodePath("../L")
+focus_next = NodePath("../B")
+focus_previous = NodePath("../Cancel")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="B" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 620.0
+offset_top = 480.0
+offset_right = 660.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../A")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../C")
+focus_neighbor_bottom = NodePath("../M")
+focus_next = NodePath("../C")
+focus_previous = NodePath("../A")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="C" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 700.0
+offset_top = 480.0
+offset_right = 740.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../B")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../D")
+focus_neighbor_bottom = NodePath("../N")
+focus_next = NodePath("../D")
+focus_previous = NodePath("../B")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="D" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 780.0
+offset_top = 480.0
+offset_right = 820.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../C")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../E")
+focus_neighbor_bottom = NodePath("../O")
+focus_next = NodePath("../E")
+focus_previous = NodePath("../C")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="E" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 860.0
+offset_top = 480.0
+offset_right = 900.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../D")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../F")
+focus_neighbor_bottom = NodePath("../P")
+focus_next = NodePath("../F")
+focus_previous = NodePath("../D")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="F" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 940.0
+offset_top = 480.0
+offset_right = 980.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../E")
+focus_neighbor_top = NodePath("../Confirm")
+focus_neighbor_right = NodePath("../G")
+focus_neighbor_bottom = NodePath("../Q")
+focus_next = NodePath("../G")
+focus_previous = NodePath("../E")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="G" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1020.0
+offset_top = 480.0
+offset_right = 1060.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../F")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../H")
+focus_neighbor_bottom = NodePath("../R")
+focus_next = NodePath("../H")
+focus_previous = NodePath("../F")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="H" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1100.0
+offset_top = 480.0
+offset_right = 1140.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../G")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../I")
+focus_neighbor_bottom = NodePath("../S")
+focus_next = NodePath("../I")
+focus_previous = NodePath("../G")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="I" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1180.0
+offset_top = 480.0
+offset_right = 1220.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../H")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../J")
+focus_neighbor_bottom = NodePath("../T")
+focus_next = NodePath("../J")
+focus_previous = NodePath("../H")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="J" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1260.0
+offset_top = 480.0
+offset_right = 1300.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../I")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../K")
+focus_neighbor_bottom = NodePath("../U")
+focus_next = NodePath("../K")
+focus_previous = NodePath("../I")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="K" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1340.0
+offset_top = 480.0
+offset_right = 1380.0
+offset_bottom = 520.0
+focus_neighbor_left = NodePath("../J")
+focus_neighbor_top = NodePath("../Cancel")
+focus_neighbor_right = NodePath("../A")
+focus_neighbor_bottom = NodePath("../V")
+focus_next = NodePath("../L")
+focus_previous = NodePath("../J")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="L" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 540.0
+offset_top = 560.0
+offset_right = 580.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../V")
+focus_neighbor_top = NodePath("../A")
+focus_neighbor_right = NodePath("../M")
+focus_neighbor_bottom = NodePath("../W")
+focus_next = NodePath("../M")
+focus_previous = NodePath("../K")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="M" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 620.0
+offset_top = 560.0
+offset_right = 660.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../L")
+focus_neighbor_top = NodePath("../B")
+focus_neighbor_right = NodePath("../N")
+focus_neighbor_bottom = NodePath("../X")
+focus_next = NodePath("../N")
+focus_previous = NodePath("../L")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="N" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 700.0
+offset_top = 560.0
+offset_right = 740.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../M")
+focus_neighbor_top = NodePath("../C")
+focus_neighbor_right = NodePath("../O")
+focus_neighbor_bottom = NodePath("../Y")
+focus_next = NodePath("../O")
+focus_previous = NodePath("../M")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="O" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 780.0
+offset_top = 560.0
+offset_right = 820.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../N")
+focus_neighbor_top = NodePath("../D")
+focus_neighbor_right = NodePath("../P")
+focus_neighbor_bottom = NodePath("../Z")
+focus_next = NodePath("../P")
+focus_previous = NodePath("../N")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="P" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 860.0
+offset_top = 560.0
+offset_right = 900.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../O")
+focus_neighbor_top = NodePath("../E")
+focus_neighbor_right = NodePath("../Q")
+focus_neighbor_bottom = NodePath("../Dash")
+focus_next = NodePath("../Q")
+focus_previous = NodePath("../O")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Q" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 940.0
+offset_top = 560.0
+offset_right = 980.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../P")
+focus_neighbor_top = NodePath("../F")
+focus_neighbor_right = NodePath("../R")
+focus_neighbor_bottom = NodePath("../Period")
+focus_next = NodePath("../R")
+focus_previous = NodePath("../P")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="R" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1020.0
+offset_top = 560.0
+offset_right = 1060.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../Q")
+focus_neighbor_top = NodePath("../G")
+focus_neighbor_right = NodePath("../S")
+focus_neighbor_bottom = NodePath("../Comma")
+focus_next = NodePath("../S")
+focus_previous = NodePath("../Q")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="S" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1100.0
+offset_top = 560.0
+offset_right = 1140.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../R")
+focus_neighbor_top = NodePath("../H")
+focus_neighbor_right = NodePath("../T")
+focus_neighbor_bottom = NodePath("../ExclamationMark")
+focus_next = NodePath("../T")
+focus_previous = NodePath("../R")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="T" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1180.0
+offset_top = 560.0
+offset_right = 1220.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../S")
+focus_neighbor_top = NodePath("../I")
+focus_neighbor_right = NodePath("../U")
+focus_neighbor_bottom = NodePath("../Apostraphe")
+focus_next = NodePath("../U")
+focus_previous = NodePath("../S")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="U" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1260.0
+offset_top = 560.0
+offset_right = 1300.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../T")
+focus_neighbor_top = NodePath("../J")
+focus_neighbor_right = NodePath("../V")
+focus_neighbor_bottom = NodePath("../Ampersand")
+focus_next = NodePath("../V")
+focus_previous = NodePath("../T")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="V" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1340.0
+offset_top = 560.0
+offset_right = 1380.0
+offset_bottom = 600.0
+focus_neighbor_left = NodePath("../U")
+focus_neighbor_top = NodePath("../K")
+focus_neighbor_right = NodePath("../L")
+focus_neighbor_bottom = NodePath("../Bar")
+focus_next = NodePath("../W")
+focus_previous = NodePath("../U")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="W" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 540.0
+offset_top = 640.0
+offset_right = 580.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Bar")
+focus_neighbor_top = NodePath("../L")
+focus_neighbor_right = NodePath("../X")
+focus_neighbor_bottom = NodePath("../0")
+focus_next = NodePath("../X")
+focus_previous = NodePath("../V")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="X" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 620.0
+offset_top = 640.0
+offset_right = 660.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../W")
+focus_neighbor_top = NodePath("../M")
+focus_neighbor_right = NodePath("../Y")
+focus_neighbor_bottom = NodePath("../1")
+focus_next = NodePath("../Y")
+focus_previous = NodePath("../W")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Y" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 700.0
+offset_top = 640.0
+offset_right = 740.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../X")
+focus_neighbor_top = NodePath("../N")
+focus_neighbor_right = NodePath("../Z")
+focus_neighbor_bottom = NodePath("../2")
+focus_next = NodePath("../Z")
+focus_previous = NodePath("../X")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Z" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 780.0
+offset_top = 640.0
+offset_right = 820.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Y")
+focus_neighbor_top = NodePath("../O")
+focus_neighbor_right = NodePath("../Dash")
+focus_neighbor_bottom = NodePath("../3")
+focus_next = NodePath("../Dash")
+focus_previous = NodePath("../Y")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Dash" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 856.0
+offset_top = 640.0
+offset_right = 896.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Z")
+focus_neighbor_top = NodePath("../P")
+focus_neighbor_right = NodePath("../Period")
+focus_neighbor_bottom = NodePath("../4")
+focus_next = NodePath("../Period")
+focus_previous = NodePath("../Z")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Period" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 940.0
+offset_top = 640.0
+offset_right = 980.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Dash")
+focus_neighbor_top = NodePath("../Q")
+focus_neighbor_right = NodePath("../Comma")
+focus_neighbor_bottom = NodePath("../5")
+focus_next = NodePath("../Comma")
+focus_previous = NodePath("../Dash")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Comma" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1020.0
+offset_top = 640.0
+offset_right = 1060.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Period")
+focus_neighbor_top = NodePath("../R")
+focus_neighbor_right = NodePath("../ExclamationMark")
+focus_neighbor_bottom = NodePath("../6")
+focus_next = NodePath("../ExclamationMark")
+focus_previous = NodePath("../Period")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="ExclamationMark" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1100.0
+offset_top = 640.0
+offset_right = 1140.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Comma")
+focus_neighbor_top = NodePath("../S")
+focus_neighbor_right = NodePath("../Apostraphe")
+focus_neighbor_bottom = NodePath("../7")
+focus_next = NodePath("../Apostraphe")
+focus_previous = NodePath("../Comma")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Apostraphe" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1180.0
+offset_top = 640.0
+offset_right = 1220.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../ExclamationMark")
+focus_neighbor_top = NodePath("../T")
+focus_neighbor_right = NodePath("../Ampersand")
+focus_neighbor_bottom = NodePath("../8")
+focus_next = NodePath("../Ampersand")
+focus_previous = NodePath("../ExclamationMark")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Ampersand" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1260.0
+offset_top = 640.0
+offset_right = 1300.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Apostraphe")
+focus_neighbor_top = NodePath("../U")
+focus_neighbor_right = NodePath("../Bar")
+focus_neighbor_bottom = NodePath("../9")
+focus_next = NodePath("../Bar")
+focus_previous = NodePath("../Apostraphe")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Bar" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1340.0
+offset_top = 640.0
+offset_right = 1380.0
+offset_bottom = 680.0
+focus_neighbor_left = NodePath("../Ampersand")
+focus_neighbor_top = NodePath("../V")
+focus_neighbor_right = NodePath("../W")
+focus_neighbor_bottom = NodePath("../Space")
+focus_next = NodePath("../0")
+focus_previous = NodePath("../Ampersand")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="0" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 540.0
+offset_top = 720.0
+offset_right = 580.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../Space")
+focus_neighbor_top = NodePath("../W")
+focus_neighbor_right = NodePath("../1")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../1")
+focus_previous = NodePath("../Bar")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="1" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 620.0
+offset_top = 720.0
+offset_right = 660.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../0")
+focus_neighbor_top = NodePath("../X")
+focus_neighbor_right = NodePath("../2")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../2")
+focus_previous = NodePath("../0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="2" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 700.0
+offset_top = 720.0
+offset_right = 740.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../1")
+focus_neighbor_top = NodePath("../Y")
+focus_neighbor_right = NodePath("../3")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../3")
+focus_previous = NodePath("../1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="3" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 780.0
+offset_top = 720.0
+offset_right = 820.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../2")
+focus_neighbor_top = NodePath("../Z")
+focus_neighbor_right = NodePath("../4")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../4")
+focus_previous = NodePath("../2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="4" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 860.0
+offset_top = 720.0
+offset_right = 900.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../3")
+focus_neighbor_top = NodePath("../Dash")
+focus_neighbor_right = NodePath("../5")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../5")
+focus_previous = NodePath("../3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="5" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 940.0
+offset_top = 720.0
+offset_right = 980.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../4")
+focus_neighbor_top = NodePath("../Period")
+focus_neighbor_right = NodePath("../6")
+focus_neighbor_bottom = NodePath("../Confirm")
+focus_next = NodePath("../6")
+focus_previous = NodePath("../4")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="6" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1020.0
+offset_top = 720.0
+offset_right = 1060.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../5")
+focus_neighbor_top = NodePath("../Comma")
+focus_neighbor_right = NodePath("../7")
+focus_neighbor_bottom = NodePath("../Cancel")
+focus_next = NodePath("../7")
+focus_previous = NodePath("../5")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="7" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1100.0
+offset_top = 720.0
+offset_right = 1140.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../6")
+focus_neighbor_top = NodePath("../ExclamationMark")
+focus_neighbor_right = NodePath("../8")
+focus_neighbor_bottom = NodePath("../Cancel")
+focus_next = NodePath("../8")
+focus_previous = NodePath("../6")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="8" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1180.0
+offset_top = 720.0
+offset_right = 1220.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../7")
+focus_neighbor_top = NodePath("../Apostraphe")
+focus_neighbor_right = NodePath("../9")
+focus_neighbor_bottom = NodePath("../Cancel")
+focus_next = NodePath("../9")
+focus_previous = NodePath("../7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="9" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1260.0
+offset_top = 720.0
+offset_right = 1300.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../8")
+focus_neighbor_top = NodePath("../Ampersand")
+focus_neighbor_right = NodePath("../Space")
+focus_neighbor_bottom = NodePath("../Cancel")
+focus_next = NodePath("../Space")
+focus_previous = NodePath("../8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Space" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(40, 40)
+offset_left = 1340.0
+offset_top = 720.0
+offset_right = 1380.0
+offset_bottom = 760.0
+focus_neighbor_left = NodePath("../9")
+focus_neighbor_top = NodePath("../Bar")
+focus_neighbor_right = NodePath("../0")
+focus_neighbor_bottom = NodePath("../Cancel")
+focus_next = NodePath("../Confirm")
+focus_previous = NodePath("../9")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Confirm" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(280, 40)
+offset_left = 620.0
+offset_top = 800.0
+offset_right = 660.0
+offset_bottom = 840.0
+focus_neighbor_left = NodePath("../Cancel")
+focus_neighbor_top = NodePath("../1")
+focus_neighbor_right = NodePath("../Cancel")
+focus_neighbor_bottom = NodePath("../../RandomizerSettings")
+focus_next = NodePath("../Cancel")
+focus_previous = NodePath("../Space")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="Cancel" type="Button" parent="RegisterName/Letters"]
+custom_minimum_size = Vector2(240, 40)
+offset_left = 1040.0
+offset_top = 800.0
+offset_right = 1280.0
+offset_bottom = 840.0
+focus_neighbor_left = NodePath("../Confirm")
+focus_neighbor_top = NodePath("../6")
+focus_neighbor_right = NodePath("../Confirm")
+focus_neighbor_bottom = NodePath("../../RandomizerSettings")
+focus_next = NodePath("../../RandomizerSettings")
+focus_previous = NodePath("../Confirm")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mltri")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_temnu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_er272")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+
+[node name="RandomizerSettings" type="Button" parent="RegisterName"]
+offset_left = 668.0
+offset_top = 960.0
+offset_right = 1284.0
+offset_bottom = 1000.0
+size_flags_vertical = 8
+focus_neighbor_top = NodePath("../Letters/Confirm")
+focus_neighbor_bottom = NodePath("../Letters/F")
+focus_next = NodePath("../Letters/A")
+focus_previous = NodePath("../Letters/Cancel")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qthc7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n0m0g")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5furh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nu4ma")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wvsp2")
+text = "Randomizer Settings"
+
+[node name="RandomizerSettingsMenu" type="MarginContainer" parent="." node_paths=PackedStringArray("open_button", "close_button")]
+process_mode = 2
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+script = ExtResource("16_7l3t4")
+open_button = NodePath("../RegisterName/RandomizerSettings")
+close_button = NodePath("MarginContainer/VBoxContainer/Back Button/MarginContainer/MarginContainer/Button")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RandomizerSettingsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("18_nu4ma")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Randomize" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Randomize"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Randomize/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomize"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Randomize/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Randomize/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Randomize/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizeSave" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Randomize/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../../../Back Button/MarginContainer/MarginContainer/Button")
+focus_neighbor_bottom = NodePath("../../../../../Seed/HBoxContainer/MarginContainer2/MarginContainer/NewSeedButton")
+focus_next = NodePath("../../../../../Seed/HBoxContainer/MarginContainer2/MarginContainer/NewSeedButton")
+focus_previous = NodePath("../../../../../../../Back Button/MarginContainer/MarginContainer/Button")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="Seed" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomizer Seed"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizerSeed" type="LineEdit" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nse4r")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_ad24c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hybvn")
+text = "SEED STRING"
+expand_to_text_length = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="NewSeedButton" type="Button" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Seed/HBoxContainer/MarginContainer2/MarginContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../../../Randomize/HBoxContainer/MarginContainer/MarginContainer/RandomizeSave")
+focus_neighbor_bottom = NodePath("../../../../../ItemRandomization/HBoxContainer/MarginContainer/MarginContainer/ItemRandomizationType")
+focus_next = NodePath("../../../../../ItemRandomization/HBoxContainer/MarginContainer/MarginContainer/ItemRandomizationType")
+focus_previous = NodePath("../../../../../Randomize/HBoxContainer/MarginContainer/MarginContainer/RandomizeSave")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0h0f1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ku2ww")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+text = "new seed"
+script = ExtResource("20_7l3t4")
+
+[node name="ItemRandomization" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ItemRandomization"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ItemRandomization/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Item Randomization"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ItemRandomization/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ItemRandomization/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ItemRandomization/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="ItemRandomizationType" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ItemRandomization/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../Seed/HBoxContainer/MarginContainer2/MarginContainer/NewSeedButton")
+focus_neighbor_bottom = NodePath("../../../../../WoodSword/HBoxContainer/MarginContainer/MarginContainer/RandomizeWoodSword")
+focus_next = NodePath("../../../../../WoodSword/HBoxContainer/MarginContainer/MarginContainer/RandomizeWoodSword")
+focus_previous = NodePath("../../../../../Seed/HBoxContainer/MarginContainer2/MarginContainer/NewSeedButton")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Items Only"
+popup/item_0/id = 0
+popup/item_1/text = "All Pickups"
+popup/item_1/id = 1
+
+[node name="WoodSword" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WoodSword"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WoodSword/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomize Wood Sword?"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WoodSword/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WoodSword/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WoodSword/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizeWoodSword" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WoodSword/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../ItemRandomization/HBoxContainer/MarginContainer/MarginContainer/ItemRandomizationType")
+focus_neighbor_bottom = NodePath("../../../../../Caves/HBoxContainer/MarginContainer/MarginContainer/RandomizeCaves")
+focus_next = NodePath("../../../../../Caves/HBoxContainer/MarginContainer/MarginContainer/RandomizeCaves")
+focus_previous = NodePath("../../../../../ItemRandomization/HBoxContainer/MarginContainer/MarginContainer/ItemRandomizationType")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="Caves" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Caves"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Caves/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomize Caves?"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Caves/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Caves/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Caves/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizeCaves" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Caves/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../WoodSword/HBoxContainer/MarginContainer/MarginContainer/RandomizeWoodSword")
+focus_neighbor_bottom = NodePath("../../../../../DungeonLocations/HBoxContainer/MarginContainer/MarginContainer/RandomizeDungeons")
+focus_next = NodePath("../../../../../DungeonLocations/HBoxContainer/MarginContainer/MarginContainer/RandomizeDungeons")
+focus_previous = NodePath("../../../../../WoodSword/HBoxContainer/MarginContainer/MarginContainer/RandomizeWoodSword")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="DungeonLocations" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DungeonLocations"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DungeonLocations/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomize Dungeon Locations?"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DungeonLocations/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DungeonLocations/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DungeonLocations/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizeDungeons" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DungeonLocations/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../Caves/HBoxContainer/MarginContainer/MarginContainer/RandomizeCaves")
+focus_neighbor_bottom = NodePath("../../../../../Enemies/HBoxContainer/MarginContainer/MarginContainer/RandomizeEnemies")
+focus_next = NodePath("../../../../../Enemies/HBoxContainer/MarginContainer/MarginContainer/RandomizeEnemies")
+focus_previous = NodePath("../../../../../Caves/HBoxContainer/MarginContainer/MarginContainer/RandomizeCaves")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="Enemies" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Enemies"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Enemies/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomize Enemies?"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Enemies/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Enemies/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Enemies/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizeEnemies" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Enemies/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../DungeonLocations/HBoxContainer/MarginContainer/MarginContainer/RandomizeDungeons")
+focus_neighbor_bottom = NodePath("../../../../../Shops/HBoxContainer/MarginContainer/MarginContainer/RandomizeShops")
+focus_next = NodePath("../../../../../Shops/HBoxContainer/MarginContainer/MarginContainer/RandomizeShops")
+focus_previous = NodePath("../../../../../DungeonLocations/HBoxContainer/MarginContainer/MarginContainer/RandomizeDungeons")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="Shops" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Shops"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Shops/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+text = "Randomize Shops?"
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Shops/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Shops/HBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Shops/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RandomizeShops" type="OptionButton" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Shops/HBoxContainer/MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+focus_neighbor_top = NodePath("../../../../../Enemies/HBoxContainer/MarginContainer/MarginContainer/RandomizeEnemies")
+focus_neighbor_bottom = NodePath("../../../../../../../Back Button/MarginContainer/MarginContainer/Button")
+focus_next = NodePath("../../../../../../../Back Button/MarginContainer/MarginContainer/Button")
+focus_previous = NodePath("../../../../../Enemies/HBoxContainer/MarginContainer/MarginContainer/RandomizeEnemies")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5f5dq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_26jq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_26jq3")
+theme_override_constants/arrow_margin = 8
+theme_override_icons/arrow = ExtResource("19_s7am5")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Yes"
+popup/item_0/id = 0
+popup/item_1/text = "No"
+popup/item_1/id = 1
+
+[node name="Back Button" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/Back Button"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = -40
+theme_override_constants/margin_top = -40
+theme_override_constants/margin_right = -40
+theme_override_constants/margin_bottom = -40
+
+[node name="NinePatchRect" type="NinePatchRect" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/Back Button/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("17_5furh")
+patch_margin_left = 80
+patch_margin_top = 80
+patch_margin_right = 80
+patch_margin_bottom = 80
+
+[node name="MarginContainer" type="MarginContainer" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/Back Button/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Button" type="Button" parent="RandomizerSettingsMenu/MarginContainer/VBoxContainer/Back Button/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../../../ScrollContainer/VBoxContainer/WoodSword/HBoxContainer/MarginContainer/MarginContainer/RandomizeWoodSword")
+focus_neighbor_bottom = NodePath("../../../../ScrollContainer/VBoxContainer/Randomize/HBoxContainer/MarginContainer/MarginContainer/RandomizeSave")
+focus_next = NodePath("../../../../ScrollContainer/VBoxContainer/Randomize/HBoxContainer/MarginContainer/MarginContainer/RandomizeSave")
+focus_previous = NodePath("../../../../ScrollContainer/VBoxContainer/WoodSword/HBoxContainer/MarginContainer/MarginContainer/RandomizeWoodSword")
+theme_override_fonts/font = ExtResource("9_temnu")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rxgc1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vchlm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jwult")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jwult")
+text = "Back"
+
+[connection signal="focus_entered" from="FileSelect/Slot1" to="FileSelect/Slot1" method="_on_focus_entered"]
+[connection signal="focus_exited" from="FileSelect/Slot1" to="FileSelect/Slot1" method="_on_focus_exited"]
+[connection signal="pressed" from="FileSelect/Slot1" to="FileSelect/Slot1" method="_on_pressed"]
+[connection signal="focus_entered" from="FileSelect/Slot2" to="FileSelect/Slot2" method="_on_focus_entered"]
+[connection signal="focus_exited" from="FileSelect/Slot2" to="FileSelect/Slot2" method="_on_focus_exited"]
+[connection signal="pressed" from="FileSelect/Slot2" to="FileSelect/Slot2" method="_on_pressed"]
+[connection signal="focus_entered" from="FileSelect/Slot3" to="FileSelect/Slot3" method="_on_focus_entered"]
+[connection signal="focus_exited" from="FileSelect/Slot3" to="FileSelect/Slot3" method="_on_focus_exited"]
+[connection signal="pressed" from="FileSelect/Slot3" to="FileSelect/Slot3" method="_on_pressed"]
+[connection signal="focus_entered" from="FileSelect/Slot4" to="FileSelect/Slot4" method="_on_focus_entered"]
+[connection signal="focus_exited" from="FileSelect/Slot4" to="FileSelect/Slot4" method="_on_focus_exited"]
+[connection signal="pressed" from="FileSelect/Slot4" to="FileSelect/Slot4" method="_on_pressed"]
+[connection signal="focus_entered" from="FileSelect/Slot5" to="FileSelect/Slot5" method="_on_focus_entered"]
+[connection signal="focus_exited" from="FileSelect/Slot5" to="FileSelect/Slot5" method="_on_focus_exited"]
+[connection signal="pressed" from="FileSelect/Slot5" to="FileSelect/Slot5" method="_on_pressed"]
+[connection signal="pressed" from="RegisterName/Letters/A" to="RegisterName" method="select_letter" binds= ["A"]]
+[connection signal="pressed" from="RegisterName/Letters/B" to="RegisterName" method="select_letter" binds= ["B"]]
+[connection signal="pressed" from="RegisterName/Letters/C" to="RegisterName" method="select_letter" binds= ["C"]]
+[connection signal="pressed" from="RegisterName/Letters/D" to="RegisterName" method="select_letter" binds= ["D"]]
+[connection signal="pressed" from="RegisterName/Letters/E" to="RegisterName" method="select_letter" binds= ["E"]]
+[connection signal="pressed" from="RegisterName/Letters/F" to="RegisterName" method="select_letter" binds= ["F"]]
+[connection signal="pressed" from="RegisterName/Letters/G" to="RegisterName" method="select_letter" binds= ["G"]]
+[connection signal="pressed" from="RegisterName/Letters/H" to="RegisterName" method="select_letter" binds= ["H"]]
+[connection signal="pressed" from="RegisterName/Letters/I" to="RegisterName" method="select_letter" binds= ["I"]]
+[connection signal="pressed" from="RegisterName/Letters/J" to="RegisterName" method="select_letter" binds= ["J"]]
+[connection signal="pressed" from="RegisterName/Letters/K" to="RegisterName" method="select_letter" binds= ["K"]]
+[connection signal="pressed" from="RegisterName/Letters/L" to="RegisterName" method="select_letter" binds= ["L"]]
+[connection signal="pressed" from="RegisterName/Letters/M" to="RegisterName" method="select_letter" binds= ["M"]]
+[connection signal="pressed" from="RegisterName/Letters/N" to="RegisterName" method="select_letter" binds= ["N"]]
+[connection signal="pressed" from="RegisterName/Letters/O" to="RegisterName" method="select_letter" binds= ["O"]]
+[connection signal="pressed" from="RegisterName/Letters/P" to="RegisterName" method="select_letter" binds= ["P"]]
+[connection signal="pressed" from="RegisterName/Letters/Q" to="RegisterName" method="select_letter" binds= ["Q"]]
+[connection signal="pressed" from="RegisterName/Letters/R" to="RegisterName" method="select_letter" binds= ["R"]]
+[connection signal="pressed" from="RegisterName/Letters/S" to="RegisterName" method="select_letter" binds= ["S"]]
+[connection signal="pressed" from="RegisterName/Letters/T" to="RegisterName" method="select_letter" binds= ["T"]]
+[connection signal="pressed" from="RegisterName/Letters/U" to="RegisterName" method="select_letter" binds= ["U"]]
+[connection signal="pressed" from="RegisterName/Letters/V" to="RegisterName" method="select_letter" binds= ["V"]]
+[connection signal="pressed" from="RegisterName/Letters/W" to="RegisterName" method="select_letter" binds= ["W"]]
+[connection signal="pressed" from="RegisterName/Letters/X" to="RegisterName" method="select_letter" binds= ["X"]]
+[connection signal="pressed" from="RegisterName/Letters/Y" to="RegisterName" method="select_letter" binds= ["Y"]]
+[connection signal="pressed" from="RegisterName/Letters/Z" to="RegisterName" method="select_letter" binds= ["Z"]]
+[connection signal="pressed" from="RegisterName/Letters/Dash" to="RegisterName" method="select_letter" binds= ["-"]]
+[connection signal="pressed" from="RegisterName/Letters/Period" to="RegisterName" method="select_letter" binds= ["."]]
+[connection signal="pressed" from="RegisterName/Letters/Comma" to="RegisterName" method="select_letter" binds= [","]]
+[connection signal="pressed" from="RegisterName/Letters/ExclamationMark" to="RegisterName" method="select_letter" binds= ["!"]]
+[connection signal="pressed" from="RegisterName/Letters/Apostraphe" to="RegisterName" method="select_letter" binds= ["'"]]
+[connection signal="pressed" from="RegisterName/Letters/Ampersand" to="RegisterName" method="select_letter" binds= ["&"]]
+[connection signal="pressed" from="RegisterName/Letters/Bar" to="RegisterName" method="select_letter" binds= ["|"]]
+[connection signal="pressed" from="RegisterName/Letters/0" to="RegisterName" method="select_letter" binds= ["0"]]
+[connection signal="pressed" from="RegisterName/Letters/1" to="RegisterName" method="select_letter" binds= ["1"]]
+[connection signal="pressed" from="RegisterName/Letters/2" to="RegisterName" method="select_letter" binds= ["2"]]
+[connection signal="pressed" from="RegisterName/Letters/3" to="RegisterName" method="select_letter" binds= ["3"]]
+[connection signal="pressed" from="RegisterName/Letters/4" to="RegisterName" method="select_letter" binds= ["4"]]
+[connection signal="pressed" from="RegisterName/Letters/5" to="RegisterName" method="select_letter" binds= ["5"]]
+[connection signal="pressed" from="RegisterName/Letters/6" to="RegisterName" method="select_letter" binds= ["6"]]
+[connection signal="pressed" from="RegisterName/Letters/7" to="RegisterName" method="select_letter" binds= ["7"]]
+[connection signal="pressed" from="RegisterName/Letters/8" to="RegisterName" method="select_letter" binds= ["8"]]
+[connection signal="pressed" from="RegisterName/Letters/9" to="RegisterName" method="select_letter" binds= ["9"]]
+[connection signal="pressed" from="RegisterName/Letters/Space" to="RegisterName" method="select_letter" binds= [" "]]
+[connection signal="pressed" from="RegisterName/Letters/Confirm" to="RegisterName" method="_on_confirm_pressed"]
+[connection signal="pressed" from="RegisterName/Letters/Cancel" to="RegisterName" method="nav_to_file_select"]

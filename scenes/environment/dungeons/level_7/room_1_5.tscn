@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3o8hx3umhf5u"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_iviyy"]
+[ext_resource type="PackedScene" uid="uid://bwnufmciir5io" path="res://scenes/environment/dungeons/general_pieces/floor_water_river_right.tscn" id="2_drdjl"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_2u8ji"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_rbinn"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="5_0lsp3"]
+
+[node name="Room_1_5" instance=ExtResource("1_iviyy")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_7/loadables_1_5.tscn"
+
+[node name="FloorWaterRiverRight" parent="Pieces" index="1" instance=ExtResource("2_drdjl")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_2u8ji")]
+
+[node name="LongWall2" parent="Pieces" index="3" instance=ExtResource("3_2u8ji")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="ShortWall" parent="Pieces" index="4" instance=ExtResource("4_rbinn")]
+
+[node name="WestWallDoor" parent="Pieces" index="5" instance=ExtResource("5_0lsp3")]

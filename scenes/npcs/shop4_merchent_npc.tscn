@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://xm007poygus4"]
+
+[ext_resource type="Script" uid="uid://b3e6lnob136fh" path="res://scripts/npcs/free_info_old_women_npc.gd" id="1_rgjlh"]
+[ext_resource type="PackedScene" uid="uid://c70ghan10tcuw" path="res://scenes/npcs/merchant_model.tscn" id="2_s4m5c"]
+[ext_resource type="FontFile" uid="uid://ipfhmv1fvvgt" path="res://sprites/fonts/the-legend-of-zelda-nes.otf" id="3_7m3yh"]
+[ext_resource type="Script" uid="uid://bcluwncpeh3eb" path="res://scripts/components/reveal_text.gd" id="4_h7re1"]
+[ext_resource type="PackedScene" uid="uid://di46s7xw4xijy" path="res://scenes/pickups/shop_pickup.tscn" id="5_3xrry"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fyjgf"]
+size = Vector3(19.2, 3.2, 14.4)
+
+[sub_resource type="Animation" id="Animation_ugh85"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_tt3jr"]
+resource_name = "die"
+length = 0.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5bryu"]
+_data = {
+&"RESET": SubResource("Animation_ugh85"),
+&"die": SubResource("Animation_tt3jr")
+}
+
+[node name="MerchentNPC" type="Node3D"]
+script = ExtResource("1_rgjlh")
+info = "BOY, THIS IS
+REALLY EXPENSIVE!"
+
+[node name="merchant_rig" parent="." instance=ExtResource("2_s4m5c")]
+
+[node name="Text" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5514317, 0)
+double_sided = false
+font = ExtResource("3_7m3yh")
+font_size = 45
+outline_size = 0
+script = ExtResource("4_h7re1")
+
+[node name="TextTrigger" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TextTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 3.2)
+shape = SubResource("BoxShape3D_fyjgf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5bryu")
+}
+
+[node name="Item1" parent="." instance=ExtResource("5_3xrry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0, 2.4)
+id = "shop_4/item_1"
+price = 80
+
+[node name="Item2" parent="." instance=ExtResource("5_3xrry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4)
+id = "shop_4/item_2"
+multi_purchase = false
+price = 250
+
+[node name="Item3" parent="." instance=ExtResource("5_3xrry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 2.4)
+id = "shop_4/item_3"
+price = 60
+
+[connection signal="body_entered" from="TextTrigger" to="." method="_on_text_trigger_body_entered"]
+[connection signal="body_exited" from="TextTrigger" to="." method="_on_text_trigger_body_exited"]

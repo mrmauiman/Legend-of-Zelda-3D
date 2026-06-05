@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://dume1lpld0ihp"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_qlgb2"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="2_mua82"]
+[ext_resource type="PackedScene" uid="uid://bjsl4kaf7vcu8" path="res://scenes/enemies/dungeon/spike_trap.tscn" id="5_3l1by"]
+
+[node name="Loadables_7_4" type="Node3D"]
+script = ExtResource("1_qlgb2")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="SpawnChecker" parent="." instance=ExtResource("2_mua82")]
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot39" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot45" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot46" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot47" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot53" index="0"]
+disabled = true
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="SpikeTrap" parent="Traps" instance=ExtResource("5_3l1by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)
+
+[node name="SpikeTrap2" parent="Traps" instance=ExtResource("5_3l1by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+
+[node name="SpikeTrap3" parent="Traps" instance=ExtResource("5_3l1by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="SpikeTrap4" parent="Traps" instance=ExtResource("5_3l1by")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[editable path="SpawnChecker"]

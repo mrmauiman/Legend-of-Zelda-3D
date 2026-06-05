@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg2vpgvem1yuy"]
+
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="1_1trxg"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="2_65wjt"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="2_eshb5"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="3_65wjt"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="4_ie075"]
+[ext_resource type="PackedScene" uid="uid://b5tsj6cvoo86l" path="res://scenes/environment/dungeons/general_pieces/floor_black.tscn" id="5_21oc4"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="7_ie075"]
+[ext_resource type="PackedScene" uid="uid://sx8su1hqkuvc" path="res://scenes/npcs/free_info_old_man_npc.tscn" id="8_21oc4"]
+
+[node name="Room_3_0" type="Node3D"]
+
+[node name="Roof" parent="." instance=ExtResource("1_1trxg")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("2_65wjt")
+
+[node name="LongWall" parent="." instance=ExtResource("2_eshb5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="ShortWall" parent="." instance=ExtResource("3_65wjt")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="EastWallDoor" parent="." instance=ExtResource("4_ie075")]
+
+[node name="FloorBlack" parent="." instance=ExtResource("5_21oc4")]
+
+[node name="LongWall2" parent="." instance=ExtResource("2_eshb5")]
+
+[node name="Torch" parent="." instance=ExtResource("7_ie075")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -2)
+
+[node name="Torch2" parent="." instance=ExtResource("7_ie075")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -2)
+
+[node name="OldManNPC" parent="." instance=ExtResource("8_21oc4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+info = "EASTMOST PENNINSULA
+IS THE SECRET."

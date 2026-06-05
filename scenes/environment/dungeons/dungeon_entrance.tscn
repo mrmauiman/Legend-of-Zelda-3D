@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyxnaavru8x42"]
+
+[ext_resource type="Script" uid="uid://bjy510py6ubba" path="res://scripts/components/dungeon_entrance.gd" id="1_6c6b7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1hruh"]
+size = Vector3(1.6, 1.6, 0.1)
+
+[node name="DungeonEntrance" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_6c6b7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.05000019)
+shape = SubResource("BoxShape3D_1hruh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

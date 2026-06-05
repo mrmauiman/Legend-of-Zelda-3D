@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjh4qr14hngh7"]
+
+[ext_resource type="Script" uid="uid://cr4h5imby5m4q" path="res://scripts/enemies/dungeon/manhandla_head.gd" id="1_hki12"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="2_bwwex"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="3_bwwex"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_idk0b"]
+radius = 0.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2sv36"]
+radius = 0.90000004
+
+[node name="Head1" type="CollisionShape3D"]
+shape = SubResource("SphereShape3D_idk0b")
+script = ExtResource("1_hki12")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Head" type="CollisionShape3D" parent="HurtBox"]
+shape = SubResource("SphereShape3D_idk0b")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_bwwex")
+max_health = 3
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_bwwex")
+knockback = Vector3(0, 3.2, 6.4)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+damage = 2
+
+[node name="Head2" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("SphereShape3D_2sv36")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurtbox_enter"]

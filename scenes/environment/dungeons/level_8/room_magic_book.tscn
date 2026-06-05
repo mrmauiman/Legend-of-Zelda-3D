@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvc4um4uxcvie"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_bnyvy"]
+[ext_resource type="PackedScene" uid="uid://co0fepuo0i2j4" path="res://scenes/environment/dungeons/general_pieces/floor_item_room.tscn" id="2_53gtd"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="3_hdxr5"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="4_rrtr8"]
+[ext_resource type="PackedScene" uid="uid://cox4frwwicyq7" path="res://scenes/environment/dungeons/general_pieces/entrance_door.tscn" id="5_gnd6k"]
+
+[node name="RoomMagicBook" instance=ExtResource("1_bnyvy")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_8/loadables_magic_book.tscn"
+
+[node name="FloorItemRoom" parent="Pieces" index="1" instance=ExtResource("2_53gtd")]
+
+[node name="ShortWall" parent="Pieces" index="2" instance=ExtResource("3_hdxr5")]
+
+[node name="ShortWall2" parent="Pieces" index="3" instance=ExtResource("3_hdxr5")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="LongWall" parent="Pieces" index="4" instance=ExtResource("4_rrtr8")]
+
+[node name="EntranceDoor" parent="Pieces" index="5" instance=ExtResource("5_gnd6k")]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://crikjkfdtcs4"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_u5b87"]
+[ext_resource type="PackedScene" uid="uid://kwsva51tncqd" path="res://scenes/enemies/dungeon/living_dragon_statue.tscn" id="3_68xuv"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="4_oa6b4"]
+[ext_resource type="PackedScene" uid="uid://e42jglknftkl" path="res://scenes/enemies/dungeon/living_head_statue.tscn" id="4_x07dp"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="6_mxxvv"]
+
+[node name="Loadables_2_1" type="Node3D"]
+script = ExtResource("1_u5b87")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("3_68xuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+
+[node name="dragon_statue2" parent="Traps" instance=ExtResource("3_68xuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+
+[node name="head_statue" parent="Traps" instance=ExtResource("4_x07dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)
+
+[node name="head_statue2" parent="Traps" instance=ExtResource("4_x07dp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("4_oa6b4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+location_id = "dungeon/8/loadables_2_1"
+hidden_by_enemies = NodePath("../../Enemies")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("6_mxxvv")]

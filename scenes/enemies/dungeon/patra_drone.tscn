@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://bu4ptb41v66lx"]
+
+[ext_resource type="Script" uid="uid://dksng3s5bjjes" path="res://scripts/enemies/dungeon/patra_drone.gd" id="1_qo244"]
+[ext_resource type="PackedScene" uid="uid://dl8hn5vpa4w6f" path="res://scenes/enemies/dungeon/patra_drone_model.tscn" id="1_vmuy6"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="2_in1t3"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="3_e35qj"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_in1t3"]
+height = 0.8
+radius = 0.2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e35qj"]
+height = 0.8
+radius = 0.3
+
+[node name="PatraDrone" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 0
+script = ExtResource("1_qo244")
+target_arrow_offset = Vector3(0, 1.6, 0)
+drop_group = 4
+
+[node name="Model" parent="." instance=ExtResource("1_vmuy6")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_in1t3")
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_in1t3")
+max_health = 8
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_e35qj")
+knockback = Vector3(0, 1.6, 4.8)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+damage = 2
+metadata/_custom_type_script = "uid://bh27hsd8jrovp"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_e35qj")
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_e35qj")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjsl4kaf7vcu8"]
+
+[ext_resource type="Script" uid="uid://du27ylpl52drf" path="res://scripts/enemies/dungeon/spike_trap.gd" id="1_d7fos"]
+[ext_resource type="ArrayMesh" uid="uid://bmgkp86qjnoe" path="res://models/dungeons/enemies/SpikeTrap.obj" id="1_e7sco"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="2_d7fos"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pio4"]
+size = Vector3(1.2, 0.4, 1.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6py6m"]
+size = Vector3(0.8, 0.5, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7fos"]
+size = Vector3(1.6, 0.6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ps02c"]
+size = Vector3(1.6, 0.6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c358d"]
+size = Vector3(1, 0.6, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2x0pk"]
+size = Vector3(1, 0.6, 1.6)
+
+[node name="SpikeTrap" type="CharacterBody3D"]
+collision_layer = 256
+collision_mask = 361
+script = ExtResource("1_d7fos")
+
+[node name="SpikeTrap" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_e7sco")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_8pio4")
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_d7fos")
+knockback = Vector3(0, 0, 9.6)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.940697e-08, 0.25, -5.9604645e-08)
+shape = SubResource("BoxShape3D_6py6m")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.940697e-08, 0.25, -5.9604645e-08)
+shape = SubResource("BoxShape3D_6py6m")
+
+[node name="Sights" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="RayCast3D" type="ShapeCast3D" parent="Sights"]
+shape = SubResource("BoxShape3D_d7fos")
+target_position = Vector3(0, 0, 25.6)
+collision_mask = 2
+
+[node name="CollisionCheck" type="RayCast3D" parent="Sights/RayCast3D"]
+target_position = Vector3(0, 0, 0.9)
+collision_mask = 361
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="RayCast3D2" type="ShapeCast3D" parent="Sights"]
+shape = SubResource("BoxShape3D_ps02c")
+target_position = Vector3(0, 0, -25.6)
+collision_mask = 2
+
+[node name="CollisionCheck" type="RayCast3D" parent="Sights/RayCast3D2"]
+target_position = Vector3(0, 0, -0.9)
+collision_mask = 361
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="RayCast3D3" type="ShapeCast3D" parent="Sights"]
+shape = SubResource("BoxShape3D_c358d")
+target_position = Vector3(25.6, 0, 0)
+collision_mask = 2
+
+[node name="CollisionCheck" type="RayCast3D" parent="Sights/RayCast3D3"]
+target_position = Vector3(0.9, 0, 0)
+collision_mask = 361
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="RayCast3D4" type="ShapeCast3D" parent="Sights"]
+shape = SubResource("BoxShape3D_2x0pk")
+target_position = Vector3(-25.6, 0, 0)
+collision_mask = 2
+
+[node name="CollisionCheck" type="RayCast3D" parent="Sights/RayCast3D4"]
+target_position = Vector3(-0.9, 0, 0)
+collision_mask = 361
+debug_shape_custom_color = Color(1, 0, 0, 1)

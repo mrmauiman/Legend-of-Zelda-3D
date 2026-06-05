@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://be8h8hc0k3poc"]
+
+[ext_resource type="PackedScene" uid="uid://s1fqxkgv1bw4" path="res://models/dungeons/level_1/Pieces/Block.glb" id="1_m4fbp"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_a7pg3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4fbp"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[node name="Block" instance=ExtResource("1_m4fbp")]
+
+[node name="Cube" parent="." index="0"]
+script = ExtResource("2_a7pg3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_m4fbp")

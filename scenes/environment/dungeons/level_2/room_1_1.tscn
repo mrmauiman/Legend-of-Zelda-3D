@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://cylmkmudd8lkl"]
+
+[ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="1_omjvg"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="3_hdfkn"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="5_v0xm4"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="6_2tvgv"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="6_58mgy"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="7_x5ev3"]
+[ext_resource type="PackedScene" uid="uid://b55x5niaurtlp" path="res://scenes/chunked_worlds/dungeons/linkchecker.tscn" id="8_omjvg"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="8_vwf47"]
+
+[node name="Room_1_1" type="Node3D"]
+
+[node name="Blocks" type="Node3D" parent="."]
+
+[node name="Block" parent="Blocks" instance=ExtResource("1_omjvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, -3.2)
+
+[node name="Block2" parent="Blocks" instance=ExtResource("1_omjvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -3.2)
+
+[node name="Block3" parent="Blocks" instance=ExtResource("1_omjvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0, 3.2)
+
+[node name="Block4" parent="Blocks" instance=ExtResource("1_omjvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 3.2)
+
+[node name="Linkchecker" parent="." instance=ExtResource("8_omjvg")]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_2/loadables_1_1.tscn"
+
+[node name="Roof" parent="." instance=ExtResource("3_hdfkn")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("6_58mgy")
+
+[node name="Floor" parent="." instance=ExtResource("3_hdfkn")]
+
+[node name="LongWall" parent="." instance=ExtResource("5_v0xm4")]
+
+[node name="EastWallDoor" parent="." instance=ExtResource("6_2tvgv")]
+
+[node name="SouthWallDoor" parent="." instance=ExtResource("7_x5ev3")]
+
+[node name="WestWallDoor" parent="." instance=ExtResource("8_vwf47")]

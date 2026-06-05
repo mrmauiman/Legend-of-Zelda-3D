@@ -1,0 +1,188 @@
+[gd_scene load_steps=16 format=3 uid="uid://camvssysbi6qd"]
+
+[ext_resource type="Script" uid="uid://hsoj1udrql8a" path="res://scripts/enemies/dungeon/like_like.gd" id="1_2eqle"]
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_hq0iy"]
+[ext_resource type="Script" uid="uid://ba8gmbsovaw6w" path="res://scripts/components/state_machine/enemy_spawning.gd" id="3_taygl"]
+[ext_resource type="Texture2D" uid="uid://bhno8gl3fxq5b" path="res://sprites/link/smoke.png" id="4_2dv6q"]
+[ext_resource type="Script" uid="uid://dwe1ihmickl7u" path="res://scripts/components/state_machine/grounded_enemy_patrol.gd" id="5_6tbu5"]
+[ext_resource type="Script" uid="uid://bkbkmpdkiex0k" path="res://scripts/components/stick_to_parent.gd" id="6_hq0iy"]
+[ext_resource type="Script" uid="uid://45lovl1cwfpt" path="res://scripts/components/state_machine/enemy_hurt.gd" id="6_jxvkv"]
+[ext_resource type="Script" uid="uid://cuq46x47rnye" path="res://scripts/components/state_machine/enemy_stunned.gd" id="7_pj1c6"]
+[ext_resource type="PackedScene" uid="uid://cp1y0ywk18qyl" path="res://scenes/enemies/dungeon/like_like_model.tscn" id="8_15bm0"]
+[ext_resource type="Script" uid="uid://wqa1ecpbus0d" path="res://scripts/components/state_machine/like_like_eating.gd" id="9_taygl"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="9_ufk4t"]
+
+[sub_resource type="Animation" id="Animation_ma4ah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_555ad"]
+resource_name = "spawn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawned"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgwxw"]
+_data = {
+&"RESET": SubResource("Animation_ma4ah"),
+&"spawn": SubResource("Animation_555ad")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cx4io"]
+height = 1.3
+radius = 0.7
+
+[node name="LikeLike" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 233
+script = ExtResource("1_2eqle")
+target_arrow_offset = Vector3(0, 1.8, 0)
+drop_group = 4
+
+[node name="StateMachine" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_hq0iy")
+metadata/_custom_type_script = "uid://b0waclod0fapl"
+
+[node name="Spawning" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_taygl")
+
+[node name="SpawnEffect" type="Sprite3D" parent="StateMachine/Spawning"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+sorting_offset = 1.6
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_2dv6q")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StateMachine/Spawning/SpawnEffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_vgwxw")
+}
+autoplay = "spawn"
+
+[node name="Patrol" type="Node3D" parent="StateMachine"]
+script = ExtResource("5_6tbu5")
+move_speed = 2.4
+
+[node name="WallChecks" type="Node3D" parent="StateMachine/Patrol"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+top_level = true
+script = ExtResource("6_hq0iy")
+offset = Vector3(0, 0.8, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+target_position = Vector3(0, 0, 1.6)
+
+[node name="RayCast3D2" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+target_position = Vector3(0, 0, -1.6)
+
+[node name="RayCast3D3" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+target_position = Vector3(1.6, 0, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+target_position = Vector3(-1.6, 0, 0)
+
+[node name="Hurt" type="Node3D" parent="StateMachine"]
+script = ExtResource("6_jxvkv")
+static_states = Array[String](["Eating"])
+
+[node name="HurtBox" type="Area3D" parent="StateMachine/Hurt"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StateMachine/Hurt/HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+shape = SubResource("CylinderShape3D_cx4io")
+
+[node name="Stunned" type="Node3D" parent="StateMachine"]
+script = ExtResource("7_pj1c6")
+
+[node name="Eating" type="Node3D" parent="StateMachine"]
+script = ExtResource("9_taygl")
+
+[node name="EatBox" type="Area3D" parent="StateMachine/Eating"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StateMachine/Eating/EatBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+shape = SubResource("CylinderShape3D_cx4io")
+
+[node name="Model" parent="." instance=ExtResource("8_15bm0")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0)
+shape = SubResource("CylinderShape3D_cx4io")
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_ufk4t")
+max_health = 9
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[connection signal="area_entered" from="StateMachine/Hurt/HurtBox" to="StateMachine/Hurt" method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="StateMachine/Eating/EatBox" to="StateMachine/Eating" method="_on_eat_box_body_entered"]

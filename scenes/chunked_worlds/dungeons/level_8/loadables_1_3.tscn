@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ym5es4b7o7cw"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_2u4l0"]
+[ext_resource type="PackedScene" uid="uid://dumwmibigwdqn" path="res://scenes/enemies/dungeon/manhandla.tscn" id="2_7fifb"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="3_2u4l0"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="4_yjkh6"]
+
+[node name="Loadables_1_3" type="Node3D"]
+script = ExtResource("1_2u4l0")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Manhandla" parent="Bosses" instance=ExtResource("2_7fifb")]
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("3_2u4l0")]
+location_id = "dungeon/8/loadables_1_3"
+hidden_by_enemies = NodePath("../../Bosses")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("4_yjkh6")]

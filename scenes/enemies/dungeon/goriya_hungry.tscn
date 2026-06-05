@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://h28opc2f3oyg"]
+
+[ext_resource type="Script" uid="uid://dij8xyprk7kuu" path="res://scripts/enemies/dungeon/goriya_hungry.gd" id="1_tqfk2"]
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_looem"]
+[ext_resource type="Script" uid="uid://0m6hbdnd11i6" path="res://scripts/components/state_machine/hungry_goriya_grumble.gd" id="3_bsfvd"]
+[ext_resource type="FontFile" uid="uid://ipfhmv1fvvgt" path="res://sprites/fonts/the-legend-of-zelda-nes.otf" id="7_7808p"]
+[ext_resource type="Script" uid="uid://bcluwncpeh3eb" path="res://scripts/components/reveal_text.gd" id="8_no3sn"]
+[ext_resource type="Script" uid="uid://danbaba6kks3i" path="res://scripts/components/state_machine/enemy_eat.gd" id="10_nat5w"]
+[ext_resource type="PackedScene" uid="uid://dt5mc2rl4qbxi" path="res://scenes/enemies/dungeon/goriya_model.tscn" id="11_drdqy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7808p"]
+size = Vector3(25.6, 6.4, 1.6)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dtfnb"]
+height = 1.5
+
+[node name="Goriya" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 169
+script = ExtResource("1_tqfk2")
+target_arrow_offset = Vector3(0, 1.8, 0)
+drop_group = 4
+attracted_to_food = true
+
+[node name="StateMachine" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_looem")
+
+[node name="Patrol" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_bsfvd")
+
+[node name="PathBlocker" type="StaticBody3D" parent="StateMachine/Patrol"]
+top_level = true
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StateMachine/Patrol/PathBlocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0)
+shape = SubResource("BoxShape3D_7808p")
+
+[node name="Text" type="Label3D" parent="StateMachine/Patrol"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1514316, 0)
+double_sided = false
+text = "GRUMBLE GRUMBLE..."
+font = ExtResource("7_7808p")
+font_size = 45
+outline_size = 0
+script = ExtResource("8_no3sn")
+
+[node name="Eat" type="Node3D" parent="StateMachine"]
+script = ExtResource("10_nat5w")
+bite_size = 28.0
+
+[node name="Model" parent="." instance=ExtResource("11_drdqy")]
+unique_name_in_owner = true
+has_boomerang = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+shape = SubResource("CapsuleShape3D_dtfnb")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://djc1rn7ukxcd7"]
+
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="1_xhids"]
+[ext_resource type="PackedScene" uid="uid://be2666jouixor" path="res://scenes/environment/caves/cave_model.tscn" id="2_hxbn5"]
+[ext_resource type="PackedScene" uid="uid://by7qp78yd81g1" path="res://scenes/npcs/shop3_merchent_npc.tscn" id="3_hxbn5"]
+
+[node name="Shop" type="Node3D"]
+
+[node name="Torch" parent="." instance=ExtResource("1_xhids")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -0.8)
+
+[node name="Torch2" parent="." instance=ExtResource("1_xhids")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -0.8)
+
+[node name="CaveModel" parent="." instance=ExtResource("2_hxbn5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="MerchentNPC" parent="." instance=ExtResource("3_hxbn5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)

@@ -1,0 +1,317 @@
+[gd_scene load_steps=22 format=3 uid="uid://bj8x1awgnugfe"]
+
+[ext_resource type="Texture2D" uid="uid://b8h7yt3671n12" path="res://sprites/enemies/dungeon/keese_1.png" id="1_a0x2r"]
+[ext_resource type="Script" uid="uid://c52cy4odaxtut" path="res://scripts/enemies/dungeon/keese.gd" id="1_co0ep"]
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_0lwn0"]
+[ext_resource type="Script" uid="uid://c8rrfukm3oyt5" path="res://scripts/components/sprite3d_effects/rotating_sprite3d_billboard_along_y.gd" id="2_egf2u"]
+[ext_resource type="Script" uid="uid://3bt166y0yhiy" path="res://scripts/components/state_machine/flying_enemy_patrol.gd" id="3_0kq32"]
+[ext_resource type="Texture2D" uid="uid://b8nwg6hvlfa0i" path="res://sprites/enemies/dungeon/keese_2.png" id="3_egf2u"]
+[ext_resource type="Script" uid="uid://ba8gmbsovaw6w" path="res://scripts/components/state_machine/enemy_spawning.gd" id="3_n1egc"]
+[ext_resource type="Script" uid="uid://45lovl1cwfpt" path="res://scripts/components/state_machine/enemy_hurt.gd" id="4_dmlc3"]
+[ext_resource type="Texture2D" uid="uid://bhno8gl3fxq5b" path="res://sprites/link/smoke.png" id="4_pdshw"]
+[ext_resource type="Script" uid="uid://cuq46x47rnye" path="res://scripts/components/state_machine/enemy_stunned.gd" id="5_8jmp3"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="9_ft5oi"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="10_8jmp3"]
+
+[sub_resource type="Animation" id="Animation_ma4ah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_555ad"]
+resource_name = "spawn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawned"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgwxw"]
+_data = {
+&"RESET": SubResource("Animation_ma4ah"),
+&"spawn": SubResource("Animation_555ad")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmlc3"]
+
+[sub_resource type="Animation" id="Animation_03yyo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c50x4"]
+resource_name = "flap"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_co0ep"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0lwn0"]
+_data = {
+&"RESET": SubResource("Animation_03yyo"),
+&"flap": SubResource("Animation_c50x4"),
+&"idle": SubResource("Animation_co0ep")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a0x2r"]
+radius = 0.48739362
+
+[node name="Keese" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 225
+script = ExtResource("1_co0ep")
+target_arrow_offset = Vector3(0, 1.6, 0)
+drop_group = 4
+
+[node name="StateMachine" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_0lwn0")
+
+[node name="Spawning" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_n1egc")
+
+[node name="SpawnEffect" type="Sprite3D" parent="StateMachine/Spawning"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+sorting_offset = 1.6
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_pdshw")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StateMachine/Spawning/SpawnEffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_vgwxw")
+}
+autoplay = "spawn"
+
+[node name="Patrol" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_0kq32")
+
+[node name="WallChecks" type="Node3D" parent="StateMachine/Patrol"]
+unique_name_in_owner = true
+top_level = true
+
+[node name="RayCast3D" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, 1.6)
+collision_mask = 33
+
+[node name="RayCast3D2" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, -1.6)
+collision_mask = 33
+
+[node name="RayCast3D3" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(1.6, 0, 0)
+collision_mask = 33
+
+[node name="RayCast3D4" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(-1.6, 0, 0)
+collision_mask = 33
+
+[node name="FloorCheck" type="RayCast3D" parent="StateMachine/Patrol"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, -2.4, 0)
+
+[node name="Hurt" type="Node3D" parent="StateMachine"]
+script = ExtResource("4_dmlc3")
+is_weak_enemy = true
+
+[node name="HurtBox" type="Area3D" parent="StateMachine/Hurt"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StateMachine/Hurt/HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_dmlc3")
+
+[node name="Stunned" type="Node3D" parent="StateMachine"]
+script = ExtResource("5_8jmp3")
+
+[node name="Model" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Frame1" type="Sprite3D" parent="Model"]
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_a0x2r")
+hframes = 4
+vframes = 4
+frame = 1
+script = ExtResource("2_egf2u")
+
+[node name="Frame2" type="Sprite3D" parent="Model"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_egf2u")
+hframes = 4
+vframes = 4
+script = ExtResource("2_egf2u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_0lwn0")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("SphereShape3D_a0x2r")
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_ft5oi")
+max_health = 1
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("10_8jmp3")
+knockback = Vector3(0, 6.4, 6.4)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_dmlc3")
+
+[connection signal="area_entered" from="StateMachine/Hurt/HurtBox" to="StateMachine/Hurt" method="_on_hurt_box_area_entered"]

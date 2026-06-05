@@ -1,0 +1,258 @@
+[gd_scene load_steps=42 format=3 uid="uid://b1qdurd786e86"]
+
+[ext_resource type="PackedScene" uid="uid://blynj52mihwn8" path="res://scenes/environment/dungeons/level.tscn" id="1_iiyov"]
+[ext_resource type="PackedScene" uid="uid://blhv1aycpk0so" path="res://scenes/environment/dungeons/level_7/room_0_0.tscn" id="2_g5qlg"]
+[ext_resource type="PackedScene" uid="uid://dd28qpbyocoh7" path="res://scenes/environment/dungeons/level_7/room_0_1.tscn" id="3_w2xvu"]
+[ext_resource type="PackedScene" uid="uid://c12eomjurlmbg" path="res://scenes/environment/dungeons/level_7/room_0_2.tscn" id="4_dv4ss"]
+[ext_resource type="PackedScene" uid="uid://g3wlpi3h2wqs" path="res://scenes/environment/dungeons/level_7/room_1_0.tscn" id="5_dxcj5"]
+[ext_resource type="PackedScene" uid="uid://bjxtxcy7dj4c6" path="res://scenes/environment/dungeons/level_7/room_1_1.tscn" id="6_phaea"]
+[ext_resource type="PackedScene" uid="uid://dw8alh106r7s3" path="res://scenes/environment/dungeons/level_7/room_1_2.tscn" id="7_e2ih8"]
+[ext_resource type="PackedScene" uid="uid://dmd2gg6v3swa7" path="res://scenes/environment/dungeons/level_7/room_1_3.tscn" id="8_tgy3h"]
+[ext_resource type="PackedScene" uid="uid://b846shtlcof0o" path="res://scenes/environment/dungeons/level_7/room_1_4.tscn" id="9_nsrje"]
+[ext_resource type="PackedScene" uid="uid://c3o8hx3umhf5u" path="res://scenes/environment/dungeons/level_7/room_1_5.tscn" id="10_r2hj6"]
+[ext_resource type="PackedScene" uid="uid://cx00v7ymtsdv7" path="res://scenes/environment/dungeons/level_7/room_2_0.tscn" id="11_nsrje"]
+[ext_resource type="PackedScene" uid="uid://w0g3266bmdgh" path="res://scenes/environment/dungeons/level_7/room_2_1.tscn" id="12_r2hj6"]
+[ext_resource type="PackedScene" uid="uid://dmupbyt6svguv" path="res://scenes/environment/dungeons/level_7/room_2_2.tscn" id="13_dxmcb"]
+[ext_resource type="PackedScene" uid="uid://tkoisoajf1im" path="res://scenes/environment/dungeons/level_7/room_2_3.tscn" id="14_12obt"]
+[ext_resource type="PackedScene" uid="uid://cgby4gm8sl7x5" path="res://scenes/environment/dungeons/level_7/room_3_0.tscn" id="15_8isd6"]
+[ext_resource type="PackedScene" uid="uid://bc6h1m4snwnrg" path="res://scenes/environment/dungeons/level_7/room_3_1.tscn" id="16_lt0jm"]
+[ext_resource type="PackedScene" uid="uid://cwjbl4bob75n0" path="res://scenes/environment/dungeons/level_7/room_4_0.tscn" id="17_f8odr"]
+[ext_resource type="PackedScene" uid="uid://bg0lfb4d6h2w4" path="res://scenes/environment/dungeons/level_7/room_4_1.tscn" id="18_hmekb"]
+[ext_resource type="PackedScene" uid="uid://xm0136c1jx6u" path="res://scenes/environment/dungeons/level_7/room_4_2.tscn" id="19_83smw"]
+[ext_resource type="PackedScene" uid="uid://4oul1mtq8tv6" path="res://scenes/environment/dungeons/level_7/room_5_0.tscn" id="20_83smw"]
+[ext_resource type="PackedScene" uid="uid://b7nh54cn01amv" path="res://scenes/environment/dungeons/level_7/room_5_1.tscn" id="21_pua4d"]
+[ext_resource type="PackedScene" uid="uid://bnlttkxrnc0i7" path="res://scenes/environment/dungeons/level_7/room_5_2.tscn" id="22_oeu4h"]
+[ext_resource type="PackedScene" uid="uid://bf3nwhkuup2e1" path="res://scenes/environment/dungeons/level_7/room_5_3.tscn" id="23_p2jkl"]
+[ext_resource type="PackedScene" uid="uid://ofusb8o2xsi3" path="res://scenes/environment/dungeons/level_7/room_6_0.tscn" id="24_jfa1k"]
+[ext_resource type="PackedScene" uid="uid://drq0rmum1tyk" path="res://scenes/environment/dungeons/level_7/room_6_1.tscn" id="25_w540s"]
+[ext_resource type="PackedScene" uid="uid://c8kxk7jvo2mow" path="res://scenes/environment/dungeons/level_7/room_6_2.tscn" id="26_qo620"]
+[ext_resource type="PackedScene" uid="uid://cjpwiivtrwy43" path="res://scenes/environment/dungeons/level_7/room_6_3.tscn" id="27_p0an1"]
+[ext_resource type="PackedScene" uid="uid://d4ktaskn0fqao" path="res://scenes/environment/dungeons/level_7/room_6_4.tscn" id="28_rgpt0"]
+[ext_resource type="PackedScene" uid="uid://bhs0xmwwpynbb" path="res://scenes/environment/dungeons/level_7/room_7_0.tscn" id="29_skn35"]
+[ext_resource type="PackedScene" uid="uid://c2f80fqc2tunf" path="res://scenes/environment/dungeons/level_7/room_7_1.tscn" id="30_c4atq"]
+[ext_resource type="PackedScene" uid="uid://blsec8lwmk3ua" path="res://scenes/environment/dungeons/level_7/room_7_2.tscn" id="31_3hdix"]
+[ext_resource type="PackedScene" uid="uid://m3xin17cx57l" path="res://scenes/environment/dungeons/level_7/room_7_3.tscn" id="32_y47ev"]
+[ext_resource type="PackedScene" uid="uid://fflasxvxtuoa" path="res://scenes/environment/dungeons/level_7/room_7_4.tscn" id="33_ab8ok"]
+[ext_resource type="PackedScene" uid="uid://boxl8uckgh34t" path="res://scenes/environment/dungeons/level_7/room_7_5.tscn" id="34_dx64r"]
+[ext_resource type="PackedScene" uid="uid://tjgxae3jp8mg" path="res://scenes/environment/dungeons/level_7/room_red_candle.tscn" id="35_p0an1"]
+[ext_resource type="PackedScene" uid="uid://deht5pckcb3vj" path="res://scenes/environment/dungeons/level_7/room_tunnel_a.tscn" id="36_rgpt0"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="37_skn35"]
+[ext_resource type="PackedScene" uid="uid://bi3jfhxuvkayc" path="res://scenes/environment/dungeons/general_pieces/bomb_cover_ns.tscn" id="38_c4atq"]
+[ext_resource type="PackedScene" uid="uid://cik2qat56v370" path="res://scenes/environment/dungeons/general_pieces/door_locked.tscn" id="39_3hdix"]
+[ext_resource type="PackedScene" uid="uid://b7vv0ekm7d7h4" path="res://scenes/environment/dungeons/general_pieces/bomb_cover_ew.tscn" id="40_y47ev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4atq"]
+size = Vector3(1.6, 1.6, 1.6)
+
+[node name="Level7" instance=ExtResource("1_iiyov")]
+level = 7
+
+[node name="Room_0_0" parent="Rooms" index="0" instance=ExtResource("2_g5qlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 61.6)
+
+[node name="Room_0_1" parent="Rooms" index="1" instance=ExtResource("3_w2xvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 61.6)
+
+[node name="Room_0_2" parent="Rooms" index="2" instance=ExtResource("4_dv4ss")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 0, 61.6)
+
+[node name="Room_1_0" parent="Rooms" index="3" instance=ExtResource("5_dxcj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 44)
+
+[node name="Room_1_1" parent="Rooms" index="4" instance=ExtResource("6_phaea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 44)
+
+[node name="Room_1_2" parent="Rooms" index="5" instance=ExtResource("7_e2ih8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, 44)
+
+[node name="Room_1_3" parent="Rooms" index="6" instance=ExtResource("8_tgy3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, 44)
+
+[node name="Room_1_4" parent="Rooms" index="7" instance=ExtResource("9_nsrje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, 44)
+
+[node name="Room_1_5" parent="Rooms" index="8" instance=ExtResource("10_r2hj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, 44)
+
+[node name="Room_2_0" parent="Rooms" index="9" instance=ExtResource("11_nsrje")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 26.4)
+
+[node name="Room_2_1" parent="Rooms" index="10" instance=ExtResource("12_r2hj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 26.4)
+
+[node name="Room_2_2" parent="Rooms" index="11" instance=ExtResource("13_dxmcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, 26.4)
+
+[node name="Room_2_3" parent="Rooms" index="12" instance=ExtResource("14_12obt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, 26.4)
+
+[node name="Room_3_0" parent="Rooms" index="13" instance=ExtResource("15_8isd6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 8.8)
+
+[node name="Room_3_1" parent="Rooms" index="14" instance=ExtResource("16_lt0jm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 8.8)
+
+[node name="Room_4_0" parent="Rooms" index="15" instance=ExtResource("17_f8odr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -8.8)
+
+[node name="Room_4_1" parent="Rooms" index="16" instance=ExtResource("18_hmekb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -8.8)
+
+[node name="Room_4_2" parent="Rooms" index="17" instance=ExtResource("19_83smw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -8.8)
+
+[node name="Room_5_0" parent="Rooms" index="18" instance=ExtResource("20_83smw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -26.4)
+
+[node name="Room_5_1" parent="Rooms" index="19" instance=ExtResource("21_pua4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -26.4)
+
+[node name="Room_5_2" parent="Rooms" index="20" instance=ExtResource("22_oeu4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -26.4)
+
+[node name="Room_5_3" parent="Rooms" index="21" instance=ExtResource("23_p2jkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, -26.4)
+
+[node name="Room_6_0" parent="Rooms" index="22" instance=ExtResource("24_jfa1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -44)
+
+[node name="Room_6_1" parent="Rooms" index="23" instance=ExtResource("25_w540s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -44)
+
+[node name="Room_6_2" parent="Rooms" index="24" instance=ExtResource("26_qo620")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -44)
+
+[node name="Room_6_3" parent="Rooms" index="25" instance=ExtResource("27_p0an1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, -44)
+
+[node name="Room_6_4" parent="Rooms" index="26" instance=ExtResource("28_rgpt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -44)
+
+[node name="Room_7_0" parent="Rooms" index="27" instance=ExtResource("29_skn35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -61.600002)
+
+[node name="Room_7_1" parent="Rooms" index="28" instance=ExtResource("30_c4atq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, -61.600002)
+
+[node name="Room_7_2" parent="Rooms" index="29" instance=ExtResource("31_3hdix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, -61.600002)
+
+[node name="Room_7_3" parent="Rooms" index="30" instance=ExtResource("32_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.799999, 0, -61.600002)
+
+[node name="Room_7_4" parent="Rooms" index="31" instance=ExtResource("33_ab8ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4, 0, -61.600002)
+
+[node name="Room_7_5" parent="Rooms" index="32" instance=ExtResource("34_dx64r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 0, -61.600002)
+
+[node name="RoomRedCandle" parent="Rooms" index="33" instance=ExtResource("35_p0an1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, -12.8, -44)
+
+[node name="RoomTunnelA" parent="Rooms" index="34" instance=ExtResource("36_rgpt0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, -12.8, -61.600002)
+
+[node name="Door" parent="Doors" index="0" instance=ExtResource("37_skn35")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 72.8, -0.1, -67.2)
+teleport_to = Vector3(56.85, -12.8, -61.6)
+look_dir = Vector3(-1, 0, 0)
+
+[node name="Door2" parent="Doors" index="1" instance=ExtResource("37_skn35")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 54.450005, -12.8, -61.6)
+teleport_to = Vector3(71.2, 0, -66.4)
+look_dir = Vector3(0, 0, -1)
+
+[node name="Door3" parent="Doors" index="2" instance=ExtResource("37_skn35")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -37.600002, -0.1, -27.199995)
+teleport_to = Vector3(71.15, -12.8, -61.6)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door4" parent="Doors" index="3" instance=ExtResource("37_skn35")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 73.55, -12.8, -61.6)
+teleport_to = Vector3(-40.8, 0, -24.8)
+look_dir = Vector3(1, 0, 0)
+
+[node name="Door5" parent="Doors" index="4" instance=ExtResource("37_skn35")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -12, -0.1, -44.8)
+teleport_to = Vector3(-12.8, -12.8, -40.85)
+look_dir = Vector3(0, 0, 1)
+
+[node name="Door6" parent="Doors" index="5" instance=ExtResource("37_skn35")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, -12.8, -38.449997)
+teleport_to = Vector3(-15.2, 0, -42.4)
+look_dir = Vector3(0, 0, -1)
+
+[node name="BombCoverNS" parent="Doors" index="6" instance=ExtResource("38_c4atq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.4, 0, 35.2)
+
+[node name="BombCoverNS2" parent="Doors" index="7" instance=ExtResource("38_c4atq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.800001, 0, 35.2)
+
+[node name="BombCoverNS3" parent="Doors" index="8" instance=ExtResource("38_c4atq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -52.8)
+
+[node name="DoorLocked" parent="Doors" index="9" instance=ExtResource("39_3hdix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, -0.1, 17.6)
+
+[node name="DoorLocked2" parent="Doors" index="10" instance=ExtResource("39_3hdix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, -0.1, -17.6)
+
+[node name="DoorLocked5" parent="Doors" index="11" instance=ExtResource("39_3hdix")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.800003, -0.1, -52.800003)
+
+[node name="DoorLocked3" parent="Doors" index="12" instance=ExtResource("39_3hdix")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -51.2, -0.1, -44.000004)
+
+[node name="DoorLocked4" parent="Doors" index="13" instance=ExtResource("39_3hdix")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25.600002, -0.1, -44.000004)
+
+[node name="BombCoverEW" parent="Doors" index="14" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6, 0, -8.8)
+
+[node name="BombCoverEW7" parent="Doors" index="15" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2, 0, 44)
+
+[node name="BombCoverEW2" parent="Doors" index="16" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6, 0, -26.400002)
+
+[node name="BombCoverEW3" parent="Doors" index="17" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6, 0, -44)
+
+[node name="BombCoverEW4" parent="Doors" index="18" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -44)
+
+[node name="BombCoverEW5" parent="Doors" index="19" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2, 0, -61.6)
+
+[node name="BombCoverEW6" parent="Doors" index="20" instance=ExtResource("40_y47ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.2, 0, -61.6)
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="DoorEnemyWalls" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -44)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_c4atq")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="DoorEnemyWalls" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.6, 0, -26.4)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_c4atq")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="DoorEnemyWalls" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8, 0, -66.4)
+collision_layer = 288
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEnemyWalls/StaticBody3D5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, 0)
+shape = SubResource("BoxShape3D_c4atq")
+
+[node name="Link" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.399998, 0, 64.6)

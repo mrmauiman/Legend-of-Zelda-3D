@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5br8kovv5l8p"]
+
+[ext_resource type="Script" uid="uid://cyb2go4e6m4s2" path="res://scripts/chunked_world/screen_enemy_manager.gd" id="1_7e775"]
+[ext_resource type="Script" uid="uid://bxagk3jr30ynr" path="res://scripts/chunked_world/loadable_screen.gd" id="1_wj45y"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="3_wj45y"]
+[ext_resource type="PackedScene" uid="uid://d0rylqdc0o2bi" path="res://scenes/chunked_worlds/overworld/spawn_checker.tscn" id="5_7e775"]
+
+[node name="Screen_3_11" type="Node3D"]
+script = ExtResource("1_wj45y")
+
+[node name="Enemies" type="Node3D" parent="."]
+script = ExtResource("1_7e775")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("5_7e775")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="Exit" parent="." instance=ExtResource("3_wj45y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.8, 8.8499975)
+teleport_to = Vector3(96.8, 1.6, 4)
+
+[node name="Entrance" parent="." instance=ExtResource("3_wj45y")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 95.2, 1.5, 3.2)
+top_level = true
+teleport_to = Vector3(89.6, -12.8, 13.6)
+look_dir = Vector3(0, 0, 1)

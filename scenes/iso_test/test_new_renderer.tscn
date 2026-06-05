@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bplnq3gciajn3"]
+
+[ext_resource type="Script" uid="uid://dt5olqlo0kpu1" path="res://scripts/components/sprite3d_effects/all_angle_render.gd" id="1_0gp6c"]
+[ext_resource type="Texture2D" uid="uid://c8qu0kqlafdmk" path="res://sprites/link/head.png" id="1_cn17i"]
+[ext_resource type="Script" uid="uid://dw1rcdsmew6se" path="res://scripts/components/sprite3d_effects/rotating_sprite3d.gd" id="2_0gp6c"]
+[ext_resource type="Texture2D" uid="uid://dgym0xn047jug" path="res://sprites/link/iso_top_test/head_iso.png" id="3_q7d1x"]
+[ext_resource type="Texture2D" uid="uid://dvffudnji0tmo" path="res://sprites/link/iso_top_test/head_top.png" id="4_k3mi5"]
+
+[node name="TestNewRenderer" type="Node3D" node_paths=PackedStringArray("side", "iso")]
+script = ExtResource("1_0gp6c")
+side = NodePath("Side")
+iso = NodePath("Iso")
+
+[node name="Side" type="Sprite3D" parent="."]
+transform = Transform3D(-0.98796463, 0, -0.15467985, 0, 1, 0, 0.15467985, 0, -0.98796463, 0, 0, 0)
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("1_cn17i")
+hframes = 4
+vframes = 5
+script = ExtResource("2_0gp6c")
+
+[node name="Iso" type="Sprite3D" parent="."]
+transform = Transform3D(-0.98796463, 0, -0.15467985, 0, 1, 0, 0.15467985, 0, -0.98796463, 0, 0, 0)
+visible = false
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_q7d1x")
+hframes = 4
+vframes = 4
+script = ExtResource("2_0gp6c")
+reverse = true
+
+[node name="Top" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
+texture_filter = 0
+texture = ExtResource("4_k3mi5")

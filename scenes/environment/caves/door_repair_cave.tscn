@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpt0rmrfogic2"]
+
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="1_fcai8"]
+[ext_resource type="Script" uid="uid://h3dgsydjgh4c" path="res://scripts/components/door_repair_cave.gd" id="1_ww34x"]
+[ext_resource type="PackedScene" uid="uid://be2666jouixor" path="res://scenes/environment/caves/cave_model.tscn" id="2_6wfig"]
+[ext_resource type="PackedScene" uid="uid://b80cg4dtrc1vm" path="res://scenes/npcs/door_old_man_npc.tscn" id="3_fcai8"]
+
+[node name="DoorRepairCave" type="Node3D"]
+script = ExtResource("1_ww34x")
+
+[node name="Torch" parent="." instance=ExtResource("1_fcai8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -0.8)
+
+[node name="Torch2" parent="." instance=ExtResource("1_fcai8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -0.8)
+
+[node name="CaveModel" parent="." instance=ExtResource("2_6wfig")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="OldManNPC" parent="." instance=ExtResource("3_fcai8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)

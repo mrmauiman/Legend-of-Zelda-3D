@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvq1naeu1kpb5"]
+
+[ext_resource type="PackedScene" uid="uid://ckftgy0sw1l74" path="res://scenes/pickups/pickup.tscn" id="1_e7wu1"]
+[ext_resource type="Texture2D" uid="uid://clcb40m0m2g0w" path="res://sprites/rupee.png" id="2_7jtuk"]
+[ext_resource type="Script" uid="uid://dexkugdnopi28" path="res://scripts/components/pickups/counter_pickup.gd" id="2_eh42e"]
+
+[sub_resource type="Animation" id="Animation_8a8h0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7jtuk"]
+resource_name = "flash"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gqo2a"]
+_data = {
+&"RESET": SubResource("Animation_8a8h0"),
+&"flash": SubResource("Animation_7jtuk")
+}
+
+[node name="RupeePickup" instance=ExtResource("1_e7wu1")]
+script = ExtResource("2_eh42e")
+pickup_id = "rupees"
+boomerang_can_pickup = true
+
+[node name="Sprite" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_7jtuk")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_gqo2a")
+}
+autoplay = "flash"

@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://c83keckgaw44e"]
+
+[ext_resource type="Script" uid="uid://codvikc15pghu" path="res://scripts/components/forward_enemy_projectile.gd" id="1_dbli4"]
+[ext_resource type="Texture2D" uid="uid://d1t0yfee6284i" path="res://sprites/enemies/octorock_rock.png" id="2_7lhc0"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="3_7nu6u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ownoe"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i0x1s"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7nu6u"]
+
+[node name="OctorockRock" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 65
+script = ExtResource("1_dbli4")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_7lhc0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ownoe")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_7nu6u")
+knockback = Vector3(0, 9.6, 6.4)
+relative_knockback_orientor = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("SphereShape3D_i0x1s")
+
+[node name="WaterChecker" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="WaterChecker"]
+shape = SubResource("SphereShape3D_7nu6u")
+
+[connection signal="blocked" from="HitBox" to="." method="blocked"]
+[connection signal="hit" from="HitBox" to="." method="hit"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

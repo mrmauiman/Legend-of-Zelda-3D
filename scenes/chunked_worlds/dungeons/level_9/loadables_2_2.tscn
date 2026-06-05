@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwwifkuwibmqa"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_slrie"]
+[ext_resource type="PackedScene" uid="uid://b3slaibk2bjbg" path="res://scenes/enemies/dungeon/patra.tscn" id="2_85lfj"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="3_n4ti6"]
+
+[node name="Loadables_2_2" type="Node3D"]
+script = ExtResource("1_slrie")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Patra" parent="Bosses" instance=ExtResource("2_85lfj")]
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("3_n4ti6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, -5.6)
+enemies = NodePath("../../Bosses")

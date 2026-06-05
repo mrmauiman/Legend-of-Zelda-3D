@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://blynj52mihwn8"]
+
+[ext_resource type="Script" uid="uid://bx8vp2s0bjkml" path="res://scripts/chunked_world/level.gd" id="1_vhv1l"]
+[ext_resource type="PackedScene" uid="uid://rqc1yj5uto2h" path="res://scenes/link/link.tscn" id="1_xty7u"]
+[ext_resource type="Script" uid="uid://d4li177ajbp6h" path="res://scripts/components/door_manager.gd" id="2_vhv1l"]
+[ext_resource type="PackedScene" uid="uid://b80firppabbyo" path="res://scenes/ui/in_game_ui.tscn" id="3_vtfll"]
+[ext_resource type="PackedScene" uid="uid://bie8f6qpf6d8r" path="res://scenes/ui/opening_animation.tscn" id="4_am2vs"]
+[ext_resource type="Script" uid="uid://1flqwd5tdscl" path="res://scripts/components/world_environment.gd" id="4_vtfll"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xty7u"]
+load_path = "res://.godot/imported/overcast_soil_puresky_4k.exr-eb587295a136aee9eb4d9a421246b6cd.bptc.ctex"
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vhv1l"]
+panorama = SubResource("CompressedTexture2D_xty7u")
+energy_multiplier = 0.3
+
+[sub_resource type="Sky" id="Sky_vtfll"]
+sky_material = SubResource("PanoramaSkyMaterial_vhv1l")
+
+[sub_resource type="Environment" id="Environment_am2vs"]
+sky = SubResource("Sky_vtfll")
+ambient_light_source = 2
+ambient_light_color = Color(0.5487277, 0.6895292, 0.96870035, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 2
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_energy = 0.3
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.4313402, 0.43134028, 0.43134007, 1)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_vhv1l")
+
+[node name="Rooms" type="Node3D" parent="."]
+
+[node name="Doors" type="Node3D" parent="."]
+script = ExtResource("2_vhv1l")
+
+[node name="DoorEnemyWalls" type="Node3D" parent="."]
+
+[node name="Link" parent="." instance=ExtResource("1_xty7u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099998474, 0, 3.2000017)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_am2vs")
+script = ExtResource("4_vtfll")
+
+[node name="Sun" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.50623596, 0.5605957, -0.6553302, 0.04134363, 0.7432458, 0.66773975, 0.86140347, -0.3651276, 0.35308066, 0, 9.5, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="UI" type="Node" parent="."]
+
+[node name="InGameUI" parent="UI" instance=ExtResource("3_vtfll")]
+
+[node name="OpeningAnimation" parent="UI" instance=ExtResource("4_am2vs")]

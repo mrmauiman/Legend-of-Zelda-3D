@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bt81eitdpmpwl"]
+
+[ext_resource type="Shader" uid="uid://c7duh6c2tomcd" path="res://shaders/shadow.gdshader" id="1_gwsfd"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_gwsfd")
+shader_parameter/size = Vector2(32, 32)
+shader_parameter/radius = 5.0
+shader_parameter/transparency = 0.40000000596048

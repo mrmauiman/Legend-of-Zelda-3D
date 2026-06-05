@@ -1,0 +1,192 @@
+[gd_scene load_steps=14 format=3 uid="uid://dd10xryr2gtvt"]
+
+[ext_resource type="Script" uid="uid://pw681k3fhcyu" path="res://scripts/enemies/overworld/lynel.gd" id="1_yo3cd"]
+[ext_resource type="PackedScene" uid="uid://clfcindqurv5j" path="res://scenes/enemies/overworld/lynel_blue_model.tscn" id="2_yo3cd"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_vww1a"]
+[ext_resource type="Texture2D" uid="uid://bhno8gl3fxq5b" path="res://sprites/link/smoke.png" id="4_3cl8r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0vj5x"]
+radius = 0.6
+height = 1.7
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0vj5x"]
+radius = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0vj5x"]
+size = Vector3(6.4, 1.6, 16)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0vj5x"]
+height = 1.6
+radius = 3.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo3cd"]
+size = Vector3(1.1, 0.8, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3cl8r"]
+size = Vector3(0.1, 0.8, 1.1)
+
+[sub_resource type="Animation" id="Animation_ma4ah"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_555ad"]
+resource_name = "spawn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawned"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgwxw"]
+_data = {
+&"RESET": SubResource("Animation_ma4ah"),
+&"spawn": SubResource("Animation_555ad")
+}
+
+[node name="LynelBlue" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 233
+script = ExtResource("1_yo3cd")
+target_arrow_offset = Vector3(0, 2, 0)
+drop_group = 1
+
+[node name="LynelModel" parent="." instance=ExtResource("2_yo3cd")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+shape = SubResource("CapsuleShape3D_0vj5x")
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_vww1a")
+max_health = 12
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("SphereShape3D_0vj5x")
+
+[node name="Sight" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -8)
+shape = SubResource("BoxShape3D_0vj5x")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Sight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_0vj5x")
+
+[node name="LinkSightChecker" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, 10)
+collision_mask = 105
+
+[node name="WallChecks" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+top_level = true
+
+[node name="RayCast3D" type="ShapeCast3D" parent="WallChecks"]
+shape = SubResource("BoxShape3D_yo3cd")
+target_position = Vector3(0, 0, 1.6)
+collision_mask = 105
+
+[node name="RayCast3D2" type="ShapeCast3D" parent="WallChecks"]
+shape = SubResource("BoxShape3D_yo3cd")
+target_position = Vector3(0, 0, -1.6)
+collision_mask = 105
+
+[node name="RayCast3D3" type="ShapeCast3D" parent="WallChecks"]
+shape = SubResource("BoxShape3D_3cl8r")
+target_position = Vector3(1.6, 0, 0)
+collision_mask = 105
+
+[node name="RayCast3D4" type="ShapeCast3D" parent="WallChecks"]
+shape = SubResource("BoxShape3D_3cl8r")
+target_position = Vector3(-1.6, 0, 0)
+collision_mask = 105
+
+[node name="SpawnEffect" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+visible = false
+sorting_offset = 1.6
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_3cl8r")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpawnEffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_vgwxw")
+}
+autoplay = "spawn"
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="Sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="Sight" to="." method="_on_sight_body_exited"]

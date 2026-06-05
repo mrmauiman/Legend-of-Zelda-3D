@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2gsnl6goaym8"]
+
+[ext_resource type="Script" uid="uid://cyb2go4e6m4s2" path="res://scripts/chunked_world/screen_enemy_manager.gd" id="1_cg6yt"]
+[ext_resource type="PackedScene" uid="uid://d0rylqdc0o2bi" path="res://scenes/chunked_worlds/overworld/spawn_checker.tscn" id="2_nnyeh"]
+
+[node name="Screen_7_9" type="Node3D"]
+
+[node name="Enemies" type="Node3D" parent="."]
+script = ExtResource("1_cg6yt")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("2_nnyeh")]

@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6deviq4y3ak"]
+
+[ext_resource type="Script" uid="uid://codvikc15pghu" path="res://scripts/components/forward_enemy_projectile.gd" id="1_obr4e"]
+[ext_resource type="Texture2D" uid="uid://bil60v0067u88" path="res://sprites/enemies/zora_fireball.png" id="2_acew1"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="3_qc35t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ownoe"]
+radius = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i0x1s"]
+
+[sub_resource type="Animation" id="Animation_ccahn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dmkp7"]
+resource_name = "flicker"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r48no"]
+_data = {
+&"RESET": SubResource("Animation_ccahn"),
+&"flicker": SubResource("Animation_dmkp7")
+}
+
+[node name="GleeokFireball" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 65
+script = ExtResource("1_obr4e")
+snap_to_ground = false
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_acew1")
+hframes = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ownoe")
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_qc35t")
+knockback = Vector3(0, 9.6, 6.4)
+relative_knockback_orientor = NodePath("..")
+damage = 2
+is_magic = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+shape = SubResource("SphereShape3D_i0x1s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_r48no")
+}
+autoplay = "flicker"
+
+[connection signal="blocked" from="HitBox" to="." method="blocked"]
+[connection signal="hit" from="HitBox" to="." method="hit"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

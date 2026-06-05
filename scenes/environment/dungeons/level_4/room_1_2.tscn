@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkiktaura6rth"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_o5ynk"]
+[ext_resource type="Script" uid="uid://xfmhu864ey0f" path="res://scripts/components/black_out.gd" id="2_lpclx"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="3_vgxww"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="4_0jwwf"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="5_845tc"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="6_lj4lr"]
+[ext_resource type="PackedScene" uid="uid://crv5dolwbpteq" path="res://scenes/environment/dungeons/general_pieces/accent_block.tscn" id="7_fqnx3"]
+
+[node name="Room_1_2" instance=ExtResource("1_o5ynk")]
+script = ExtResource("2_lpclx")
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_1_2.tscn"
+
+[node name="Floor" parent="Pieces" index="1" instance=ExtResource("3_vgxww")]
+
+[node name="WestWallDoor" parent="Pieces" index="2" instance=ExtResource("4_0jwwf")]
+
+[node name="ShortWall" parent="Pieces" index="3" instance=ExtResource("5_845tc")]
+
+[node name="LongWall" parent="Pieces" index="4" instance=ExtResource("6_lj4lr")]
+
+[node name="LongWall2" parent="Pieces" index="5" instance=ExtResource("6_lj4lr")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Blocks" type="Node3D" parent="Pieces" index="6"]
+
+[node name="AccentBlock" parent="Pieces/Blocks" index="0" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -4.8)
+
+[node name="AccentBlock2" parent="Pieces/Blocks" index="1" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -3.2000003)
+
+[node name="AccentBlock3" parent="Pieces/Blocks" index="2" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -1.6000003)
+
+[node name="AccentBlock4" parent="Pieces/Blocks" index="3" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -2.3841858e-07)
+
+[node name="AccentBlock5" parent="Pieces/Blocks" index="4" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 1.5999998)
+
+[node name="AccentBlock6" parent="Pieces/Blocks" index="5" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 1.5999998)
+
+[node name="AccentBlock7" parent="Pieces/Blocks" index="6" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 0, 1.5999998)
+
+[node name="AccentBlock8" parent="Pieces/Blocks" index="7" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 0, -2.3841858e-07)
+
+[node name="AccentBlock9" parent="Pieces/Blocks" index="8" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 0, -3.2000003)
+
+[node name="AccentBlock10" parent="Pieces/Blocks" index="9" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 0, -4.8)
+
+[node name="AccentBlock11" parent="Pieces/Blocks" index="10" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4000006, 0, -3.2000003)
+
+[node name="AccentBlock12" parent="Pieces/Blocks" index="11" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000055, 0, -3.2000003)
+
+[node name="AccentBlock13" parent="Pieces/Blocks" index="12" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.600001, 0, 4.7999997)
+
+[node name="AccentBlock14" parent="Pieces/Blocks" index="13" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000067, 0, 3.1999998)
+
+[node name="AccentBlock15" parent="Pieces/Blocks" index="14" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000067, 0, 1.5999998)
+
+[node name="AccentBlock16" parent="Pieces/Blocks" index="15" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000067, 0, -2.3841858e-07)
+
+[node name="AccentBlock17" parent="Pieces/Blocks" index="16" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80000067, 0, -1.6000003)
+
+[node name="AccentBlock18" parent="Pieces/Blocks" index="17" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999994, 0, -3.2000003)
+
+[node name="AccentBlock19" parent="Pieces/Blocks" index="18" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9999995, 0, -3.2000003)
+
+[node name="AccentBlock20" parent="Pieces/Blocks" index="19" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, -3.2000003)
+
+[node name="AccentBlock21" parent="Pieces/Blocks" index="20" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, -1.6000003)
+
+[node name="AccentBlock22" parent="Pieces/Blocks" index="21" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, -2.3841858e-07)
+
+[node name="AccentBlock23" parent="Pieces/Blocks" index="22" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, 1.5999998)
+
+[node name="AccentBlock24" parent="Pieces/Blocks" index="23" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, 3.1999998)
+
+[node name="AccentBlock25" parent="Pieces/Blocks" index="24" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999994, 0, 4.7999997)
+
+[node name="AccentBlock26" parent="Pieces/Blocks" index="25" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3999994, 0, 3.1999998)
+
+[node name="AccentBlock27" parent="Pieces/Blocks" index="26" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.799999, 0, 4.7999997)
+
+[node name="AccentBlock28" parent="Pieces/Blocks" index="27" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.799999, 0, 3.1999998)
+
+[node name="AccentBlock29" parent="Pieces/Blocks" index="28" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1999993, 0, -1.6000004)
+
+[node name="AccentBlock30" parent="Pieces/Blocks" index="29" instance=ExtResource("7_fqnx3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.799999, 0, -1.6000004)
+
+[connection signal="area_entered" from="Linkchecker" to="." method="_on_linkchecker_area_entered"]

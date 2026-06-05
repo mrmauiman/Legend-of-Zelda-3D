@@ -1,0 +1,120 @@
+[gd_scene load_steps=16 format=3 uid="uid://dqde4kt3rmijy"]
+
+[ext_resource type="Script" uid="uid://c2lxpb2cyxmle" path="res://scripts/enemies/dungeon/dodongo.gd" id="1_dtt6a"]
+[ext_resource type="PackedScene" uid="uid://cqapjwt3pas4x" path="res://scenes/enemies/dungeon/dodongo_model.tscn" id="2_1g86t"]
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_f401b"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_1g86t"]
+[ext_resource type="Script" uid="uid://dwe1ihmickl7u" path="res://scripts/components/state_machine/grounded_enemy_patrol.gd" id="3_f401b"]
+[ext_resource type="Script" uid="uid://bkbkmpdkiex0k" path="res://scripts/components/stick_to_parent.gd" id="4_0ofh5"]
+[ext_resource type="Script" uid="uid://b7d33bynv88un" path="res://scripts/components/state_machine/dodongo_stomp.gd" id="4_36a27"]
+[ext_resource type="Script" uid="uid://b35xiwse2i2u7" path="res://scripts/components/state_machine/dodongo_charge.gd" id="5_u8p26"]
+[ext_resource type="Script" uid="uid://djd6rdwndydlq" path="res://scripts/components/state_machine/dodongo_eat_bomb.gd" id="7_rjjpv"]
+[ext_resource type="Script" uid="uid://biov0mxmkfgxv" path="res://scripts/components/state_machine/dodongo_stunned.gd" id="8_evgoq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8p26"]
+size = Vector3(1, 0.6, 1.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dtt6a"]
+size = Vector3(1.2, 1.7, 1.6)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_36a27"]
+height = 1.0
+radius = 1.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f401b"]
+size = Vector3(1.4, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjjpv"]
+size = Vector3(1.4, 1.7, 2.7)
+
+[node name="Dodongo" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 233
+script = ExtResource("1_dtt6a")
+target_arrow_offset = Vector3(0, 1.8, 0)
+drop_group = 3
+
+[node name="StateMachine" type="Node3D" parent="."]
+script = ExtResource("2_f401b")
+
+[node name="Default" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_f401b")
+can_stop = false
+
+[node name="WallChecks" type="Node3D" parent="StateMachine/Default"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+top_level = true
+script = ExtResource("4_0ofh5")
+offset = Vector3(0, 0.8, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="StateMachine/Default/WallChecks"]
+target_position = Vector3(0, 0, 1.6)
+
+[node name="RayCast3D2" type="RayCast3D" parent="StateMachine/Default/WallChecks"]
+target_position = Vector3(0, 0, -1.6)
+
+[node name="RayCast3D3" type="RayCast3D" parent="StateMachine/Default/WallChecks"]
+target_position = Vector3(1.6, 0, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="StateMachine/Default/WallChecks"]
+target_position = Vector3(-1.6, 0, 0)
+
+[node name="Chase" type="Node3D" parent="StateMachine"]
+script = ExtResource("5_u8p26")
+
+[node name="Stomp" type="Node3D" parent="StateMachine"]
+script = ExtResource("4_36a27")
+
+[node name="EatBomb" type="Node3D" parent="StateMachine"]
+script = ExtResource("7_rjjpv")
+
+[node name="BombDetector" type="Area3D" parent="StateMachine/EatBomb"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StateMachine/EatBomb/BombDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 1.25)
+shape = SubResource("BoxShape3D_u8p26")
+
+[node name="Stunned" type="Node3D" parent="StateMachine"]
+script = ExtResource("8_evgoq")
+
+[node name="Model" parent="." instance=ExtResource("2_1g86t")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0.099999964)
+shape = SubResource("BoxShape3D_dtt6a")
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_1g86t")
+max_health = 50
+metadata/_custom_type_script = "uid://1hxfdebra5fm"
+
+[node name="StompSight" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StompSight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.3)
+shape = SubResource("CylinderShape3D_36a27")
+
+[node name="ChargeSight" type="ShapeCast3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_f401b")
+target_position = Vector3(0, 0, 32)
+collision_mask = 2
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0.85, 0.14999998)
+shape = SubResource("BoxShape3D_rjjpv")
+
+[connection signal="body_entered" from="StateMachine/EatBomb/BombDetector" to="StateMachine/EatBomb" method="_on_bomb_detector_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

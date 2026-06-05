@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=4 uid="uid://c508bpae2eh8j"]
+
+[ext_resource type="Script" uid="uid://c6oc4fm4duqwp" path="res://scripts/components/sealed_door.gd" id="1_kgig7"]
+[ext_resource type="Texture2D" uid="uid://xya4hxb8f4m1" path="res://models/dungeons/level_1/Pieces/DoorSealed_DoorSealed.png" id="2_33f00"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="3_dyrcj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_anitb"]
+size = Vector3(1.6, 2.8, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgdsj"]
+resource_name = "DoorSealed_Material"
+cull_mode = 2
+albedo_texture = ExtResource("2_33f00")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tbi25"]
+_surfaces = [{
+"aabb": AABB(-0.8, -0.1, -2.8, 1.6, 0.1, 2.8),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"name": "DoorSealed_Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAA//8AAP//AAD//wAAAAAAAAAAAAAAAP////8AAP////8AAAAA////////AAAAAP//AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kkk1u"]
+resource_name = "DoorSealed_DoorSealed"
+_surfaces = [{
+"aabb": AABB(-0.8, -0.1, -2.8, 1.6, 0.1, 2.8),
+"attribute_data": PackedByteArray("AEz/F/+L//cATP/3/4v/FwAE/xcARP/3AAT/9wBE/xf/k/8X/5f/9/+T//f/l/8X/5//F/+j//f/n//3/6P/F/+r/9f/6//f/6v/3//r/9f/q//v/+v/9/+r//f/6//v"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_wgdsj"),
+"name": "DoorSealed_Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA//8AAAAA////////AAD/////AAAAAAAA//8AAP//AAD/v/////////+/AAD//////7//////AAD/vwAAAAAAAFTVAAD/////VNUAAAAA//9U1QAA//8AAFTV/////wAAVNX//wAA//9U1f///////1TV//8AAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD//wAA/////wCA//8AAP//AIAAAAAA//8AgP///////wCA/3//P/9//z//f/8//3//P////3////9/////f////39U1VTVVNVU1VTVVNVU1VTVqqpUVaqqVFWqqlRVqqpUVf///3////9/////f////3//f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tbi25")
+
+[node name="SealedDoor" type="StaticBody3D"]
+script = ExtResource("1_kgig7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 1.4, -0.049999997)
+shape = SubResource("BoxShape3D_anitb")
+debug_color = Color(0.890817, 0.1384983, 0.7199668, 0.41960785)
+
+[node name="DoorSealed" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_kkk1u")
+skeleton = NodePath("")
+script = ExtResource("3_dyrcj")

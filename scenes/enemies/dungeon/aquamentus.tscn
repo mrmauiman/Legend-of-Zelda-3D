@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3lfe1xxoseqq"]
+
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="1_2e7kp"]
+[ext_resource type="PackedScene" uid="uid://d0jy0y1nsc3tb" path="res://scenes/enemies/dungeon/aquamentus_model.tscn" id="1_c401p"]
+[ext_resource type="Script" uid="uid://b61yw5ffconq5" path="res://scripts/enemies/dungeon/aquamentus.gd" id="1_rwj12"]
+[ext_resource type="Script" uid="uid://3wb8egsqb0i" path="res://scripts/components/state_machine/aquamentus_default.gd" id="3_6ugu0"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_ho61r"]
+[ext_resource type="Script" uid="uid://c3rms1hy1tyh0" path="res://scripts/components/state_machine/aquamentus_stunned.gd" id="4_6ugu0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ugu0"]
+size = Vector3(2.2, 1, 1.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1540"]
+size = Vector3(2.4, 1.7, 2.5)
+
+[node name="Aquamentus" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 233
+script = ExtResource("1_rwj12")
+drop_group = 3
+
+[node name="StateMachine" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_2e7kp")
+metadata/_custom_type_script = "uid://b0waclod0fapl"
+
+[node name="Default" type="Node3D" parent="StateMachine"]
+script = ExtResource("3_6ugu0")
+
+[node name="MeleeSight" type="Area3D" parent="StateMachine/Default"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StateMachine/Default/MeleeSight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.9000001)
+shape = SubResource("BoxShape3D_6ugu0")
+
+[node name="Stunned" type="Node3D" parent="StateMachine"]
+script = ExtResource("4_6ugu0")
+
+[node name="Model" parent="." instance=ExtResource("1_c401p")]
+unique_name_in_owner = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0.14999995)
+shape = SubResource("BoxShape3D_p1540")
+debug_color = Color(0.95998603, 0, 0.52127314, 0.41960785)
+
+[node name="Health" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_ho61r")
+max_health = 15
+metadata/_custom_type_script = "uid://1hxfdebra5fm"

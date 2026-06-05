@@ -1,0 +1,30 @@
+[gd_scene load_steps=9 format=3 uid="uid://b14an7xqgkto0"]
+
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="1_bs1y0"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="2_rvptj"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="2_y81o1"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="3_rvptj"]
+[ext_resource type="PackedScene" uid="uid://b0bg78xtryf88" path="res://scenes/environment/dungeons/general_pieces/floor_water_mail_slot.tscn" id="4_021vq"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="5_w7707"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="6_q3lvn"]
+[ext_resource type="PackedScene" uid="uid://b55x5niaurtlp" path="res://scenes/chunked_worlds/dungeons/linkchecker.tscn" id="9_021vq"]
+
+[node name="Room_5_2" type="Node3D"]
+
+[node name="Roof" parent="." instance=ExtResource("1_bs1y0")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("2_rvptj")
+
+[node name="ShortWall" parent="." instance=ExtResource("2_y81o1")]
+
+[node name="SouthWallDoor" parent="." instance=ExtResource("3_rvptj")]
+
+[node name="FloorWaterMailSlot" parent="." instance=ExtResource("4_021vq")]
+
+[node name="LongWall" parent="." instance=ExtResource("5_w7707")]
+
+[node name="WestWallDoor" parent="." instance=ExtResource("6_q3lvn")]
+
+[node name="Linkchecker" parent="." instance=ExtResource("9_021vq")]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_1/loadables_5_2.tscn"

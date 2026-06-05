@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkkeg2mmy25he"]
+
+[ext_resource type="PackedScene" uid="uid://bgo26cpafjqhn" path="res://models/dungeons/general_pieces/FloorSand.glb" id="1_espnd"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dre56"]
+data = PackedVector3Array(9.599999, -5.6, 0, -9.599999, -5.6, 0.19999999, 9.599999, -5.6, 0.19999999, 9.599999, -5.6, 0, -9.599999, -5.6, 0, -9.599999, -5.6, 0.19999999, -9.599999, 5.6, 0, 9.599999, 5.6, 0.19999999, -9.599999, 5.6, 0.19999999, -9.599999, 5.6, 0, 9.599999, 5.6, 0, 9.599999, 5.6, 0.19999999, -9.599999, -5.6, 0, -9.599999, 5.6, 0.19999999, -9.599999, -5.6, 0.19999999, -9.599999, -5.6, 0, -9.599999, 5.6, 0, -9.599999, 5.6, 0.19999999, 9.599999, 5.6, 0, 9.599999, -5.6, 0.19999999, 9.599999, 5.6, 0.19999999, 9.599999, 5.6, 0, 9.599999, -5.6, 0, 9.599999, -5.6, 0.19999999, -9.599999, -5.6, 0, 9.599999, 5.6, 0, -9.599999, 5.6, 0, -9.599999, -5.6, 0, 9.599999, -5.6, 0, 9.599999, 5.6, 0, -9.599999, 5.6, 0.19999999, 9.599999, -5.6, 0.19999999, -9.599999, -5.6, 0.19999999, -9.599999, 5.6, 0.19999999, 9.599999, 5.6, 0.19999999, 9.599999, -5.6, 0.19999999)
+
+[node name="FloorSand" instance=ExtResource("1_espnd")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_dre56")

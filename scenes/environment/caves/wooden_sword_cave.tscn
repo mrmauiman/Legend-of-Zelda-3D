@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnjkwyqdj2kyn"]
+
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="1_557kg"]
+[ext_resource type="PackedScene" uid="uid://be2666jouixor" path="res://scenes/environment/caves/cave_model.tscn" id="2_bnif1"]
+[ext_resource type="PackedScene" uid="uid://dgs8h3qx2k2se" path="res://scenes/npcs/old_man_npc.tscn" id="3_sga1k"]
+
+[node name="WoodenSwordCave" type="Node3D"]
+
+[node name="Torch" parent="." instance=ExtResource("1_557kg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -0.8)
+
+[node name="Torch2" parent="." instance=ExtResource("1_557kg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -0.8)
+
+[node name="CaveModel" parent="." instance=ExtResource("2_bnif1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="OldManNPC" parent="." instance=ExtResource("3_sga1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+location_id = "cave/wooden_sword_cave"
+item_2_heart_requirement = 4
+scroll_text = "MASTER USING IT AND YOU
+CAN HAVE THIS SWORD SCROLL."

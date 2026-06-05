@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkwnqednva41k"]
+
+[ext_resource type="PackedScene" uid="uid://uumbdiwv2cs6" path="res://models/dungeons/level_1/Pieces/head_statue.glb" id="1_seh5h"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_seh5h"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1vbik"]
+height = 1.6
+radius = 0.8
+
+[node name="HeadStatue" instance=ExtResource("1_seh5h")]
+
+[node name="DungeonHeadStatue" parent="." index="0"]
+script = ExtResource("2_seh5h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+collision_layer = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("CylinderShape3D_1vbik")

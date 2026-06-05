@@ -1,0 +1,1053 @@
+[gd_scene load_steps=9 format=3 uid="uid://bb546lhbyun4w"]
+
+[ext_resource type="PackedScene" uid="uid://jd0y8h0ccfv8" path="res://models/dungeons/enemies/digdogger_rig.glb" id="1_vok6j"]
+[ext_resource type="Texture2D" uid="uid://kkrma54uwqh6" path="res://sprites/enemies/dungeon/digdogger_body.png" id="2_46sxd"]
+[ext_resource type="Texture2D" uid="uid://dwylninx1c5f8" path="res://sprites/enemies/dungeon/digdogger_base.png" id="3_46sxd"]
+[ext_resource type="Texture2D" uid="uid://dafk88wm2w2jn" path="res://sprites/enemies/dungeon/digdogger_tentacle.png" id="3_28128"]
+[ext_resource type="Script" uid="uid://dw1rcdsmew6se" path="res://scripts/components/sprite3d_effects/rotating_sprite3d.gd" id="4_te4pa"]
+
+[sub_resource type="Animation" id="Animation_te4pa"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Tentacle.001")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1.6, 0, 0)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Tentacle.001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Tentacle.002")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 1.5216905, 0, -0.4944272)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Armature/Skeleton3D:Tentacle.002")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Armature/Skeleton3D:Tentacle.003")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 1.2944273, 0, -0.94045645)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Armature/Skeleton3D:Tentacle.003")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Armature/Skeleton3D:Tentacle.004")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0.9404565, 0, -1.2944273)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Armature/Skeleton3D:Tentacle.004")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065)
+tracks/10/type = "position_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Armature/Skeleton3D:Tentacle.005")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0.49442726, 0, -1.5216906)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Armature/Skeleton3D:Tentacle.005")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, 0, 0.5877853, 0, 0.809017)
+tracks/12/type = "position_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Armature/Skeleton3D:Tentacle.006")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -1.1920929e-07, 0, -1.6)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Armature/Skeleton3D:Tentacle.006")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/14/type = "position_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Armature/Skeleton3D:Tentacle.007")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, -0.49442732, 0, -1.5216905)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Armature/Skeleton3D:Tentacle.007")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883)
+tracks/16/type = "position_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Armature/Skeleton3D:Tentacle.008")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -0.9404565, 0, -1.2944273)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Armature/Skeleton3D:Tentacle.008")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565)
+tracks/18/type = "position_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Armature/Skeleton3D:Tentacle.009")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, -1.2944273, 0, -0.94045645)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Armature/Skeleton3D:Tentacle.009")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065)
+tracks/20/type = "position_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Armature/Skeleton3D:Tentacle.010")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, -1.5216906, 0, -0.4944272)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Armature/Skeleton3D:Tentacle.010")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, 0, 0.5877854, 0, 0.8090169)
+tracks/22/type = "position_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Armature/Skeleton3D:Tentacle.011")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, -1.6, 0, 2.3841858e-07)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Armature/Skeleton3D:Tentacle.011")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/24/type = "position_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Armature/Skeleton3D:Tentacle.012")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, -1.5216905, 0, 0.49442732)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Armature/Skeleton3D:Tentacle.012")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883)
+tracks/26/type = "position_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Armature/Skeleton3D:Tentacle.013")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, -1.2944273, 0, 0.9404565)
+tracks/27/type = "rotation_3d"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Armature/Skeleton3D:Tentacle.013")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565)
+tracks/28/type = "position_3d"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Armature/Skeleton3D:Tentacle.014")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = PackedFloat32Array(0, 1, -0.9404564, 0, 1.2944274)
+tracks/29/type = "rotation_3d"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Armature/Skeleton3D:Tentacle.014")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065)
+tracks/30/type = "position_3d"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Armature/Skeleton3D:Tentacle.015")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = PackedFloat32Array(0, 1, -0.4944272, 0, 1.5216906)
+tracks/31/type = "rotation_3d"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Armature/Skeleton3D:Tentacle.015")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = PackedFloat32Array(0, 1, 0, 0.5877854, 0, 0.8090169)
+tracks/32/type = "position_3d"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Armature/Skeleton3D:Tentacle.016")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = PackedFloat32Array(0, 1, 3.5762787e-07, 0, 1.6)
+tracks/33/type = "rotation_3d"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Armature/Skeleton3D:Tentacle.016")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/34/type = "position_3d"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Armature/Skeleton3D:Tentacle.017")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = PackedFloat32Array(0, 1, 0.49442732, 0, 1.5216905)
+tracks/35/type = "rotation_3d"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Armature/Skeleton3D:Tentacle.017")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883)
+tracks/36/type = "position_3d"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Armature/Skeleton3D:Tentacle.018")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = PackedFloat32Array(0, 1, 0.9404565, 0, 1.2944273)
+tracks/37/type = "rotation_3d"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Armature/Skeleton3D:Tentacle.018")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565)
+tracks/38/type = "position_3d"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Armature/Skeleton3D:Tentacle.019")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = PackedFloat32Array(0, 1, 1.2944274, 0, 0.94045633)
+tracks/39/type = "rotation_3d"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Armature/Skeleton3D:Tentacle.019")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065)
+tracks/40/type = "position_3d"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Armature/Skeleton3D:Tentacle.020")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = PackedFloat32Array(0, 1, 1.5216906, 0, 0.4944272)
+tracks/41/type = "rotation_3d"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Armature/Skeleton3D:Tentacle.020")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = PackedFloat32Array(0, 1, 0, 0.5877854, 0, 0.8090169)
+
+[sub_resource type="Animation" id="Animation_28128"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D:Body")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.10000001, 1, 0, 0, 0, 0.20000002, 1, 0, 0, 0, 0.3, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Armature/Skeleton3D:Body")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.10000001, 1, 0, 0, 0, 1, 0.20000002, 1, 0, 0, 0, 1, 0.3, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Armature/Skeleton3D:Tentacle.001")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 1.6, 0, 0, 0.10000001, 1, 1.6, 0, 0, 0.20000002, 1, 1.6, 0, 0, 0.3, 1, 1.6, 0, 0)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Armature/Skeleton3D:Tentacle.001")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.10000001, 1, 0, 0.1305262, 0, 0.9914449, 0.20000002, 1, 0, 0, 0, 1, 0.3, 1, 0, -0.42261827, 0, 0.9063078)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Armature/Skeleton3D:Tentacle.002")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 1.5216905, 0, -0.4944272, 0.10000001, 1, 1.5216905, 0, -0.4944272, 0.20000002, 1, 1.5216905, 0, -0.4944272, 0.3, 1, 1.5216905, 0, -0.4944272)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Armature/Skeleton3D:Tentacle.002")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883, 0.10000001, 1, 0, -0.061048564, 0, 0.9981348, 0.20000002, 1, 0, 0.15643446, 0, 0.9876883, 0.3, 1, 0, 0.44619778, 0, 0.89493436)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Armature/Skeleton3D:Tentacle.003")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 1.2944273, 0, -0.94045645, 0.10000001, 1, 1.2944273, 0, -0.94045645, 0.20000002, 1, 1.2944273, 0, -0.94045645, 0.3, 1, 1.2944273, 0, -0.94045645)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Armature/Skeleton3D:Tentacle.003")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565, 0.10000001, 1, 0, 0.43051112, 0, 0.90258527, 0.20000002, 1, 0, 0.30901703, 0, 0.9510565, 0.3, 1, 0, -0.12186927, 0, 0.99254614)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Armature/Skeleton3D:Tentacle.004")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0.9404565, 0, -1.2944273, 0.10000001, 1, 0.9404565, 0, -1.2944273, 0.20000002, 1, 0.9404565, 0, -1.2944273, 0.3, 1, 0.9404565, 0, -1.2944273)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Armature/Skeleton3D:Tentacle.004")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065, 0.10000001, 1, 0, 0.33380693, 0, 0.94264144, 0.20000002, 1, 0, 0.45399055, 0, 0.8910065, 0.3, 1, 0, 0.8386706, 0, 0.54463893)
+tracks/10/type = "position_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Armature/Skeleton3D:Tentacle.005")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat32Array(0, 1, 0.49442726, 0, -1.5216906, 0.10000001, 1, 0.49442726, 0, -1.5216906, 0.20000002, 1, 0.49442726, 0, -1.5216906, 0.3, 1, 0.49442726, 0, -1.5216906)
+tracks/11/type = "rotation_3d"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Armature/Skeleton3D:Tentacle.005")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = PackedFloat32Array(0, 1, 0, 0.5877853, 0, 0.809017, 0.10000001, 1, 0, 0.6883546, 0, 0.7253744, 0.20000002, 1, 0, 0.5877853, 0, 0.809017, 0.3, 1, 0, 0.3173047, 0, 0.94832367)
+tracks/12/type = "position_3d"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Armature/Skeleton3D:Tentacle.006")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = PackedFloat32Array(0, 1, -1.1920929e-07, 0, -1.6, 0.10000001, 1, -1.1920929e-07, 0, -1.6, 0.20000002, 1, -1.1920929e-07, 0, -1.6, 0.3, 1, -1.1920929e-07, 0, -1.6)
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Armature/Skeleton3D:Tentacle.006")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.10000001, 1, 0, -0.17364816, 0, 0.9848078, 0.20000002, 1, 0, 0, 0, 1, 0.3, 1, 0, 0.38268343, 0, 0.92387956)
+tracks/14/type = "position_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Armature/Skeleton3D:Tentacle.007")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat32Array(0, 1, -0.49442732, 0, -1.5216905, 0.10000001, 1, -0.49442732, 0, -1.5216905, 0.20000002, 1, -0.49442732, 0, -1.5216905, 0.3, 1, -0.49442732, 0, -1.5216905)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Armature/Skeleton3D:Tentacle.007")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883, 0.10000001, 1, 0, 0.32556817, 0, 0.9455186, 0.20000002, 1, 0, 0.15643446, 0, 0.9876883, 0.3, 1, 0, -0.23344538, 0, 0.9723699)
+tracks/16/type = "position_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Armature/Skeleton3D:Tentacle.008")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat32Array(0, 1, -0.9404565, 0, -1.2944273, 0.10000001, 1, -0.9404565, 0, -1.2944273, 0.20000002, 1, -0.9404565, 0, -1.2944273, 0.3, 1, -0.9404565, 0, -1.2944273)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Armature/Skeleton3D:Tentacle.008")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565, 0.10000001, 1, 0, 0.052335996, 0, 0.9986295, 0.20000002, 1, 0, 0.30901703, 0, 0.9510565, 0.3, 1, 0, 0.58070296, 0, 0.8141155)
+tracks/18/type = "position_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Armature/Skeleton3D:Tentacle.009")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat32Array(0, 1, -1.2944273, 0, -0.94045645, 0.10000001, 1, -1.2944273, 0, -0.94045645, 0.20000002, 1, -1.2944273, 0, -0.94045645, 0.3, 1, -1.2944273, 0, -0.94045645)
+tracks/19/type = "rotation_3d"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Armature/Skeleton3D:Tentacle.009")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065, 0.10000001, 1, 0, 0.6018151, 0, 0.7986355, 0.20000002, 1, 0, 0.45399055, 0, 0.8910065, 0.3, 1, 0, 0.07845916, 0, 0.9969173)
+tracks/20/type = "position_3d"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Armature/Skeleton3D:Tentacle.010")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = PackedFloat32Array(0, 1, -1.5216906, 0, -0.4944272, 0.10000001, 1, -1.5216906, 0, -0.4944272, 0.20000002, 1, -1.5216906, 0, -0.4944272, 0.3, 1, -1.5216906, 0, -0.4944272)
+tracks/21/type = "rotation_3d"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Armature/Skeleton3D:Tentacle.010")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = PackedFloat32Array(0, 1, 0, 0.5877854, 0, 0.8090169, 0.10000001, 1, 0, 0.39874926, 0, 0.91705996, 0.20000002, 1, 0, 0.5877854, 0, 0.8090169, 0.3, 1, 0, 0.8949345, 0, 0.44619763)
+tracks/22/type = "position_3d"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Armature/Skeleton3D:Tentacle.011")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = PackedFloat32Array(0, 1, -1.6, 0, 2.3841858e-07, 0.10000001, 1, -1.6, 0, 2.3841858e-07, 0.20000002, 1, -1.6, 0, 2.3841858e-07, 0.3, 1, -1.6, 0, 2.3841858e-07)
+tracks/23/type = "rotation_3d"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Armature/Skeleton3D:Tentacle.011")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.10000001, 1, 0, 0.21643962, 0, 0.976296, 0.20000002, 1, 0, 0, 0, 1, 0.3, 1, 0, -0.42261827, 0, 0.9063078)
+tracks/24/type = "position_3d"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Armature/Skeleton3D:Tentacle.012")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = PackedFloat32Array(0, 1, -1.5216905, 0, 0.49442732, 0.10000001, 1, -1.5216905, 0, 0.49442732, 0.20000002, 1, -1.5216905, 0, 0.49442732, 0.3, 1, -1.5216905, 0, 0.49442732)
+tracks/25/type = "rotation_3d"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Armature/Skeleton3D:Tentacle.012")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883, 0.10000001, 1, 0, -0.01745241, 0, 0.9998477, 0.20000002, 1, 0, 0.15643446, 0, 0.9876883, 0.3, 1, 0, 0.5591929, 0, 0.8290376)
+tracks/26/type = "position_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Armature/Skeleton3D:Tentacle.013")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat32Array(0, 1, -1.2944273, 0, 0.9404565, 0.10000001, 1, -1.2944273, 0, 0.9404565, 0.20000002, 1, -1.2944273, 0, 0.9404565, 0.3, 1, -1.2944273, 0, 0.9404565)
+tracks/27/type = "rotation_3d"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Armature/Skeleton3D:Tentacle.013")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565, 0.10000001, 1, 0, 0.4694716, 0, 0.88294756, 0.20000002, 1, 0, 0.30901703, 0, 0.9510565, 0.3, 1, 0, 0.008726587, 0, 0.9999619)
+tracks/28/type = "position_3d"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Armature/Skeleton3D:Tentacle.014")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = PackedFloat32Array(0, 1, -0.9404564, 0, 1.2944274, 0.10000001, 1, -0.9404564, 0, 1.2944274, 0.20000002, 1, -0.9404564, 0, 1.2944274, 0.3, 1, -0.9404564, 0, 1.2944274)
+tracks/29/type = "rotation_3d"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Armature/Skeleton3D:Tentacle.014")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065, 0.10000001, 1, 0, 0.20791177, 0, 0.97814757, 0.20000002, 1, 0, 0.45399055, 0, 0.8910065, 0.3, 1, 0, 0.78801084, 0, 0.61566144)
+tracks/30/type = "position_3d"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Armature/Skeleton3D:Tentacle.015")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = PackedFloat32Array(0, 1, -0.4944272, 0, 1.5216906, 0.10000001, 1, -0.4944272, 0, 1.5216906, 0.20000002, 1, -0.4944272, 0, 1.5216906, 0.3, 1, -0.4944272, 0, 1.5216906)
+tracks/31/type = "rotation_3d"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Armature/Skeleton3D:Tentacle.015")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = PackedFloat32Array(0, 1, 0, 0.5877854, 0, 0.8090169, 0.10000001, 1, 0, 0.8290378, 0, 0.5591927, 0.20000002, 1, 0, 0.5877854, 0, 0.8090169, 0.3, 1, 0, 0.14780964, 0, 0.9890158)
+tracks/32/type = "position_3d"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Armature/Skeleton3D:Tentacle.016")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = PackedFloat32Array(0, 1, 3.5762787e-07, 0, 1.6, 0.10000001, 1, 3.5762787e-07, 0, 1.6, 0.20000002, 1, 3.5762787e-07, 0, 1.6, 0.3, 1, 3.5762787e-07, 0, 1.6)
+tracks/33/type = "rotation_3d"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Armature/Skeleton3D:Tentacle.016")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.10000001, 1, 0, -0.38268346, 0, 0.92387956, 0.20000002, 1, 0, 0, 0, 1, 0.3, 1, 0, 0.38268343, 0, 0.92387956)
+tracks/34/type = "position_3d"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Armature/Skeleton3D:Tentacle.017")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = PackedFloat32Array(0, 1, 0.49442732, 0, 1.5216905, 0.10000001, 1, 0.49442732, 0, 1.5216905, 0.20000002, 1, 0.49442732, 0, 1.5216905, 0.3, 1, 0.49442732, 0, 1.5216905)
+tracks/35/type = "rotation_3d"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Armature/Skeleton3D:Tentacle.017")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = PackedFloat32Array(0, 1, 0, 0.15643446, 0, 0.9876883, 0.10000001, 1, 0, 0.40673667, 0, 0.9135454, 0.20000002, 1, 0, 0.15643446, 0, 0.9876883, 0.3, 1, 0, -0.23344538, 0, 0.9723699)
+tracks/36/type = "position_3d"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Armature/Skeleton3D:Tentacle.018")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = PackedFloat32Array(0, 1, 0.9404565, 0, 1.2944273, 0.10000001, 1, 0.9404565, 0, 1.2944273, 0.20000002, 1, 0.9404565, 0, 1.2944273, 0.3, 1, 0.9404565, 0, 1.2944273)
+tracks/37/type = "rotation_3d"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Armature/Skeleton3D:Tentacle.018")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = PackedFloat32Array(0, 1, 0, 0.30901703, 0, 0.9510565, 0.10000001, 1, 0, 0.09584579, 0, 0.9953962, 0.20000002, 1, 0, 0.30901703, 0, 0.9510565, 0.3, 1, 0, 0.61566156, 0, 0.7880107)
+tracks/38/type = "position_3d"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Armature/Skeleton3D:Tentacle.019")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = PackedFloat32Array(0, 1, 1.2944274, 0, 0.94045633, 0.10000001, 1, 1.2944274, 0, 0.94045633, 0.20000002, 1, 1.2944274, 0, 0.94045633, 0.3, 1, 1.2944274, 0, 0.94045633)
+tracks/39/type = "rotation_3d"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Armature/Skeleton3D:Tentacle.019")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = PackedFloat32Array(0, 1, 0, 0.45399055, 0, 0.8910065, 0.10000001, 1, 0, 0.5664063, 0, 0.8241262, 0.20000002, 1, 0, 0.45399055, 0, 0.8910065, 0.3, 1, 0, 0.12186944, 0, 0.99254614)
+tracks/40/type = "position_3d"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Armature/Skeleton3D:Tentacle.020")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = PackedFloat32Array(0, 1, 1.5216906, 0, 0.4944272, 0.10000001, 1, 1.5216906, 0, 0.4944272, 0.20000002, 1, 1.5216906, 0, 0.4944272, 0.3, 1, 1.5216906, 0, 0.4944272)
+tracks/41/type = "rotation_3d"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("Armature/Skeleton3D:Tentacle.020")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = PackedFloat32Array(0, 1, 0, 0.5877854, 0, 0.8090169, 0.10000001, 1, 0, 0.47715893, 0, 0.878817, 0.20000002, 1, 0, 0.5877854, 0, 0.8090169, 0.3, 1, 0, 0.8949345, 0, 0.44619763)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wjxxr"]
+_data = {
+&"RESET": SubResource("Animation_te4pa"),
+&"idle": SubResource("Animation_28128")
+}
+
+[node name="DigDoggerModel" instance=ExtResource("1_vok6j")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/scale = Vector3(0.9999998, 1, 0.9999998)
+bones/2/rotation = Quaternion(0, 0.15643446, 0, 0.98768836)
+bones/2/scale = Vector3(1.0000001, 1, 1.0000001)
+bones/3/rotation = Quaternion(0, 0.30901703, 0, 0.95105654)
+bones/4/scale = Vector3(1.0000001, 1, 1.0000001)
+bones/6/scale = Vector3(0.9999998, 1, 0.9999998)
+bones/7/rotation = Quaternion(0, 0.15643446, 0, 0.98768836)
+bones/8/rotation = Quaternion(0, 0.30901703, 0, 0.95105654)
+bones/8/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/11/scale = Vector3(0.9999998, 1, 0.9999998)
+bones/12/rotation = Quaternion(0, 0.15643446, 0, 0.98768836)
+bones/13/rotation = Quaternion(0, 0.30901703, 0, 0.95105654)
+bones/14/scale = Vector3(1.0000001, 1, 1.0000001)
+bones/15/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/16/scale = Vector3(0.9999998, 1, 0.9999998)
+bones/17/rotation = Quaternion(0, 0.15643446, 0, 0.98768836)
+bones/18/rotation = Quaternion(0, 0.30901703, 0, 0.95105654)
+bones/18/scale = Vector3(0.99999994, 1, 0.99999994)
+bones/19/scale = Vector3(1.0000001, 1, 1.0000001)
+
+[node name="Body" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0"]
+bone_name = "Body"
+bone_idx = 0
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Body" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Body/Node3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_46sxd")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Armature/Skeleton3D/Body/Node3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+sorting_offset = -3.2
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("3_46sxd")
+
+[node name="Tentacle1" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 1.6, 0, 0)
+bone_name = "Tentacle.001"
+bone_idx = 1
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle1/Node3D" index="0"]
+transform = Transform3D(0.36308047, 0, -0.9317578, 0, 1, 0, 0.9317578, 0, 0.36308047, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 1
+script = ExtResource("4_te4pa")
+frame_offset = 12
+
+[node name="Tentacle2" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.95105666, 0, 0.30901703, 0, 1, 0, -0.30901703, 0, 0.95105666, 1.5216905, 0, -0.4944272)
+bone_name = "Tentacle.002"
+bone_idx = 2
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle2/Node3D" index="0"]
+transform = Transform3D(-0.085825264, 0, -0.9963101, 0, 1, 0, 0.9963101, 0, -0.085825264, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+script = ExtResource("4_te4pa")
+frame_offset = 12
+
+[node name="Tentacle3" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.80901694, 0, 0.58778536, 0, 1, 0, -0.58778536, 0, 0.80901694, 1.2944273, 0, -0.94045645)
+bone_name = "Tentacle.003"
+bone_idx = 3
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle3/Node3D" index="0"]
+transform = Transform3D(-0.5109814, 0, -0.8595918, 0, 1, 0, 0.8595918, 0, -0.5109814, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 15
+script = ExtResource("4_te4pa")
+frame_offset = 12
+
+[node name="Tentacle4" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="4"]
+transform = Transform3D(0.5877852, 0, 0.8090172, 0, 1, 0, -0.8090172, 0, 0.5877852, 0.9404565, 0, -1.2944273)
+bone_name = "Tentacle.004"
+bone_idx = 4
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle4/Node3D" index="0"]
+transform = Transform3D(-0.81280136, 0, -0.5825409, 0, 1, 0, 0.5825409, 0, -0.81280136, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 14
+script = ExtResource("4_te4pa")
+frame_offset = 12
+
+[node name="Tentacle5" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="5"]
+transform = Transform3D(0.30901694, 0, 0.95105654, 0, 1, 0, -0.95105654, 0, 0.30901694, 0.49442726, 0, -1.5216906)
+bone_name = "Tentacle.005"
+bone_idx = 5
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle5" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle5/Node3D" index="0"]
+transform = Transform3D(-0.96732897, 0, -0.25352448, 0, 1, 0, 0.25352448, 0, -0.96732897, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 13
+script = ExtResource("4_te4pa")
+frame_offset = 12
+
+[node name="Tentacle6" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -1.1920929e-07, 0, -1.6)
+bone_name = "Tentacle.006"
+bone_idx = 6
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle6/Node3D" index="0"]
+transform = Transform3D(-0.0679733, 0, -0.99768716, 0, 1, 0, 0.99768716, 0, -0.0679733, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 12
+script = ExtResource("4_te4pa")
+frame_offset = 8
+
+[node name="Tentacle7" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="7"]
+transform = Transform3D(0.95105654, 0, 0.309017, 0, 1, 0, -0.309017, 0, 0.95105654, -0.49442732, 0, -1.5216905)
+bone_name = "Tentacle.007"
+bone_idx = 7
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle7" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle7/Node3D" index="0"]
+transform = Transform3D(-0.35351527, 0, -0.93542874, 0, 1, 0, 0.93542874, 0, -0.35351527, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 11
+script = ExtResource("4_te4pa")
+frame_offset = 8
+
+[node name="Tentacle8" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="8"]
+transform = Transform3D(0.8090169, 0, 0.5877853, 0, 1, 0, -0.5877853, 0, 0.8090169, -0.9404565, 0, -1.2944273)
+bone_name = "Tentacle.008"
+bone_idx = 8
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle8" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle8/Node3D" index="0"]
+transform = Transform3D(-0.59131414, 0, -0.8064412, 0, 1, 0, 0.8064412, 0, -0.59131414, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 10
+script = ExtResource("4_te4pa")
+frame_offset = 8
+
+[node name="Tentacle9" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="9"]
+transform = Transform3D(0.5877851, 0, 0.80901706, 0, 1, 0, -0.80901706, 0, 0.5877851, -1.2944273, 0, -0.94045645)
+bone_name = "Tentacle.009"
+bone_idx = 9
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle9" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle9/Node3D" index="0"]
+transform = Transform3D(-0.7765062, 0, -0.63010967, 0, 1, 0, 0.63010967, 0, -0.7765062, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 10
+script = ExtResource("4_te4pa")
+frame_offset = 8
+
+[node name="Tentacle10" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="10"]
+transform = Transform3D(0.3090166, 0, 0.95105666, 0, 1, 0, -0.95105666, 0, 0.3090166, -1.5216906, 0, -0.4944272)
+bone_name = "Tentacle.010"
+bone_idx = 10
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle10" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle10/Node3D" index="0"]
+transform = Transform3D(-0.9068628, 0, -0.42142582, 0, 1, 0, 0.42142582, 0, -0.9068628, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 9
+script = ExtResource("4_te4pa")
+frame_offset = 8
+
+[node name="Tentacle11" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="11"]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -1.6, 0, 2.3841858e-07)
+bone_name = "Tentacle.011"
+bone_idx = 11
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle11" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle11/Node3D" index="0"]
+transform = Transform3D(0.19286126, 0, -0.98122597, 0, 1, 0, 0.98122597, 0, 0.19286126, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 8
+script = ExtResource("4_te4pa")
+frame_offset = 4
+
+[node name="Tentacle12" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="12"]
+transform = Transform3D(0.95105654, 0, 0.309017, 0, 1, 0, -0.309017, 0, 0.95105654, -1.5216905, 0, 0.49442732)
+bone_name = "Tentacle.012"
+bone_idx = 12
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle12" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle12/Node3D" index="0"]
+transform = Transform3D(-0.04440425, 0, -0.99901366, 0, 1, 0, 0.99901366, 0, -0.04440425, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 8
+script = ExtResource("4_te4pa")
+frame_offset = 4
+
+[node name="Tentacle13" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="13"]
+transform = Transform3D(0.80901694, 0, 0.58778536, 0, 1, 0, -0.58778536, 0, 0.80901694, -1.2944273, 0, 0.9404565)
+bone_name = "Tentacle.013"
+bone_idx = 13
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle13" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle13/Node3D" index="0"]
+transform = Transform3D(-0.2796872, 0, -0.9600912, 0, 1, 0, 0.9600912, 0, -0.2796872, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 7
+script = ExtResource("4_te4pa")
+frame_offset = 4
+
+[node name="Tentacle14" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="14"]
+transform = Transform3D(0.5877852, 0, 0.8090172, 0, 1, 0, -0.8090172, 0, 0.5877852, -0.9404564, 0, 1.2944274)
+bone_name = "Tentacle.014"
+bone_idx = 14
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle14" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle14/Node3D" index="0"]
+transform = Transform3D(-0.5021945, 0, -0.8647547, 0, 1, 0, 0.8647547, 0, -0.5021945, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 7
+script = ExtResource("4_te4pa")
+frame_offset = 4
+
+[node name="Tentacle15" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="15"]
+transform = Transform3D(0.30901656, 0, 0.9510566, 0, 1, 0, -0.9510566, 0, 0.30901656, -0.4944272, 0, 1.5216906)
+bone_name = "Tentacle.015"
+bone_idx = 15
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle15" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle15/Node3D" index="0"]
+transform = Transform3D(-0.7003748, 0, -0.7137753, 0, 1, 0, 0.7137753, 0, -0.7003748, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 6
+script = ExtResource("4_te4pa")
+frame_offset = 4
+
+[node name="Tentacle16" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="16"]
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 3.5762787e-07, 0, 1.6)
+bone_name = "Tentacle.016"
+bone_idx = 16
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle16" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle16/Node3D" index="0"]
+transform = Transform3D(0.5086177, 0, -0.8609923, 0, 1, 0, 0.8609923, 0, 0.5086177, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 5
+script = ExtResource("4_te4pa")
+
+[node name="Tentacle17" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="17"]
+transform = Transform3D(0.95105654, 0, 0.309017, 0, 1, 0, -0.309017, 0, 0.95105654, 0.49442732, 0, 1.5216905)
+bone_name = "Tentacle.017"
+bone_idx = 17
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle17" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle17/Node3D" index="0"]
+transform = Transform3D(0.25221303, 0, -0.9676717, 0, 1, 0, 0.9676717, 0, 0.25221303, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 5
+script = ExtResource("4_te4pa")
+
+[node name="Tentacle18" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="18"]
+transform = Transform3D(0.8090169, 0, 0.5877853, 0, 1, 0, -0.5877853, 0, 0.8090169, 0.9404565, 0, 1.2944273)
+bone_name = "Tentacle.018"
+bone_idx = 18
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle18" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle18/Node3D" index="0"]
+transform = Transform3D(-0.04872137, 0, -0.9988124, 0, 1, 0, 0.9988124, 0, -0.04872137, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 4
+script = ExtResource("4_te4pa")
+
+[node name="Tentacle19" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="19"]
+transform = Transform3D(0.5877852, 0, 0.8090172, 0, 1, 0, -0.8090172, 0, 0.5877852, 1.2944274, 0, 0.94045633)
+bone_name = "Tentacle.019"
+bone_idx = 19
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle19" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle19/Node3D" index="0"]
+transform = Transform3D(-0.3776966, 0, -0.9259292, 0, 1, 0, 0.9259292, 0, -0.3776966, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 3
+script = ExtResource("4_te4pa")
+
+[node name="Tentacle20" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="20"]
+transform = Transform3D(0.3090166, 0, 0.95105666, 0, 1, 0, -0.95105666, 0, 0.3090166, 1.5216906, 0, 0.4944272)
+bone_name = "Tentacle.020"
+bone_idx = 20
+
+[node name="Node3D" type="Node3D" parent="Armature/Skeleton3D/Tentacle20" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Armature/Skeleton3D/Tentacle20/Node3D" index="0"]
+transform = Transform3D(-0.69630677, 0, -0.7177442, 0, 1, 0, 0.7177442, 0, -0.69630677, 0, 0, 0)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("3_28128")
+hframes = 4
+vframes = 4
+frame = 2
+script = ExtResource("4_te4pa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_wjxxr")
+}
+autoplay = "idle"

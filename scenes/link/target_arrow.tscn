@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfvbvi1w21etl"]
+
+[ext_resource type="Texture2D" uid="uid://bi76rfk6r74ro" path="res://sprites/target_arrow.png" id="1_jc70v"]
+
+[node name="TargetArrow" type="Sprite3D"]
+offset = Vector2(0, 4)
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_jc70v")
+hframes = 2

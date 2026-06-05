@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjngllbnb00yw"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_gp45o"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="3_0coia"]
+
+[node name="LoadablesTunnelA" type="Node3D"]
+script = ExtResource("1_gp45o")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="SpawnChecker" parent="." instance=ExtResource("3_0coia")]

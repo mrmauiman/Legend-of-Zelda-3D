@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpjxcbkmfv7q7"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_7w68w"]
+[ext_resource type="PackedScene" uid="uid://drl547gpk7hb4" path="res://scenes/enemies/dungeon/bubble.tscn" id="4_77ios"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="5_qlgh3"]
+
+[node name="Loadables_7_3" type="Node3D"]
+script = ExtResource("1_7w68w")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="Bubble" parent="Traps" instance=ExtResource("4_77ios")]
+
+[node name="Bubble2" parent="Traps" instance=ExtResource("4_77ios")]
+
+[node name="SpawnChecker" parent="." instance=ExtResource("5_qlgh3")]
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot39" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot45" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot46" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot47" index="0"]
+disabled = true
+
+[node name="CollisionShape3D" parent="SpawnChecker/SpawnSpot53" index="0"]
+disabled = true
+
+[editable path="SpawnChecker"]

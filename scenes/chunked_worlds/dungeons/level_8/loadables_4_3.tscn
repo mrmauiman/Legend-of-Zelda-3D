@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfi5kc2cyg6m2"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_ue2vn"]
+[ext_resource type="PackedScene" uid="uid://yw7e3tu7ntt2" path="res://scenes/enemies/dungeon/living_accent_dragon_statue.tscn" id="3_2pgnh"]
+[ext_resource type="PackedScene" uid="uid://cxab8aqhp6r6e" path="res://scenes/enemies/dungeon/living_accent_head_statue.tscn" id="4_4e7ff"]
+[ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="5_ugote"]
+[ext_resource type="PackedScene" uid="uid://dj735pkpoteu" path="res://scenes/chunked_worlds/dungeons/spawn_checker.tscn" id="6_abvo8"]
+
+[node name="Loadables_4_3" type="Node3D"]
+script = ExtResource("1_ue2vn")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="Traps" type="Node3D" parent="."]
+
+[node name="dragon_statue" parent="Traps" instance=ExtResource("3_2pgnh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="head_statue" parent="Traps" instance=ExtResource("4_4e7ff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+
+[node name="SealedDoors" type="Node3D" parent="."]
+
+[node name="SealedDoor" parent="SealedDoors" node_paths=PackedStringArray("enemies") instance=ExtResource("5_ugote")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.7, -0.1, 0)
+enemies = NodePath("../../Enemies")
+
+[node name="SpawnChecker" parent="." instance=ExtResource("6_abvo8")]

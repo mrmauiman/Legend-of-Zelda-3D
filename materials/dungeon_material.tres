@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://1hcl6qjg0iyg"]
+
+[ext_resource type="Shader" uid="uid://bn3gl1eq01628" path="res://shaders/dungeon_material.gdshader" id="1_dpa8d"]
+[ext_resource type="Texture2D" uid="uid://bcgx1wbg5t56j" path="res://models/dungeons/level_1/Pieces/EastWallDoor_EastWallDoor.png" id="2_q4o34"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dpa8d")
+shader_parameter/image = ExtResource("2_q4o34")
+shader_parameter/accent_color = Color(0.1254902, 0.21960784, 0.9254902, 1)
+shader_parameter/highlight_color = Color(0, 0.9098039, 0.84705883, 1)
+shader_parameter/base_color = Color(0, 0.5019608, 0.53333336, 1)
+shader_parameter/shadow_color = Color(0.09411765, 0.23529412, 0.36078432, 1)
+shader_parameter/temp_accent_color = Color(0.1254902, 0.21960784, 0.9254902, 1)
+shader_parameter/temp_highlight_color = Color(0, 0.9098039, 0.84705883, 1)
+shader_parameter/temp_base_color = Color(0, 0.5019608, 0.53333336, 1)
+shader_parameter/temp_shadow_color = Color(0.09411765, 0.23529412, 0.36078432, 1)

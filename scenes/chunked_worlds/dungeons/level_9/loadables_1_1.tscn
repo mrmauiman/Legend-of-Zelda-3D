@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cphmi71my3f27"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_43uqq"]
+[ext_resource type="PackedScene" uid="uid://b3slaibk2bjbg" path="res://scenes/enemies/dungeon/patra.tscn" id="2_d5g0w"]
+[ext_resource type="PackedScene" uid="uid://b30wqxs0c1jbg" path="res://scenes/pickups/item_pickup.tscn" id="3_43uqq"]
+
+[node name="Loadables_1_1" type="Node3D"]
+script = ExtResource("1_43uqq")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Patra" parent="Bosses" instance=ExtResource("2_d5g0w")]
+
+[node name="Pickups" type="Node3D" parent="."]
+
+[node name="ItemPickup" parent="Pickups" node_paths=PackedStringArray("hidden_by_enemies") instance=ExtResource("3_43uqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+location_id = "dungeon/9/loadables_1_1"
+hidden_by_enemies = NodePath("../../Bosses")

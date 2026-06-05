@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://wdrp31n1hhli"]
+
+[ext_resource type="Script" uid="uid://ykxv5js3ir57" path="res://scripts/components/step_ladder.gd" id="1_lkluh"]
+[ext_resource type="PackedScene" uid="uid://uehnne1onl0i" path="res://models/step_ladder.glb" id="2_btqv0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4756l"]
+size = Vector3(1.6, 0.1, 1.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_86igo"]
+size = Vector3(1.8, 3.2, 1.8)
+
+[node name="StepLadder" type="StaticBody3D"]
+script = ExtResource("1_lkluh")
+
+[node name="step_ladder" parent="." instance=ExtResource("2_btqv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("BoxShape3D_4756l")
+
+[node name="WaterDisplacer" type="Area3D" parent="." groups=["StepLadderArea"]]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 10
+priority = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterDisplacer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_86igo")
+
+[node name="Subtractor" type="CSGBox3D" parent="WaterDisplacer"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+visible = false
+size = Vector3(1.8, 3.2, 1.8)
+
+[connection signal="body_entered" from="WaterDisplacer" to="." method="_on_water_displacer_body_entered"]
+[connection signal="body_exited" from="WaterDisplacer" to="." method="_on_water_displacer_body_exited"]

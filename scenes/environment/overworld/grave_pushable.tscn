@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctfyrtw2v04cs"]
+
+[ext_resource type="Script" uid="uid://6i1vt055w700" path="res://scripts/components/rock_pushable.gd" id="1_yl62b"]
+[ext_resource type="ArrayMesh" uid="uid://bjp0nhs82jfcw" path="res://models/Grave.obj" id="2_yl62b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_obno3"]
+size = Vector3(1.6, 1.6, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pod2"]
+size = Vector3(0.6, 1.6, 0.8)
+
+[node name="Grave" type="StaticBody3D"]
+script = ExtResource("1_yl62b")
+power_bracelet_required = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0.79999995, 0)
+shape = SubResource("BoxShape3D_obno3")
+
+[node name="Area3D" type="Area3D" parent="." groups=["Pushable"]]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9604645e-08, 0.79999995, -5.9604645e-08)
+shape = SubResource("BoxShape3D_7pod2")
+
+[node name="Grave" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_yl62b")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://x0t27t2spl04"]
+
+[ext_resource type="PackedScene" uid="uid://b55x5niaurtlp" path="res://scenes/chunked_worlds/dungeons/linkchecker.tscn" id="1_3spjo"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_kv6fe"]
+[ext_resource type="Script" uid="uid://dmf7wi5sg7qc4" path="res://scripts/components/dungeon_roof.gd" id="3_gg1bi"]
+
+[node name="Room" type="Node3D"]
+
+[node name="Linkchecker" parent="." instance=ExtResource("1_3spjo")]
+
+[node name="Pieces" type="Node3D" parent="."]
+
+[node name="Roof" parent="Pieces" instance=ExtResource("2_kv6fe")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 6.2000003, 0)
+visible = false
+script = ExtResource("3_gg1bi")

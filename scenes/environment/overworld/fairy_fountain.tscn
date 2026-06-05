@@ -1,0 +1,565 @@
+[gd_scene load_steps=13 format=3 uid="uid://bpf81vyavuwyw"]
+
+[ext_resource type="Script" uid="uid://66wphx2prxvu" path="res://scripts/components/fairy_fountain.gd" id="1_63fpr"]
+[ext_resource type="PackedScene" uid="uid://c180uha28yww4" path="res://scenes/npcs/fairy.tscn" id="2_nuvl6"]
+[ext_resource type="Texture2D" uid="uid://cqqnrr2qgpq7n" path="res://sprites/heart.png" id="5_s765h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s765h"]
+size = Vector3(3.2, 3.2, 4)
+
+[sub_resource type="Animation" id="Animation_jvj14"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dxlu3"]
+resource_name = "spin"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.7853982, 0), Vector3(0, 1.5707964, 0), Vector3(0, 2.3561945, 0), Vector3(0, 3.1415927, 0), Vector3(0, 3.9269907, 0), Vector3(0, 4.712389, 0), Vector3(0, 5.497787, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iy018"]
+_data = {
+&"RESET": SubResource("Animation_jvj14"),
+&"spin": SubResource("Animation_dxlu3")
+}
+
+[sub_resource type="Animation" id="Animation_4468j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Heart2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Heart3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Heart4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Heart6:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Heart7:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Heart8:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Heart5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_63fpr"]
+resource_name = "hide"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.7999997),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Heart2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.59999967),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Heart3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.39999986),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Heart4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.19999981),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Heart6:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9999995),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Heart7:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.1999993),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Heart8:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.4000001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Heart5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.5999999),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "animation"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Spin")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": PackedStringArray("spin"),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("%HealingEffect/..")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.5999999),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"heal_finished"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ym88d"]
+resource_name = "reveal"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Heart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.79999995),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Heart2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Heart3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.40000004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Heart4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Heart6:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Heart7:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Heart8:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Heart5:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "animation"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Spin")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": PackedStringArray("spin"),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_s765h"]
+resource_name = "spin"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "animation"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Spin")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": PackedStringArray("spin"),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%HealingEffect/..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.19999981, 0.39999986, 0.5999999, 0.79999995, 1, 1.2, 1.3999999, 1.5999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}, {
+"args": [],
+"method": &"check_healed"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b8gx7"]
+_data = {
+&"RESET": SubResource("Animation_4468j"),
+&"hide": SubResource("Animation_63fpr"),
+&"reveal": SubResource("Animation_ym88d"),
+&"spin": SubResource("Animation_s765h")
+}
+
+[node name="FairyFountain" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_63fpr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+shape = SubResource("BoxShape3D_s765h")
+
+[node name="Fairy" parent="." instance=ExtResource("2_nuvl6")]
+
+[node name="HealingEffect" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.99470276, -0.102792524, 0, 0.102792524, 0.99470276, 0, 1.159, 0)
+
+[node name="Spinner" type="Node3D" parent="HealingEffect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25481963, 2.4372754)
+
+[node name="Heart" type="Node3D" parent="HealingEffect/Spinner"]
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart2" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart3" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -1, 0, -4.3711385e-08, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart4" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(-0.7071067, 0, 0.7071067, 7.450581e-09, 1, 7.450581e-09, -0.7071067, 0, -0.7071067, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart6" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(0.7071067, 0, -0.7071067, -7.450581e-09, 1, -7.450581e-09, 0.7071067, 0, 0.7071067, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart7" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 1, 0, -4.3711385e-08, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart8" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(-0.7071067, 0, -0.7071067, -7.450581e-09, 1, 7.450581e-09, 0.7071067, 0, -0.7071067, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Heart5" type="Node3D" parent="HealingEffect/Spinner"]
+transform = Transform3D(-0.9999999, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, 0)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="HealingEffect/Spinner/Heart5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2)
+pixel_size = 0.1
+billboard = 1
+texture_filter = 0
+texture = ExtResource("5_s765h")
+hframes = 4
+
+[node name="Spin" type="AnimationPlayer" parent="HealingEffect"]
+libraries = {
+&"": SubResource("AnimationLibrary_iy018")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../HealingEffect/Spinner")
+libraries = {
+&"": SubResource("AnimationLibrary_b8gx7")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_animation_finished"]

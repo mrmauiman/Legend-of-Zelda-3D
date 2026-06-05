@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://x01m1qags5k3"]
+
+[ext_resource type="Script" uid="uid://b0fi0f88ol3nd" path="res://scripts/enemies/dungeon/moldorm.gd" id="1_eqwak"]
+[ext_resource type="Texture2D" uid="uid://bil60v0067u88" path="res://sprites/enemies/zora_fireball.png" id="2_5noq1"]
+[ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="3_5noq1"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="4_p8ko8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p8ko8"]
+radius = 0.4
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5noq1"]
+
+[sub_resource type="Animation" id="Animation_p8ko8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Sprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5noq1"]
+resource_name = "hurt"
+length = 0.2667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Sprite3D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.20000002, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(0, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrxsv"]
+_data = {
+&"RESET": SubResource("Animation_p8ko8"),
+&"hurt": SubResource("Animation_5noq1")
+}
+
+[node name="Moldorm" type="CharacterBody3D"]
+collision_layer = 132
+collision_mask = 233
+script = ExtResource("1_eqwak")
+target_arrow_offset = Vector3(0, 1, 0)
+drop_group = 3
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_5noq1")
+hframes = 4
+frame = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("SphereShape3D_p8ko8")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_5noq1")
+max_health = 2
+
+[node name="HurtBox" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HurtBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("SphereShape3D_5noq1")
+
+[node name="HurtAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hrxsv")
+}
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("4_p8ko8")
+knockback = Vector3(0, 1.6, 6.4)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("SphereShape3D_5noq1")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

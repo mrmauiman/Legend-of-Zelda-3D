@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://v3dvxioctdcu"]
+
+[ext_resource type="Script" uid="uid://c8bd1qixty5vl" path="res://scripts/chunked_world/loadables_manager.gd" id="1_ris1q"]
+[ext_resource type="PackedScene" uid="uid://h28opc2f3oyg" path="res://scenes/enemies/dungeon/goriya_hungry.tscn" id="2_hjupe"]
+
+[node name="Loadables_5_0" type="Node3D"]
+script = ExtResource("1_ris1q")
+metadata/_custom_type_script = "uid://c8bd1qixty5vl"
+
+[node name="Bosses" type="Node3D" parent="."]
+
+[node name="Goriya" parent="Bosses" instance=ExtResource("2_hjupe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)

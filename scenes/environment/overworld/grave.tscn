@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch1m88ud8css4"]
+
+[ext_resource type="ArrayMesh" uid="uid://bjp0nhs82jfcw" path="res://models/Grave.obj" id="1_1iw48"]
+[ext_resource type="Script" uid="uid://b2615uxlvrewp" path="res://scripts/components/grave.gd" id="1_7pdxd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pdxd"]
+size = Vector3(1.6, 1.6, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1iw48"]
+size = Vector3(1.8000001, 1.6, 0.8)
+
+[node name="Grave" type="StaticBody3D"]
+script = ExtResource("1_7pdxd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9604645e-08, 0.8, 0)
+shape = SubResource("BoxShape3D_7pdxd")
+
+[node name="Grave" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_1iw48")
+
+[node name="LinkDetector" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LinkDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.8, 2.9802322e-08)
+shape = SubResource("BoxShape3D_1iw48")
+
+[connection signal="body_entered" from="LinkDetector" to="." method="_on_link_detector_body_entered"]

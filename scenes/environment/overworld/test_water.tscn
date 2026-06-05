@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw1uokfgttk2"]
+
+[ext_resource type="PackedScene" uid="uid://b74bv8mdncqd0" path="res://scenes/environment/overworld/water.tscn" id="1_i5q2b"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Water" parent="." instance=ExtResource("1_i5q2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.187412, 0.04570532, -28.967491)
+visible = false
+size = Vector3(7.0649414, 1, 6.8835754)

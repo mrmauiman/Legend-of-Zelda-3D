@@ -1,0 +1,306 @@
+[gd_scene load_steps=19 format=3 uid="uid://kt6u3fjqr3cs"]
+
+[ext_resource type="Script" uid="uid://ct70hk6t40yxk" path="res://scripts/ui/title_screen.gd" id="1_r23qo"]
+[ext_resource type="Texture2D" uid="uid://237ney37gydq" path="res://sprites/ui/main_menu/title_screen_1.png" id="2_cfe2f"]
+[ext_resource type="Texture2D" uid="uid://cjychyteixxlw" path="res://sprites/ui/main_menu/title_screen_2.png" id="3_6ik4u"]
+[ext_resource type="Texture2D" uid="uid://ycaqbi0ibhb2" path="res://sprites/ui/main_menu/title_screen_3.png" id="4_aqu7r"]
+[ext_resource type="Texture2D" uid="uid://dmmgg7y10so06" path="res://sprites/ui/main_menu/title_screen_4.png" id="5_jsbfx"]
+[ext_resource type="Texture2D" uid="uid://qxd8vt0mih6y" path="res://sprites/ui/main_menu/water_fall_splash.png" id="6_cfe2f"]
+[ext_resource type="Texture2D" uid="uid://dgyce5ayiolo2" path="res://sprites/ui/main_menu/water_fall_wave.png" id="7_aqu7r"]
+[ext_resource type="Script" uid="uid://dbjwm6frtvnda" path="res://scripts/ui/waterfall_wave_spawner.gd" id="7_jsbfx"]
+[ext_resource type="Script" uid="uid://bkb785lirugqi" path="res://scripts/ui/waterfall_wave.gd" id="8_jsbfx"]
+
+[sub_resource type="Animation" id="Animation_1oiph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Frame3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Frame4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g5qcc"]
+resource_name = "flash"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Frame2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Frame3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Frame4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.40000004, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5p4sa"]
+_data = {
+&"RESET": SubResource("Animation_1oiph"),
+&"flash": SubResource("Animation_g5qcc")
+}
+
+[sub_resource type="Animation" id="Animation_lddph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7oraf"]
+resource_name = "flash"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g5qcc"]
+_data = {
+&"RESET": SubResource("Animation_lddph"),
+&"flash": SubResource("Animation_7oraf")
+}
+
+[sub_resource type="Animation" id="Animation_to824"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_tqags"]
+resource_name = "anim"
+length = 0.10000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y77df"]
+_data = {
+&"RESET": SubResource("Animation_to824"),
+&"anim": SubResource("Animation_tqags")
+}
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_r23qo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame1" type="TextureRect" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cfe2f")
+stretch_mode = 5
+
+[node name="Frame2" type="TextureRect" parent="TitleScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_6ik4u")
+stretch_mode = 5
+
+[node name="Frame3" type="TextureRect" parent="TitleScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_aqu7r")
+stretch_mode = 5
+
+[node name="Frame4" type="TextureRect" parent="TitleScreen"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_jsbfx")
+stretch_mode = 5
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="TitleScreen"]
+libraries = {
+&"": SubResource("AnimationLibrary_5p4sa")
+}
+autoplay = "flash"
+
+[node name="Node2D" type="Node2D" parent="TitleScreen"]
+position = Vector2(960, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen/Node2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_g5qcc")
+}
+autoplay = "flash"
+
+[node name="Sprite2D" type="Sprite2D" parent="TitleScreen/Node2D"]
+texture_filter = 1
+position = Vector2(-154, 811)
+scale = Vector2(4.82, 4.82)
+texture = ExtResource("6_cfe2f")
+vframes = 2
+
+[node name="Node2D" type="Node2D" parent="TitleScreen/Node2D"]
+position = Vector2(-154, 878)
+script = ExtResource("7_jsbfx")
+pause_time = 0.15
+
+[node name="Template" type="Sprite2D" parent="TitleScreen/Node2D/Node2D"]
+texture_filter = 1
+scale = Vector2(4.82, 4.82)
+texture = ExtResource("7_aqu7r")
+vframes = 3
+script = ExtResource("8_jsbfx")
+gravity = 600.0
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="TitleScreen/Node2D/Node2D/Template"]
+scale = Vector2(0.20746888, 0.20746888)
+rect = Rect2(-100, -50, 200, 100)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen/Node2D/Node2D/Template"]
+libraries = {
+&"": SubResource("AnimationLibrary_y77df")
+}
+autoplay = "anim"

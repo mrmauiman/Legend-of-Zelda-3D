@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://c62ekgoq8mrqp"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_bxxqr"]
+[ext_resource type="PackedScene" uid="uid://or1pdtuffde0" path="res://scenes/environment/dungeons/general_pieces/floor_water_maze.tscn" id="2_78btt"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="3_e58jn"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="4_0btad"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="5_qktsy"]
+[ext_resource type="PackedScene" uid="uid://b4byrm40880b7" path="res://scenes/environment/dungeons/general_pieces/east_wall_door.tscn" id="6_o32ul"]
+
+[node name="Room_4_1" instance=ExtResource("1_bxxqr")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_4_1.tscn"
+
+[node name="FloorWaterMaze" parent="Pieces" index="1" instance=ExtResource("2_78btt")]
+
+[node name="LongWall" parent="Pieces" index="2" instance=ExtResource("3_e58jn")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="WestWallDoor" parent="Pieces" index="3" instance=ExtResource("4_0btad")]
+
+[node name="NorthWallDoor" parent="Pieces" index="4" instance=ExtResource("5_qktsy")]
+
+[node name="EastWallDoor" parent="Pieces" index="5" instance=ExtResource("6_o32ul")]

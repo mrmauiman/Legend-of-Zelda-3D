@@ -1,0 +1,1593 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0rylqdc0o2bi"]
+
+[ext_resource type="Script" uid="uid://dtxeyq6e8m74" path="res://scripts/chunked_world/spawn_checker.gd" id="1_42qrg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83vgi"]
+size = Vector3(1.4, 1.4, 1.4)
+
+[node name="SpawnChecker" type="Node3D"]
+script = ExtResource("1_42qrg")
+
+[node name="SpawnSpot" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot5" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot6" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot7" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot85" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot85"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot86" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot86"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot87" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot87"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot88" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot88"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot89" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot89"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot90" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot90"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot91" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot91"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot106" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot106"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot107" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot107"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot108" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot108"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot109" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot109"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot110" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot110"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot111" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot111"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot112" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot112"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot8" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot9" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot10" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot11" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot12" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot13" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot14" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot15" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot16" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot17" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot18" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot19" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot20" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot21" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot22" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot23" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot24" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot25" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot26" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot27" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot28" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot29" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot30" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot31" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot32" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot33" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot34" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot35" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot36" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot37" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot38" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot39" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot40" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot41" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot42" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot43" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot44" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot45" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot46" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot47" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot48" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot49" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot50" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot51" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot52" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot52"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot53" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot53"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot54" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot54"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot55" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot56" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot57" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot58" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot59" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot59"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot60" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot60"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot61" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot62" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot63" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot64" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot64"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot65" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot65"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot66" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot66"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot67" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot67"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot68" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot68"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot69" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot69"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot70" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot70"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot71" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot71"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot72" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot72"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot73" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot73"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot74" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot75" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot76" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot77" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot78" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot79" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot80" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot80"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot81" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot81"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot82" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot82"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot83" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot83"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot84" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot84"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot92" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot92"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot93" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot93"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot94" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot94"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot95" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot95"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot96" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot96"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot97" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot97"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot98" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot98"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot99" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, -4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot99"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot100" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, -3.2000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot100"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot101" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, -1.6000003)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot101"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot102" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, -2.3841858e-07)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot102"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot103" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, 1.5999999)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot103"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot104" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, 3.1999998)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot104"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot105" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, 4.8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot105"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot113" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot113"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot114" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot114"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot115" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot115"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot116" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot116"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot117" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot117"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot118" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot118"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot119" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot119"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot120" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot120"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot121" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot121"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot122" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot122"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot123" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot123"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot124" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot124"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot125" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot125"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot126" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot126"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot127" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot127"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot128" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot128"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot129" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot129"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot130" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot130"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot131" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot131"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot132" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot132"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot133" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot133"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot134" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot134"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot135" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot135"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot136" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot136"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot137" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot137"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot138" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot138"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot139" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot139"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot140" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot140"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot141" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot141"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot142" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot142"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot143" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, 6.3999996)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot143"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot144" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, 8)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot144"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot145" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot145"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot146" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot146"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot147" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot147"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot148" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.400001, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot148"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot149" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot149"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot150" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.000001, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot150"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot151" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot151"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot152" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot152"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot153" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot153"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot154" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot154"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot155" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot155"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot156" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot156"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot157" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot157"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot158" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot158"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot159" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot159"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot160" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8000002, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot160"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot161" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot161"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot162" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7999997, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot162"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot163" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot163"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot164" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot164"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot165" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot165"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot166" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot166"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot167" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot167"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot168" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot168"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot169" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot169"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot170" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot170"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot171" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot171"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot172" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot172"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot173" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot173"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot174" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.400001, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot174"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot175" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, -8.000001)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot175"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")
+
+[node name="SpawnSpot176" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.000001, 0, -6.4000006)
+collision_layer = 0
+collision_mask = 107
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnSpot176"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_83vgi")

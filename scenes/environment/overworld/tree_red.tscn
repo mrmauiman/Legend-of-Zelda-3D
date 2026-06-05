@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmi6k454woqgy"]
+
+[ext_resource type="Script" uid="uid://co3pfk52wxldt" path="res://scripts/tree.gd" id="1_02usa"]
+[ext_resource type="ArrayMesh" uid="uid://fiivfjowsbl2" path="res://models/TreeFoliageRed.obj" id="2_yk1ka"]
+[ext_resource type="ArrayMesh" uid="uid://qypekpkupqr" path="res://models/TreeTrunk.obj" id="3_vlruy"]
+[ext_resource type="Material" uid="uid://ck326ddchu5l5" path="res://models/materials/red_leaves.tres" id="3_wmrpx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5qbtl"]
+height = 3.2
+radius = 0.8
+
+[node name="Tree" type="StaticBody3D"]
+collision_layer = 64
+script = ExtResource("1_02usa")
+
+[node name="Leaves" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.999, 0, 0, 0, 0.999, 0, 0, 0, 0.999, 0, 0, 0)
+mesh = ExtResource("2_yk1ka")
+surface_material_override/0 = ExtResource("3_wmrpx")
+
+[node name="Model" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="TreeTrunk" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.2, 0)
+mesh = ExtResource("3_vlruy")
+skeleton = NodePath("../..")
+
+[node name="TreeFoliage2" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+mesh = ExtResource("2_yk1ka")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("3_wmrpx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("CylinderShape3D_5qbtl")
+
+[node name="RayCasts" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="RayCast3D1" type="RayCast3D" parent="RayCasts"]
+target_position = Vector3(0, 0, 1.6)
+collision_mask = 64
+
+[node name="RayCast3D2" type="RayCast3D" parent="RayCasts"]
+target_position = Vector3(1.6, 0, 0)
+collision_mask = 64
+
+[node name="RayCast3D3" type="RayCast3D" parent="RayCasts"]
+target_position = Vector3(0, 0, -1.6)
+collision_mask = 64
+
+[node name="RayCast3D4" type="RayCast3D" parent="RayCasts"]
+target_position = Vector3(-1.6, 0, 0)
+collision_mask = 64

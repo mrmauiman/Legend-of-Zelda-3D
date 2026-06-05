@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cedqh3uexplcd"]
+
+[ext_resource type="ArrayMesh" uid="uid://dn37or8pnnloi" path="res://models/TempleEntranceOneEyeGreen.obj" id="1_r4p3e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvxv1"]
+size = Vector3(0.90000004, 2.4, 0.8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsy42"]
+size = Vector3(3, 3.2, 1.3000001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cevtt"]
+size = Vector3(0.7, 3.2, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8mdw"]
+size = Vector3(1.6, 1.3000001, 0.4)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5pkoi"]
+height = 3.1999998
+radius = 0.8
+
+[node name="TempleEntrance" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9500002, 1.2, 2.9802322e-08)
+shape = SubResource("BoxShape3D_xvxv1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9499999, 1.2, 2.9802322e-08)
+shape = SubResource("BoxShape3D_xvxv1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.6, -0.14999998)
+shape = SubResource("BoxShape3D_nsy42")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1500002, 1.6, 0.6)
+shape = SubResource("BoxShape3D_cevtt")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1499997, 1.6, 0.6)
+shape = SubResource("BoxShape3D_cevtt")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9802322e-07, 2.55, 0.6)
+shape = SubResource("BoxShape3D_b8mdw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.6, -0.45)
+shape = SubResource("CylinderShape3D_5pkoi")
+
+[node name="TempleEntranceOneEyeGreen" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_r4p3e")

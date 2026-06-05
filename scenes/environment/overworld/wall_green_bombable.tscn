@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c52ner866qugw"]
+
+[ext_resource type="Script" uid="uid://dvk2g3up3ecqi" path="res://scripts/components/bombable_wall.gd" id="1_r763c"]
+[ext_resource type="PackedScene" uid="uid://boofuj5t2dw8m" path="res://models/green_bombable_wall.glb" id="2_r763c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrnhd"]
+size = Vector3(1.6, 1.6, 0.1)
+
+[node name="GreenBombableWall" type="StaticBody3D"]
+script = ExtResource("1_r763c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.05)
+shape = SubResource("BoxShape3D_hrnhd")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.05)
+shape = SubResource("BoxShape3D_hrnhd")
+
+[node name="green_bombable_wall" parent="." instance=ExtResource("2_r763c")]
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

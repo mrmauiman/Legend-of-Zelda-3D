@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0satwugd5dkt"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_gw1ho"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="2_wfeg1"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="3_w4oyn"]
+[ext_resource type="PackedScene" uid="uid://bj3eqt3pkgnmq" path="res://scenes/environment/dungeons/general_pieces/entrance_door_short_wall.tscn" id="4_buv5h"]
+
+[node name="RoomTunnelA" instance=ExtResource("1_gw1ho")]
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_8/loadables_tunnel_a.tscn"
+
+[node name="LongWall" parent="Pieces" index="1" instance=ExtResource("2_wfeg1")]
+
+[node name="LongWall2" parent="Pieces" index="2" instance=ExtResource("2_wfeg1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Floor" parent="Pieces" index="3" instance=ExtResource("3_w4oyn")]
+
+[node name="EntranceDoorShortWall" parent="Pieces" index="4" instance=ExtResource("4_buv5h")]
+
+[node name="EntranceDoorShortWall2" parent="Pieces" index="5" instance=ExtResource("4_buv5h")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

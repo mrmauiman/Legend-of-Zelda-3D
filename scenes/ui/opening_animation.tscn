@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bie8f6qpf6d8r"]
+
+[ext_resource type="Shader" uid="uid://cm6fgk4lalfy3" path="res://shaders/opening_animation.gdshader" id="1_383ua"]
+[ext_resource type="Script" uid="uid://ca0k4nqro8c3k" path="res://scripts/ui/opening_animation.gd" id="1_lyv0y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lyv0y"]
+shader = ExtResource("1_383ua")
+shader_parameter/open = 0.0
+
+[node name="OpeningAnimation" type="CanvasLayer"]
+script = ExtResource("1_lyv0y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_lyv0y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

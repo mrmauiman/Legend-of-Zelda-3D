@@ -1,0 +1,147 @@
+[gd_scene load_steps=12 format=3 uid="uid://c1tbqk0abonga"]
+
+[ext_resource type="PackedScene" uid="uid://ckftgy0sw1l74" path="res://scenes/pickups/pickup.tscn" id="1_eakn7"]
+[ext_resource type="Script" uid="uid://chwjyn2hpcfmd" path="res://scripts/components/pickups/triforce_piece_pickup.gd" id="2_roeh7"]
+[ext_resource type="Texture2D" uid="uid://c3lva1tupvw4d" path="res://sprites/triforce_piece.png" id="3_roeh7"]
+[ext_resource type="Texture2D" uid="uid://b1s2nf2bjwlly" path="res://sprites/triforce_gleam.png" id="4_yo621"]
+[ext_resource type="Script" uid="uid://dur55rjoel68d" path="res://scripts/components/sprite3d_effects/billboard_along_bone.gd" id="5_r8wy7"]
+
+[sub_resource type="Animation" id="Animation_8a8h0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7jtuk"]
+resource_name = "flash"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gqo2a"]
+_data = {
+&"RESET": SubResource("Animation_8a8h0"),
+&"flash": SubResource("Animation_7jtuk")
+}
+
+[sub_resource type="Animation" id="Animation_yo621"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gleam:pixel_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+
+[sub_resource type="Animation" id="Animation_roeh7"]
+resource_name = "spin"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -6.2831855)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gleam:pixel_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 0.07]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8wy7"]
+_data = {
+&"RESET": SubResource("Animation_yo621"),
+&"spin": SubResource("Animation_roeh7")
+}
+
+[node name="Pickup" instance=ExtResource("1_eakn7")]
+script = ExtResource("2_roeh7")
+never_despawn = true
+
+[node name="Sprite" type="Sprite3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+sorting_offset = 1.6
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("3_roeh7")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_gqo2a")
+}
+autoplay = "flash"
+
+[node name="Node3D" type="Node3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0.8, 0)
+
+[node name="Gleam" type="Sprite3D" parent="Node3D" index="0"]
+transform = Transform3D(-0.9963482, 0, -0.08538081, 0, 1, 0, 0.0853808, 0, -0.99634826, 0, 0, 0)
+sorting_offset = 1.5
+modulate = Color(1, 1, 1, 0.32941177)
+pixel_size = 0.1
+billboard = Callable()
+texture_filter = 0
+texture = ExtResource("4_yo621")
+hframes = 2
+script = ExtResource("5_r8wy7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node3D" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_r8wy7")
+}
+autoplay = "spin"

@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://do8ux1522y27c"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_tosge"]
+[ext_resource type="PackedScene" uid="uid://b4lcu334h3gm3" path="res://scenes/environment/dungeons/general_pieces/floor_entrance.tscn" id="2_2djeo"]
+[ext_resource type="PackedScene" uid="uid://cox4frwwicyq7" path="res://scenes/environment/dungeons/general_pieces/entrance_door.tscn" id="3_urumc"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_1l7u8"]
+[ext_resource type="PackedScene" uid="uid://d3b38vruobuy8" path="res://scenes/environment/dungeons/general_pieces/north_wall_door.tscn" id="5_dt24d"]
+[ext_resource type="PackedScene" uid="uid://dstgau5klwsnm" path="res://scenes/environment/dungeons/general_pieces/dragon_statue.tscn" id="6_fahna"]
+[ext_resource type="PackedScene" uid="uid://dkwnqednva41k" path="res://scenes/environment/dungeons/general_pieces/head_statue.tscn" id="7_pr3wo"]
+[ext_resource type="PackedScene" uid="uid://bhgpc2qlcwh3j" path="res://scenes/environment/dungeons/dungeon_exit.tscn" id="8_kefjw"]
+
+[node name="Room_0_6" instance=ExtResource("1_tosge")]
+
+[node name="FloorEntrance" parent="Pieces" index="1" instance=ExtResource("2_2djeo")]
+
+[node name="EntranceDoor" parent="Pieces" index="2" instance=ExtResource("3_urumc")]
+
+[node name="ShortWall" parent="Pieces" index="3" instance=ExtResource("4_1l7u8")]
+
+[node name="ShortWall2" parent="Pieces" index="4" instance=ExtResource("4_1l7u8")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="NorthWallDoor" parent="Pieces" index="5" instance=ExtResource("5_dt24d")]
+
+[node name="Statues" type="Node3D" parent="Pieces" index="6"]
+
+[node name="DragonStatue" parent="Pieces/Statues" index="0" instance=ExtResource("6_fahna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="DragonStatue2" parent="Pieces/Statues" index="1" instance=ExtResource("6_fahna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, -3.2)
+
+[node name="DragonStatue3" parent="Pieces/Statues" index="2" instance=ExtResource("6_fahna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, -0.1, 3.2)
+
+[node name="DragonStatue4" parent="Pieces/Statues" index="3" instance=ExtResource("6_fahna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 0)
+
+[node name="DragonStatue5" parent="Pieces/Statues" index="4" instance=ExtResource("6_fahna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, -3.2)
+
+[node name="DragonStatue6" parent="Pieces/Statues" index="5" instance=ExtResource("6_fahna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 3.2)
+
+[node name="HeadStatue" parent="Pieces/Statues" index="6" instance=ExtResource("7_pr3wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 0)
+
+[node name="HeadStatue2" parent="Pieces/Statues" index="7" instance=ExtResource("7_pr3wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, 3.2)
+
+[node name="HeadStatue3" parent="Pieces/Statues" index="8" instance=ExtResource("7_pr3wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0, -3.2)
+
+[node name="HeadStatue4" parent="Pieces/Statues" index="9" instance=ExtResource("7_pr3wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 0)
+
+[node name="HeadStatue5" parent="Pieces/Statues" index="10" instance=ExtResource("7_pr3wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 3.2)
+
+[node name="HeadStatue6" parent="Pieces/Statues" index="11" instance=ExtResource("7_pr3wo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, -3.2)
+
+[node name="DungeonEntrance" parent="." index="2" instance=ExtResource("8_kefjw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5)
+dungeon_path = "res://scenes/chunked_worlds/overworld/overworld.tscn"

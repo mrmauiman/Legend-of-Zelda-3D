@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://j5conf6f88mm"]
+
+[ext_resource type="Script" uid="uid://bvervlynxorqn" path="res://scripts/link/food.gd" id="1_370ap"]
+[ext_resource type="Texture2D" uid="uid://m7im1xsex543" path="res://sprites/link/food.png" id="2_370ap"]
+[ext_resource type="Script" uid="uid://c8rrfukm3oyt5" path="res://scripts/components/sprite3d_effects/rotating_sprite3d_billboard_along_y.gd" id="3_negvu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_370ap"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2r4fo"]
+radius = 25.6
+
+[node name="Food" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 65
+floor_stop_on_slope = false
+floor_max_angle = 0.6981317
+script = ExtResource("1_370ap")
+
+[node name="Texture" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="Food" type="Sprite3D" parent="Texture"]
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("2_370ap")
+hframes = 4
+vframes = 5
+frame = 19
+script = ExtResource("3_negvu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_370ap")
+
+[node name="AttractionArea" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttractionArea"]
+shape = SubResource("CylinderShape3D_2r4fo")

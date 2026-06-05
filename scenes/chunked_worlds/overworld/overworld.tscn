@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://cp2xp05n470p5"]
+
+[ext_resource type="Script" uid="uid://dmu8o0tyl2ye2" path="res://scripts/chunked_world/overworld.gd" id="1_jws5l"]
+[ext_resource type="PackedScene" uid="uid://2voob4crkfaf" path="res://scenes/chunked_worlds/overworld/overworld_mesh.tscn" id="1_k1n60"]
+[ext_resource type="Script" uid="uid://d2ilne8dk1bwu" path="res://scripts/chunked_world/screen_manager.gd" id="3_xbj33"]
+[ext_resource type="Texture2D" uid="uid://dvrdvpfx5s73p" path="res://hdris/overcast_soil_puresky_4k.exr" id="4_lepxx"]
+[ext_resource type="PackedScene" uid="uid://b80firppabbyo" path="res://scenes/ui/in_game_ui.tscn" id="5_cgh5m"]
+[ext_resource type="Script" uid="uid://1flqwd5tdscl" path="res://scripts/components/world_environment.gd" id="6_6i8cb"]
+[ext_resource type="PackedScene" uid="uid://bie8f6qpf6d8r" path="res://scenes/ui/opening_animation.tscn" id="6_jws5l"]
+[ext_resource type="PackedScene" uid="uid://rqc1yj5uto2h" path="res://scenes/link/link.tscn" id="39_0mg1x"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7t7xk"]
+panorama = ExtResource("4_lepxx")
+energy_multiplier = 0.3
+
+[sub_resource type="Sky" id="Sky_xo14e"]
+sky_material = SubResource("PanoramaSkyMaterial_7t7xk")
+
+[sub_resource type="Environment" id="Environment_cgh5m"]
+background_mode = 2
+sky = SubResource("Sky_xo14e")
+ambient_light_source = 2
+ambient_light_color = Color(0.5487277, 0.6895292, 0.96870035, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 2
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_energy = 0.3
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.4313402, 0.43134028, 0.43134007, 1)
+
+[sub_resource type="FogMaterial" id="FogMaterial_jws5l"]
+albedo = Color(0.43137255, 0.43137255, 0.43137255, 1)
+height_falloff = 0.4797516
+edge_fade = 0.52780324
+
+[node name="Overworld" type="Node3D"]
+script = ExtResource("1_jws5l")
+
+[node name="WorldMesh" parent="." instance=ExtResource("1_k1n60")]
+
+[node name="Screens" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_xbj33")
+screen_to_load = "screen_0_0"
+
+[node name="Link" parent="." instance=ExtResource("39_0mg1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6, 0, 64)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cgh5m")
+script = ExtResource("6_6i8cb")
+
+[node name="Sun" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.50623596, 0.5605957, -0.6553302, 0.04134363, 0.7432458, 0.66773975, 0.86140347, -0.3651276, 0.35308066, 0, 9.5, 0)
+light_energy = 0.5
+shadow_enabled = true
+
+[node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05001068, 16.5, 77.15)
+size = Vector3(428.30002, 35, 12.5)
+material = SubResource("FogMaterial_jws5l")
+
+[node name="FogVolume2" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05001068, 16.050001, -77.049995)
+size = Vector3(428.30002, 34.100002, 12.5)
+material = SubResource("FogMaterial_jws5l")
+
+[node name="FogVolume3" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.55002, 15.75, 0.20000458)
+size = Vector3(9.3, 33.5, 167)
+material = SubResource("FogMaterial_jws5l")
+
+[node name="FogVolume4" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -209.55, 16.1, 0.20000458)
+size = Vector3(9.3, 34.2, 167)
+material = SubResource("FogMaterial_jws5l")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="InGameUI" parent="UI" instance=ExtResource("5_cgh5m")]
+
+[node name="OpeningAnimation" parent="UI" instance=ExtResource("6_jws5l")]

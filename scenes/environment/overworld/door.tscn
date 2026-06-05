@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjjwjygypdu1j"]
+
+[ext_resource type="Script" uid="uid://dpocj3fy7is4n" path="res://scripts/components/door.gd" id="1_hpvv5"]
+[ext_resource type="Shader" uid="uid://v2kkcr0kgsvo" path="res://shaders/circle_transition.gdshader" id="2_hs68i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uvdjg"]
+size = Vector3(1.6, 1.6, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vddq2"]
+shader = ExtResource("2_hs68i")
+shader_parameter/circle_radius = 0.6000000285
+shader_parameter/circle_offset = Vector2(0, 0.07)
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[node name="Door" type="Area3D" groups=["Door"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hpvv5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+shape = SubResource("BoxShape3D_uvdjg")
+debug_color = Color(0.6930184, 0.36969793, 0.84417695, 0.41960785)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_vddq2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

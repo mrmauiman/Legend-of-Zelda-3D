@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc465mai3xuna"]
+
+[ext_resource type="PackedScene" uid="uid://uvu3ejub86u8" path="res://models/dungeons/level_1/Pieces/FloorSand.glb" id="1_wldn3"]
+[ext_resource type="Script" uid="uid://b2gavqgboyqlv" path="res://scripts/components/dungeon_material_handler.gd" id="2_qp4kv"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qp4kv"]
+data = PackedVector3Array(9.599999, -5.6, 0, -9.599999, -5.6, 0.19999999, 9.599999, -5.6, 0.19999999, 9.599999, -5.6, 0, -9.599999, -5.6, 0, -9.599999, -5.6, 0.19999999, -9.599999, 5.6, 0, 9.599999, 5.6, 0.19999999, -9.599999, 5.6, 0.19999999, -9.599999, 5.6, 0, 9.599999, 5.6, 0, 9.599999, 5.6, 0.19999999, -9.599999, -5.6, 0, -9.599999, 5.6, 0.19999999, -9.599999, -5.6, 0.19999999, -9.599999, -5.6, 0, -9.599999, 5.6, 0, -9.599999, 5.6, 0.19999999, 9.599999, 5.6, 0, 9.599999, -5.6, 0.19999999, 9.599999, 5.6, 0.19999999, 9.599999, 5.6, 0, 9.599999, -5.6, 0, 9.599999, -5.6, 0.19999999, -9.599999, -5.6, 0, 9.599999, 5.6, 0, -9.599999, 5.6, 0, -9.599999, -5.6, 0, 9.599999, -5.6, 0, 9.599999, 5.6, 0, -9.599999, 5.6, 0.19999999, 9.599999, -5.6, 0.19999999, -9.599999, -5.6, 0.19999999, -9.599999, 5.6, 0.19999999, 9.599999, 5.6, 0.19999999, 9.599999, -5.6, 0.19999999)
+
+[node name="FloorColoredSand" instance=ExtResource("1_wldn3")]
+
+[node name="FloorSand" parent="." index="0"]
+script = ExtResource("2_qp4kv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_qp4kv")

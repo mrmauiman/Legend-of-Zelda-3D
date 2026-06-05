@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3hxb8viah7oe"]
+
+[ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_0wpkg"]
+[ext_resource type="Script" uid="uid://xfmhu864ey0f" path="res://scripts/components/black_out.gd" id="2_2g0ti"]
+[ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="3_4oa1b"]
+[ext_resource type="PackedScene" uid="uid://bdb3u35fn0464" path="res://scenes/environment/dungeons/general_pieces/short_wall.tscn" id="4_cnk3t"]
+[ext_resource type="PackedScene" uid="uid://ksix2yivnxbc" path="res://scenes/environment/dungeons/general_pieces/long_wall.tscn" id="5_y15mr"]
+[ext_resource type="PackedScene" uid="uid://bd187kdd7d5lw" path="res://scenes/environment/dungeons/general_pieces/south_wall_door.tscn" id="6_c7mav"]
+[ext_resource type="PackedScene" uid="uid://cnr7y0bsj6cpy" path="res://scenes/environment/dungeons/general_pieces/west_wall_door.tscn" id="7_omybh"]
+[ext_resource type="PackedScene" uid="uid://crv5dolwbpteq" path="res://scenes/environment/dungeons/general_pieces/accent_block.tscn" id="8_0wpkg"]
+
+[node name="Room_7_2" instance=ExtResource("1_0wpkg")]
+script = ExtResource("2_2g0ti")
+
+[node name="Linkchecker" parent="." index="0"]
+loadable_path = "res://scenes/chunked_worlds/dungeons/level_4/loadables_7_2.tscn"
+
+[node name="Floor" parent="Pieces" index="1" instance=ExtResource("3_4oa1b")]
+
+[node name="ShortWall" parent="Pieces" index="2" instance=ExtResource("4_cnk3t")]
+
+[node name="LongWall" parent="Pieces" index="3" instance=ExtResource("5_y15mr")]
+
+[node name="SouthWallDoor" parent="Pieces" index="4" instance=ExtResource("6_c7mav")]
+
+[node name="WestWallDoor" parent="Pieces" index="5" instance=ExtResource("7_omybh")]
+
+[node name="Blocks" type="Node3D" parent="Pieces" index="6"]
+
+[node name="AccentBlock" parent="Pieces/Blocks" index="0" instance=ExtResource("8_0wpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2000003, 0, 0)
+
+[node name="AccentBlock6" parent="Pieces/Blocks" index="1" instance=ExtResource("8_0wpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2000003, 0, 0)
+
+[node name="AccentBlock2" parent="Pieces/Blocks" index="2" instance=ExtResource("8_0wpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, -1.6)
+
+[node name="AccentBlock3" parent="Pieces/Blocks" index="3" instance=ExtResource("8_0wpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6000004, 0, 1.6)
+
+[node name="AccentBlock4" parent="Pieces/Blocks" index="4" instance=ExtResource("8_0wpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, -1.6)
+
+[node name="AccentBlock5" parent="Pieces/Blocks" index="5" instance=ExtResource("8_0wpkg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5999994, 0, 1.6)

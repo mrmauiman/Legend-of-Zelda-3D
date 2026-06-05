@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://cbmxkh16rmr8n"]
+
+[ext_resource type="Script" uid="uid://crsjego2fqtwo" path="res://scripts/link/bomb.gd" id="1_m3s2y"]
+[ext_resource type="Texture2D" uid="uid://dsmd3ju3csvbn" path="res://sprites/link/bomb_1.png" id="1_vpdcx"]
+[ext_resource type="Script" uid="uid://c8rrfukm3oyt5" path="res://scripts/components/sprite3d_effects/rotating_sprite3d_billboard_along_y.gd" id="2_j15uc"]
+[ext_resource type="Texture2D" uid="uid://tjposgtu1ifv" path="res://sprites/link/bomb_2.png" id="4_3nocn"]
+[ext_resource type="Texture2D" uid="uid://df68v4rr0l420" path="res://sprites/link/bomb_3.png" id="5_poanl"]
+[ext_resource type="Texture2D" uid="uid://b63wyg0fexb5l" path="res://sprites/link/bomb_4.png" id="6_8gab1"]
+[ext_resource type="Texture2D" uid="uid://b2612tmwyjruw" path="res://sprites/link/bomb_5.png" id="7_rdkyb"]
+[ext_resource type="Texture2D" uid="uid://cmdao0ngob7e2" path="res://sprites/link/bomb_6.png" id="8_sk3su"]
+[ext_resource type="Texture2D" uid="uid://bvyiivwo07uxq" path="res://sprites/link/bomb_7.png" id="9_k4r2f"]
+[ext_resource type="Texture2D" uid="uid://050puim15oov" path="res://sprites/link/bomb_8.png" id="10_3swkl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gix0d"]
+radius = 0.4
+
+[node name="Bomb" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 65
+floor_stop_on_slope = false
+floor_max_angle = 0.6981317
+script = ExtResource("1_m3s2y")
+fuse_time = 2.5
+
+[node name="Texture" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="Bomb1" type="Sprite3D" parent="Texture"]
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_vpdcx")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb2" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_3nocn")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb3" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("5_poanl")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb4" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("6_8gab1")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb5" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("7_rdkyb")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb6" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("8_sk3su")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb7" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("9_k4r2f")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="Bomb8" type="Sprite3D" parent="Texture"]
+visible = false
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("10_3swkl")
+hframes = 5
+vframes = 2
+script = ExtResource("2_j15uc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_gix0d")

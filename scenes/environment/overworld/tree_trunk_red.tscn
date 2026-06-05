@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://befvj2cex4xly"]
+
+[ext_resource type="ArrayMesh" uid="uid://bktwyw8ig4guh" path="res://models/TreeRed.obj" id="1_u70qs"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_e22hd"]
+height = 3.2
+radius = 0.9
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vht7h"]
+height = 1.55
+radius = 0.3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gi64c"]
+height = 1.875
+radius = 0.3
+
+[node name="TreeTrunk" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+shape = SubResource("CylinderShape3D_e22hd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8660253, 0.49999997, 0, -0.49999997, 0.8660253, 0, 0, 0, 1, 0.99843884, 0.89843893, 0)
+shape = SubResource("CylinderShape3D_vht7h")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.70710677, -0.70710665, 0, 0.70710665, 0.70710677, 0, 0, 0, 1, -0.916466, 2.413344, 0)
+shape = SubResource("CylinderShape3D_gi64c")
+
+[node name="TreeRed" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_u70qs")

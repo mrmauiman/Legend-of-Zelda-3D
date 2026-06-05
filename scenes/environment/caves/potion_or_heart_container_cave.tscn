@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://drlfq6b5avlxp"]
+
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="1_0ryl6"]
+[ext_resource type="Script" uid="uid://s72y3bc5vnx6" path="res://scripts/components/cave_location_data.gd" id="1_by6h5"]
+[ext_resource type="PackedScene" uid="uid://be2666jouixor" path="res://scenes/environment/caves/cave_model.tscn" id="2_by6h5"]
+[ext_resource type="PackedScene" uid="uid://dw8tnn5sbinuc" path="res://scenes/npcs/potion_or_heart_container_old_man_npc.tscn" id="4_by6h5"]
+
+[node name="PotionOrHeartContainerCave" type="Node3D"]
+script = ExtResource("1_by6h5")
+
+[node name="Torch" parent="." instance=ExtResource("1_0ryl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -0.8)
+
+[node name="Torch2" parent="." instance=ExtResource("1_0ryl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -0.8)
+
+[node name="CaveModel" parent="." instance=ExtResource("2_by6h5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="OldManNPC" parent="." instance=ExtResource("4_by6h5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)

@@ -1,0 +1,146 @@
+[gd_scene load_steps=13 format=3 uid="uid://1x4buuki6ty2"]
+
+[ext_resource type="Script" uid="uid://y75v0cv3xsr0" path="res://scripts/enemies/dungeon/gleeok_head.gd" id="1_7ucjr"]
+[ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_8cq3q"]
+[ext_resource type="Texture2D" uid="uid://vutf0m2ttpam" path="res://sprites/enemies/dungeon/gleeok_head_floating.png" id="4_sl5pk"]
+[ext_resource type="Script" uid="uid://3bt166y0yhiy" path="res://scripts/components/state_machine/flying_enemy_patrol.gd" id="5_3x7u8"]
+[ext_resource type="Texture2D" uid="uid://wsfxegece3by" path="res://sprites/enemies/dungeon/gleeok_head_floating_fire.png" id="6_gt8st"]
+[ext_resource type="Script" uid="uid://c8rrfukm3oyt5" path="res://scripts/components/sprite3d_effects/rotating_sprite3d_billboard_along_y.gd" id="9_mem18"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="12_vgkhp"]
+
+[sub_resource type="Animation" id="Animation_7ucjr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_58kh1"]
+resource_name = "flash"
+length = 0.033335
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.016666668, 0.033333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86x4c"]
+_data = {
+&"RESET": SubResource("Animation_7ucjr"),
+&"flash": SubResource("Animation_58kh1")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f5xh7"]
+radius = 0.4
+height = 1.5999999
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sl5pk"]
+radius = 0.3
+height = 1.5999999
+
+[node name="GleeokHead" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 225
+script = ExtResource("1_7ucjr")
+target_arrow_offset = Vector3(0, 1.6, 0)
+drop_group = 4
+
+[node name="StateMachine" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_8cq3q")
+
+[node name="Patrol" type="Node3D" parent="StateMachine"]
+script = ExtResource("5_3x7u8")
+stop_chance = -1.0
+move_speed = 3.2
+
+[node name="WallChecks" type="Node3D" parent="StateMachine/Patrol"]
+unique_name_in_owner = true
+top_level = true
+
+[node name="RayCast3D" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, 1.6)
+collision_mask = 33
+
+[node name="RayCast3D2" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, 0, -1.6)
+collision_mask = 33
+
+[node name="RayCast3D3" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(1.6, 0, 0)
+collision_mask = 33
+
+[node name="RayCast3D4" type="RayCast3D" parent="StateMachine/Patrol/WallChecks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(-1.6, 0, 0)
+collision_mask = 33
+
+[node name="FloorCheck" type="RayCast3D" parent="StateMachine/Patrol"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+target_position = Vector3(0, -2.4, 0)
+
+[node name="Model" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Head" type="Sprite3D" parent="Model"]
+sorting_offset = 0.4
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_sl5pk")
+hframes = 4
+vframes = 4
+frame = 15
+script = ExtResource("9_mem18")
+
+[node name="Fire" type="Sprite3D" parent="Model"]
+flip_h = true
+pixel_size = 0.1
+billboard = 2
+texture_filter = 0
+texture = ExtResource("6_gt8st")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model"]
+libraries = {
+&"": SubResource("AnimationLibrary_86x4c")
+}
+autoplay = "flash"
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("12_vgkhp")
+knockback = Vector3(0, 6.4, 6.4)
+relative_knockback_orientor = NodePath("..")
+xz_omni_dir_knockback = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.05)
+shape = SubResource("CapsuleShape3D_f5xh7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.05)
+shape = SubResource("CapsuleShape3D_sl5pk")

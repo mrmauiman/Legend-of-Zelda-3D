@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm2ni4kcffa81"]
+
+[ext_resource type="Script" uid="uid://kw2uq6vogodu" path="res://scripts/components/fast_travel_cave.gd" id="1_fnhw3"]
+[ext_resource type="PackedScene" uid="uid://bcspqawyuxoxi" path="res://scenes/environment/overworld/torch.tscn" id="1_hui33"]
+[ext_resource type="PackedScene" uid="uid://bubabsu8tvbuv" path="res://scenes/environment/caves/cave_fast_travel_model.tscn" id="2_hui33"]
+[ext_resource type="PackedScene" uid="uid://sx8su1hqkuvc" path="res://scenes/npcs/free_info_old_man_npc.tscn" id="3_fnhw3"]
+[ext_resource type="PackedScene" uid="uid://bjjwjygypdu1j" path="res://scenes/environment/overworld/door.tscn" id="5_ba8pe"]
+
+[node name="FastTravelCave" type="Node3D"]
+script = ExtResource("1_fnhw3")
+
+[node name="Torch" parent="." instance=ExtResource("1_hui33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, -0.8)
+
+[node name="Torch2" parent="." instance=ExtResource("1_hui33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -0.8)
+
+[node name="CaveFastTravelModel" parent="." instance=ExtResource("2_hui33")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="OldManNPC" parent="." instance=ExtResource("3_fnhw3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
+
+[node name="Door1" parent="." instance=ExtResource("5_ba8pe")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -4, -0.1, 0.8)
+look_dir = Vector3(0, 0, 1)
+is_fast_travel_door = true
+
+[node name="Door2" parent="." instance=ExtResource("5_ba8pe")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.8, -0.1, 0.8)
+look_dir = Vector3(0, 0, 1)
+is_fast_travel_door = true
+
+[node name="Door3" parent="." instance=ExtResource("5_ba8pe")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 5.6, -0.1, 0.8)
+look_dir = Vector3(0, 0, 1)
+is_fast_travel_door = true

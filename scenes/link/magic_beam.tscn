@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnnm2itwi1clc"]
+
+[ext_resource type="Script" uid="uid://bba6orhd6kud0" path="res://scripts/link/magic_beam.gd" id="1_kmf40"]
+[ext_resource type="Texture2D" uid="uid://dulgg15qawqk" path="res://sprites/enemies/dungeon/wizzrobe_beam.png" id="2_tvfjr"]
+[ext_resource type="Script" uid="uid://bh27hsd8jrovp" path="res://scripts/components/hit_box.gd" id="4_isf5y"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7ckq1"]
+radius = 0.1
+height = 1.6
+
+[sub_resource type="Animation" id="Animation_3l6lg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BeamTexture/BeamTexture1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BeamTexture/BeamTexture2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_a7h2a"]
+resource_name = "pulse"
+length = 0.06666834
+loop_mode = 1
+step = 0.016666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BeamTexture/BeamTexture1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.016666668, 0.033333335, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BeamTexture/BeamTexture2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.016666668, 0.033333335, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18mos"]
+_data = {
+&"RESET": SubResource("Animation_3l6lg"),
+&"pulse": SubResource("Animation_a7h2a")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l28g4"]
+height = 1.8
+radius = 0.8
+
+[node name="MagicBeam" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_kmf40")
+
+[node name="BeamTexture" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="BeamTexture1" type="Sprite3D" parent="BeamTexture"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("2_tvfjr")
+hframes = 2
+vframes = 2
+
+[node name="BeamTexture2" type="Sprite3D" parent="BeamTexture"]
+pixel_size = 0.1
+texture_filter = 0
+texture = ExtResource("2_tvfjr")
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_7ckq1")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, -1.6, 0)
+collision_mask = 257
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_18mos")
+}
+autoplay = "pulse"
+
+[node name="HitBox" type="Area3D" parent="." node_paths=PackedStringArray("relative_knockback_orientor")]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("4_isf5y")
+knockback = Vector3(0, 9.6, 6.4)
+relative_knockback_orientor = NodePath("..")
+damage = 2
+is_magic = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBox"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_l28g4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0, 0.69720095, 0.69720083, 1)
+
+[connection signal="blocked" from="HitBox" to="." method="blocked"]
+[connection signal="hit" from="HitBox" to="." method="hit"]
+[connection signal="parried" from="HitBox" to="." method="parried"]

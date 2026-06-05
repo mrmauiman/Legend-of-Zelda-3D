@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://lrxit70d3bhg"]
+
+[ext_resource type="Script" uid="uid://dkdkx21xso43o" path="res://scripts/components/maze_room.gd" id="1_sg4yr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xdig8"]
+size = Vector3(22.4, 6.1, 14.4)
+
+[sub_resource type="FogMaterial" id="FogMaterial_xdig8"]
+density = 2.0
+albedo = Color(0.43137255, 0.43137255, 0.43137255, 1)
+height_falloff = 0.4797516
+edge_fade = 0.52780324
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2rif8"]
+size = Vector3(25.6, 9.400001, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fljyn"]
+size = Vector3(0.1, 9.6, 17.6)
+
+[sub_resource type="Gradient" id="Gradient_sg4yr"]
+colors = PackedColorArray(0.43137255, 0.43137255, 0.43137255, 1, 0.43137255, 0.43137255, 0.43137255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2rif8"]
+gradient = SubResource("Gradient_sg4yr")
+width = 2560
+height = 1024
+
+[node name="MazeRoom" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_sg4yr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14999998, 0)
+shape = SubResource("BoxShape3D_xdig8")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7499999, 8)
+size = Vector3(25.6, 9.3, 4.8)
+material = SubResource("FogMaterial_xdig8")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8000001, -8)
+size = Vector3(25.6, 9.2, 4.8)
+material = SubResource("FogMaterial_xdig8")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.5999998, 0)
+size = Vector3(4.8, 9.6, 17.6)
+material = SubResource("FogMaterial_xdig8")
+
+[node name="FogVolume4" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.7499999, 0)
+size = Vector3(4.8, 9.3, 17.6)
+material = SubResource("FogMaterial_xdig8")
+
+[node name="FogVolume5" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.4, 0)
+size = Vector3(25.6, 3.2, 17.6)
+material = SubResource("FogMaterial_xdig8")
+
+[node name="FogVolume6" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.40000045, 0)
+size = Vector3(25.6, 3.2, 17.6)
+material = SubResource("FogMaterial_xdig8")
+
+[node name="DoorNorth" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorNorth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5000002, -8.8)
+shape = SubResource("BoxShape3D_2rif8")
+
+[node name="DoorSouth" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorSouth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 8.8)
+shape = SubResource("BoxShape3D_2rif8")
+
+[node name="DoorEast" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorEast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8, 1.6000001, 0)
+shape = SubResource("BoxShape3D_fljyn")
+
+[node name="DoorWest" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8, 1.6, 0)
+shape = SubResource("BoxShape3D_fljyn")
+
+[node name="FogWalls" type="Node3D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="FogWalls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -8.7)
+double_sided = false
+texture = SubResource("GradientTexture2D_2rif8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="FogWalls"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.7, 8.7)
+double_sided = false
+texture = SubResource("GradientTexture2D_2rif8")
+
+[node name="Sprite3D3" type="Sprite3D" parent="FogWalls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.7, 1.7, 0)
+double_sided = false
+texture = SubResource("GradientTexture2D_2rif8")
+
+[node name="Sprite3D4" type="Sprite3D" parent="FogWalls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 12.7, 1.7, 0)
+double_sided = false
+texture = SubResource("GradientTexture2D_2rif8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="DoorNorth" to="." method="enter_dir" binds= ["north"]]
+[connection signal="body_entered" from="DoorSouth" to="." method="enter_dir" binds= ["south"]]
+[connection signal="body_entered" from="DoorEast" to="." method="enter_dir" binds= ["east"]]
+[connection signal="body_entered" from="DoorWest" to="." method="enter_dir" binds= ["west"]]
