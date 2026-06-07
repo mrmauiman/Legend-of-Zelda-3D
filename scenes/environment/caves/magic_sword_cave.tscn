@@ -18,7 +18,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 [node name="OldManNPC" parent="." instance=ExtResource("3_hxmme")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
 location_id = "cave/magic_sword_cave"
-item_1_heart_requirement = 13
+item_1_heart_requirement = 12
 item_2_heart_requirement = 16
 text = "MASTER USING IT AND
 YOU CAN HAVE THIS."

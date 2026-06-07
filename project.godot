@@ -25,6 +25,8 @@ config/icon="uid://b4of84ifeiixl"
 
 [autoload]
 
+ModLoaderStore="*res://addons/mod_loader/mod_loader_store.gd"
+ModLoader="*res://addons/mod_loader/mod_loader.gd"
 Encryption="*res://scripts/components/encryption.gd"
 Inventory="*res://scripts/link/inventory.gd"
 EnemyDrops="*res://scripts/enemy_drops.gd"

@@ -44,9 +44,9 @@ func _ready():
 		animation_player.play(icon.flicker);
 
 func _on_body_entered(body):
-	if not multi_purchase:
-		Inventory.pickup_locations_grabbed.push_back(id);
 	if body.is_in_group("Link") and Inventory.counters.rupees >= price:
+		if not multi_purchase:
+			Inventory.pickup_locations_grabbed.push_back(id);
 		match type:
 			"item":
 				if Inventory.items[item_id] < modifier:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://8iadsbqoy2fm"]
+[gd_scene load_steps=18 format=3 uid="uid://8iadsbqoy2fm"]
 
 [ext_resource type="Script" uid="uid://cwvu3p6tw5ti4" path="res://scripts/enemies/dungeon/goriya.gd" id="1_ew6ey"]
 [ext_resource type="Script" uid="uid://b0waclod0fapl" path="res://scripts/components/state_machine/state_machine.gd" id="2_no0dc"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://45lovl1cwfpt" path="res://scripts/components/state_machine/enemy_hurt.gd" id="8_rqtsl"]
 [ext_resource type="Script" uid="uid://cuq46x47rnye" path="res://scripts/components/state_machine/enemy_stunned.gd" id="9_661id"]
 [ext_resource type="PackedScene" uid="uid://c0w8mdfgd1koy" path="res://scenes/enemies/dungeon/goriya_model_blue.tscn" id="10_ew6ey"]
+[ext_resource type="Script" uid="uid://danbaba6kks3i" path="res://scripts/components/state_machine/enemy_eat.gd" id="10_no0dc"]
 [ext_resource type="Script" uid="uid://1hxfdebra5fm" path="res://scripts/components/health.gd" id="11_2x2g8"]
 
 [sub_resource type="Animation" id="Animation_ma4ah"]
@@ -164,6 +165,9 @@ shape = SubResource("BoxShape3D_8m3fy")
 
 [node name="Stunned" type="Node3D" parent="StateMachine"]
 script = ExtResource("9_661id")
+
+[node name="Eat" type="Node3D" parent="StateMachine"]
+script = ExtResource("10_no0dc")
 
 [node name="Model" parent="." instance=ExtResource("10_ew6ey")]
 unique_name_in_owner = true
