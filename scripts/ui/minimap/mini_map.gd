@@ -1,4 +1,4 @@
-extends MarginContainer
+class_name MiniMap extends MarginContainer
 
 @export var level: Inventory.LEVELS = Inventory.LEVELS.OVERWORLD;
 @export var tiles_wide: int = 16;

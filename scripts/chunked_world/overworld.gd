@@ -7,3 +7,4 @@ func _ready():
 	link.global_position = Inventory.LEVEL_END_TELEPORT_POSITIONS[level];
 	Inventory.current_level = Inventory.LEVELS.OVERWORLD;
 	SoundSystem.play_overworld_music();
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED;

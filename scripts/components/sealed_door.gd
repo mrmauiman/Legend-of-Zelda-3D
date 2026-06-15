@@ -2,19 +2,21 @@ extends StaticBody3D
 
 @export var enemies: Node3D;
 
-var unlocked = false;
+var unlocked = true;
 
 func destroy():
 	queue_free();
 
 func unlock():
-	SoundSystem.play_global("res://audio/sfx/door_opened.wav");
+	if not unlocked:
+		SoundSystem.play_global("res://audio/sfx/door_opened.wav");
 	unlocked = true;
 	visible = false;
 	%CollisionShape3D.set_deferred("disabled", true);
 
 func lock():
-	SoundSystem.play_global("res://audio/sfx/door_opened.wav");
+	if unlocked:
+		SoundSystem.play_global("res://audio/sfx/door_opened.wav");
 	unlocked = false;
 	visible = true;
 	%CollisionShape3D.set_deferred("disabled", false);

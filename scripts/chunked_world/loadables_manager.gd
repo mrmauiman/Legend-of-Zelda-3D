@@ -76,7 +76,8 @@ func _ready():
 	if bosses:
 		for boss in bosses.get_children():
 			if data.bosses[boss.name]: boss.queue_free();
-	
+
+func lock_sealed_doors():
 	if sealed_doors:
 		for sealed_door in sealed_doors.get_children():
 			sealed_door.lock();

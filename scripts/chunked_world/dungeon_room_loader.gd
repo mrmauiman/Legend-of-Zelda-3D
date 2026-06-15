@@ -20,3 +20,7 @@ func _on_body_entered(body: Node3D):
 func _on_body_exited(body: Node3D):
 	if body.is_in_group("Link") and loadable_scene:
 		unload_room();
+
+func _on_sealed_door_checker_body_entered(body):
+	if body.is_in_group("Link") and loadable:
+		loadable.lock_sealed_doors();

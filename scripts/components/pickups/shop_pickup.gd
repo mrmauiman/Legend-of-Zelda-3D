@@ -62,7 +62,7 @@ func _on_body_entered(body):
 					SoundSystem.play_global("res://audio/sfx/PickupItem.wav");
 				elif item_id == "heart_containers":
 					Inventory.heart_container_levels[Inventory.current_level] = true;
-					Inventory.take_damage(-2);
+					Inventory.heal(1);
 					body.pickup(item_id, Inventory.ITEM_TYPES.NONE);
 					SoundSystem.play_global("res://audio/sfx/PickupItem.wav");
 				elif item_id == "keys":
@@ -71,7 +71,7 @@ func _on_body_entered(body):
 				else:
 					SoundSystem.play_global("res://audio/sfx/RupeePickup.wav");
 			"heart":
-				Inventory.take_damage(-2);
+				Inventory.heal(1);
 				SoundSystem.play_global("res://audio/sfx/RupeePickup.wav");
 			"counter_max":
 				Inventory.counter_maxes[item_id] += modifier;

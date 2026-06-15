@@ -26,6 +26,8 @@ tonemap_mode = 2
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_energy = 0.3
+fog_mode = 1
+fog_light_color = Color(0.43137255, 0.43137255, 0.43137255, 1)
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(0.4313402, 0.43134028, 0.43134007, 1)
 

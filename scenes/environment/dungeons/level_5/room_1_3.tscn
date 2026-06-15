@@ -29,5 +29,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0, -2)
 
 [node name="OldManNPC" parent="." index="4" instance=ExtResource("8_aiuag")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.2)
-info = "DIGDIGGER HATES
+info = "DIGDOGGER HATES
 CERTAIN KIND OF SOUND."
