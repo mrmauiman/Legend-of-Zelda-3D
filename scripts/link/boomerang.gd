@@ -17,7 +17,7 @@ var sfx: AudioStreamPlayer3D;
 func start_returning():
 	returning = true;
 	timer = 0;
-	%CollisionShape3D.disabled = true;
+	%CollisionShape3D.set_deferred("disabled", true);
 
 func _ready():
 	if not direction or not link:

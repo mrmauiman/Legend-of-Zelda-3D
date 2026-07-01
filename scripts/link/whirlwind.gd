@@ -5,6 +5,7 @@ class_name Whirlwind extends CharacterBody3D
 
 var timer: float = life_time;
 var link;
+var grabbing: bool = false;
 
 func teleport():
 	var temp_link = link;
@@ -14,7 +15,7 @@ func teleport():
 
 func _physics_process(delta):
 	timer -= delta;
-	if timer <= 0:
+	if timer <= 0 and not grabbing:
 		queue_free();
 	
 	if link:
@@ -26,6 +27,7 @@ func _physics_process(delta):
 
 func _on_grabber_body_entered(body):
 	if body.is_in_group("Link"):
+		grabbing = true;
 		link = body;
 		link.get_grabbed();
 		DoorAnimation.enter();

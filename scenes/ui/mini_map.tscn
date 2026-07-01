@@ -3871,7 +3871,6 @@ text = "LEVEL-7"
 horizontal_alignment = 1
 
 [node name="Level8" type="MarginContainer" parent="."]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8
@@ -4049,7 +4048,7 @@ theme_override_constants/margin_bottom = 3
 script = ExtResource("150_hxveo")
 screen = Vector2i(7, 1)
 marker_type = 1
-item_location_id = "dungeon/8/loadables_magicbook"
+item_location_id = "dungeon/8/loadablesmagicbook"
 
 [node name="ColorRect2" type="Sprite2D" parent="Level8/Control/CompassMarkers/Item_magicbook"]
 texture = ExtResource("152_wwy43")
@@ -4344,6 +4343,7 @@ text = "LEVEL-8"
 horizontal_alignment = 1
 
 [node name="Level9" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 8

@@ -25,6 +25,7 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SealedDoorChecker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0500002, 0)
 shape = SubResource("BoxShape3D_3hber")
+debug_color = Color(0.74097687, 0.3284979, 0.834421, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

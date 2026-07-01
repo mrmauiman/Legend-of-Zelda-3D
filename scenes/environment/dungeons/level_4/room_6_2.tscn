@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cviwv18ennmpx"]
+[gd_scene load_steps=11 format=3 uid="uid://cviwv18ennmpx"]
 
 [ext_resource type="PackedScene" uid="uid://x0t27t2spl04" path="res://scenes/environment/dungeons/room.tscn" id="1_xvn5b"]
 [ext_resource type="PackedScene" uid="uid://b64ycunmwvtuo" path="res://scenes/environment/dungeons/general_pieces/floor.tscn" id="2_drlrd"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://be8h8hc0k3poc" path="res://scenes/environment/dungeons/general_pieces/block.tscn" id="7_2irno"]
 [ext_resource type="PackedScene" uid="uid://bej6ykj7mp76h" path="res://scenes/environment/dungeons/general_pieces/block_pushable.tscn" id="8_d1gx2"]
 [ext_resource type="PackedScene" uid="uid://c508bpae2eh8j" path="res://scenes/environment/dungeons/general_pieces/door_sealed.tscn" id="9_fyw1q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xvn5b"]
+size = Vector3(17.7, 6.4, 9.7)
 
 [node name="Room_6_2" instance=ExtResource("1_xvn5b")]
 
@@ -38,4 +41,12 @@ door = NodePath("../../SealedDoor")
 [node name="SealedDoor" parent="Pieces" index="7" instance=ExtResource("9_fyw1q")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.6, -0.1, 0)
 
-[connection signal="body_entered" from="Linkchecker" to="Pieces/SealedDoor" method="_on_body_entered"]
+[node name="SealArea" type="Area3D" parent="." index="2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SealArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050000668, 3.0000005, 0.049999714)
+shape = SubResource("BoxShape3D_xvn5b")
+
+[connection signal="body_entered" from="SealArea" to="Pieces/SealedDoor" method="_on_body_entered"]

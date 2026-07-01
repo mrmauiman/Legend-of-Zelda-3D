@@ -8,7 +8,7 @@ func update_held_item():
 	pass;
 
 func play_hurt_animation():
-	animation_player.play("hurt");
+	pass
 
 func _physics_process(_delta):
 	if Inventory.clock_timer > 0:
